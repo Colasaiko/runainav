@@ -17,38 +17,38 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">AI</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><Link href="/ai-tools" className="hover:text-gray-900">AI工具</Link></li>
-              <li><Link href="/tools/chatgpt" className="hover:text-gray-900">ChatGPT</Link></li>
-              <li><Link href="/tools/claude" className="hover:text-gray-900">Claude</Link></li>
-              <li><Link href="/tools/gemini" className="hover:text-gray-900">Gemini</Link></li>
-              <li><Link href="/ai-tools/coding" className="hover:text-gray-900">AI编程</Link></li>
-              <li><Link href="/ai-tools/image" className="hover:text-gray-900">AI绘画</Link></li>
-              <li><Link href="/ai-tools/video" className="hover:text-gray-900">AI视频</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI工具</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">ChatGPT</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">Claude</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">Gemini</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI编程</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI绘画</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI视频</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">指南</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><Link href="/tutorials" className="hover:text-gray-900">AI教程</Link></li>
-              <li><Link href="/guides" className="hover:text-gray-900">AI新手</Link></li>
-              <li><Link href="/guides/prompt" className="hover:text-gray-900">Prompt</Link></li>
-              <li><Link href="/guides/compare" className="hover:text-gray-900">AI工具比较</Link></li>
-              <li><Link href="/guides/tips" className="hover:text-gray-900">AI使用技巧</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI教程</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI新手</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">Prompt</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI工具比较</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">AI使用技巧</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Network</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><Link href="/network" className="hover:text-gray-900">VPN是什么</Link></li>
-              <li><Link href="/vpn/guides" className="hover:text-gray-900">VPN指南</Link></li>
-              <li><Link href="/network/environment" className="hover:text-gray-900">网络环境</Link></li>
-              <li><Link href="/network/security" className="hover:text-gray-900">网络安全</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">VPN是什么</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">VPN指南</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">网络环境</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">网络安全</Link></li>
               <li className="pt-2"><Link href="/vpn" className="text-gray-900 font-medium hover:text-brand-600">RunAI VPN</Link></li>
-              <li><Link href="/vpn#pricing" className="hover:text-gray-900">套餐</Link></li>
-              <li><Link href="/vpn/tutorials" className="hover:text-gray-900">使用教程</Link></li>
-              <li><Link href="/vpn/faq" className="hover:text-gray-900">常见问题</Link></li>
+              <li><Link href="/vpn" className="hover:text-gray-900">套餐</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">使用教程</Link></li>
+              <li><Link href="/coming-soon" className="hover:text-gray-900">常见问题</Link></li>
             </ul>
           </div>
         </div>

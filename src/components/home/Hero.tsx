@@ -44,17 +44,12 @@ export default function Hero() {
         </div>
         
         {/* Trending */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm text-gray-500">
-          <span className="mr-2">热门搜索：</span>
-          {['ChatGPT', 'Claude', 'Gemini', 'AI编程', 'AI绘图', 'AI视频'].map((tag) => (
-            <Link 
-              key={tag} 
-              href={`/search?q=${tag}`}
-              className="px-3 py-1 bg-gray-50 border border-gray-100 rounded-full hover:bg-gray-100 hover:text-gray-900 transition-colors"
-            >
-              {tag}
-            </Link>
-          ))}
+        <div className="mt-6 flex flex-wrap justify-center items-center gap-3 text-sm">
+          <span className="text-gray-500 font-medium">热门搜索：</span>
+          <Link href="/coming-soon" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">ChatGPT Plus</Link>
+          <Link href="/coming-soon" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">Midjourney 教程</Link>
+          <Link href="/coming-soon" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">Claude 3</Link>
+          <Link href="/vpn" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">稳定 VPN 推荐</Link>
         </div>
       </div>
     </section>

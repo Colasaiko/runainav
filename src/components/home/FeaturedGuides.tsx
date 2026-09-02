@@ -12,7 +12,7 @@ export default function FeaturedGuides() {
               从入门到精通，手把手教你如何高效使用主流 AI 工具。
             </p>
           </div>
-          <Link href="/tutorials" className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-brand-600 transition-colors">
+          <Link href="/coming-soon" className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-brand-600 transition-colors">
             查看所有指南 &rarr;
           </Link>
         </div>
@@ -20,7 +20,7 @@ export default function FeaturedGuides() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Featured Large Card */}
           <div className="lg:col-span-7">
-            <Link href="/tutorials/chatgpt-beginner" className="group block h-full">
+            <Link href="/coming-soon" className="group block h-full">
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 h-full hover:shadow-lg transition-shadow">
                 <div className="aspect-video bg-gray-100 relative w-full flex items-center justify-center">
                   <div className="text-gray-400 group-hover:scale-105 transition-transform duration-500">
@@ -49,7 +49,7 @@ export default function FeaturedGuides() {
               { title: "AI 编程入门：如何用 Cursor 快速写出网页", tag: "AI 编程" },
               { title: "AI 绘图入门：Midjourney 基础参数与提示词解析", tag: "AI 绘图" }
             ].map((guide, idx) => (
-              <Link key={idx} href={`/tutorials/${idx}`} className="group block bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+              <Link key={idx} href="/coming-soon" className="group block bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
                 <div className="text-xs font-medium text-gray-500 mb-2">{guide.tag}</div>
                 <h4 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors">
                   {guide.title}

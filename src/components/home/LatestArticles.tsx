@@ -19,7 +19,7 @@ export default function LatestArticles() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {articles.map((article, idx) => (
-            <Link key={idx} href="#" className="group flex gap-6 items-start">
+            <Link key={idx} href="/coming-soon" className="group flex gap-6 items-start">
               <div className="w-24 h-24 shrink-0 bg-gray-100 rounded-xl overflow-hidden relative">
                 {/* Image Placeholder */}
                 <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-500" />
@@ -42,7 +42,7 @@ export default function LatestArticles() {
         </div>
         
         <div className="mt-12 text-center">
-          <Link href="/blog" className="inline-flex items-center justify-center px-6 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors font-medium">
+          <Link href="/coming-soon" className="inline-flex items-center justify-center px-6 py-3 border border-gray-200 text-gray-700 rounded-xl hover:bg-gray-50 transition-colors font-medium">
             阅读更多文章
           </Link>
         </div>
