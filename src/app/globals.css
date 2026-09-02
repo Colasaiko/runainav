@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-50: #f6f8fb;
+  --color-brand-100: #ecf1f6;
+  --color-brand-200: #d5e0ee;
+  --color-brand-300: #b1c7e1;
+  --color-brand-400: #88a8d0;
+  --color-brand-500: #678bbf;
+  --color-brand-600: #5171a7;
+  --color-brand-700: #425a87;
+  --color-brand-800: #384b6f;
+  --color-brand-900: #31405d;
+  --color-brand-950: #212a40;
+  
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: #ffffff;
+  --foreground: #111827; /* gray-900 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a; /* slate-950 */
+    --foreground: #f8fafc; /* slate-50 */
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base heading styles for Editorial feel */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  font-weight: 600;
 }
