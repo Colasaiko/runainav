@@ -52,7 +52,7 @@ export default function VPNProductSection() {
               
               <div className="flex gap-3 mt-auto">
                 <Link 
-                  href={`/vpn/${brand.slug}`}
+                  href="/coming-soon"
                   className="flex-1 py-2.5 text-sm font-medium text-center text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors"
                 >
                   详情
