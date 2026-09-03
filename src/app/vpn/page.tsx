@@ -130,12 +130,6 @@ export default function VPNPage() {
               
               <div className="pt-8 border-t border-gray-100">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2"><Monitor className="w-6 h-6 text-gray-500"/> macOS 教程 (Clash)</h3>
-                <div className="mb-8 text-sm text-gray-600 bg-gray-50 p-5 rounded-xl border border-gray-200">
-                  <p className="mb-2 font-medium">macOS 客户端下载（推荐优先从您购买的 VPN 官网后台下载对应版本）：</p>
-                  <a href="https://168downloads.oss-ap-northeast-2.aliyuncs.com/wf/wfnetwork-3.0.0-macos.zip" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline inline-flex items-center font-medium bg-brand-50 px-3 py-1.5 rounded-lg border border-brand-100">
-                    备用下载通道 (macOS) <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
-                  </a>
-                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                   {[1, 2, 3, 4].map(num => (
                     <div key={`mac-${num}`} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">

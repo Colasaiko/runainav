@@ -416,9 +416,14 @@ export default function WeifengReviewPage() {
                 <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
                   无论您使用 Windows、macOS、Android 还是 iPhone/iPad，我们为您整理了通用的客户端下载与配置图文教程。
                 </p>
-                <Link href="/vpn#tutorials" className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors font-medium">
-                  查看各平台完整教程 <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link href="/vpn#tutorials" className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors font-medium">
+                    查看各平台完整教程 <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                  <a href="https://168downloads.oss-ap-northeast-2.aliyuncs.com/wf/wfnetwork-3.0.0-macos.zip" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors font-medium">
+                    微风 macOS 客户端下载 <ExternalLink className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
               </div>
             </div>
 
