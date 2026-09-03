@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "VPN 品牌推荐与选择指南 - RunAI",
   description: "浏览 RunAI 收录的 VPN 品牌，根据 AI、学习、开发、影音与日常网络需求选择适合自己的网络方案。",
   alternates: {
-    canonical: "/vpn/",
+    canonical: "https://runainav.com/vpn",
   },
   openGraph: {
     title: "VPN 品牌推荐与选择指南 - RunAI",

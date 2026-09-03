@@ -4,6 +4,16 @@ import AIList from './AIList';
 export const metadata = {
   title: 'AI 工具大全 | 发现适合你的 AI 工具 | RunAI',
   description: '浏览 RunAI 为您精选的全球热门 AI 工具，涵盖聊天、搜索、编程、绘图、视频等领域的顶级产品，并提供详细的使用指南与国内网络环境评估。',
+  alternates: {
+    canonical: 'https://runainav.com/ai',
+  },
+  openGraph: {
+    title: 'AI 工具大全 | 发现适合你的 AI 工具 | RunAI',
+    description: '浏览 RunAI 为您精选的全球热门 AI 工具，涵盖聊天、搜索、编程、绘图、视频等领域的顶级产品，并提供详细的使用指南与国内网络环境评估。',
+    url: 'https://runainav.com/ai',
+    type: 'website',
+    siteName: 'RunAI',
+  }
 };
 
 export default function AIPage() {

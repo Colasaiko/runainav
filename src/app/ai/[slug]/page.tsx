@@ -62,6 +62,31 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
     }
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://runainav.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI 工具",
+        "item": "https://runainav.com/ai"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": tool.name,
+        "item": `https://runainav.com/ai/${slug}`
+      }
+    ]
+  };
+
   const faqJsonLd = tool.faq.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -78,6 +103,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
       
       {/* Hero Section */}

@@ -6,22 +6,23 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://runainav.com';
   
+  const lastModDate = new Date('2026-09-02');
   const staticPages = [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'daily' as const,
       priority: 1,
     },
     {
       url: `${baseUrl}/vpn/`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/ai`,
-      lastModified: new Date(),
+      lastModified: lastModDate,
       changeFrequency: 'daily' as const,
       priority: 0.9,
     }

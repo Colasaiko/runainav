@@ -3,12 +3,12 @@ import { Clock } from "lucide-react";
 
 // 70% AI, 30% VPN/Network ratio
 const articles = [
-  { tag: "AI教程", title: "如何用 Cursor 快速搭建一个个人博客？", date: "2小时前", isNetwork: false },
-  { tag: "AI资讯", title: "OpenAI 发布最新模型，能力全面提升", date: "5小时前", isNetwork: false },
-  { tag: "网络指南", title: "为什么连接 VPN 后网速会变慢？", date: "昨天", isNetwork: true },
-  { tag: "AI工具", title: "5 款提高开发者效率的隐藏 AI 神器", date: "昨天", isNetwork: false },
-  { tag: "AI绘图", title: "Midjourney V6 真实感人像提示词全解析", date: "2天前", isNetwork: false },
-  { tag: "VPN科普", title: "出差党必看：如何保护酒店 Wi-Fi 数据安全", date: "3天前", isNetwork: true },
+  { tag: "AI教程", title: "如何用 Cursor 快速搭建一个个人博客？", date: "热门教程", isNetwork: false },
+  { tag: "AI资讯", title: "OpenAI 模型能力全解析：从 GPT-4 到最新版本", date: "精华指南", isNetwork: false },
+  { tag: "网络指南", title: "为什么连接 VPN 后网速会变慢？", date: "常见问题", isNetwork: true },
+  { tag: "AI工具", title: "5 款提高开发者效率的隐藏 AI 神器", date: "工具推荐", isNetwork: false },
+  { tag: "AI绘图", title: "Midjourney 真实感人像提示词全解析", date: "实战演练", isNetwork: false },
+  { tag: "VPN科普", title: "出差党必看：如何保护酒店 Wi-Fi 数据安全", date: "安全科普", isNetwork: true },
 ];
 
 export default function LatestArticles() {
