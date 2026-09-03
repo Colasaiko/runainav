@@ -16,14 +16,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!tool) return {};
   
   return {
-    title: `${tool.name} 是什么？功能、用途与国内使用指南 | RunAI`,
+    title: tool.seoTitle,
     description: tool.seoDescription || tool.shortDescription,
     keywords: tool.seoKeywords,
     alternates: {
       canonical: `https://runainav.com/ai/${slug}`,
     },
     openGraph: {
-      title: `${tool.name} 是什么？功能、用途与国内使用指南`,
+      title: tool.seoTitle,
       description: tool.seoDescription || tool.shortDescription,
       url: `https://runainav.com/ai/${slug}`,
       siteName: 'RunAI',

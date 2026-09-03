@@ -4,6 +4,7 @@ export type FAQItem = {
 };
 
 export type AITool = {
+  seoTitle: string;
   seoDescription: string;
   seoKeywords: string;
   slug: string;
@@ -37,6 +38,7 @@ export type AITool = {
 export const aiTools: AITool[] = [
   {
     "slug": "chatgpt",
+    "seoTitle": "2026最新ChatGPT进阶教程 | 国内连通配置方案 - RunAI",
     "seoDescription": "不知道如何注册与使用最强AI助手？RunAI深度解析ChatGPT国内连通指南，带您玩转GPT-4o与多模态对话功能。立即点击阅读实战配置与深度防封锁指南！",
     "seoKeywords": "ChatGPT教程,GPT4使用,AI对话模型,网络环境配置",
     "name": "ChatGPT",
@@ -134,6 +136,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "claude",
+    "seoTitle": "2026最新Claude进阶教程 | 编程辅助防封指南 - RunAI",
     "seoDescription": "还在为长文本与代码分析发愁？RunAI为您带来Claude全面使用指南，涵盖Artifacts特色功能及防封号注意事项。点击获取最新节点状态与国内直连方案！",
     "seoKeywords": "Claude注册,AI编程助手,长文本总结,Claude防封",
     "name": "Claude",
@@ -224,6 +227,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "gemini",
+    "seoTitle": "2026最新Gemini进阶教程 | 谷歌多模态大模型 - RunAI",
     "seoDescription": "想体验谷歌生态原生的多模态大模型？RunAI全面评估Gemini在跨模态推理与搜索整合中的卓越表现，详解服务地区限制。点击阅读深度无障碍使用与最新节点指南！",
     "seoKeywords": "Gemini使用,谷歌AI工具,多模态模型,服务地区限制",
     "name": "Gemini",
@@ -310,6 +314,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "grok",
+    "seoTitle": "2026最新Grok深度测评 | X平台AI与网络配置 - RunAI",
     "seoDescription": "想知道马斯克X平台独家AI有何不同？RunAI带您深入了解Grok的实时信息处理能力与幽默互动模式，掌握国内网络配置技巧。点击获取最新连通状态与进阶玩法指南！",
     "seoKeywords": "Grok使用,X平台AI,实时信息抓取,国内网络配置",
     "name": "Grok",
@@ -391,6 +396,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "perplexity",
+    "seoTitle": "2026最新Perplexity测评 | AI智能搜索神器 - RunAI",
     "seoDescription": "受够了传统搜索引擎的无用信息？RunAI深度评测Perplexity AI搜索神器，教您如何精准获取带学术引用的答案。立即点击探索无广告的高效知识获取方案！",
     "seoKeywords": "Perplexity教程,AI搜索引擎,学术文献检索,智能问答",
     "name": "Perplexity",
@@ -478,6 +484,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "cursor",
+    "seoTitle": "2026最新Cursor进阶教程 | 全栈代码生成工具 - RunAI",
     "seoDescription": "不知道如何零基础快速开发网页？RunAI带您掌握Cursor这款内置AI的智能编辑器，轻松实现自动补全与项目级代码生成。点击阅读深度编程指南与本地环境配置！",
     "seoKeywords": "Cursor教程,AI代码生成,智能编辑器,全栈开发辅助",
     "name": "Cursor",
@@ -565,6 +572,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "github-copilot",
+    "seoTitle": "2026最新Copilot进阶教程 | 编程插件深度测评 - RunAI",
     "seoDescription": "还在手动编写重复代码？RunAI全面解析GitHub Copilot的实时代码补全与注释生成功能，助您大幅提升开发效率。点击获取开发者必备的网络配置与实战指南！",
     "seoKeywords": "Copilot使用,GitHub插件,AI代码补全,开发者工具",
     "name": "GitHub Copilot",
@@ -646,6 +654,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "midjourney",
+    "seoTitle": "2026最新Midjourney教程 | AI绘画高级提示词 - RunAI",
     "seoDescription": "想要生成极具艺术感的专业级图像？RunAI为您拆解Midjourney基础参数与高级提示词技巧，助您轻松驾驭Discord生图流程。点击获取最新指令与连通指南！",
     "seoKeywords": "Midjourney教程,AI绘画工具,提示词技巧,图像生成",
     "name": "Midjourney",
@@ -733,6 +742,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "ideogram",
+    "seoTitle": "2026最新Ideogram深度测评 | 海报与文字排版 - RunAI",
     "seoDescription": "还在为AI绘画无法准确生成文字而苦恼？RunAI带您探索Ideogram在文字排版与海报设计上的核心优势，完美解决字体融合难题。立即点击阅读设计排版实战指南！",
     "seoKeywords": "Ideogram教程,AI文字生成,海报设计排版,AI绘画",
     "name": "Ideogram",
@@ -812,6 +822,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "runway",
+    "seoTitle": "2026最新Runway进阶教程 | 好莱坞级视频生成 - RunAI",
     "seoDescription": "不知道如何制作好莱坞级别的AI视频？RunAI详细评测Runway的高级视频生成与编辑功能，助您轻松实现文字到视频的转换。点击阅读深度视频创作与网络加速方案！",
     "seoKeywords": "Runway使用,AI视频生成,影视后期编辑,网络加速方案",
     "name": "Runway",
@@ -896,6 +907,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "canva-ai",
+    "seoTitle": "2026最新Canva AI深度测评 | 一键在线设计排版 - RunAI",
     "seoDescription": "想要零基础快速搞定专业设计？RunAI深入解析Canva AI魔法工作室的核心功能，让一键生成演示文稿与社交媒体图片变得无比简单。点击获取零门槛在线设计指南！",
     "seoKeywords": "CanvaAI教程,魔法工作室,在线平面设计,一键生成演示",
     "name": "Canva AI (Magic Studio)",
@@ -980,6 +992,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "gamma",
+    "seoTitle": "2026最新Gamma进阶教程 | 一键排版生成PPT - RunAI",
     "seoDescription": "还在用传统软件通宵做PPT？RunAI教您使用Gamma一键生成美观专业的演示文稿，支持Markdown与多种精美主题。立即点击探索高效排版与云端办公实战指南！",
     "seoKeywords": "Gamma教程,AI制作PPT,自动生成排版,云端办公神器",
     "name": "Gamma",
@@ -1059,6 +1072,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "suno",
+    "seoTitle": "2026最新Suno进阶教程 | 零基础AI音乐自动生成 - RunAI",
     "seoDescription": "不懂乐理也想创作专业级热门歌曲？RunAI深度评测Suno音乐生成神器，输入中文歌词即可一键生成带人声的高品质音乐。点击阅读完整创作流程与免费额度使用技巧！",
     "seoKeywords": "Suno教程,AI音乐生成,自动作曲作词,高品质人声",
     "name": "Suno",
@@ -1136,6 +1150,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "replit",
+    "seoTitle": "2026最新Replit深度测评 | 云端IDE与协作开发 - RunAI",
     "seoDescription": "想要在浏览器里直接编写和部署代码？RunAI带您体验Replit的云端IDE与AI代码补全能力，让协作开发变得触手可及。点击阅读云端开发环境配置与连通状态指南！",
     "seoKeywords": "Replit教程,云端IDE,协作开发平台,AI代码助手",
     "name": "Replit",
@@ -1205,6 +1220,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "v0",
+    "seoTitle": "2026最新v0进阶教程 | UI前端代码一键自动生成 - RunAI",
     "seoDescription": "不知道如何把设计图快速变成前端代码？RunAI为您解析v0强大的UI生成能力，通过自然语言一键导出React与Tailwind组件。点击阅读前端开发自动化指南！",
     "seoKeywords": "v0教程,UI代码生成,前端开发自动化,React组件",
     "name": "v0",
@@ -1274,6 +1290,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "bolt",
+    "seoTitle": "2026最新Bolt深度测评 | 全栈Web应用构建方案 - RunAI",
     "seoDescription": "想要体验直接在浏览器中构建全栈应用？RunAI剖析Bolt的前后端一体化开发体验，让AI助您实时预览与无缝部署项目。点击获取深度全栈开发与国内网络连通指南！",
     "seoKeywords": "Bolt教程,全栈应用生成,Web开发助手,实时预览部署",
     "name": "Bolt",
@@ -1343,6 +1360,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "leonardo-ai",
+    "seoTitle": "2026最新Leonardo AI教程 | 免费绘画模型训练 - RunAI",
     "seoDescription": "寻找功能全面且免费额度高的AI绘画工具？RunAI详细介绍Leonardo AI在游戏资产与艺术创作中的强大模型微调与生成能力。点击获取专属模型训练与设计指南！",
     "seoKeywords": "LeonardoAI,游戏资产生成,模型微调,免费AI绘画",
     "name": "Leonardo AI",
@@ -1412,6 +1430,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "adobe-firefly",
+    "seoTitle": "2026最新Firefly进阶教程 | 商用版权无忧设计 - RunAI",
     "seoDescription": "担心AI绘画作品存在版权争议？RunAI带您体验Adobe Firefly主打商用安全的生成式填充功能，完美融入PS生态。点击探索无忧商用设计指南！",
     "seoKeywords": "Firefly教程,AdobeAI,商用版权安全,生成式填充",
     "name": "Adobe Firefly",
@@ -1481,6 +1500,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "pika",
+    "seoTitle": "2026最新Pika进阶教程 | 3D动漫风格与视频运镜 - RunAI",
     "seoDescription": "不知道如何让静态图片瞬间动起来？RunAI为您演示Pika在3D动画与动漫风格视频生成上的独特优势，精准控制视频局部动态。立即点击获取动漫创作与视频运镜指南！",
     "seoKeywords": "Pika使用,AI视频动画,图片转视频,局部动态控制",
     "name": "Pika",
@@ -1550,6 +1570,7 @@ export const aiTools: AITool[] = [
   },
   {
     "slug": "luma-dream-machine",
+    "seoTitle": "2026最新Luma深度测评 | 超写实物理视频运镜 - RunAI",
     "seoDescription": "想体验生成超写实电影级画面的快感？RunAI深度评测Luma Dream Machine在物理规律与镜头运动上的突破。点击阅读深度超写实视频创作指南！",
     "seoKeywords": "Luma教程,写实视频生成,AI视频运镜,高质量物理规律",
     "name": "Luma Dream Machine",

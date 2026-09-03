@@ -2,14 +2,14 @@ import { Suspense } from 'react';
 import AIList from './AIList';
 
 export const metadata = {
-  title: 'AI 工具大全 | 发现适合你的 AI 工具 | RunAI',
+  title: '2026最新AI工具大全与测评 | 高效生产力神器 - RunAI',
   description: '不知道哪个AI工具最适合工作需求？RunAI收录全球热门的聊天、编程、绘图等AI神器，提供详尽对比与国内无障碍使用评测。立即点击探索最新AI工具大全与使用方案！',
   keywords: 'AI工具大全,AI聊天神器,AI编程软件,AI绘画生成',
   alternates: {
     canonical: 'https://runainav.com/ai',
   },
   openGraph: {
-    title: 'AI 工具大全 | 发现适合你的 AI 工具 | RunAI',
+    title: '2026最新AI工具大全与测评 | 高效生产力神器 - RunAI',
     description: '不知道哪个AI工具最适合工作需求？RunAI收录全球热门的聊天、编程、绘图等AI神器，提供详尽对比与国内无障碍使用评测。立即点击探索最新AI工具大全与使用方案！',
     url: 'https://runainav.com/ai',
     type: 'website',

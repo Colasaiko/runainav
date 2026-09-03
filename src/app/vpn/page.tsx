@@ -7,14 +7,14 @@ import Link from "next/link";
 import { ShieldCheck, Network, Lock, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "VPN 品牌推荐与选择指南 - RunAI",
+  title: "2026稳定网络节点深度测评 | 海外AI连通指南 - RunAI",
   description: "还在为访问海外AI服务频繁掉线而烦恼？RunAI精选适合国内环境的高速稳定网络品牌，提供节点、原生IP与流媒体解锁深度评测。点击获取最适合你的专线网络配置方案！",
   keywords: "稳定网络节点,原生IP代理,网络环境配置,专线加速方案",
   alternates: {
     canonical: "https://runainav.com/vpn",
   },
   openGraph: {
-    title: "VPN 品牌推荐与选择指南 - RunAI",
+    title: "2026稳定网络节点深度测评 | 海外AI连通指南 - RunAI",
     description: "还在为访问海外AI服务频繁掉线而烦恼？RunAI精选适合国内环境的高速稳定网络品牌，提供节点、原生IP与流媒体解锁深度评测。点击获取最适合你的专线网络配置方案！",
     url: "https://runainav.com/vpn/",
     type: "website",
