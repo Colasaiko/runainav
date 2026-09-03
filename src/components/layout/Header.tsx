@@ -18,7 +18,7 @@ export default function Header() {
           
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
-            <Link href="/coming-soon" className="hover:text-gray-900 transition-colors">AI工具</Link>
+            <Link href="/ai" className="hover:text-gray-900 transition-colors">AI工具</Link>
             <Link href="/coming-soon" className="hover:text-gray-900 transition-colors">AI指南</Link>
             <Link href="/coming-soon" className="hover:text-gray-900 transition-colors">使用教程</Link>
             <Link href="/coming-soon" className="hover:text-gray-900 transition-colors">海外资源</Link>
@@ -53,7 +53,7 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-16 left-0 w-full bg-white border-b border-gray-100 shadow-lg py-4 px-4 flex flex-col gap-4">
-          <Link href="/coming-soon" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI工具</Link>
+          <Link href="/ai" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI工具</Link>
           <Link href="/coming-soon" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI指南</Link>
           <Link href="/coming-soon" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">使用教程</Link>
           <Link href="/coming-soon" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">海外资源</Link>

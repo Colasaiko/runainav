@@ -22,7 +22,7 @@ export default function PopularAITools() {
               <span className="block text-sm mt-1 text-gray-400">注：本站提供客观指南，非这些产品的官方运营商。</span>
             </p>
           </div>
-          <Link href="/coming-soon" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
+          <Link href="/ai" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
             查看所有工具 <ArrowRight className="w-4 h-4 ml-1" />
           </Link>
         </div>
@@ -42,7 +42,7 @@ export default function PopularAITools() {
               <p className="text-sm text-gray-500 mb-6 flex-grow">{tool.desc}</p>
               
               <Link 
-                href="/coming-soon" 
+                href={`/ai/${tool.id}`} 
                 className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-brand-600 transition-colors mt-auto"
               >
                 了解更多 <ArrowRight className="w-4 h-4 ml-1" />

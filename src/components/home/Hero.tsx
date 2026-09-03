@@ -17,7 +17,7 @@ export default function Hero() {
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <Link 
-            href="#categories" 
+            href="/ai" 
             className="w-full sm:w-auto px-8 py-3.5 bg-gray-900 text-white rounded-full font-medium hover:bg-gray-800 transition-all active:scale-95"
           >
             探索 AI
@@ -46,9 +46,9 @@ export default function Hero() {
         {/* Trending */}
         <div className="mt-6 flex flex-wrap justify-center items-center gap-3 text-sm">
           <span className="text-gray-500 font-medium">热门搜索：</span>
-          <Link href="/coming-soon" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">ChatGPT Plus</Link>
-          <Link href="/coming-soon" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">Midjourney 教程</Link>
-          <Link href="/coming-soon" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">Claude 3</Link>
+          <Link href="/ai/chatgpt" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">ChatGPT Plus</Link>
+          <Link href="/ai/midjourney" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">Midjourney 教程</Link>
+          <Link href="/ai/claude" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">Claude</Link>
           <Link href="/vpn" className="px-4 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-brand-300 hover:text-brand-600 transition-colors shadow-sm">稳定 VPN 推荐</Link>
         </div>
       </div>

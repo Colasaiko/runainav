@@ -1,20 +1,38 @@
 import { MetadataRoute } from 'next';
+import { aiTools } from '@/data/aiTools';
 
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const baseUrl = 'https://runainav.com';
+  
+  const staticPages = [
     {
-      url: 'https://runainav.com/',
+      url: `${baseUrl}/`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 1.0,
+      changeFrequency: 'daily' as const,
+      priority: 1,
     },
     {
-      url: 'https://runainav.com/vpn/',
+      url: `${baseUrl}/vpn/`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'daily' as const,
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/ai`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    }
   ];
+
+  const aiPages = aiTools.map((tool) => ({
+    url: `${baseUrl}/ai/${tool.slug}`,
+    lastModified: new Date(tool.lastUpdated),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...aiPages];
 }

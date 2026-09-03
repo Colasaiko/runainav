@@ -17,13 +17,13 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">AI</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI工具</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">ChatGPT</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">Claude</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">Gemini</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI编程</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI绘画</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI视频</Link></li>
+              <li><Link href="/ai" className="hover:text-gray-900">AI工具大全</Link></li>
+              <li><Link href="/ai/chatgpt" className="hover:text-gray-900">ChatGPT</Link></li>
+              <li><Link href="/ai/claude" className="hover:text-gray-900">Claude</Link></li>
+              <li><Link href="/ai/gemini" className="hover:text-gray-900">Gemini</Link></li>
+              <li><Link href="/ai?category=coding" className="hover:text-gray-900">AI编程</Link></li>
+              <li><Link href="/ai?category=image" className="hover:text-gray-900">AI绘画</Link></li>
+              <li><Link href="/ai?category=video" className="hover:text-gray-900">AI视频</Link></li>
             </ul>
           </div>
 

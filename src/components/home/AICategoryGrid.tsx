@@ -2,14 +2,14 @@ import { MessageSquare, PenTool, Code, Image, Video, Search, FileText, BookOpen 
 import Link from "next/link";
 
 const categories = [
-  { id: 'chat', name: 'AI 聊天', icon: MessageSquare, desc: 'ChatGPT · Claude · Gemini', href: '/coming-soon' },
-  { id: 'writing', name: 'AI 写作', icon: PenTool, desc: '文章 · 翻译 · 总结', href: '/coming-soon' },
-  { id: 'coding', name: 'AI 编程', icon: Code, desc: 'Cursor · Claude Code · ChatGPT', href: '/coming-soon' },
-  { id: 'image', name: 'AI 绘画', icon: Image, desc: 'Midjourney · 图片生成', href: '/coming-soon' },
-  { id: 'video', name: 'AI 视频', icon: Video, desc: '视频生成 · 剪辑', href: '/coming-soon' },
-  { id: 'search', name: 'AI 搜索', icon: Search, desc: 'Perplexity · AI Research', href: '/coming-soon' },
-  { id: 'office', name: 'AI 办公', icon: FileText, desc: 'PPT · 文件 · 总结', href: '/coming-soon' },
-  { id: 'learning', name: 'AI 学习', icon: BookOpen, desc: '语言 · 知识 · 学习助手', href: '/coming-soon' },
+  { id: 'chat', name: 'AI 聊天', icon: MessageSquare, desc: 'ChatGPT · Claude · Gemini', href: '/ai?category=chat' },
+  { id: 'writing', name: 'AI 写作', icon: PenTool, desc: '文章 · 翻译 · 总结', href: '/ai?category=productivity' },
+  { id: 'coding', name: 'AI 编程', icon: Code, desc: 'Cursor · Claude Code · ChatGPT', href: '/ai?category=coding' },
+  { id: 'image', name: 'AI 绘画', icon: Image, desc: 'Midjourney · 图片生成', href: '/ai?category=image' },
+  { id: 'video', name: 'AI 视频', icon: Video, desc: '视频生成 · 剪辑', href: '/ai?category=video' },
+  { id: 'search', name: 'AI 搜索', icon: Search, desc: 'Perplexity · AI Research', href: '/ai?category=search' },
+  { id: 'office', name: 'AI 办公', icon: FileText, desc: 'PPT · 文件 · 总结', href: '/ai?category=productivity' },
+  { id: 'learning', name: 'AI 学习', icon: BookOpen, desc: '语言 · 知识 · 学习助手', href: '/ai?category=chat' },
 ];
 
 export default function AICategoryGrid() {
