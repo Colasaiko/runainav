@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import ZoomableImage from '@/components/ui/ZoomableImage';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -256,12 +257,13 @@ export default function WeifengReviewPage() {
                 微风网络官方套餐信息主打专线网络，实际节点可能根据地区和线路安排使用不同命名，具体请以客户端当前显示为准。<br/><br/>
                 本次记录的节点状态截图显示共有 62 个节点在线，主要覆盖香港、台湾、日本、新加坡和美国等地区。
               </p>
-              <figure className="mb-6 rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
-                <Image src="/images/weifeng/weifeng-node-status.png" alt="微风网络62个在线节点状态截图" width={800} height={450} className="w-full h-auto" />
-                <figcaption className="p-3 text-center text-xs text-gray-500 border-t border-gray-100 bg-gray-50">
-                  微风网络节点状态截图，记录时显示 62 个节点在线。节点数量与状态可能随时间变化。
-                </figcaption>
-              </figure>
+              <ZoomableImage 
+                  src="/images/weifeng/weifeng-node-status.png" 
+                  alt="微风网络62个在线节点状态截图" 
+                  width={800} 
+                  height={450} 
+                  caption="微风网络节点状态截图，记录时显示 62 个节点在线。节点数量与状态可能随时间变化。" 
+                />
               <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100">
                 <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p>节点数量、地区和在线状态可能随运营调整而变化，以上仅代表截图记录当时情况。</p>
@@ -289,12 +291,13 @@ export default function WeifengReviewPage() {
                   </tbody>
                 </table>
               </div>
-              <figure className="mb-6 rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
-                <Image src="/images/weifeng/weifeng-speed-test-2026-08.png" alt="微风网络香港日本美国新加坡台湾节点测速结果" width={800} height={450} className="w-full h-auto" />
-                <figcaption className="p-3 text-center text-xs text-gray-500 border-t border-gray-100 bg-gray-50">
-                  2026 年 8 月 14 日的一次节点测速记录，实际速度会受到网络环境与使用时间影响。
-                </figcaption>
-              </figure>
+              <ZoomableImage 
+                  src="/images/weifeng/weifeng-speed-test-2026-08.png" 
+                  alt="微风网络香港日本美国新加坡台湾节点测速结果" 
+                  width={800} 
+                  height={450} 
+                  caption="2026 年 8 月 14 日的一次节点测速记录，实际速度会受到网络环境与使用时间影响。" 
+                />
               <div className="bg-gray-100 p-5 rounded-xl text-sm text-gray-600 border border-gray-200">
                 <p className="leading-relaxed">以上仅为一次实际测速记录（平均延迟 83ms，最高下载 86.5 MB/s，丢包 0%），不代表所有地区、运营商、设备和使用时间都能获得相同结果。实际速度和延迟会受到本地网络、线路状态和节点负载等因素影响。</p>
               </div>
@@ -306,12 +309,13 @@ export default function WeifengReviewPage() {
               <p className="text-gray-700 leading-relaxed mb-6">
                 根据本次提供的隐私与安全检测截图，测试环境中未发现 DNS 泄漏，WebRTC 公网地址显示为已阻断，截图中的 IP 风险评分为 6/100，并标记为 Clean。截图同时显示 TLS 1.3、AES-256-GCM、VLESS、XTLS-Reality 等协议或加密相关信息。
               </p>
-              <figure className="mb-6 rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
-                <Image src="/images/weifeng/weifeng-privacy-test-2026-08.png" alt="微风网络DNS与WebRTC隐私检测截图" width={800} height={450} className="w-full h-auto" />
-                <figcaption className="p-3 text-center text-xs text-gray-500 border-t border-gray-100 bg-gray-50">
-                  隐私与网络检测截图，仅反映截图所记录的测试环境与时间。
-                </figcaption>
-              </figure>
+              <ZoomableImage 
+                  src="/images/weifeng/weifeng-privacy-test-2026-08.png" 
+                  alt="微风网络DNS与WebRTC隐私检测截图" 
+                  width={800} 
+                  height={450} 
+                  caption="隐私与网络检测截图，仅反映截图所记录的测试环境与时间。" 
+                />
               <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100">
                 <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed">截图中展示了 Cure53 与 SOC 2 Type II 相关审计/合规信息，但 RunAI 目前尚未独立核实对应公开报告，因此本文不将其作为已验证结论。</p>
