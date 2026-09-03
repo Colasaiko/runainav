@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
-import { ExternalLink, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { ExternalLink, CheckCircle2, ShieldAlert, Zap, List, ThumbsUp, ThumbsDown, Lightbulb } from 'lucide-react';
 import { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -163,17 +163,76 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
           
           {/* Left Column: Main Info */}
           <div className="md:col-span-2 space-y-10">
+            {/* 30秒速读 */}
+            <section id="quick-read" className="bg-gradient-to-br from-brand-50 to-white p-8 rounded-2xl border border-brand-100 shadow-sm relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-100 rounded-full blur-3xl opacity-50 -mr-10 -mt-10 pointer-events-none"></div>
+              <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2 relative z-10">
+                <Zap className="w-5 h-5 text-brand-500" />
+                30秒速读
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6 relative z-10">
+                {tool.overview}
+              </p>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                {/* 优势 */}
+                <div className="bg-white/80 backdrop-blur p-5 rounded-xl border border-green-100">
+                  <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center">
+                    <ThumbsUp className="w-4 h-4 mr-2 text-green-500" /> 核心优势
+                  </h3>
+                  <ul className="space-y-2">
+                    {tool.advantages.map((adv, idx) => (
+                      <li key={idx} className="text-sm text-gray-600 flex items-start leading-relaxed">
+                        <span className="text-green-500 mr-2 font-bold">•</span>{adv}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* 局限 */}
+                <div className="bg-white/80 backdrop-blur p-5 rounded-xl border border-amber-100">
+                  <h3 className="text-sm font-bold text-gray-900 mb-3 flex items-center">
+                    <ThumbsDown className="w-4 h-4 mr-2 text-amber-500" /> 局限性
+                  </h3>
+                  <ul className="space-y-2">
+                    {tool.limitations.map((lim, idx) => (
+                      <li key={idx} className="text-sm text-gray-600 flex items-start leading-relaxed">
+                        <span className="text-amber-500 mr-2 font-bold">•</span>{lim}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* 快速跳转菜单 */}
+            <section className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hidden sm:block">
+              <h2 className="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <List className="w-5 h-5 text-gray-400" />
+                快速跳转菜单
+              </h2>
+              <div className="flex flex-wrap gap-2.5">
+                <a href="#what-is" className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">详细介绍</a>
+                <a href="#features" className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">核心特色</a>
+                <a href="#usecases" className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">使用场景</a>
+                <a href="#getting-started" className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">新手入门</a>
+                <a href="#network" className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">网络环境</a>
+                {tool.faq.length > 0 && (
+                  <a href="#faq" className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">常见问题</a>
+                )}
+              </div>
+            </section>
+
             {/* 什么是 */}
-            <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <section id="what-is" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">{tool.name} 是什么？</h2>
               <div className="prose prose-brand max-w-none text-gray-600 leading-relaxed">
                 <p>{tool.description}</p>
-                <p className="mt-4">{tool.overview}</p>
               </div>
             </section>
 
             {/* 功能特色 */}
-            <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <section id="features" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">核心特色</h2>
               <ul className="space-y-4">
                 {tool.features.map((feature, idx) => (
@@ -186,7 +245,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
             
             {/* 使用场景 */}
-            <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <section id="usecases" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">它可以帮你做什么？</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {tool.useCases.map((useCase, idx) => (
@@ -198,7 +257,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
             
             {/* 新手入门 */}
-            <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+            <section id="getting-started" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">如何开始使用？</h2>
               <div className="space-y-6">
                 {tool.gettingStarted.map((step, idx) => (
@@ -213,7 +272,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
             
             {/* 国内使用与网络环境 */}
-            <section className="bg-amber-50/50 p-8 rounded-2xl border border-amber-100">
+            <section id="network" className="bg-amber-50/50 p-8 rounded-2xl border border-amber-100 scroll-mt-24">
               <div className="flex items-center gap-2 mb-4">
                 <ShieldAlert className="w-6 h-6 text-amber-500" />
                 <h2 className="text-xl font-bold text-gray-900">国内使用与网络环境</h2>
@@ -239,7 +298,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             
             {/* FAQ */}
             {tool.faq.length > 0 && (
-              <section className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <section id="faq" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h2>
                 <div className="space-y-6">
                   {tool.faq.map((item, idx) => (
@@ -256,10 +315,11 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
           </div>
           
           {/* Right Column: Sidebar */}
-          <div className="space-y-6">
-            {/* 基本信息 */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 sticky top-24">
-              <h3 className="text-lg font-bold text-gray-900 mb-4 pb-4 border-b border-gray-100">基本信息</h3>
+          <div>
+            <div className="sticky top-24 space-y-6">
+              {/* 基本信息 */}
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 className="text-lg font-bold text-gray-900 mb-4 pb-4 border-b border-gray-100">基本信息</h3>
               
               <div className="space-y-4 text-sm">
                 <div>
@@ -302,6 +362,26 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
               
               <div className="mt-8 pt-6 border-t border-gray-100 text-xs text-gray-400 text-center">
                 最后更新：{tool.lastUpdated}
+              </div>
+            </div>
+              
+              {/* 温馨小提示 */}
+              <div className="bg-amber-50 p-6 rounded-2xl shadow-sm border border-amber-100">
+                <h3 className="text-base font-bold text-amber-900 mb-3 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-amber-500" />
+                  温馨小提示
+                </h3>
+                <p className="text-sm text-amber-800 leading-relaxed">
+                  使用海外 AI 产品时，请遵守当地法律法规。对于需要海外网络环境的工具，建议提前准备稳定的专线方案以获得最佳体验。
+                </p>
+                <div className="mt-4">
+                  <Link 
+                    href="/vpn" 
+                    className="text-amber-600 hover:text-amber-700 text-sm font-medium flex items-center transition-colors"
+                  >
+                    查看网络连通方案 <ExternalLink className="w-4 h-4 ml-1" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
