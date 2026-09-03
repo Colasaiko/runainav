@@ -8,13 +8,14 @@ import { ShieldCheck, Network, Lock, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "VPN 品牌推荐与选择指南 - RunAI",
-  description: "浏览 RunAI 收录的 VPN 品牌，根据 AI、学习、开发、影音与日常网络需求选择适合自己的网络方案。",
+  description: "还在为访问海外AI服务频繁掉线而烦恼？RunAI精选适合国内环境的高速稳定网络品牌，提供节点、原生IP与流媒体解锁深度评测。点击获取最适合你的专线网络配置方案！",
+  keywords: "稳定网络节点,原生IP代理,网络环境配置,专线加速方案",
   alternates: {
     canonical: "https://runainav.com/vpn",
   },
   openGraph: {
     title: "VPN 品牌推荐与选择指南 - RunAI",
-    description: "浏览 RunAI 收录的 VPN 品牌，根据 AI、学习、开发、影音与日常网络需求选择适合自己的网络方案。",
+    description: "还在为访问海外AI服务频繁掉线而烦恼？RunAI精选适合国内环境的高速稳定网络品牌，提供节点、原生IP与流媒体解锁深度评测。点击获取最适合你的专线网络配置方案！",
     url: "https://runainav.com/vpn/",
     type: "website",
   }
@@ -35,9 +36,17 @@ export default function VPNPage() {
             <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
               浏览 RunAI 收录的 VPN 品牌，根据 AI、学习、开发、影音和日常网络需求选择适合自己的网络方案。
             </p>
-            <div className="inline-flex items-center px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-600 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-brand-500 mr-2"></span>
-              收录了 {vpnBrands.length} 个 VPN 品牌
+            <div className="flex flex-col items-center gap-6">
+              <div className="inline-flex items-center px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-600 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-brand-500 mr-2"></span>
+                收录了 {vpnBrands.length} 个 VPN 品牌
+              </div>
+              <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500">
+                <span>稳定网络节点</span>
+                <span>原生IP代理</span>
+                <span>网络环境配置</span>
+                <span>专线加速方案</span>
+              </div>
             </div>
           </div>
         </section>

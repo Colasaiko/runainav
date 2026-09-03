@@ -54,9 +54,18 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm">
-            © 2026 RunAI
-          </p>
+          <div className="flex flex-col gap-2">
+            <p className="text-gray-400 text-sm">
+              © 2026 RunAI
+            </p>
+            <div className="text-[10px] text-gray-300 flex gap-2 flex-wrap">
+              <span>热门检索：</span>
+              <span>AI导航网站</span>
+              <span>ChatGPT教程</span>
+              <span>Claude使用指南</span>
+              <span>网络环境配置</span>
+            </div>
+          </div>
           <div className="flex items-center gap-6 text-sm text-gray-500">
             <Link href="/about" className="hover:text-gray-900">关于 RunAI</Link>
             <Link href="/contact" className="hover:text-gray-900">联系我们</Link>

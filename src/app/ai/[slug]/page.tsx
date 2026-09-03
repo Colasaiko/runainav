@@ -17,13 +17,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   
   return {
     title: `${tool.name} 是什么？功能、用途与国内使用指南 | RunAI`,
-    description: tool.shortDescription,
+    description: tool.seoDescription || tool.shortDescription,
+    keywords: tool.seoKeywords,
     alternates: {
       canonical: `https://runainav.com/ai/${slug}`,
     },
     openGraph: {
       title: `${tool.name} 是什么？功能、用途与国内使用指南`,
-      description: tool.shortDescription,
+      description: tool.seoDescription || tool.shortDescription,
       url: `https://runainav.com/ai/${slug}`,
       siteName: 'RunAI',
       type: 'article',
@@ -129,8 +130,13 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {tool.tags.map((tag, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm font-medium">
+                  <span key={`tag-${idx}`} className="px-3 py-1 bg-gray-100 text-gray-600 rounded-md text-sm font-medium">
                     {tag}
+                  </span>
+                ))}
+                {tool.seoKeywords.split(',').map((kw, idx) => (
+                  <span key={`kw-${idx}`} className="px-3 py-1 bg-gray-50 text-gray-400 rounded-md text-sm border border-gray-100">
+                    {kw}
                   </span>
                 ))}
               </div>
