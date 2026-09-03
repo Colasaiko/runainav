@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: lastModDate,
       changeFrequency: 'daily' as const,
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/vpn/weifeng`,
+      lastModified: new Date('2026-09-03'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     }
   ];
 

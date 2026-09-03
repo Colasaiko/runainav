@@ -4,7 +4,8 @@ import Footer from "@/components/layout/Footer";
 import VPNList from "@/components/vpn/VPNList";
 import { vpnBrands } from "@/data/vpnBrands";
 import Link from "next/link";
-import { ShieldCheck, Network, Lock, Zap } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, Network, Lock, Zap, Monitor, Smartphone, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "稳定网络节点深度测评 | 海外AI连通指南 - RunAI",
@@ -106,8 +107,74 @@ export default function VPNPage() {
           </div>
         </section>
 
+        {/* General Tutorials */}
+        <section id="tutorials" className="py-20 bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">通用客户端连接指南</h2>
+              <p className="text-gray-500 max-w-2xl mx-auto">无论您选择哪个品牌的网络服务，主流的代理客户端配置流程基本一致。请参考以下针对不同设备的图文配置指南。</p>
+            </div>
+            
+            <div className="space-y-16">
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2"><Monitor className="w-6 h-6 text-gray-500"/> Windows 教程 (Clash)</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[1, 2, 3, 4, 5, 6].map(num => (
+                    <div key={`win-${num}`} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <Image src={`/images/tutorials/tutorial-windows-0${num}.png`} alt={`Windows教程步骤 ${num}`} width={600} height={400} className="w-full h-auto" />
+                      <div className="p-3 bg-gray-50 text-center text-sm text-gray-600 font-medium border-t border-gray-100">步骤 {num}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="pt-8 border-t border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2"><Monitor className="w-6 h-6 text-gray-500"/> macOS 教程 (Clash)</h3>
+                <div className="mb-8 text-sm text-gray-600 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                  <p className="mb-2 font-medium">macOS 客户端下载（推荐优先从您购买的 VPN 官网后台下载对应版本）：</p>
+                  <a href="https://168downloads.oss-ap-northeast-2.aliyuncs.com/wf/wfnetwork-3.0.0-macos.zip" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline inline-flex items-center font-medium bg-brand-50 px-3 py-1.5 rounded-lg border border-brand-100">
+                    备用下载通道 (macOS) <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+                  </a>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {[1, 2, 3, 4].map(num => (
+                    <div key={`mac-${num}`} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <Image src={`/images/tutorials/tutorial-mac-0${num}.png`} alt={`macOS教程步骤 ${num}`} width={600} height={400} className="w-full h-auto" />
+                      <div className="p-3 bg-gray-50 text-center text-sm text-gray-600 font-medium border-t border-gray-100">步骤 {num}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="pt-8 border-t border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2"><Smartphone className="w-6 h-6 text-gray-500"/> Android 教程 (Clash)</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                  {[1, 2, 3, 4].map(num => (
+                    <div key={`android-${num}`} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <Image src={`/images/tutorials/tutorial-android-0${num}.png`} alt={`Android教程步骤 ${num}`} width={400} height={800} className="w-full h-auto" />
+                      <div className="p-3 bg-gray-50 text-center text-sm text-gray-600 font-medium border-t border-gray-100">步骤 {num}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="pt-8 border-t border-gray-100">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2"><Smartphone className="w-6 h-6 text-gray-500"/> iPhone / iPad 教程 (Shadowrocket)</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6">
+                  {[1, 2, 3, 4, 5].map(num => (
+                    <div key={`ios-${num}`} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+                      <Image src={`/images/tutorials/tutorial-ios-0${num}.png`} alt={`iOS教程步骤 ${num}`} width={400} height={800} className="w-full h-auto" />
+                      <div className="p-3 bg-gray-50 text-center text-sm text-gray-600 font-medium border-t border-gray-100">步骤 {num}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Buying Guide Editorial */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="container mx-auto px-4 max-w-3xl prose prose-gray prose-brand">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">如何选择 VPN？</h2>
             <div className="text-gray-600 leading-relaxed space-y-6">
