@@ -20,12 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: tool.seoDescription || tool.shortDescription,
     keywords: tool.seoKeywords,
     alternates: {
-      canonical: `https://runainav.com/ai/${slug}`,
+      canonical: `https://runainav.com/guides/${slug}`,
     },
     openGraph: {
       title: tool.seoTitle,
       description: tool.seoDescription || tool.shortDescription,
-      url: `https://runainav.com/ai/${slug}`,
+      url: `https://runainav.com/guides/${slug}`,
       siteName: 'RunAI',
       type: 'article',
     }
@@ -56,7 +56,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
       "priceCurrency": "USD"
     },
     "description": tool.shortDescription,
-    "url": `https://runainav.com/ai/${slug}`,
+    "url": `https://runainav.com/guides/${slug}`,
     "publisher": {
       "@type": "Organization",
       "name": tool.company
@@ -76,14 +76,14 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "AI 工具",
-        "item": "https://runainav.com/ai"
+        "name": "AI指南",
+        "item": "https://runainav.com/guides"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": tool.name,
-        "item": `https://runainav.com/ai/${slug}`
+        "item": `https://runainav.com/guides/${slug}`
       }
     ]
   };
@@ -114,7 +114,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
           <nav className="flex text-sm text-gray-500 mb-8">
             <Link href="/" className="hover:text-brand-600 transition-colors">首页</Link>
             <span className="mx-2">/</span>
-            <Link href="/ai" className="hover:text-brand-600 transition-colors">AI 工具</Link>
+            <Link href="/guides" className="hover:text-brand-600 transition-colors">AI指南</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900 font-medium">{tool.name}</span>
           </nav>
@@ -143,7 +143,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors font-medium shadow-sm"
                 >
-                  前往官网 <ExternalLink className="w-4 h-4 ml-2" />
+                  前往官方 ↗
                 </a>
                 <Link 
                   href="/vpn"
@@ -395,7 +395,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
               {relatedTools.map(t => (
                 <Link 
                   key={t.slug}
-                  href={`/ai/${t.slug}`}
+                  href={`/guides/${t.slug}`}
                   className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full"
                 >
                   <div className="flex items-center gap-3 mb-3">

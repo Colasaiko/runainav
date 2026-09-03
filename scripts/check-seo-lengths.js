@@ -46,6 +46,14 @@ const aiDesc = aiContent.match(/description:\s*'([^']+)'/)[1];
 checkLength('/ai', 'Title', aiTitle, 20, 30);
 checkLength('/ai', 'Description', aiDesc, 70, 80);
 
+
+// 3.5 Check /guides
+const guidesContent = fs.readFileSync('src/app/guides/page.tsx', 'utf-8');
+const guidesTitle = guidesContent.match(/title:\s*'([^']+)'/)[1];
+const guidesDesc = guidesContent.match(/description:\s*'([^']+)'/)[1];
+checkLength('/guides', 'Title', guidesTitle, 20, 30);
+checkLength('/guides', 'Description', guidesDesc, 70, 80);
+
 // 4. Check /vpn
 const vpnContent = fs.readFileSync('src/app/vpn/page.tsx', 'utf-8');
 const vpnTitle = vpnContent.match(/title:\s*"([^"]+)"/)[1];

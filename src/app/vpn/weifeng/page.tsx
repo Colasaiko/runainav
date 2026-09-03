@@ -334,11 +334,11 @@ export default function WeifengReviewPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
                     <tr>
-                      <td className="p-4 font-medium"><Link href="/ai/chatgpt" className="text-brand-600 hover:underline">ChatGPT</Link></td>
+                      <td className="p-4 font-medium"><Link href="/guides/chatgpt" className="text-brand-600 hover:underline">ChatGPT</Link></td>
                       <td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-02</td>
                     </tr>
                     <tr>
-                      <td className="p-4 font-medium"><Link href="/ai/claude" className="text-brand-600 hover:underline">Claude</Link></td>
+                      <td className="p-4 font-medium"><Link href="/guides/claude" className="text-brand-600 hover:underline">Claude</Link></td>
                       <td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-02</td>
                     </tr>
                     <tr><td className="p-4 font-medium">Gemini</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>

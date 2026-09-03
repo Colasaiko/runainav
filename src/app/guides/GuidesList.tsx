@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
-import { Search, ChevronRight, Zap, Target, Lightbulb, Star, LayoutGrid, ExternalLink } from 'lucide-react';
+import { Search, ChevronRight, Zap, Target, Lightbulb, Star, LayoutGrid } from 'lucide-react';
 
 const CATEGORIES = [
   { id: 'all', name: '全部' },
@@ -27,7 +27,7 @@ const SCENARIOS = [
   { icon: '✍️', name: '写文章', query: '写作', tools: ['ChatGPT', 'Claude', 'Gemini'] },
 ];
 
-function AIListContent() {
+function GuidesListContent() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -191,9 +191,9 @@ function AIListContent() {
       <section id="all-tools" className="scroll-mt-24">
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <LayoutGrid className="w-6 h-6 text-brand-500" /> 全部 AI 工具
+            <LayoutGrid className="w-6 h-6 text-brand-500" /> 全部 AI 指南
           </h2>
-          <p className="text-gray-500 mt-1">目前收录 {aiTools.length} 款常用 AI 工具，可按分类或关键词快速查找。</p>
+          <p className="text-gray-500 mt-1">目前收录 {aiTools.length} 篇详细的 AI 使用指南，可按分类或关键词快速查找。</p>
         </div>
 
         <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
@@ -203,7 +203,7 @@ function AIListContent() {
                 key={cat.id}
                 onClick={() => {
                   setActiveCategory(cat.id);
-                  window.history.pushState(null, '', cat.id === 'all' ? '/ai' : `/ai?category=${cat.id}`);
+                  window.history.pushState(null, '', cat.id === 'all' ? '/guides' : `/guides?category=${cat.id}`);
                 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   activeCategory === cat.id
@@ -231,22 +231,23 @@ function AIListContent() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredTools.length > 0 ? (
             filteredTools.map((tool) => (
-                            <div
+              <Link 
                 key={tool.slug} 
-                className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full"
+                href={`/guides/${tool.slug}`}
+                className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full block"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center flex-shrink-0 text-brand-600 font-bold text-xl shadow-sm border border-brand-100/50">
                     {tool.name.charAt(0)}
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold text-gray-900 transition-colors line-clamp-1">{tool.name}</h2>
-                    <p className="text-sm text-gray-500">{tool.company}</p>
+                    <h2 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-1">{tool.name} 使用指南</h2>
+                    <p className="text-sm text-gray-500">{tool.category}</p>
                   </div>
                 </div>
                 
                 <p className="text-sm text-gray-600 mb-6 flex-grow line-clamp-2 leading-relaxed">
-                  {tool.shortDescription}
+                  了解 {tool.name} 可以做什么、如何开始使用，以及账号与网络环境方面需要注意的问题。
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
@@ -257,27 +258,19 @@ function AIListContent() {
                   ))}
                 </div>
                 
-                <div className="mt-auto pt-4 border-t border-gray-50 flex items-center gap-3">
-                  <a 
-                    href={tool.officialUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex-1 text-center py-2 bg-brand-600 text-white rounded-lg hover:bg-brand-700 transition-colors text-sm font-medium inline-flex items-center justify-center"
-                  >
-                    前往官方 <ExternalLink className="w-3.5 h-3.5 ml-1" />
-                  </a>
-                  <Link 
-                    href={`/guides/${tool.slug}`} 
-                    className="flex-1 text-center py-2 bg-white text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium inline-flex items-center justify-center"
-                  >
-                    查看指南 <ChevronRight className="w-4 h-4 ml-1" />
-                  </Link>
+                <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                  <span className="text-xs text-gray-400">
+                    最后更新: {tool.lastUpdated}
+                  </span>
+                  <span className="flex items-center text-sm font-medium text-brand-600">
+                    阅读指南 <ChevronRight className="w-4 h-4 ml-1" />
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))
           ) : (
             <div className="col-span-full py-20 text-center text-gray-500 bg-white rounded-2xl border border-gray-100">
-              没有找到相关的 AI 工具，尝试换个关键词试试？
+              没有找到相关的 AI 指南，尝试换个关键词试试？
             </div>
           )}
         </div>
@@ -286,6 +279,6 @@ function AIListContent() {
   );
 }
 
-export default function AIList() {
-  return <AIListContent />;
+export default function GuidesList() {
+  return <GuidesListContent />;
 }

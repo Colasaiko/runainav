@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const aiPages = aiTools.map((tool) => ({
-    url: `${baseUrl}/ai/${tool.slug}`,
+    url: `${baseUrl}/guides/${tool.slug}`,
     lastModified: new Date(tool.lastUpdated),
     changeFrequency: 'weekly' as const,
     priority: 0.8,

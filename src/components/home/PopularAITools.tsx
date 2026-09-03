@@ -42,7 +42,7 @@ export default function PopularAITools() {
               <p className="text-sm text-gray-500 mb-6 flex-grow">{tool.desc}</p>
               
               <Link 
-                href={`/ai/${tool.id}`} 
+                href={`/guides/${tool.id}`} 
                 className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-brand-600 transition-colors mt-auto"
               >
                 了解更多 <ArrowRight className="w-4 h-4 ml-1" />
