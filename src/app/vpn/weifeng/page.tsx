@@ -6,22 +6,18 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ExternalLink, Check, Info, AlertTriangle, Monitor, Smartphone, HelpCircle, Zap, ArrowRight } from 'lucide-react';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
+import JsonLd from '@/components/seo/JsonLd';
 
 const AFFILIATE_URL = "https://wep01.breezenetaff.com/#/?code=bSnymFll";
 
-export const metadata: Metadata = {
+import { constructMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = constructMetadata({
   title: '微风网络怎么样？套餐、节点与AI使用体验 | RunAI',
   description: '微风网络提供多档流量套餐与专线节点，支持Windows、macOS、Android和iOS。本文整理价格、节点覆盖、实际测速、AI使用测试与新手选择建议。',
-  alternates: {
-    canonical: 'https://runainav.com/vpn/weifeng',
-  },
-  openGraph: {
-    title: '微风网络怎么样？套餐、节点与AI使用体验 | RunAI',
-    description: '微风网络提供多档流量套餐与专线节点，支持Windows、macOS、Android和iOS。本文整理价格、节点覆盖、实际测速、AI使用测试与新手选择建议。',
-    url: 'https://runainav.com/vpn/weifeng',
-    type: 'article',
-  }
-};
+  canonical: '/vpn/weifeng/',
+  type: 'article',
+});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -111,9 +107,9 @@ export default function WeifengReviewPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
       <FloatingBuyButton url={AFFILIATE_URL} brandName="微风网络" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
       
       <main className="flex-grow">
         {/* Hero Section */}

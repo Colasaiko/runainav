@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
 import { ExternalLink, CheckCircle2, ShieldAlert, Zap, List, ThumbsUp, ThumbsDown, Lightbulb } from 'lucide-react';
 import { Metadata } from 'next';
+import JsonLd from '@/components/seo/JsonLd';
 
 export async function generateStaticParams() {
   return aiTools.map((tool) => ({
@@ -103,9 +104,9 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
 
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
-      {faqJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />}
+      <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+      {faqJsonLd && <JsonLd data={faqJsonLd} />}
       
       {/* Hero Section */}
       <section className="bg-white border-b border-gray-200 pt-16 pb-12">
