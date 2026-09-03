@@ -134,11 +134,6 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
                     {tag}
                   </span>
                 ))}
-                {tool.seoKeywords.split(',').map((kw, idx) => (
-                  <span key={`kw-${idx}`} className="px-3 py-1 bg-gray-50 text-gray-400 rounded-md text-sm border border-gray-100">
-                    {kw}
-                  </span>
-                ))}
               </div>
               
               <div className="flex flex-wrap items-center gap-4">

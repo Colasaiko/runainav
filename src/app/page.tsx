@@ -13,14 +13,14 @@ import LatestArticles from "@/components/home/LatestArticles";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: '2026最新AI工具大全与深度测评 | 网络连通指南 - RunAI',
+  title: 'AI工具大全与深度测评 | 网络连通指南 - RunAI',
   description: '找不到好用的AI工具或因网络限制无从下手？RunAI快航为您精选ChatGPT等顶尖AI产品，提供国内稳定的网络配置与实战教程。点击开启全球AI无障碍之旅！',
   keywords: 'AI导航网站,ChatGPT教程,Claude使用指南,网络环境配置',
   alternates: {
     canonical: 'https://runainav.com/',
   },
   openGraph: {
-    title: '2026最新AI工具大全与深度测评 | 网络连通指南 - RunAI',
+    title: 'AI工具大全与深度测评 | 网络连通指南 - RunAI',
     description: '找不到好用的AI工具或因网络限制无从下手？RunAI快航为您精选ChatGPT等顶尖AI产品，提供国内稳定的网络配置与实战教程。点击开启全球AI无障碍之旅！',
     url: 'https://runainav.com/',
     type: 'website',

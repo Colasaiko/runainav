@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
 import { Search, ChevronRight } from 'lucide-react';
@@ -18,19 +17,19 @@ const CATEGORIES = [
 ];
 
 function AIListContent() {
-  const searchParams = useSearchParams();
-  const initCategory = searchParams.get('category') || 'all';
-  
-  const [activeCategory, setActiveCategory] = useState(initCategory);
+  const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    const cat = searchParams.get('category');
-    if (cat && CATEGORIES.some(c => c.id === cat)) {
-      // eslint-disable-next-line
-      setActiveCategory(cat);
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('category');
+      if (cat && CATEGORIES.some(c => c.id === cat)) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setActiveCategory(cat);
+      }
     }
-  }, [searchParams]);
+  }, []);
 
   const filteredTools = aiTools.filter((tool) => {
     const matchesCategory = activeCategory === 'all' || tool.categories.includes(activeCategory);
@@ -127,9 +126,5 @@ function AIListContent() {
 }
 
 export default function AIList() {
-  return (
-    <Suspense fallback={<div className="text-center py-20">加载中...</div>}>
-      <AIListContent />
-    </Suspense>
-  );
+  return <AIListContent />;
 }
