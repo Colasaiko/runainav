@@ -59,7 +59,7 @@ export default function VpnSlowSpeedPage() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pb-20 font-[family-name:var(--font-sans)]">
+    <div className="bg-gray-50 min-h-screen pb-20 font-[family-name:var(--font-sans)] text-gray-900">
       <Header />
       <ArticleStickyBar sections={[
          { id: 'concept', navLabel: '先看结论' },
@@ -347,7 +347,7 @@ export default function VpnSlowSpeedPage() {
               <p>自己测速时，可以重点记录下面这些指标：<strong>Ping</strong> 看响应速度，<strong>Download / Upload</strong> 看传输能力，<strong>丢包</strong>看连接稳定性，最后再结合实际使用体验一起判断。</p>
               
               <div className="overflow-x-auto my-6 not-prose rounded-xl border border-gray-200 shadow-sm">
-                <table className="min-w-full text-sm text-left whitespace-nowrap">
+                <table className="min-w-full text-sm text-left whitespace-nowrap text-gray-900">
                   <thead className="bg-gray-100 text-gray-700">
                     <tr>
                       <th className="px-5 py-3.5 font-bold">节点状态</th>
