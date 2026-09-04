@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CalendarDays } from "lucide-react";
 
 const articles = [
+  { tag: "AI对比", title: "ChatGPT、Claude、Gemini怎么选？", date: "2026-09-04", isNetwork: false, href: "/guides/chatgpt-vs-claude-vs-gemini" },
   { tag: "实战教程", title: "如何用 Cursor 搭建个人博客？", date: "2026-09-04", isNetwork: false, href: "/guides/cursor-build-blog" },
   { tag: "网络指南", title: "为什么连接 VPN 后网速会变慢？", date: "2026-09-04", isNetwork: true, href: "/guides/vpn-slow-speed" },
   { tag: "问题排查", title: "AI 工具打不开怎么办？网络环境与常见问题排查", date: "2026-09-03", isNetwork: true, href: "/guides/ai-network" },

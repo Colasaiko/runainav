@@ -13,6 +13,16 @@ export interface GuideArticle {
 
 export const guideArticles: GuideArticle[] = [
   {
+    slug: 'chatgpt-vs-claude-vs-gemini',
+    title: 'ChatGPT、Claude、Gemini怎么选？',
+    description: '对比ChatGPT、Claude与Gemini在聊天、写作、编程、文件处理、搜索和中文体验等方面的差异，并结合免费功能与使用环境，帮助你按需求选择AI工具。',
+    type: 'tool',
+    category: 'AI聊天',
+    tags: ['ChatGPT', 'Claude', 'Gemini', '工具对比', 'AI选择'],
+    publishedAt: '2026-09-04',
+    updatedAt: '2026-09-04'
+  },
+  {
     slug: 'vpn-slow-speed',
     title: '为什么连接VPN后网速会变慢？',
     description: '连接VPN后出现网速下降、延迟升高或视频卡顿，通常与节点距离、线路拥堵、加密开销、本地网络和运营商路由有关。本文用简单方法教你判断原因并逐步排查。',
@@ -22,7 +32,6 @@ export const guideArticles: GuideArticle[] = [
     publishedAt: '2026-09-04',
     updatedAt: '2026-09-04'
   },
-
   {
     slug: 'cursor-build-blog',
     title: 'Cursor搭建个人博客教程',
