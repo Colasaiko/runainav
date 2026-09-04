@@ -1,4 +1,3 @@
-import ChannelMenu from '@/components/navigation/ChannelMenu';
 import { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -25,8 +24,7 @@ export default function VPNPage() {
         {/* Content-focused Hero */}
         <section className="pt-20 pb-12 bg-gray-50 border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-        <ChannelMenu activePath="/vpn" />
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
               VPN 品牌与网络方案
             </h1>
             <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">

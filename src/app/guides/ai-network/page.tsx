@@ -1,4 +1,3 @@
-import ChannelMenu from '@/components/navigation/ChannelMenu';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
@@ -80,7 +79,6 @@ export default function AINetworkGuidePage() {
       {/* Hero Section */}
       <section className="bg-white border-b border-gray-200 pt-16 pb-12">
         <div className="container mx-auto px-4 max-w-4xl">
-          <ChannelMenu activePath="/guides" />
           <nav className="flex text-sm text-gray-500 mb-8">
             <Link href="/" className="hover:text-brand-600 transition-colors">首页</Link>
             <span className="mx-2">/</span>
