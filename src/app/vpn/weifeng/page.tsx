@@ -1,4 +1,5 @@
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
+import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import ZoomableImage from '@/components/ui/ZoomableImage';
@@ -119,6 +120,7 @@ export default function WeifengReviewPage() {
          { id: 'pros-cons', navLabel: '优缺点' },
          { id: 'faq', navLabel: 'FAQ' }
       ]} />
+      <FloatingBackButton fallbackHref="/vpn" />
       <FloatingBuyButton url={AFFILIATE_URL} brandName="微风网络" />
       <JsonLd data={jsonLd} />
       <JsonLd data={breadcrumbJsonLd} />

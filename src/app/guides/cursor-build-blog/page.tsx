@@ -1,6 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
+import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import Link from 'next/link';
 import { Zap, Check, ChevronRight, AlertTriangle, Info, Terminal } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
@@ -145,6 +146,7 @@ Module not found: Can't resolve '@/components/Header'
          { id: 'step7', navLabel: '部署' },
          { id: 'faq', navLabel: 'FAQ' }
       ]} />
+      <FloatingBackButton fallbackHref="/guides" />
       
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />

@@ -1,4 +1,5 @@
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
+import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
@@ -114,6 +115,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
          { id: 'how-to-use', navLabel: '网络要求' },
          { id: 'faq', navLabel: 'FAQ' }
       ]} />
+      <FloatingBackButton fallbackHref="/guides" />
       <JsonLd data={jsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       {faqJsonLd && <JsonLd data={faqJsonLd} />}

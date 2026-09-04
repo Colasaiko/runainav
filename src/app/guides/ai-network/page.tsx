@@ -1,4 +1,5 @@
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
+import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -72,6 +73,7 @@ export default function AINetworkGuidePage() {
          { id: 'mistakes', navLabel: '常见误区' },
          { id: 'faq', navLabel: 'FAQ' }
       ]} />
+      <FloatingBackButton fallbackHref="/guides" />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
       <JsonLd data={articleJsonLd} />
