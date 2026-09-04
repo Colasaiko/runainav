@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Clock } from "lucide-react";
+import { CalendarDays } from "lucide-react";
 
-// 70% AI, 30% VPN/Network ratio
 const articles = [
   { tag: "实战教程", title: "如何用 Cursor 搭建个人博客？", date: "2026-09-04", isNetwork: false, href: "/guides/cursor-build-blog" },
-  { tag: "网络指南", title: "AI 工具打不开怎么办？网络环境与常见问题排查", date: "2026-09-03", isNetwork: true, href: "/guides/ai-network" },
+  { tag: "网络指南", title: "为什么连接 VPN 后网速会变慢？", date: "2026-09-04", isNetwork: true, href: "/guides/vpn-slow-speed" },
+  { tag: "问题排查", title: "AI 工具打不开怎么办？网络环境与常见问题排查", date: "2026-09-03", isNetwork: true, href: "/guides/ai-network" },
   { tag: "品牌实测", title: "微风网络怎么样？套餐、节点与 AI 使用体验", date: "2026-09-02", isNetwork: true, href: "/vpn/weifeng" },
 ];
 
@@ -16,7 +16,7 @@ export default function LatestArticles() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {articles.map((article, idx) => (
-            <Link key={idx} href={article.href || "/coming-soon"} className="group flex gap-6 items-start">
+            <Link key={idx} href={article.href} className="group flex gap-6 items-start">
               <div className="w-24 h-24 shrink-0 bg-gray-100 rounded-xl overflow-hidden relative">
                 {/* Image Placeholder */}
                 <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-500" />
@@ -27,7 +27,7 @@ export default function LatestArticles() {
                     {article.tag}
                   </span>
                   <span className="text-xs text-gray-400 flex items-center">
-                    <Clock className="w-3 h-3 mr-1" /> {article.date}
+                    <CalendarDays className="w-3 h-3 mr-1" /> {article.date}
                   </span>
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors mb-2 line-clamp-2">

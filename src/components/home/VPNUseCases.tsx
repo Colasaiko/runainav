@@ -14,7 +14,7 @@ const useCases = [
   {
     icon: GraduationCap,
     title: "AI 学习",
-    desc: "无障碍访问海外名校公开课、技术教程、教育资源与全球化学习平台。"
+    desc: "访问海外公开课程、技术教程与学习资源、技术教程、教育资源与全球化学习平台。"
   },
   {
     icon: Globe2,
@@ -40,7 +40,7 @@ export default function VPNUseCases() {
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">一个 VPN，可以用在哪里？</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            不仅是解锁 AI，更是为你打开通向全球互联网资源的数字大门。
+            不仅适用于 AI 工具，更是为你打开通向全球互联网资源的数字大门。
           </p>
         </div>
         

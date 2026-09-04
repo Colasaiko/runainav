@@ -13,6 +13,17 @@ export interface GuideArticle {
 
 export const guideArticles: GuideArticle[] = [
   {
+    slug: 'vpn-slow-speed',
+    title: '为什么连接VPN后网速会变慢？',
+    description: '连接VPN后出现网速下降、延迟升高或视频卡顿，通常与节点距离、线路拥堵、加密开销、本地网络和运营商路由有关。本文用简单方法教你判断原因并逐步排查。',
+    type: 'troubleshooting',
+    category: '网络环境',
+    tags: ['VPN', '网速测试', '延迟'],
+    publishedAt: '2026-09-04',
+    updatedAt: '2026-09-04'
+  },
+
+  {
     slug: 'cursor-build-blog',
     title: 'Cursor搭建个人博客教程',
     description: '从安装Cursor、创建项目、编写提示词到本地预览、上传GitHub与部署网站，本文用新手能看懂的方式演示AI辅助搭建个人博客，并整理常见报错与排查方法。',

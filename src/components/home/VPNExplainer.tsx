@@ -17,7 +17,7 @@ export default function VPNExplainer() {
               <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-brand-600">
                 <Map className="w-6 h-6" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">跨越可用区限制</h3>
+              <h3 className="font-bold text-gray-900 mb-2">服务地区与网络环境</h3>
               <p className="text-sm text-gray-500">某些 AI 服务仅在特定国家或地区提供，VPN 可帮助建立符合要求的网络连接。</p>
             </div>
             

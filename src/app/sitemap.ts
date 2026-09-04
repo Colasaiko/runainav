@@ -28,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
         {
       url: `${baseUrl}/guides/cursor-build-blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guides/vpn-slow-speed`,
       lastModified: new Date('2026-09-04'),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
