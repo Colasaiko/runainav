@@ -51,12 +51,14 @@ export default function VPNProductSection() {
               </p>
               
               <div className="flex gap-3 mt-auto">
-                <Link 
-                  href="/coming-soon"
-                  className="flex-1 py-2.5 text-sm font-medium text-center text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors"
-                >
-                  详情
-                </Link>
+                {brand.id === 'weifeng' ? (
+                  <Link 
+                    href={`/vpn/${brand.id}`}
+                    className="flex-1 py-2.5 text-sm font-medium text-center text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors"
+                  >
+                    详情
+                  </Link>
+                ) : null}
                 <a 
                   href={brand.url}
                   target="_blank"

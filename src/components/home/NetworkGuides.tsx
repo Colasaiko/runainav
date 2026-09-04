@@ -2,12 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const guides = [
-  { title: "为什么部分 AI 服务存在地区限制？", href: "/coming-soon" },
-  { title: "AI 服务为什么会检测 IP？如何解决？", href: "/coming-soon" },
-  { title: "VPN 是什么？一篇文章看懂", href: "/coming-soon" },
-  { title: "使用海外 AI 前应该注意什么？", href: "/coming-soon" },
-  { title: "VPN 和代理有什么区别？", href: "/coming-soon" },
-  { title: "公共 Wi-Fi 安全指南", href: "/coming-soon" },
+  { title: "AI 工具打不开怎么办？", href: "/guides/ai-network" },
+  { title: "为什么连接 VPN 后网速会变慢？", href: "/guides/vpn-slow-speed" },
+  { title: "微风网络怎么样？套餐、节点与 AI 使用体验", href: "/vpn/weifeng" }
 ];
 
 export default function NetworkGuides() {
@@ -19,12 +16,12 @@ export default function NetworkGuides() {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">网络与 VPN 指南</h2>
             <p className="text-gray-500">深入了解网络环境对使用全球服务的影响。</p>
           </div>
-          <Link href="/coming-soon" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
+          <Link href="/guides" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
             查看更多 <ArrowRight className="w-4 h-4 ml-1" />
           </Link>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {guides.map((guide, idx) => (
             <Link 
               key={idx} 

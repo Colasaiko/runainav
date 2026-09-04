@@ -7,7 +7,7 @@ import { constructMetadata } from "@/lib/seo";
 export const metadata = constructMetadata({
   title: '海外热门AI使用指南与常见问题解答 | RunAI',
   description: 'RunAI精选全球顶尖AI工具的使用方法与功能介绍。无论你是新手还是进阶用户，都能在此了解详细的账号要求、网络环境配置及常见问题，助你快速掌握AI高效工作法。',
-  canonical: '/guides/',
+  canonical: '/guides',
 });
 
 export default function GuidesPage() {

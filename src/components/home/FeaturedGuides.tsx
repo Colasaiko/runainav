@@ -12,7 +12,7 @@ export default function FeaturedGuides() {
               从入门到精通，手把手教你如何高效使用主流 AI 工具。
             </p>
           </div>
-          <Link href="/coming-soon" className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-brand-600 transition-colors">
+          <Link href="/guides" className="inline-flex items-center text-sm font-medium text-gray-900 hover:text-brand-600 transition-colors">
             查看所有指南 &rarr;
           </Link>
         </div>

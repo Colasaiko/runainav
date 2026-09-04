@@ -31,24 +31,17 @@ export default function Footer() {
             <h4 className="font-semibold text-gray-900 mb-4">指南</h4>
             <ul className="space-y-3 text-sm text-gray-500">
               <li><Link href="/guides" className="hover:text-gray-900">AI教程</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI新手</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">Prompt</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI工具比较</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">AI使用技巧</Link></li>
+              <li><Link href="/guides/chatgpt-vs-claude-vs-gemini" className="hover:text-gray-900">AI工具比较</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-semibold text-gray-900 mb-4">Network</h4>
             <ul className="space-y-3 text-sm text-gray-500">
-              <li><Link href="/coming-soon" className="hover:text-gray-900">VPN是什么</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">VPN指南</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">网络环境</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">网络安全</Link></li>
+              <li><Link href="/guides/ai-network" className="hover:text-gray-900">网络环境</Link></li>
+              <li><Link href="/guides/vpn-slow-speed" className="hover:text-gray-900">网络速度排查</Link></li>
               <li className="pt-2"><Link href="/vpn" className="text-gray-900 font-medium hover:text-brand-600">RunAI VPN</Link></li>
-              <li><Link href="/vpn" className="hover:text-gray-900">套餐</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">使用教程</Link></li>
-              <li><Link href="/coming-soon" className="hover:text-gray-900">常见问题</Link></li>
+              <li><Link href="/vpn/weifeng" className="hover:text-gray-900">微风网络实测</Link></li>
             </ul>
           </div>
         </div>
@@ -65,13 +58,6 @@ export default function Footer() {
               <span>Claude使用指南</span>
               <span>网络环境配置</span>
             </div>
-          </div>
-          <div className="flex items-center gap-6 text-sm text-gray-500">
-            <Link href="/about" className="hover:text-gray-900">关于 RunAI</Link>
-            <Link href="/contact" className="hover:text-gray-900">联系我们</Link>
-            <Link href="/privacy" className="hover:text-gray-900">隐私政策</Link>
-            <Link href="/terms" className="hover:text-gray-900">服务条款</Link>
-            <Link href="/disclaimer" className="hover:text-gray-900">免责声明</Link>
           </div>
         </div>
       </div>

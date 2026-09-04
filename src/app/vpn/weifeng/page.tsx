@@ -17,7 +17,7 @@ import { constructMetadata } from "@/lib/seo";
 export const metadata: Metadata = constructMetadata({
   title: '微风网络怎么样？套餐、节点与AI使用体验 | RunAI',
   description: '微风网络提供多档流量套餐与专线节点，支持Windows、macOS、Android和iOS。本文整理价格、节点覆盖、实际测速、AI使用测试与新手选择建议。',
-  canonical: '/vpn/weifeng/',
+  canonical: '/vpn/weifeng',
   type: 'article',
 });
 

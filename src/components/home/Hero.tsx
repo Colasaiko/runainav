@@ -1,5 +1,5 @@
-import { Search } from "lucide-react";
 import Link from "next/link";
+import HomeSearch from "./HomeSearch";
 
 export default function Hero() {
   return (
@@ -9,7 +9,7 @@ export default function Hero() {
       
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6 leading-tight">
-          探索全球 AI，<br className="md:hidden" />更简单地开始
+          探索全球 AI，<br className="md:hidden" />更简单地开始。
         </h1>
         <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
           RunAI 帮你发现 AI 工具、学习使用方法，并解决实际使用过程中遇到的网络环境问题。
@@ -31,17 +31,7 @@ export default function Hero() {
         </div>
 
         {/* Global Search */}
-        <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-2 flex items-center transition-shadow focus-within:shadow-md focus-within:border-gray-200">
-          <Search className="w-5 h-5 text-gray-400 ml-3" />
-          <input 
-            type="text" 
-            placeholder="搜索 AI 工具、教程或使用问题..." 
-            className="w-full px-4 py-3 outline-none text-gray-700 bg-transparent"
-          />
-          <button className="px-6 py-2.5 bg-gray-100 text-gray-700 rounded-xl font-medium hover:bg-gray-200 transition-colors hidden sm:block">
-            搜索
-          </button>
-        </div>
+        <HomeSearch />
         
         {/* Trending */}
         <div className="mt-6 flex flex-wrap justify-center items-center gap-3 text-sm">

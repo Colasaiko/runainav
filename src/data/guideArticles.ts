@@ -50,6 +50,6 @@ export const guideArticles: GuideArticle[] = [
     category: '网络环境',
     tags: ['网络', '常见问题'],
     publishedAt: '2026-09-03',
-    updatedAt: '2026-09-03'
+    updatedAt: '2026-09-04'
   }
 ];

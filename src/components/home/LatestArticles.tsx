@@ -17,24 +17,18 @@ export default function LatestArticles() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {articles.map((article, idx) => (
-            <Link key={idx} href={article.href} className="group flex gap-6 items-start">
-              <div className="w-24 h-24 shrink-0 bg-gray-100 rounded-xl overflow-hidden relative">
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-gray-200 group-hover:scale-105 transition-transform duration-500" />
+            <Link key={idx} href={article.href} className="group block">
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`text-xs font-medium px-2 py-0.5 rounded-sm ${article.isNetwork ? 'bg-gray-100 text-gray-600' : 'bg-brand-50 text-brand-600'}`}>
+                  {article.tag}
+                </span>
+                <span className="text-xs text-gray-400 flex items-center">
+                  <CalendarDays className="w-3 h-3 mr-1" /> {article.date}
+                </span>
               </div>
-              <div>
-                <div className="flex items-center gap-3 mb-2">
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-sm ${article.isNetwork ? 'bg-gray-100 text-gray-600' : 'bg-brand-50 text-brand-600'}`}>
-                    {article.tag}
-                  </span>
-                  <span className="text-xs text-gray-400 flex items-center">
-                    <CalendarDays className="w-3 h-3 mr-1" /> {article.date}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors mb-2 line-clamp-2">
-                  {article.title}
-                </h3>
-              </div>
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-2">
+                {article.title}
+              </h3>
             </Link>
           ))}
         </div>

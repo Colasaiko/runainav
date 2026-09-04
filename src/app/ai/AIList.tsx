@@ -35,6 +35,8 @@ function AIListContent() {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const cat = params.get('category');
+      const q = params.get('q');
+      if (q) setSearchQuery(q);
       if (cat && CATEGORIES.some(c => c.id === cat)) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setActiveCategory(cat);
@@ -64,17 +66,6 @@ function AIListContent() {
   return (
     <div>
       
-      <section className="mb-10">
-        
-        <div className="flex overflow-x-auto pb-4 gap-3 scrollbar-hide sticky top-0 z-20 bg-gray-50/90 backdrop-blur pt-2">
-          <a href="#quick-read" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">30 秒速读</a>
-          <a href="#scenarios" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">按需求找 AI</a>
-          <a href="#beginner-recommends" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">新手推荐</a>
-          <a href="#network-tips" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">温馨小提示</a>
-          <a href="#all-tools" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">全部 AI 工具</a>
-        </div>
-      </section>
-
       {/* 30 秒速读 */}
       <section id="quick-read" className="mb-12 scroll-mt-24">
         <div className="mb-6">
@@ -235,7 +226,7 @@ function AIListContent() {
                     {tool.name.charAt(0)}
                   </div>
                   <div>
-                    <h2 className="text-lg font-bold text-gray-900 transition-colors line-clamp-1">{tool.name}</h2>
+                    <h3 className="text-lg font-bold text-gray-900 transition-colors line-clamp-1">{tool.name}</h3>
                     <p className="text-sm text-gray-500">{tool.company}</p>
                   </div>
                 </div>
