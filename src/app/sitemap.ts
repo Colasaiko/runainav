@@ -26,7 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily' as const,
       priority: 0.9,
     },
-    {
+        {
+      url: `${baseUrl}/guides/cursor-build-blog`,
+      lastModified: new Date('2026-09-04'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+{
       url: `${baseUrl}/guides/ai-network`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,

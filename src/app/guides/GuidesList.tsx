@@ -5,6 +5,32 @@ import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
 import { Search, ChevronRight, Zap, Target, Lightbulb, Star, LayoutGrid } from 'lucide-react';
 
+
+const EXTRA_TUTORIALS = [
+  {
+    slug: 'cursor-build-blog',
+    name: 'Cursor实战：搭建个人博客',
+    description: '从安装、创建项目到本地预览与部署，用新手能看懂的方式演示 AI 辅助建站完整工作流。',
+    shortDescription: '新手友好：AI 辅助搭建个人博客。',
+    categories: ['coding', 'all'],
+    category: 'AI 编程',
+    tags: ['Cursor', '实战教程'],
+    lastUpdated: '2026-09-04',
+    isNew: true
+  },
+  {
+    slug: 'ai-network',
+    name: 'AI工具打不开怎么办？',
+    description: '排查网络环境与常见问题，解决海外 AI 工具加载缓慢或登录失败的情况。',
+    shortDescription: '排查网络环境与解决 AI 无法登录情况。',
+    categories: ['all'],
+    category: '网络指南',
+    tags: ['网络', '常见问题'],
+    lastUpdated: '2026-09-03',
+    isNew: false
+  }
+];
+
 const CATEGORIES = [
   { id: 'all', name: '全部' },
   { id: 'chat', name: 'AI 聊天' },
@@ -42,7 +68,10 @@ function GuidesListContent() {
     }
   }, []);
 
-  const filteredTools = aiTools.filter((tool) => {
+  
+  const allGuides = [...EXTRA_TUTORIALS, ...aiTools];
+  const filteredTools = allGuides.filter((tool) => {
+
     const matchesCategory = activeCategory === 'all' || tool.categories.includes(activeCategory);
     
     let search = searchQuery.toLowerCase();
