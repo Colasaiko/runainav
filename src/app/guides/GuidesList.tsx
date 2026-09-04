@@ -1,322 +1,163 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import { useState } from 'react';
+import { Search } from 'lucide-react';
 import { aiTools } from '@/data/aiTools';
-import { Search, ChevronRight, Zap, Target, Lightbulb, Star, LayoutGrid } from 'lucide-react';
+import { guideArticles, GuideArticle, GuideType } from '@/data/guideArticles';
+import GuideCard from '@/components/guides/GuideCard';
 
+// 1. Combine guides data
+const toolGuides: GuideArticle[] = aiTools.map(tool => ({
+  slug: tool.slug,
+  title: `${tool.name} 使用指南`,
+  description: tool.description,
+  type: 'tool' as GuideType,
+  category: tool.categories.includes('chat') ? 'AI聊天' : 
+            tool.categories.includes('coding') ? 'AI编程' :
+            tool.categories.includes('image') ? 'AI绘图' :
+            tool.categories.includes('video') ? 'AI视频' :
+            tool.categories.includes('productivity') ? 'AI办公' : 'AI工具',
+  tags: [tool.name],
+  publishedAt: tool.lastUpdated,
+  updatedAt: tool.lastUpdated
+}));
 
-const EXTRA_TUTORIALS = [
-  {
-    slug: 'cursor-build-blog',
-    name: 'Cursor实战：搭建个人博客',
-    description: '从安装、创建项目到本地预览与部署，用新手能看懂的方式演示 AI 辅助建站完整工作流。',
-    shortDescription: '新手友好：AI 辅助搭建个人博客。',
-    categories: ['coding', 'all'],
-    category: 'AI 编程',
-    tags: ['Cursor', '实战教程'],
-    lastUpdated: '2026-09-04',
-    isNew: true
-  },
-  {
-    slug: 'ai-network',
-    name: 'AI工具打不开怎么办？',
-    description: '排查网络环境与常见问题，解决海外 AI 工具加载缓慢或登录失败的情况。',
-    shortDescription: '排查网络环境与解决 AI 无法登录情况。',
-    categories: ['all'],
-    category: '网络指南',
-    tags: ['网络', '常见问题'],
-    lastUpdated: '2026-09-03',
-    isNew: false
-  }
-];
+const allGuides: GuideArticle[] = [...guideArticles, ...toolGuides].sort((a, b) => {
+  if (a.publishedAt === b.publishedAt) return a.title.localeCompare(b.title);
+  return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+});
 
-const CATEGORIES = [
-  { id: 'all', name: '全部' },
-  { id: 'chat', name: 'AI 聊天' },
-  { id: 'search', name: 'AI 搜索' },
-  { id: 'coding', name: 'AI 编程' },
-  { id: 'image', name: 'AI 绘画' },
-  { id: 'video', name: 'AI 视频' },
-  { id: 'productivity', name: 'AI 办公' },
-  { id: 'music', name: 'AI 音乐' },
-];
+const latestGuides = allGuides.slice(0, 6);
 
-const SCENARIOS = [
-  { icon: '💬', name: '聊天与问答', query: '聊天', tools: ['ChatGPT', 'Claude', 'Gemini', 'Grok'] },
-  { icon: '🔍', name: '搜资料', query: '搜索', tools: ['Perplexity', 'Gemini', 'ChatGPT'] },
-  { icon: '💻', name: '写代码', query: '代码', tools: ['Cursor', 'GitHub Copilot', 'Replit', 'v0', 'Bolt'] },
-  { icon: '🎨', name: '生成图片', query: '绘图', tools: ['Midjourney', 'Ideogram', 'Leonardo AI', 'Adobe Firefly'] },
-  { icon: '🎬', name: '制作视频', query: '视频', tools: ['Runway', 'Pika', 'Luma Dream Machine'] },
-  { icon: '📊', name: '做 PPT / 办公', query: 'PPT', tools: ['Gamma', 'Canva AI', 'ChatGPT'] },
-  { icon: '🎵', name: '制作音乐', query: '音乐', tools: ['Suno'] },
-  { icon: '✍️', name: '写文章', query: '写作', tools: ['ChatGPT', 'Claude', 'Gemini'] },
-];
+type FilterType = 'all' | 'tool' | 'tutorial' | 'troubleshooting';
 
-function GuidesListContent() {
-  const [activeCategory, setActiveCategory] = useState('all');
+export default function GuidesList() {
+  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const cat = params.get('category');
-      if (cat && CATEGORIES.some(c => c.id === cat)) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setActiveCategory(cat);
+  const filteredGuides = allGuides.filter(guide => {
+    // 1. Filter by type
+    if (activeFilter !== 'all' && guide.type !== activeFilter) {
+      return false;
+    }
+    // 2. Filter by search query
+    if (searchQuery.trim() !== '') {
+      const q = searchQuery.toLowerCase();
+      const matchTitle = guide.title.toLowerCase().includes(q);
+      const matchDesc = guide.description.toLowerCase().includes(q);
+      const matchCategory = guide.category.toLowerCase().includes(q);
+      const matchTags = guide.tags.some(t => t.toLowerCase().includes(q));
+      if (!matchTitle && !matchDesc && !matchCategory && !matchTags) {
+        return false;
       }
     }
-  }, []);
-
-  
-  const allGuides = [...EXTRA_TUTORIALS, ...aiTools];
-  const filteredTools = allGuides.filter((tool) => {
-
-    const matchesCategory = activeCategory === 'all' || tool.categories.includes(activeCategory);
-    
-    let search = searchQuery.toLowerCase();
-    // Alias mapping for common user inputs
-    if (search.includes('写代码')) search = '代码';
-    if (search.includes('画图') || search.includes('生图')) search = '绘图';
-    if (search.includes('做ppt')) search = 'ppt';
-    if (search.includes('写文章')) search = '写作';
-
-    const matchesSearch = 
-      tool.name.toLowerCase().includes(search) || 
-      tool.shortDescription.toLowerCase().includes(search) ||
-      tool.description.toLowerCase().includes(search) ||
-      tool.tags.some(tag => tag.toLowerCase().includes(search));
-    
-    return matchesCategory && matchesSearch;
+    return true;
   });
 
   return (
-    <div>
+    <div className="space-y-16">
       
-      <section className="mb-10">
-        
-        <div className="flex overflow-x-auto pb-4 gap-3 scrollbar-hide sticky top-0 z-20 bg-gray-50/90 backdrop-blur pt-2">
-          <a href="#beginner-recommends" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">新手入门</a>
-          
-          <button onClick={() => { setActiveCategory('chat'); document.getElementById('all-tools')?.scrollIntoView({ behavior: 'smooth' }); }} className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">AI 聊天</button>
-          <button onClick={() => { setActiveCategory('coding'); document.getElementById('all-tools')?.scrollIntoView({ behavior: 'smooth' }); }} className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">AI 编程</button>
-          <button onClick={() => { setActiveCategory('image'); document.getElementById('all-tools')?.scrollIntoView({ behavior: 'smooth' }); }} className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">AI 绘图</button>
-          <button onClick={() => { setActiveCategory('video'); document.getElementById('all-tools')?.scrollIntoView({ behavior: 'smooth' }); }} className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">AI 视频</button>
-          <button onClick={() => { setActiveCategory('productivity'); document.getElementById('all-tools')?.scrollIntoView({ behavior: 'smooth' }); }} className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">AI 办公</button>
-          
-          <a href="#all-tools" className="whitespace-nowrap px-5 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 hover:border-brand-200 transition-colors shadow-sm">全部指南</a>
-        </div>
-      </section>
-
-      {/* 30 秒速读 */}
-      <section id="quick-read" className="mb-12 scroll-mt-24">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <Zap className="w-6 h-6 text-amber-500" /> 30 秒速读
-          </h2>
-          <p className="text-gray-500 mt-1">第一次来？先从这里开始。</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">第一次用 AI</h3>
-            <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
-              如果还不知道该选什么，可以先从 ChatGPT、Claude 或 Gemini 开始。这几款工具覆盖聊天、写作、学习、资料整理和日常工作等常见需求。
-            </p>
-            <a href="#beginner-recommends" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
-              看看新手推荐 <ChevronRight className="w-4 h-4 ml-1" />
-            </a>
+      {/* Latest Guides Section (Only show if no search/filter is active) */}
+      {activeFilter === 'all' && searchQuery.trim() === '' && (
+        <section>
+          <div className="flex items-center gap-2 mb-6">
+            <span className="text-xl">🔥</span>
+            <h2 className="text-2xl font-bold text-gray-900">最新指南</h2>
           </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">已经知道要做什么</h3>
-            <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
-              想写代码、做图片、生成视频、制作 PPT 或创作音乐，可以直接按照使用需求寻找对应工具。
-            </p>
-            <a href="#scenarios" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
-              按需求找 AI <ChevronRight className="w-4 h-4 ml-1" />
-            </a>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
-            <h3 className="text-lg font-bold text-gray-900 mb-3">已经有网络方案</h3>
-            <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
-              如果已经使用 RunAI 推荐的网络品牌，可以直接选择想使用的 AI，再查看对应工具的功能、账号要求和网络环境说明。
-            </p>
-            <a href="#all-tools" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
-              开始选 AI <ChevronRight className="w-4 h-4 ml-1" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 你想用 AI 做什么？ */}
-      <section id="scenarios" className="mb-12 scroll-mt-24">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <Target className="w-6 h-6 text-brand-500" /> 你想用 AI 做什么？
-          </h2>
-          <p className="text-gray-500 mt-1">从需求出发，更快找到适合的工具。</p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {SCENARIOS.map((scenario, idx) => (
-            <button 
-              key={idx}
-              onClick={() => {
-                setSearchQuery(scenario.query);
-                setActiveCategory('all');
-                document.getElementById('all-tools')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-300 hover:shadow-md transition-all text-left flex flex-col group"
-            >
-              <div className="text-3xl mb-3">{scenario.icon}</div>
-              <div className="font-bold text-gray-900 group-hover:text-brand-600 transition-colors">{scenario.name}</div>
-              <div className="text-xs text-gray-500 mt-1.5 line-clamp-1">{scenario.tools.join(' · ')}</div>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* 温馨小提示 */}
-      <section id="network-tips" className="mb-12 scroll-mt-24">
-        <div className="bg-blue-50/80 p-6 md:p-8 rounded-2xl border border-blue-100 flex gap-4 items-start">
-          <Lightbulb className="w-6 h-6 text-blue-500 flex-shrink-0 mt-1" />
-          <div>
-            <h3 className="text-lg font-bold text-blue-900 mb-2">温馨小提示</h3>
-            <p className="text-blue-800 text-sm leading-relaxed mb-4">
-              不同 AI 服务的账号要求、支持地区和网络环境可能有所不同，实际使用情况也可能随着官方服务调整而变化。如果遇到无法加载、登录异常或功能不可用，可以先检查账号地区、网络连接以及服务当前支持范围。<br/><br/>
-              RunAI 会尽量提供清楚的使用说明，但具体功能、价格和服务可用性请以 AI 官方信息为准。
-            </p>
-            <Link href="/vpn" className="inline-flex items-center px-4 py-2 bg-white text-blue-700 text-sm font-medium rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors">
-              查看网络连通方案 <ChevronRight className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 新手推荐 */}
-      <section id="beginner-recommends" className="mb-12 scroll-mt-24">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <Star className="w-6 h-6 text-amber-400 fill-amber-400" /> 新手推荐
-          </h2>
-          <p className="text-gray-500 mt-1">如果第一次接触海外 AI，可以先了解这些常用工具。</p>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-          <Link href="/guides/ai-network" className="group flex flex-col bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-            <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
-              <Zap className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-600 transition-colors">AI 工具网络环境指南</h3>
-            <p className="text-gray-500 text-sm mb-4 flex-grow line-clamp-2">AI打不开？加载慢？一步步排查网络连接、账号地区和常见错误。</p>
-            <div className="flex items-center text-sm font-medium text-brand-600">
-              阅读指南 <ChevronRight className="w-4 h-4 ml-1" />
-            </div>
-          </Link>
-          {['chatgpt', 'claude', 'gemini', 'cursor', 'midjourney', 'gamma'].map(slug => {
-             const t = aiTools.find(tool => tool.slug === slug);
-             if(!t) return null;
-             return (
-               <Link key={slug} href={`/guides/${slug}`} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 hover:shadow-md transition-all flex flex-col items-center text-center group">
-                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center text-brand-600 font-bold text-xl mb-3 shadow-sm border border-brand-100/50">
-                   {t.name.charAt(0)}
-                 </div>
-                 <span className="text-sm font-bold text-gray-900 group-hover:text-brand-600 line-clamp-1">{t.name}</span>
-               </Link>
-             )
-          })}
-        </div>
-      </section>
-
-      {/* 全部 AI 工具 */}
-      <section id="all-tools" className="scroll-mt-24">
-        <div className="mb-6">
-          <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-            <LayoutGrid className="w-6 h-6 text-brand-500" /> 全部 AI 指南
-          </h2>
-          <p className="text-gray-500 mt-1">目前收录 {aiTools.length} 篇详细的 AI 使用指南，可按分类或关键词快速查找。</p>
-        </div>
-
-        <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  setActiveCategory(cat.id);
-                  window.history.pushState(null, '', cat.id === 'all' ? '/guides' : `/guides?category=${cat.id}`);
-                }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === cat.id
-                    ? 'bg-brand-600 text-white shadow-sm'
-                    : 'bg-gray-50 text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                {cat.name}
-              </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {latestGuides.map(guide => (
+              <GuideCard 
+                key={guide.slug}
+                title={guide.title}
+                description={guide.description}
+                href={`/guides/${guide.slug}`}
+                type={guide.type}
+                category={guide.category}
+                date={guide.publishedAt}
+              />
             ))}
           </div>
+        </section>
+      )}
+
+      {/* All Guides Section */}
+      <section>
+        <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">全部指南</h2>
+            <p className="text-gray-500 text-sm">浏览 RunAI 当前已经发布的 AI 使用指南与实战教程。</p>
+          </div>
           
-          <div className="relative md:w-80 flex-shrink-0">
-            <input
-              type="text"
-              placeholder="搜索 AI、用途或关键词，例如：写代码、绘图、PPT"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all outline-none text-sm"
-            />
-            <Search className="w-4 h-4 text-gray-400 absolute left-4 top-1/2 -translate-y-1/2" />
+          <div className="flex-shrink-0 w-full md:w-72">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <input 
+                type="text" 
+                placeholder="搜索指南，例如：ChatGPT、Cursor、网络问题" 
+                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition-all shadow-sm"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
           </div>
         </div>
 
+        {/* Filter Pills */}
+        <div className="flex overflow-x-auto pb-4 mb-4 gap-3 no-scrollbar -mx-4 px-4 md:mx-0 md:px-0">
+          <button 
+            onClick={() => setActiveFilter('all')}
+            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'all' ? 'bg-gray-900 text-white' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50'}`}
+          >
+            全部
+          </button>
+          <button 
+            onClick={() => setActiveFilter('tool')}
+            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'tool' ? 'bg-blue-600 text-white border-blue-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:text-blue-600'}`}
+          >
+            AI工具指南
+          </button>
+          <button 
+            onClick={() => setActiveFilter('tutorial')}
+            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'tutorial' ? 'bg-green-600 text-white border-green-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-green-50 hover:text-green-600'}`}
+          >
+            实战教程
+          </button>
+          <button 
+            onClick={() => setActiveFilter('troubleshooting')}
+            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'troubleshooting' ? 'bg-orange-600 text-white border-orange-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-orange-50 hover:text-orange-600'}`}
+          >
+            问题指南
+          </button>
+        </div>
+
+        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredTools.length > 0 ? (
-            filteredTools.map((tool) => (
-              <Link 
-                key={tool.slug} 
-                href={`/guides/${tool.slug}`}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full block"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center flex-shrink-0 text-brand-600 font-bold text-xl shadow-sm border border-brand-100/50">
-                    {tool.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h2 className="text-lg font-bold text-gray-900 group-hover:text-brand-600 transition-colors line-clamp-1">{tool.name} 使用指南</h2>
-                    <p className="text-sm text-gray-500">{tool.category}</p>
-                  </div>
-                </div>
-                
-                <p className="text-sm text-gray-600 mb-6 flex-grow line-clamp-2 leading-relaxed">
-                  了解 {tool.name} 可以做什么、如何开始使用，以及账号与网络环境方面需要注意的问题。
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {tool.tags.slice(0, 3).map((tag, idx) => (
-                    <span key={idx} className="px-2.5 py-1 bg-gray-50 text-gray-500 rounded text-xs border border-gray-100">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                  <span className="text-xs text-gray-400">
-                    最后更新: {tool.lastUpdated}
-                  </span>
-                  <span className="flex items-center text-sm font-medium text-brand-600">
-                    阅读指南 <ChevronRight className="w-4 h-4 ml-1" />
-                  </span>
-                </div>
-              </Link>
+          {filteredGuides.length > 0 ? (
+            filteredGuides.map(guide => (
+              <GuideCard 
+                key={guide.slug}
+                title={guide.title}
+                description={guide.description}
+                href={`/guides/${guide.slug}`}
+                type={guide.type}
+                category={guide.category}
+                date={guide.publishedAt}
+              />
             ))
           ) : (
-            <div className="col-span-full py-20 text-center text-gray-500 bg-white rounded-2xl border border-gray-100">
-              没有找到相关的 AI 指南，尝试换个关键词试试？
+            <div className="col-span-full py-20 text-center bg-white rounded-2xl border border-gray-100 shadow-sm">
+              <p className="text-gray-500 mb-2">未找到匹配的指南</p>
+              <button 
+                onClick={() => { setSearchQuery(''); setActiveFilter('all'); }}
+                className="text-brand-600 hover:underline text-sm font-medium"
+              >
+                清除搜索条件
+              </button>
             </div>
           )}
         </div>
       </section>
+
     </div>
   );
-}
-
-export default function GuidesList() {
-  return <GuidesListContent />;
 }

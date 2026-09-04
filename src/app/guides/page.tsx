@@ -1,6 +1,5 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Suspense } from 'react';
 import GuidesList from './GuidesList';
 
 import { constructMetadata } from "@/lib/seo";
@@ -11,28 +10,22 @@ export const metadata = constructMetadata({
   canonical: '/guides/',
 });
 
-export default function AIPage() {
+export default function GuidesPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
       <main className="flex-grow py-12">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">AI 使用指南</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            从入门到实际使用，了解常用 AI 的功能、账号要求、网络环境和常见问题。
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500">
-            <span>AI工具大全</span>
-            <span>AI聊天神器</span>
-            <span>AI编程软件</span>
-            <span>AI绘画生成</span>
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="mb-12 text-center">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">AI 使用指南</h1>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+              从入门、实战到问题排查，找到适合你的 AI 使用内容。
+            </p>
           </div>
-        </div>
-        <Suspense fallback={<div className="text-center py-20">加载中...</div>}>
+          
           <GuidesList />
-        </Suspense>
-      </div>
+          
+        </div>
       </main>
       <Footer />
     </div>
