@@ -7,7 +7,7 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://runainav.com';
   
-  const lastModDate = new Date('2026-09-02');
+  const lastModDate = new Date('2026-09-04');
   
   // Use a Map to deduplicate paths. The key is the normalized URL pathname.
   const sitemapEntries = new Map<string, MetadataRoute.Sitemap[0]>();

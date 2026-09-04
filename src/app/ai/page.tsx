@@ -1,6 +1,5 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Suspense } from 'react';
 import AIList from './AIList';
 
 import { constructMetadata } from "@/lib/seo";
@@ -29,9 +28,7 @@ export default function AIPage() {
             <span>AI绘画生成</span>
           </div>
         </div>
-        <Suspense fallback={<div className="text-center py-20">加载中...</div>}>
-          <AIList />
-        </Suspense>
+        <AIList />
       </div>
       </main>
       <Footer />

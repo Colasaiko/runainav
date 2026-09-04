@@ -14,7 +14,7 @@ const useCases = [
   {
     icon: GraduationCap,
     title: "AI 学习",
-    desc: "访问海外公开课程、技术教程与学习资源、技术教程、教育资源与全球化学习平台。"
+    desc: "访问海外公开课程、技术教程与学习资源、教育资源与全球化学习平台。"
   },
   {
     icon: Globe2,

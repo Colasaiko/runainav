@@ -36,6 +36,7 @@ function AIListContent() {
       const params = new URLSearchParams(window.location.search);
       const cat = params.get('category');
       const q = params.get('q');
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (q) setSearchQuery(q);
       if (cat && CATEGORIES.some(c => c.id === cat)) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
