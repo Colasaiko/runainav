@@ -289,7 +289,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
                   查看 RunAI 网络方案
                 </Link>
                 <Link 
-                  href="/coming-soon" 
+                  href="/guides/ai-network" 
                   className="inline-flex items-center justify-center px-5 py-2.5 bg-white border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm"
                 >
                   阅读 AI 网络连通指南

@@ -1,6 +1,7 @@
 import React from 'react';
 
 type SchemaProps = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any> | Record<string, any>[];
 };
 

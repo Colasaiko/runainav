@@ -158,8 +158,18 @@ function BrandCard({ brand, isFeatured = false }: { brand: VPNBrand, isFeatured?
       <div className="grid grid-cols-2 gap-2 mb-6 pt-4 border-t border-gray-50">
         {brand.price !== undefined && (
           <div>
-            <div className="text-xs text-gray-400 mb-0.5">起步价格</div>
-            <div className="text-sm font-semibold text-gray-900">{brand.currency}{brand.price} / 月</div>
+            {brand.id === 'weifeng' ? (
+              <>
+                <div className="text-xs text-gray-400 mb-0.5">年付折算</div>
+                <div className="text-sm font-semibold text-gray-900">{brand.currency}{brand.price} / 月</div>
+                <div className="text-[10px] text-gray-400 mt-0.5">月付方案 ¥27 起</div>
+              </>
+            ) : (
+              <>
+                <div className="text-xs text-gray-400 mb-0.5">起步价格</div>
+                <div className="text-sm font-semibold text-gray-900">{brand.currency}{brand.price} / 月</div>
+              </>
+            )}
           </div>
         )}
         {brand.traffic && (

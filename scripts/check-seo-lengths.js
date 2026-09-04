@@ -56,10 +56,18 @@ checkLength('/guides', 'Description', guidesDesc, 70, 80);
 
 // 4. Check /vpn
 const vpnContent = fs.readFileSync('src/app/vpn/page.tsx', 'utf-8');
-const vpnTitle = vpnContent.match(/title:\s*"([^"]+)"/)[1];
-const vpnDesc = vpnContent.match(/description:\s*"([^"]+)"/)[1];
+const vpnTitle = vpnContent.match(/title:\s*['"]([^'"]+)['"]/)[1];
+const vpnDesc = vpnContent.match(/description:\s*['"]([^'"]+)['"]/)[1];
 checkLength('/vpn', 'Title', vpnTitle, 20, 30);
 checkLength('/vpn', 'Description', vpnDesc, 70, 80);
+
+
+// Check /guides/ai-network
+const netContent = fs.readFileSync('src/app/guides/ai-network/page.tsx', 'utf-8');
+const netTitle = netContent.match(/title:\s*['"]([^'"]+)['"]/)[1];
+const netDesc = netContent.match(/description:\s*['"]([^'"]+)['"]/)[1];
+checkLength('/guides/ai-network', 'Title', netTitle, 20, 30);
+checkLength('/guides/ai-network', 'Description', netDesc, 70, 80);
 
 if (hasError) {
   process.exit(1);
