@@ -3,7 +3,11 @@ import Footer from '@/components/layout/Footer';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import Link from 'next/link';
-import { Zap, Check, ChevronRight, AlertTriangle, Info, Terminal, Activity, ZapOff, Wifi } from 'lucide-react';
+import { 
+  Zap, Check, AlertTriangle, Info, Activity, ZapOff, 
+  ArrowRight, Smartphone, Server, Globe, Wifi, User, 
+  MessageSquare, Play, Gamepad2, XCircle, CheckCircle 
+} from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from "@/lib/seo";
 
@@ -78,7 +82,7 @@ export default function VpnSlowSpeedPage() {
 
       {/* Hero Section */}
       <section className="bg-white border-b border-gray-200 pt-16 pb-12">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <nav className="flex text-sm text-gray-500 mb-8">
             <Link href="/" className="hover:text-brand-600 transition-colors">首页</Link>
             <span className="mx-2">/</span>
@@ -100,27 +104,27 @@ export default function VpnSlowSpeedPage() {
       </section>
 
       {/* Content */}
-      <section className="container mx-auto px-4 max-w-4xl py-12 relative">
+      <section className="container mx-auto px-4 max-w-5xl py-12 relative">
         <div id="article-sticky-trigger" className="absolute top-0 w-full h-1 pointer-events-none opacity-0"></div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 xl:gap-12">
           
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-9">
             
             {/* Quick Read */}
-            <div className="bg-gradient-to-br from-brand-50 to-white p-8 rounded-2xl border border-brand-100 shadow-sm mb-10 relative overflow-hidden">
-              <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <div className="bg-gradient-to-br from-brand-50 to-white p-6 sm:p-8 rounded-2xl border border-brand-100 shadow-sm mb-10 relative overflow-hidden">
+              <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2 m-0">
                 <Zap className="w-5 h-5 text-brand-500" />
                 30 秒速读
               </h2>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-700 m-0 p-0 list-none">
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <span>连接 VPN 后速度下降一定程度上很常见，因为数据需要经过额外的网络路径加密和转发。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>速度下降不只取决于 VPN 本身，还受到本地宽带、Wi-Fi 信号、运营商线路、节点物理距离和服务器当前负载影响。</span>
+                  <span>速度下降不只取决于 VPN 本身，还受到本地宽带、Wi-Fi、运营商线路、节点距离和服务器负载影响。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
@@ -128,193 +132,356 @@ export default function VpnSlowSpeedPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>AI 聊天对话通常不需要极高的带宽，更重要的是连接稳定（不丢包）。</span>
+                  <span>AI 聊天通常不需要特别高的带宽，更重要的是连接稳定。</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <span>在线视频依赖持续的下载速度；而竞技游戏则最看重 Ping、Jitter 和 0 丢包。</span>
+                  <span>视频更依赖持续下载速度。游戏更看重 Ping、Jitter 和丢包。</span>
                 </li>
               </ul>
             </div>
 
-            <div className="prose prose-brand max-w-none prose-h2:scroll-mt-32 prose-h3:scroll-mt-32 prose-h2:mt-12">
+            <div className="prose prose-brand max-w-none prose-h2:scroll-mt-32 prose-h3:scroll-mt-32 prose-h2:mt-10 prose-p:text-gray-600 prose-headings:text-gray-900">
               
-              <h2 id="concept" className="mt-0">为什么连接以后网络会多走一段路？</h2>
+              <h2 id="concept" className="mt-0 mb-4">为什么连接以后网络会多走一段路？</h2>
               <p>为了理解为什么网速会变化，我们需要用非常简单的比喻来看看数据到底去了哪。</p>
-              <p><strong>正常上网时：</strong><br/>
-              你的设备 → 网站服务器</p>
-              <p><strong>连接网络节点（VPN）以后：</strong><br/>
-              你的设备 → <strong>【网络节点】</strong> → 网站服务器</p>
-              <p>在这个过程中，你的数据不仅多走了一站路，而且为了安全和穿越限制，数据在你的设备上会被<strong>加密</strong>，到达节点后再<strong>解密转发</strong>。理论上，只要增加了中间商和处理环节，延迟和资源消耗通常都会不可避免地增加。</p>
-              <p>但请注意，这并不意味着“连接后一定卡得没法用”。不同品牌、不同线路、不同协议之间表现差异极大，有些优质专线甚至能帮你绕过拥堵的公共网络。</p>
-
-              <h2 id="metrics">速度到底看什么？</h2>
-              <p>很多新手只看测速软件跑出的大数字，其实评估网络体验需要看四个核心指标：</p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-                <div className="border border-gray-200 p-4 rounded-xl bg-white shadow-sm">
-                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Activity className="w-4 h-4 text-blue-500" /> 下载速度</div>
-                  <p className="text-sm text-gray-600 m-0 mb-2">单位：Mbps 或 MB/s</p>
-                  <p className="text-sm text-gray-500 m-0">决定你能多快下完大文件，或者看 4K 视频会不会缓冲。</p>
+              
+              <div className="flex flex-col gap-4 sm:gap-6 my-8 not-prose">
+                <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                  <h4 className="font-bold text-gray-900 mb-4 mt-0 text-sm uppercase tracking-wider">普通连接</h4>
+                  <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
+                    <div className="bg-white border border-gray-300 px-4 py-2 rounded-lg font-medium text-gray-700 shadow-sm flex items-center gap-2"><Smartphone className="w-4 h-4"/> 你的设备</div>
+                    <ArrowRight className="w-5 h-5 text-gray-400" />
+                    <div className="bg-white border border-gray-300 px-4 py-2 rounded-lg font-medium text-gray-700 shadow-sm flex items-center gap-2"><Server className="w-4 h-4"/> 网站服务器</div>
+                  </div>
+                  <p className="text-sm text-gray-500 mt-4 mb-0">数据直接前往目标服务。</p>
                 </div>
-                <div className="border border-gray-200 p-4 rounded-xl bg-white shadow-sm">
-                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Activity className="w-4 h-4 text-green-500" /> 延迟 (Ping)</div>
-                  <p className="text-sm text-gray-600 m-0 mb-2">单位：ms (毫秒)</p>
-                  <p className="text-sm text-gray-500 m-0">数值越低越好。决定了你点下按钮后，网页、游戏和 AI 响应有多快。</p>
-                </div>
-                <div className="border border-gray-200 p-4 rounded-xl bg-white shadow-sm">
-                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Activity className="w-4 h-4 text-purple-500" /> 抖动 (Jitter)</div>
-                  <p className="text-sm text-gray-600 m-0 mb-2">单位：ms</p>
-                  <p className="text-sm text-gray-500 m-0">反映延迟是否稳定。一直稳在 60ms 远好于在 30ms 到 240ms 之间疯狂横跳。</p>
-                </div>
-                <div className="border border-gray-200 p-4 rounded-xl bg-white shadow-sm">
-                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><ZapOff className="w-4 h-4 text-red-500" /> 丢包 (Packet Loss)</div>
-                  <p className="text-sm text-gray-600 m-0 mb-2">单位：%</p>
-                  <p className="text-sm text-gray-500 m-0">数据有没有在路上丢失。高丢包是造成视频卡顿、游戏瞬移、AI请求超时的元凶。</p>
+                <div className="bg-brand-50 border border-brand-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+                  <h4 className="font-bold text-brand-900 mb-4 mt-0 text-sm uppercase tracking-wider">通过网络节点</h4>
+                  <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
+                    <div className="bg-white border border-brand-300 px-4 py-2 rounded-lg font-medium text-gray-700 shadow-sm flex items-center gap-2"><Smartphone className="w-4 h-4"/> 你的设备</div>
+                    <ArrowRight className="w-5 h-5 text-brand-400" />
+                    <div className="bg-brand-500 text-white px-4 py-2 rounded-lg font-medium shadow-sm flex items-center gap-2"><Globe className="w-4 h-4"/> 网络节点</div>
+                    <ArrowRight className="w-5 h-5 text-brand-400" />
+                    <div className="bg-white border border-brand-300 px-4 py-2 rounded-lg font-medium text-gray-700 shadow-sm flex items-center gap-2"><Server className="w-4 h-4"/> 网站服务器</div>
+                  </div>
+                  <p className="text-sm text-brand-700 mt-4 mb-0">为了建立加密连接并通过网络节点转发数据，通信会增加额外的网络路径和处理步骤，因此延迟和资源消耗可能增加。</p>
                 </div>
               </div>
 
-              <div className="bg-gray-100 p-4 rounded-xl my-6 flex items-start gap-3">
-                <Info className="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5" />
+              <p>但这并不意味着连接后一定会慢得离谱，不同线路表现差异很大。</p>
+
+              <h2 id="metrics" className="mb-4">速度到底看什么？</h2>
+              <p>不要只讲 Mbps。评估网络体验需要看四个核心指标：</p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 my-8 not-prose">
+                <div className="border border-gray-200 p-4 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Activity className="w-4 h-4 text-blue-500" /> 下载速度</div>
+                  <p className="text-xs text-gray-500 font-mono mb-2 bg-gray-50 inline-block px-2 py-1 rounded">Mbps / MB/s</p>
+                  <p className="text-sm text-gray-600 m-0">影响：视频缓冲、大文件下载、素材传输。</p>
+                </div>
+                <div className="border border-gray-200 p-4 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Activity className="w-4 h-4 text-green-500" /> 延迟 (Ping)</div>
+                  <p className="text-xs text-gray-500 font-mono mb-2 bg-gray-50 inline-block px-2 py-1 rounded">ms (越低越好)</p>
+                  <p className="text-sm text-gray-600 m-0">影响：网页响应速度、AI 对话反馈、游戏操作延迟。</p>
+                </div>
+                <div className="border border-gray-200 p-4 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><Activity className="w-4 h-4 text-purple-500" /> 抖动 (Jitter)</div>
+                  <p className="text-xs text-gray-500 font-mono mb-2 bg-gray-50 inline-block px-2 py-1 rounded">ms (波动幅度)</p>
+                  <p className="text-sm text-gray-600 m-0">延迟是否稳定。一直稳定的 60ms 通常比在 30ms 到 240ms 之间跳动体验更好。</p>
+                </div>
+                <div className="border border-gray-200 p-4 rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow">
+                  <div className="font-bold text-gray-900 mb-2 flex items-center gap-2"><ZapOff className="w-4 h-4 text-red-500" /> 丢包 (Loss)</div>
+                  <p className="text-xs text-gray-500 font-mono mb-2 bg-gray-50 inline-block px-2 py-1 rounded">% (丢失比率)</p>
+                  <p className="text-sm text-gray-600 m-0">数据有没有在路上丢失。高丢包易造成视频卡顿、断线重连、游戏瞬移、AI 请求失败。</p>
+                </div>
+              </div>
+
+              <div className="bg-blue-50/50 border border-blue-100 p-5 sm:p-6 rounded-2xl my-8 flex items-start gap-4 not-prose shadow-sm">
+                <Info className="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-gray-800 mt-0 mb-1">新手提示：Mbps 和 MB/s 不是一回事</h4>
-                  <p className="text-gray-600 text-sm m-0">
-                    测速软件通常显示 <code>100 Mbps</code>，这里的 b 是小写的 bit（比特）。而我们平时下载文件看到的 <code>MB/s</code> 的 B 是大写的 Byte（字节）。<br/>
-                    简单来说：8 bit ≈ 1 Byte。理论上 <code>100 Mbps ≈ 12.5 MB/s</code>。实际还会受到网络损耗影响打折，不要以为 100Mbps 就能一秒下 100 兆。
+                  <h4 className="font-bold text-blue-900 mt-0 mb-2 text-base">新手提示：100 Mbps ≠ 100 MB/s</h4>
+                  <p className="text-blue-800 text-sm m-0 leading-relaxed">
+                    测速显示的 <code>Mbps</code> 中的 b 是小写的 bit（比特）。而下载文件显示的 <code>MB/s</code> 的 B 是大写的 Byte（字节）。<br/>
+                    <strong>理论换算：8 bit ≈ 1 Byte。</strong> 即 <code>100 Mbps ≈ 12.5 MB/s</code>。<br/>
+                    实际速度仍会受到协议、网络拥堵状态和服务器性能影响而打折。
                   </p>
                 </div>
               </div>
 
-              <h2 id="reason1">原因 1：节点距离为什么会影响速度？</h2>
-              <p>光纤传输数据是物理过程。例如你人在亚洲，却选择连接位于美国或欧洲的节点，数据需要在海底光缆里跑大半个地球。这通常直接导致：<strong>延迟 (Ping) 飙升</strong>。</p>
-              <p>但请注意，<strong>最近的节点不一定绝对最快</strong>。因为即使节点在隔壁，如果它当前负载过高、或者你家宽带连接它的路由绕路，实际体验依然会很差。建议：先从相对近的地区开始测试，再根据实际结果选择。</p>
+              <h2 id="reason1" className="mb-4">节点距离为什么会影响速度？</h2>
+              <p>光纤传输数据是物理过程。例如你人在亚洲，却选择连接位于美国或欧洲的节点，数据需要在海底光缆里跑更远，这通常直接导致延迟 (Ping) 飙升。</p>
 
-              <h2 id="reason2">原因 2：节点拥堵</h2>
-              <p>VPN 服务器就像高速公路。如果很多用户同时挤在同一个节点上，服务器的总带宽和出口资源就会变得紧张。</p>
-              <p><strong>常见表现：</strong>白天丝滑，晚高峰（如晚上 8 点 - 11 点）变得奇慢无比，测速忽高忽低，视频疯狂缓冲。切换到另一个同地区节点后突然恢复。</p>
-              <p>对于用户来说，<strong>晚高峰的测速表现才是判断一条线路真实质量的最重要指标</strong>。</p>
+              <div className="bg-gray-900 rounded-2xl p-6 sm:p-8 my-8 text-white relative overflow-hidden not-prose shadow-lg">
+                <div className="flex flex-col items-start gap-4">
+                  <div className="bg-brand-500 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 relative z-10 text-sm shadow-sm">你的位置</div>
+                  
+                  <div className="flex items-center gap-3 relative z-10 ml-8">
+                    <div className="w-8 border-t-2 border-dashed border-gray-600"></div>
+                    <div className="bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-md text-sm text-gray-200">香港 (较近)</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 relative z-10 ml-8">
+                    <div className="w-16 border-t-2 border-dashed border-gray-600"></div>
+                    <div className="bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-md text-sm text-gray-200">日本 (中等)</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 relative z-10 ml-8">
+                    <div className="w-24 border-t-2 border-dashed border-gray-600"></div>
+                    <div className="bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-md text-sm text-gray-200">新加坡 (中等)</div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 relative z-10 ml-8">
+                    <div className="w-48 border-t-2 border-dashed border-gray-600"></div>
+                    <div className="bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-md text-sm text-gray-200">美国 (较远)</div>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-6 pt-4 border-t border-gray-800 mb-0 leading-relaxed">免责声明：距离只是影响延迟的因素之一。实际表现还取决于运营商路由、节点负载、线路质量和服务器状态。请先从相对近的地区开始测试，再根据实际结果选择，不要误以为距离最近一定最快。</p>
+              </div>
 
-              <h2 id="reason3">原因 3：本地网络本身已经有问题</h2>
-              <p>这是最容易被忽略的盲区。很多时候大家一卡就觉得是节点坏了，但如果你：</p>
-              <ul>
-                <li>连接着只有一格信号的 Wi-Fi</li>
-                <li>路由器隔了三堵墙</li>
-                <li>连接在极易受干扰的 2.4GHz 频段上</li>
-                <li>室友正在疯狂下载</li>
-              </ul>
-              <p>那么即使你购买了全世界最贵的专线，最终体验依然会差。<strong>排查建议：</strong>先断开连接，用本地基础网络测一次速，看看是不是你家 Wi-Fi 已经卡死了。</p>
+              <h2 id="reason2" className="mb-4">节点拥堵</h2>
+              <p>很多用户同时使用同一个节点时，服务器带宽和出口资源可能变得紧张。白天正常，晚上变慢，测速忽高忽低，换另一个同地区节点立刻恢复，这是典型的拥堵表现。高峰期表现才是判断线路质量的重要指标。</p>
 
-              <h2 id="reason4">原因 4：运营商与国际路由</h2>
-              <p>不同的网络宽带运营商（电信、联通、移动、长城宽带等）前往海外服务器的“出海路线”是完全不同的。</p>
-              <p>这意味着：连接完全相同的同一个节点，用户 A 可能非常快，而用户 B 可能非常慢。这不代表节点造假，而是你们的基础线路和国际出口不同导致的路由差异。</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 not-prose">
+                <div className="bg-green-50 border border-green-200 p-6 rounded-2xl shadow-sm">
+                  <h4 className="font-bold text-green-800 mt-0 mb-4 text-base">低负载节点</h4>
+                  <div className="flex gap-2 mb-4">
+                    <User className="w-5 h-5 text-green-600"/><User className="w-5 h-5 text-green-600"/><User className="w-5 h-5 text-green-600"/>
+                  </div>
+                  <div className="w-full bg-green-200 rounded-full h-3 mb-3">
+                    <div className="bg-green-500 h-3 rounded-full" style={{ width: '30%' }}></div>
+                  </div>
+                  <p className="text-sm font-medium text-green-800 mb-1">体验：通常较稳定</p>
+                  <p className="text-xs text-green-700 m-0">出口带宽宽裕，请求处理迅速，鲜有丢包。</p>
+                </div>
+                
+                <div className="bg-red-50 border border-red-200 p-6 rounded-2xl shadow-sm">
+                  <h4 className="font-bold text-red-800 mt-0 mb-4 text-base">高峰期拥堵节点</h4>
+                  <div className="flex gap-1 flex-wrap mb-4">
+                    {[...Array(8)].map((_, i) => <User key={i} className="w-5 h-5 text-red-600"/>)}
+                  </div>
+                  <div className="w-full bg-red-200 rounded-full h-3 mb-3">
+                    <div className="bg-red-500 h-3 rounded-full" style={{ width: '95%' }}></div>
+                  </div>
+                  <p className="text-sm font-medium text-red-800 mb-1">体验：波动、缓冲、延迟增加</p>
+                  <p className="text-xs text-red-700 m-0">出口资源高度紧张，易出现排队挤占和高丢包。</p>
+                </div>
+              </div>
 
-              <h2 id="reason5">原因 5：协议和加密开销及节点负载</h2>
-              <p>网络代理客户端在后台需要对数据进行高强度的加密、封装和转发。现代手机和电脑通常可以毫无压力地处理，但如果你的设备是一台非常老旧的路由器，CPU 扛不住复杂的加密协议计算，也会导致网速上限被锁死卡住。</p>
-              <p>同时，看到节点“绿灯在线”，不等于节点“完全没有负载”。服务器本身的 CPU、内存占满都会导致你的请求响应变慢。</p>
-              <p><em>延伸阅读：<Link href="/guides/ai-network">AI 网络环境与常见问题排查指南</Link></em></p>
-
-              <h2 id="how-to-test">怎么判断到底哪里变慢？（测速方法）</h2>
-              <p>遇到问题不要盲目切换，请按以下实用步骤排查：</p>
-
-              <ol>
-                <li><strong>Step 1：</strong>彻底断开 VPN / 代理客户端，在纯本地网络下跑一次 Speedtest，记录 <code>Ping</code>、<code>Download</code>、<code>Upload</code>。</li>
-                <li><strong>Step 2：</strong>连接节点，使用<strong>完全相同的测速服务器</strong>再次测试。</li>
-                <li><strong>Step 3：</strong>每次测速至少重复 3 次，避免单次偶然误差。</li>
-                <li><strong>Step 4：</strong>测试不同地区的节点（如香港、日本、新加坡、美国），观察数据差异。</li>
-                <li><strong>Step 5：</strong>在你的实际使用场景（YouTube、ChatGPT、Cursor 等）中真实体验一下，不要只相信测速数字。</li>
-              </ol>
-
-              <p>你可以自己创建一个简单的小表格记录（以下为空模板示例，请填入自己的真实数据）：</p>
+              <h2 id="reason3" className="mb-4">本地网络本身已经有问题</h2>
+              <p>很多用户容易忽略，哪怕买了顶级节点，基础网络不行依然体验极差。</p>
               
-              <div className="overflow-x-auto my-6">
-                <table className="min-w-full text-sm text-left border border-gray-200">
-                  <thead className="bg-gray-50">
+              <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 sm:p-8 my-8 shadow-sm not-prose">
+                <h4 className="font-bold text-gray-900 mt-0 mb-6 flex items-center gap-2 text-lg"><Wifi className="w-6 h-6 text-gray-500" /> 先别急着怪节点</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
+                  {[
+                    "断开节点后原始网络正常吗？",
+                    "Wi-Fi 信号是否满格且在 5GHz 频段？",
+                    "是否正在后台下载其他大文件？",
+                    "手机热点是否出现信号波动？",
+                    "路由器是否距离太远或隔墙太多？",
+                    "其他设备是否正在大量占用带宽？"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded border border-gray-300 flex-shrink-0 mt-0.5 bg-gray-50 flex items-center justify-center"></div>
+                      <span className="text-sm text-gray-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-500 mt-6 mb-0 pt-4 border-t border-gray-100">强烈建议：先断开连接测一次基础网络。</p>
+              </div>
+
+              <h2 id="reason4" className="mb-4">运营商与国际路由</h2>
+              <p>不同网络运营商前往海外服务器的路径可能完全不同。同一个节点，用户 A 很快，用户 B 比较慢，不一定代表节点造假，可能是本地运营商、所在地区、国际出口和路由路径不同导致。</p>
+
+              <h2 id="reason5" className="mb-4">协议和加密开销及节点负载</h2>
+              <p>网络连接需要对数据加密、封装、转发，这会带来一定资源消耗。现代电脑和手机通常可以较好处理，但性能较低的路由器或老设备仍可能受影响。同时，看到节点在线不等于服务器完全没有负载，CPU 和内存压力都会影响体验。</p>
+
+              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 my-10 not-prose">
+                <h3 className="font-bold text-gray-900 text-lg mb-6 text-center">快速判断：你遇到的是哪一种？</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[
+                    { title: "一连接速度马上明显下降", check: "原始网络 / 节点距离 / 负载", advice: "先测未连接状态，再测试相同条件下的节点。" },
+                    { title: "白天正常，晚上明显变慢", check: "高峰拥堵", advice: "同时间测试其他地区的节点。" },
+                    { title: "Speedtest 很快，网页还是慢", check: "目标网站 / DNS / CDN / 路由", advice: "不要只依赖 Speedtest，它只代表理论上限。" },
+                    { title: "ChatGPT 正常，Cursor 超时", check: "连接稳定性 / 丢包 / 持续连接", advice: "稳定比单纯高下载速度更重要。" },
+                    { title: "视频正常，但游戏延迟很高", check: "Ping / Jitter / 路由", advice: "游戏需求与视频完全不同，看重延迟。" },
+                    { title: "所有节点都慢", check: "本地网络 / ISP / 客户端设备", advice: "先断开节点，彻查基础宽带网络。" }
+                  ].map((item, i) => (
+                    <div key={i} className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                      <h5 className="font-bold text-gray-900 mt-0 mb-3 text-sm">{item.title}</h5>
+                      <p className="text-xs text-gray-500 mb-3"><strong>优先检查：</strong>{item.check}</p>
+                      <p className="text-xs text-brand-700 m-0 bg-brand-50 p-2.5 rounded-lg leading-relaxed">{item.advice}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <h2 id="how-to-test" className="mb-6">怎么判断到底哪里变慢？（测速方法）</h2>
+              
+              <div className="not-prose my-8 p-6 bg-white border border-gray-200 rounded-2xl shadow-sm">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {[
+                    { num: "01", title: "断开节点", desc: "测试 Download、Upload、Ping" },
+                    { num: "02", title: "连接目标节点", desc: "连接海外节点" },
+                    { num: "03", title: "同测速服务器", desc: "使用完全相同的测速点再测" },
+                    { num: "04", title: "重复测试 3 次", desc: "避免单次测试误差太大" },
+                    { num: "05", title: "测试不同节点", desc: "对比香港、日本、美国等" },
+                    { num: "06", title: "实际场景测试", desc: "YouTube / ChatGPT / Cursor" }
+                  ].map((step, i) => (
+                    <div key={i} className="flex flex-col gap-2 relative">
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-sm shrink-0 border-2 border-white shadow-sm z-10">{step.num}</div>
+                        {i !== 5 && <div className="hidden md:block absolute top-4 left-10 w-full border-t-2 border-dashed border-gray-100"></div>}
+                      </div>
+                      <div className="mt-1">
+                        <h5 className="font-bold text-gray-900 m-0 text-sm mb-1">{step.title}</h5>
+                        <p className="text-gray-500 text-xs m-0 leading-relaxed pr-2">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p>测速记录模板（请填入实际数据）：</p>
+              
+              <div className="overflow-x-auto my-6 not-prose rounded-xl border border-gray-200 shadow-sm">
+                <table className="min-w-full text-sm text-left whitespace-nowrap">
+                  <thead className="bg-gray-100 text-gray-700">
                     <tr>
-                      <th className="px-4 py-3 border-b">节点状态</th>
-                      <th className="px-4 py-3 border-b">Ping</th>
-                      <th className="px-4 py-3 border-b">Download</th>
-                      <th className="px-4 py-3 border-b">Upload</th>
-                      <th className="px-4 py-3 border-b">丢包</th>
-                      <th className="px-4 py-3 border-b">实际体验</th>
+                      <th className="px-5 py-3.5 font-bold">节点状态</th>
+                      <th className="px-5 py-3.5 font-bold">Ping</th>
+                      <th className="px-5 py-3.5 font-bold">Download</th>
+                      <th className="px-5 py-3.5 font-bold">Upload</th>
+                      <th className="px-5 py-3.5 font-bold">丢包</th>
+                      <th className="px-5 py-3.5 font-bold">实际体验</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    <tr><td className="px-4 py-3">未连接</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td></tr>
-                    <tr><td className="px-4 py-3">香港 01</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td></tr>
-                    <tr><td className="px-4 py-3">日本 02</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td></tr>
-                    <tr><td className="px-4 py-3">美国 01</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td><td className="px-4 py-3">—</td></tr>
+                  <tbody className="divide-y divide-gray-100 bg-white">
+                    <tr className="hover:bg-gray-50"><td className="px-5 py-3 font-medium">未连接</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td></tr>
+                    <tr className="hover:bg-gray-50"><td className="px-5 py-3 font-medium">香港节点</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td></tr>
+                    <tr className="hover:bg-gray-50"><td className="px-5 py-3 font-medium">日本节点</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td></tr>
+                    <tr className="hover:bg-gray-50"><td className="px-5 py-3 font-medium">美国节点</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td><td className="px-5 py-3 text-gray-400">—</td></tr>
                   </tbody>
                 </table>
               </div>
 
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-5 my-6 rounded-r-xl">
-                <h4 className="font-bold text-blue-900 mt-0 mb-2">为什么 Speedtest 很快，但网页还是慢？</h4>
-                <p className="text-blue-800 text-sm m-0">Speedtest 的测速原理是找到离节点最近的最佳服务器塞满测速数据包。但你实际访问的网站可能遇到目标服务器响应慢、CDN 解析绕路、DNS 污染、或者建连协议过时等问题。测速软件只代表链路理论上限，不是所有网站真实体验的绝对标准。</p>
-              </div>
-
-              <h2 id="ai-and-video">使用 ChatGPT、Claude、Cursor 时该看什么？</h2>
-              <p><strong>文字类 AI (ChatGPT / Claude)：</strong>流量消耗通常非常小。对于它们而言，<strong>稳定连接和零丢包</strong>远比下载能跑几百兆更重要。</p>
-              <p><strong>编程类 AI (Cursor / Copilot)：</strong>这类 Agent 编辑器需要极为频繁、持续地在后台与模型保持通信。<Link href="/guides/cursor-build-blog">在 Cursor 开发项目时</Link>，如果你频繁遇到响应失败或请求超时，绝大概率是当前节点断流、丢包严重或是你的网络 IP 被拦截。</p>
-
-              <h3 className="mt-8">视频用户看什么？</h3>
-              <p>在线看 4K 高清视频，主要依赖于<strong>持续稳定的下载速度 (Download)</strong> 和优秀的缓存机制，Ping 的高低反而不是首要问题（视频缓冲不差那 100 毫秒）。</p>
-
-              <h3 className="mt-8">游戏为什么又不一样？</h3>
-              <p>游戏与视频截然相反！竞技类游戏几乎不需要极高的下载带宽（绝大多数网络游戏每秒传输数据仅在几十 KB），但游戏对延迟、Jitter 和丢包极其敏感。举个极端的例子：<br/>
-              <code>500Mbps 下载 + 180ms 延迟</code> 的节点，玩 FPS 游戏会让你痛不欲生；<br/>
-              <code>100Mbps 下载 + 稳定 40ms 且 0 丢包</code> 的节点，体验会如丝般顺滑。</p>
-
-              <h2 id="solution">连接后变慢，可以先做什么？</h2>
-              <p>排除法永远是网络排错的真理，请按以下顺序尝试：</p>
-              <ol>
-                <li>先断开连接，测试原始网络是否正常。</li>
-                <li>Wi-Fi 用户尝试靠近路由器，或测试连接稳定得多得 5GHz 频段 / 网线直连。</li>
-                <li>关闭后台正在大量下载 / 上传 / 测速的程序。</li>
-                <li>尝试切换同地区的其他空闲节点，避开明显拥堵的时段。</li>
-                <li>尝试物理距离相对更近的节点（例如身在亚洲优先测香港、日本、新加坡）。</li>
-                <li>彻底关闭客户端，重新启动再次连接。</li>
-              </ol>
-
-              <div className="bg-amber-50 p-5 rounded-xl my-6 border border-amber-100 flex items-start gap-4">
-                <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-amber-900 mt-0 mb-2">排错大忌：疯狂乱换</h4>
-                  <p className="text-amber-800 text-sm m-0">排查问题时，请务必<strong>一次只改变一个变量</strong>（比如只换节点，先不动别的）。如果你同时换了节点、换了 DNS、换了浏览器、还顺手重启了路由器，你永远无法得知到底是谁解决了问题。</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 not-prose">
+                <div className="bg-white border border-red-100 p-5 sm:p-6 rounded-2xl relative overflow-hidden shadow-sm">
+                  <div className="absolute top-0 right-0 bg-red-100 text-red-700 px-3 py-1 text-xs font-bold rounded-bl-lg">❌ 不推荐测法</div>
+                  <ul className="space-y-3 m-0 mt-4 p-0 list-none text-sm text-gray-700">
+                    <li className="flex items-start gap-2"><span className="text-red-400">•</span> 只测一次就下结论</li>
+                    <li className="flex items-start gap-2"><span className="text-red-400">•</span> 每次测速都随机换测试服务器</li>
+                    <li className="flex items-start gap-2"><span className="text-red-400">•</span> 一边下载大文件一边测速</li>
+                    <li className="flex items-start gap-2"><span className="text-red-400">•</span> 拿白天和晚上直接作对比</li>
+                    <li className="flex items-start gap-2"><span className="text-red-400">•</span> 只看下载速度，不看 Ping 延迟</li>
+                  </ul>
+                </div>
+                <div className="bg-white border border-green-100 p-5 sm:p-6 rounded-2xl relative overflow-hidden shadow-sm">
+                  <div className="absolute top-0 right-0 bg-green-100 text-green-800 px-3 py-1 text-xs font-bold rounded-bl-lg">✅ 更合理测法</div>
+                  <ul className="space-y-3 m-0 mt-4 p-0 list-none text-sm text-gray-700">
+                    <li className="flex items-start gap-2"><span className="text-green-500">•</span> 保持相同测试条件（控制变量）</li>
+                    <li className="flex items-start gap-2"><span className="text-green-500">•</span> 每个节点至少重复测试 3 次</li>
+                    <li className="flex items-start gap-2"><span className="text-green-500">•</span> 手动锁定同一个目标测速服务器</li>
+                    <li className="flex items-start gap-2"><span className="text-green-500">•</span> 综合记录 Ping、Download、丢包</li>
+                    <li className="flex items-start gap-2"><span className="text-green-500">•</span> 结合真实的网站/软件应用实测</li>
+                  </ul>
                 </div>
               </div>
 
-              <h3 className="mt-8">新手常见的错误判断</h3>
-              <ul className="space-y-4 list-none p-0">
-                <li>❌ <strong>节点 Ping 低就一定最快</strong><br/>
-                解答：低 Ping 只代表握手快，如果节点带宽已被挤爆，实际下载速度可能只有几十 KB/s。</li>
-                <li>❌ <strong>Speedtest 下载高就一定最稳定</strong><br/>
-                解答：瞬时的测速高峰掩盖不了可能存在的断流和高丢包问题。</li>
-                <li>❌ <strong>美国节点一定最适合海外 AI</strong><br/>
-                解答：多数 AI 已经全球部署 CDN，日本、新加坡等节点往往对亚洲用户响应更快。</li>
-                <li>❌ <strong>贵的套餐一定 Ping 更低</strong><br/>
-                解答：物理距离的上限无法被金钱突破，哪怕再贵的专线跨太平洋也要几十毫秒。</li>
-                <li>❌ <strong>所有人连接同一个节点速度应该一样</strong><br/>
-                解答：不同地区、不同运营商（电信/联通/移动）的本地路由千差万别，体验自然不同。</li>
-              </ul>
+              <h2 id="ai-and-video" className="mb-6">场景差异：使用 AI / 视频 / 游戏时该看什么？</h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-6 my-8 not-prose">
+                <div className="bg-white border border-gray-200 p-5 xl:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center mb-5"><MessageSquare className="w-6 h-6"/></div>
+                  <h4 className="font-bold text-gray-900 m-0 mb-3 text-base">AI 聊天与编程</h4>
+                  <div className="text-xs font-medium text-gray-600 mb-4 bg-gray-100 inline-block px-2.5 py-1.5 rounded border border-gray-200">重点：稳定性 / 丢包 / 持续连接</div>
+                  <p className="text-sm text-gray-600 m-0 leading-relaxed">文字对话不需要极高带宽，更重要的是稳定和少丢包。连接不稳定容易导致 Cursor 等频繁通信请求失败、超时或 Agent 中断。</p>
+                </div>
+                <div className="bg-white border border-gray-200 p-5 xl:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center mb-5"><Play className="w-6 h-6"/></div>
+                  <h4 className="font-bold text-gray-900 m-0 mb-3 text-base">在线视频</h4>
+                  <div className="text-xs font-medium text-gray-600 mb-4 bg-gray-100 inline-block px-2.5 py-1.5 rounded border border-gray-200">重点：持续下载速度 / 稳定性</div>
+                  <p className="text-sm text-gray-600 m-0 leading-relaxed">视频更依赖源源不断的持续带宽，只要下载速度能跑满视频码率且不经常断流，一定的 Ping 延迟也可以被视频缓冲掩盖。</p>
+                </div>
+                <div className="bg-white border border-gray-200 p-5 xl:p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-full bg-green-50 text-green-500 flex items-center justify-center mb-5"><Gamepad2 className="w-6 h-6"/></div>
+                  <h4 className="font-bold text-gray-900 m-0 mb-3 text-base">在线竞技游戏</h4>
+                  <div className="text-xs font-medium text-gray-600 mb-4 bg-gray-100 inline-block px-2.5 py-1.5 rounded border border-gray-200">重点：Ping / Jitter / 0 丢包</div>
+                  <p className="text-sm text-gray-600 m-0 leading-relaxed">高带宽不代表低延迟。500Mbps+180ms 体验远不如 100Mbps+稳定 40ms。游戏极度依赖低延迟、低抖动和 0 丢包路由。</p>
+                </div>
+              </div>
 
-              <p className="mt-8 text-gray-500 text-sm italic">如果想看一份包含不同地区节点延迟和下载速度的实际测试案例，可以参考 RunAI 的<Link href="/vpn/weifeng">微风网络测速记录</Link>。</p>
+              <h2 id="solution" className="mb-6">连接后变慢，可以先做什么？</h2>
+              <p>排除法永远是排错的真理，按以下顺序：</p>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-8 not-prose">
+                {[
+                  "1 先测基础网络", "2 试同地区节点", "3 测较近节点", "4 避开拥堵节点",
+                  "5 检查 Wi-Fi", "6 关大流量任务", "7 比较时间段", "8 联系服务商"
+                ].map((text, i) => (
+                  <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-3 sm:p-4 flex flex-col items-center justify-center text-center gap-2 hover:bg-white hover:border-gray-300 transition-colors">
+                    <div className="w-7 h-7 rounded-full bg-gray-200 text-gray-700 font-bold text-xs flex items-center justify-center">{text.split(" ")[0]}</div>
+                    <span className="text-xs sm:text-sm font-medium text-gray-800">{text.split(" ").slice(1).join(" ")}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-amber-50/80 p-5 sm:p-6 rounded-2xl my-8 border border-amber-100 flex items-start gap-4 shadow-sm not-prose">
+                <AlertTriangle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-bold text-amber-900 mt-0 mb-2 text-base">排错大忌：疯狂乱换</h4>
+                  <p className="text-amber-800 text-sm m-0 leading-relaxed">一次只改变一个变量（例如先只换节点）。如果你同时换节点、换 DNS、换浏览器，还顺手重启路由器，将很难判断真正原因。</p>
+                </div>
+              </div>
+
+              <h3 className="mt-12 mb-6">新手常见的错误判断</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8 not-prose">
+                {[
+                  { m: "Ping 低就一定最快", a: "低 Ping 只代表握手快，如果该节点带宽被挤爆，下载速度照样惨不忍睹。" },
+                  { m: "Speedtest 快就一定稳定", a: "瞬时的测速高峰掩盖不了常态化断流或隐性高丢包等稳定性问题。" },
+                  { m: "美国节点最适合所有 AI", a: "多数 AI 已部署全球 CDN，亚洲用户连日本或新加坡响应往往更迅速。" },
+                  { m: "贵的套餐一定低延迟", a: "物理距离的下限无法靠金钱突破，专线跨洋也至少要几十到上百毫秒。" },
+                  { m: "所有人同节点体验一样", a: "不同城市、不同运营商（电信/联通/移动）去同一节点的本地路由千差万别。" }
+                ].map((item, i) => (
+                  <div key={i} className="bg-white border border-red-100 p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                    <div className="font-bold text-red-800 text-sm mb-2 flex items-center gap-2"><XCircle className="w-4 h-4" /> {item.m}</div>
+                    <p className="text-gray-600 text-xs m-0 leading-relaxed">{item.a}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-8 text-gray-500 text-sm">
+                如果想看一份包含不同地区节点延迟和下载速度的实际测试案例，可以<Link href="/vpn/weifeng">查看微风网络实测记录</Link>。
+              </p>
+
+              <div className="bg-gray-900 text-white rounded-2xl p-6 sm:p-8 mt-12 mb-10 shadow-lg not-prose">
+                <h3 className="text-xl font-bold mt-0 mb-6 flex items-center gap-3"><CheckCircle className="w-6 h-6 text-brand-400"/> 一句话判断</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-5 gap-x-8 text-sm">
+                  <div className="flex border-b border-gray-800 pb-3"><span className="text-gray-400 w-24 shrink-0">网页慢：</span><span className="text-gray-200">看延迟与目标网站</span></div>
+                  <div className="flex border-b border-gray-800 pb-3"><span className="text-gray-400 w-24 shrink-0">视频卡：</span><span className="text-gray-200">看持续下载速度</span></div>
+                  <div className="flex border-b border-gray-800 pb-3"><span className="text-gray-400 w-24 shrink-0">游戏延迟：</span><span className="text-gray-200">看 Ping / Jitter / 丢包</span></div>
+                  <div className="flex border-b border-gray-800 pb-3"><span className="text-gray-400 w-24 shrink-0">AI 经常断：</span><span className="text-gray-200">看稳定性和防丢包</span></div>
+                  <div className="flex sm:col-span-2 pt-2"><span className="text-brand-400 font-bold w-24 shrink-0">所有节点慢：</span><span className="font-bold">立刻停止怪节点，先彻底排查本地网络。</span></div>
+                </div>
+              </div>
 
               <h2 id="faq">常见问题 FAQ</h2>
               
               <div className="space-y-6 mt-8">
                 {faqData.map((faq, idx) => (
-                  <div key={idx} className="border-b border-gray-100 pb-4 last:border-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.q}</h3>
+                  <div key={idx} className="border-b border-gray-100 pb-5 last:border-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">{faq.q}</h3>
                     <p className="text-gray-600 m-0 leading-relaxed">{faq.a}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-12 bg-gray-50 rounded-2xl p-8 text-center border border-gray-200">
+              <div className="mt-12 bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm not-prose">
                 <h3 className="text-xl font-bold text-gray-900 mt-0 mb-4">排查完本地还是卡顿？</h3>
-                <p className="text-gray-600 mb-6">如果已经排除了本地 Wi-Fi 和宽带的问题，但现有线路仍长期表现不稳定、断流，可以比较不同网络方案的节点覆盖、套餐和测试记录，寻找更适合你运营商路由的服务商。</p>
+                <p className="text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">如果已经排除了本地宽带的问题，但现有线路仍长期不稳定，可以比较不同网络方案的覆盖、套餐和测试记录。</p>
                 <Link href="/vpn" className="inline-flex items-center justify-center px-6 py-3 bg-white border border-gray-200 text-gray-900 font-medium rounded-xl hover:bg-gray-50 transition-colors shadow-sm">
-                  查看 RunAI 网络品牌对比
+                  查看 RunAI 网络品牌
                 </Link>
               </div>
 
@@ -322,19 +489,19 @@ export default function VpnSlowSpeedPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-4 hidden lg:block">
-            <div className="sticky top-32 space-y-6">
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-4">相关推荐</h3>
+          <div className="lg:col-span-3 lg:block mt-12 lg:mt-0 order-last">
+            <div className="lg:sticky lg:top-32 space-y-6">
+              <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                <h3 className="font-bold text-gray-900 mb-4 text-base">相关推荐</h3>
                 <div className="space-y-3">
-                  <Link href="/guides/ai-network" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm">
-                    AI 网络环境与常见登录问题排查
+                  <Link href="/guides/ai-network" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
+                    AI 网络环境与常见问题
                   </Link>
-                  <Link href="/guides/cursor-build-blog" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm">
-                    Cursor 搭建个人博客教程
+                  <Link href="/guides/cursor-build-blog" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
+                    Cursor 搭建博客实战
                   </Link>
-                  <Link href="/vpn/weifeng" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm">
-                    微风网络测速实录
+                  <Link href="/vpn/weifeng" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
+                    微风网络实测记录
                   </Link>
                 </div>
               </div>
