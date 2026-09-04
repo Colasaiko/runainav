@@ -1,3 +1,5 @@
+import ChannelMenu from '@/components/navigation/ChannelMenu';
+import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -61,6 +63,16 @@ export default function AINetworkGuidePage() {
   return (
     <div className="bg-gray-50 min-h-screen pb-20 font-[family-name:var(--font-sans)]">
       <Header />
+      <ArticleStickyBar sections={[
+         { id: 'symptoms', navLabel: '常见症状' },
+         { id: 'checklist', navLabel: '排查顺序' },
+         { id: 'account-region', navLabel: '账号与地区' },
+         { id: 'network-dns', navLabel: '网络与 DNS' },
+         { id: 'speed', navLabel: '速度与稳定性' },
+         { id: 'different-ai', navLabel: '不同 AI 表现' },
+         { id: 'mistakes', navLabel: '常见误区' },
+         { id: 'faq', navLabel: 'FAQ' }
+      ]} />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
       <JsonLd data={articleJsonLd} />
@@ -68,6 +80,7 @@ export default function AINetworkGuidePage() {
       {/* Hero Section */}
       <section className="bg-white border-b border-gray-200 pt-16 pb-12">
         <div className="container mx-auto px-4 max-w-4xl">
+          <ChannelMenu activePath="/guides" />
           <nav className="flex text-sm text-gray-500 mb-8">
             <Link href="/" className="hover:text-brand-600 transition-colors">首页</Link>
             <span className="mx-2">/</span>
@@ -109,29 +122,10 @@ export default function AINetworkGuidePage() {
           <p className="text-amber-800 font-medium mt-4">建议按照顺序排查问题，而不是盲目不停更换网络节点。</p>
         </div>
 
-        {/* 菜单游览 */}
-        <section className="mb-12">
-          <div className="mb-4">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-              🧭 菜单游览
-            </h2>
-            <p className="text-gray-500 mt-1 text-sm">快速跳到你遇到的问题。</p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <a href="#symptoms" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">常见症状</a>
-            <a href="#checklist" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">排查顺序</a>
-            <a href="#account-region" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">账号与地区</a>
-            <a href="#network-dns" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">网络与 DNS</a>
-            <a href="#different-ai" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">不同 AI 为什么表现不同</a>
-            <a href="#speed" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">速度与稳定性</a>
-            <a href="#mistakes" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">常见误区</a>
-            <a href="#faq" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-600 transition-colors shadow-sm">FAQ</a>
-          </div>
-        </section>
-
         {/* Content Structure */}
         <div className="prose prose-brand max-w-none prose-h2:text-2xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-100 prose-h3:text-xl prose-p:text-gray-600 prose-p:leading-relaxed prose-li:text-gray-600">
           
+          <div id="article-sticky-trigger" className="h-1 w-full absolute -mt-1 opacity-0 pointer-events-none"></div>
           <h2 id="symptoms" className="scroll-mt-24">常见的 AI 使用问题</h2>
           
           <h3>1. 官网完全打不开</h3>
@@ -303,6 +297,7 @@ export default function AINetworkGuidePage() {
           </div>
 
         </div>
+        <div id="article-end-trigger" className="h-1 w-full opacity-0 pointer-events-none"></div>
       </section>
       
       <Footer />

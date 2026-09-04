@@ -1,3 +1,5 @@
+import ChannelMenu from '@/components/navigation/ChannelMenu';
+import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
@@ -104,6 +106,15 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
 
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
+
+      <ArticleStickyBar sections={[
+         { id: 'what-is', navLabel: '简介' },
+         { id: 'features', navLabel: '特色' },
+         { id: 'usecases', navLabel: '使用场景' },
+         { id: 'pricing', navLabel: '价格' },
+         { id: 'how-to-use', navLabel: '网络要求' },
+         { id: 'faq', navLabel: 'FAQ' }
+      ]} />
       <JsonLd data={jsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       {faqJsonLd && <JsonLd data={faqJsonLd} />}
@@ -111,6 +122,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
       {/* Hero Section */}
       <section className="bg-white border-b border-gray-200 pt-16 pb-12">
         <div className="container mx-auto px-4 max-w-4xl">
+          <ChannelMenu activePath="/guides" />
           {/* Breadcrumb */}
           <nav className="flex text-sm text-gray-500 mb-8">
             <Link href="/" className="hover:text-brand-600 transition-colors">首页</Link>
@@ -225,7 +237,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
 
             {/* 什么是 */}
-            <section id="what-is" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
+            <section id="what-is" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">{tool.name} 是什么？</h2>
               <div className="prose prose-brand max-w-none text-gray-600 leading-relaxed">
                 <p>{tool.description}</p>
@@ -233,7 +245,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
 
             {/* 功能特色 */}
-            <section id="features" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
+            <section id="features" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">核心特色</h2>
               <ul className="space-y-4">
                 {tool.features.map((feature, idx) => (
@@ -246,7 +258,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
             
             {/* 使用场景 */}
-            <section id="usecases" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
+            <section id="usecases" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">它可以帮你做什么？</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {tool.useCases.map((useCase, idx) => (
@@ -258,7 +270,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
             
             {/* 新手入门 */}
-            <section id="getting-started" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
+            <section id="getting-started" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-32">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">如何开始使用？</h2>
               <div className="space-y-6">
                 {tool.gettingStarted.map((step, idx) => (
@@ -273,7 +285,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             </section>
             
             {/* 国内使用与网络环境 */}
-            <section id="network" className="bg-amber-50/50 p-8 rounded-2xl border border-amber-100 scroll-mt-24">
+            <section id="network" className="bg-amber-50/50 p-8 rounded-2xl border border-amber-100 scroll-mt-32">
               <div className="flex items-center gap-2 mb-4">
                 <ShieldAlert className="w-6 h-6 text-amber-500" />
                 <h2 className="text-xl font-bold text-gray-900">国内使用与网络环境</h2>
@@ -299,7 +311,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             
             {/* FAQ */}
             {tool.faq.length > 0 && (
-              <section id="faq" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-24">
+              <section id="faq" className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 scroll-mt-32">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h2>
                 <div className="space-y-6">
                   {tool.faq.map((item, idx) => (

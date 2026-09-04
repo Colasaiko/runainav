@@ -1,3 +1,5 @@
+import ChannelMenu from '@/components/navigation/ChannelMenu';
+import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import ZoomableImage from '@/components/ui/ZoomableImage';
@@ -106,6 +108,18 @@ export default function WeifengReviewPage() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Header />
+      <ArticleStickyBar sections={[
+         { id: 'intro', navLabel: '简介' },
+         { id: 'pricing', navLabel: '套餐' },
+         { id: 'nodes', navLabel: '节点' },
+         { id: 'speed-test', navLabel: '测速' },
+         { id: 'privacy', navLabel: '隐私' },
+         { id: 'ai-test', navLabel: 'AI实测' },
+         { id: 'daily-use', navLabel: '日常体验' },
+         { id: 'devices', navLabel: '设备' },
+         { id: 'pros-cons', navLabel: '优缺点' },
+         { id: 'faq', navLabel: 'FAQ' }
+      ]} />
       <FloatingBuyButton url={AFFILIATE_URL} brandName="微风网络" />
       <JsonLd data={jsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
@@ -115,6 +129,7 @@ export default function WeifengReviewPage() {
         {/* Hero Section */}
         <section className="bg-white pt-12 md:pt-20 pb-12 border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-4xl">
+          <ChannelMenu activePath="/vpn" />
             <nav className="flex text-sm text-gray-500 mb-8">
               <Link href="/" className="hover:text-brand-600">首页</Link> <span className="mx-2">/</span>
               <Link href="/vpn" className="hover:text-brand-600">网络连通方案</Link> <span className="mx-2">/</span>
@@ -163,7 +178,8 @@ export default function WeifengReviewPage() {
 
             {/* 微风网络是什么 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">微风网络是什么？</h2>
+              <div id="article-sticky-trigger" className="h-1 w-full absolute -mt-1 opacity-0 pointer-events-none"></div>
+          <h2 id="intro" className="text-2xl font-bold text-gray-900 mb-4 scroll-mt-32">微风网络是什么？</h2>
               <p className="text-gray-700 leading-relaxed">
                 微风网络是一项面向日常跨境网络需求的网络服务。它主要适合需要访问海外 AI 服务、国际网站、在线视频、跨境办公、学习与日常浏览的用户。
               </p>
@@ -171,7 +187,7 @@ export default function WeifengReviewPage() {
 
             {/* 套餐价格 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">套餐价格</h2>
+              <h2 id="pricing" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-32">套餐价格</h2>
               <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
                 <table className="w-full text-left border-collapse min-w-[600px]">
                   <thead>
@@ -250,7 +266,7 @@ export default function WeifengReviewPage() {
 
             {/* 节点覆盖 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">节点覆盖</h2>
+              <h2 id="nodes" className="text-2xl font-bold text-gray-900 mb-4 scroll-mt-32">节点覆盖</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 微风网络官方套餐信息主打专线网络，实际节点可能根据地区和线路安排使用不同命名，具体请以客户端当前显示为准。<br/><br/>
                 本次记录的节点状态截图显示共有 62 个节点在线，主要覆盖香港、台湾、日本、新加坡和美国等地区。
@@ -270,7 +286,7 @@ export default function WeifengReviewPage() {
 
             {/* 实际速度测试 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">实际速度测试</h2>
+              <h2 id="speed-test" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-32">实际速度测试</h2>
               <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
                 <table className="w-full text-left border-collapse min-w-[500px]">
                   <thead>
@@ -303,7 +319,7 @@ export default function WeifengReviewPage() {
 
             {/* 隐私与网络检测 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
+              <h2 id="privacy" className="text-2xl font-bold text-gray-900 mb-4 scroll-mt-32">隐私与网络检测</h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 根据本次提供的隐私与安全检测截图，测试环境中未发现 DNS 泄漏，WebRTC 公网地址显示为已阻断，截图中的 IP 风险评分为 6/100，并标记为 Clean。截图同时显示 TLS 1.3、AES-256-GCM、VLESS、XTLS-Reality 等协议或加密相关信息。
               </p>
@@ -322,7 +338,7 @@ export default function WeifengReviewPage() {
 
             {/* AI 实际测试 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">AI 实际测试</h2>
+              <h2 id="ai-test" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-32">AI 实际测试</h2>
               <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
                 <table className="w-full text-left border-collapse min-w-[600px]">
                   <thead>
@@ -359,7 +375,7 @@ export default function WeifengReviewPage() {
             {/* 日常浏览与游戏说明 */}
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">日常使用体验</h2>
+                <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mb-4 scroll-mt-32">日常使用体验</h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   根据实际体验反馈：
                 </p>
@@ -384,7 +400,7 @@ export default function WeifengReviewPage() {
 
             {/* 支持设备与如何开始使用 */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">支持设备与使用流程</h2>
+              <h2 id="devices" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-32">支持设备与使用流程</h2>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 bg-white px-5 py-3 rounded-xl border border-gray-200 text-gray-700 shadow-sm font-medium">
                   <Monitor className="w-5 h-5 text-gray-500" /> Windows
@@ -432,7 +448,7 @@ export default function WeifengReviewPage() {
             {/* 优点与购买前需要注意 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-200 pt-12 mt-12">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2"><Check className="text-green-500" /> 主要优点</h2>
+                <h2 id="pros-cons" className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2 scroll-mt-32"><Check className="text-green-500" /> 主要优点</h2>
                 <ul className="space-y-6 text-gray-700">
                   <li className="flex gap-4">
                     <span className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-1">1</span>
@@ -503,7 +519,7 @@ export default function WeifengReviewPage() {
 
             {/* FAQ */}
             <div className="border-t border-gray-200 pt-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">常见问题 (FAQ)</h2>
+              <h2 id="faq" className="text-2xl font-bold text-gray-900 mb-8 scroll-mt-32">常见问题 (FAQ)</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2 flex items-start"><span className="text-brand-500 mr-2 mt-0.5"><HelpCircle className="w-5 h-5"/></span>微风网络最便宜多少钱？</h3>
