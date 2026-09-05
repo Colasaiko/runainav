@@ -1,16 +1,19 @@
 const fs = require('fs');
-let c = fs.readFileSync('src/data/guideArticles.ts', 'utf8');
-const newArticle = `  {
-    slug: 'vpn-slow-speed',
-    title: '为什么连接VPN后网速会变慢？',
-    description: '连接VPN后出现网速下降、延迟升高或视频卡顿，通常与节点距离、线路拥堵、加密开销、本地网络和运营商路由有关。本文用简单方法教你判断原因并逐步排查。',
-    type: 'troubleshooting',
-    category: '网络环境',
-    tags: ['VPN', '网速测试', '延迟'],
-    publishedAt: '2026-09-04',
-    updatedAt: '2026-09-04'
-  },
-`;
-c = c.replace('export const guideArticles: GuideArticle[] = [', 'export const guideArticles: GuideArticle[] = [\n' + newArticle);
-fs.writeFileSync('src/data/guideArticles.ts', c);
-console.log('done');
+const path = 'src/data/guideArticles.ts';
+let c = fs.readFileSync(path, 'utf8');
+
+const newArticle = `
+  {
+    slug: 'midjourney-realistic-portrait',
+    title: 'Midjourney人像提示词：构图光线教程',
+    description: '从人物主体、构图、光线、镜头、景深到皮肤质感，系统拆解Midjourney真实感人像提示词写法，并提供可直接参考的Prompt模板与常见失败排查方法。',
+    type: 'tutorial',
+    category: 'AI绘图',
+    tags: ['Midjourney', 'AI绘图', '提示词', '人像', 'Prompt'],
+    publishedAt: '2026-09-05',
+    updatedAt: '2026-09-05'
+  },`;
+
+c = c.replace(/export const guideArticles: GuideArticle\[\] = \[/, `export const guideArticles: GuideArticle[] = [${newArticle}`);
+
+fs.writeFileSync(path, c);
