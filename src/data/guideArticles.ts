@@ -13,6 +13,16 @@ export interface GuideArticle {
 
 export const guideArticles: GuideArticle[] = [
   {
+    slug: 'suno-chinese-song-tutorial',
+    title: 'Suno中文歌曲生成教程：歌词与风格怎么写',
+    description: '从中文歌词、歌曲结构、音乐风格到人声和排除项，本文用可复制示例教你使用Suno生成中文歌曲，并介绍Custom模式、修改方法与商用权限注意事项。',
+    type: 'tutorial',
+    category: 'AI音乐',
+    tags: ['Suno', 'AI音乐', '中文歌曲', '歌词', '音乐生成'],
+    publishedAt: '2026-09-05',
+    updatedAt: '2026-09-05'
+  },
+  {
     slug: 'gamma-ppt-tutorial',
     title: 'Gamma做PPT教程：从生成到导出',
     description: '从确定主题、起草大纲到排版优化与最终导出，本文用一个完整案例带你使用Gamma制作演示文稿，并教你如何避免AI常见排版错误，做出一份真正能用的PPT。',
