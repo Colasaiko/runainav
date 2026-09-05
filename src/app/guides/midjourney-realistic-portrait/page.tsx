@@ -250,16 +250,16 @@ export default function MidjourneyPortraitGuide() {
             <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-8">
               <h4 className="font-bold text-gray-900 mt-0 mb-4">第一个完整例子：</h4>
               <div className="bg-gray-900 text-gray-100 p-4 rounded-xl font-mono text-sm mb-4 break-words">
-                portrait of a young man standing beside a cafe window, soft morning light, natural skin texture, 85mm portrait photography, shallow depth of field, eye-level composition, realistic photography --ar 2:3
+                一位年轻男子站在咖啡馆窗边，柔和的晨间自然光，自然真实的皮肤质感，85mm人像摄影观感，浅景深，平视构图，写实摄影风格 --ar 2:3
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm text-gray-700">
-                <div><span className="font-semibold text-brand-600">主体：</span>portrait of a young man</div>
-                <div><span className="font-semibold text-brand-600">环境：</span>standing beside a cafe window</div>
-                <div><span className="font-semibold text-brand-600">光线：</span>soft morning light</div>
-                <div><span className="font-semibold text-brand-600">质感：</span>natural skin texture</div>
-                <div><span className="font-semibold text-brand-600">镜头：</span>85mm portrait photography</div>
-                <div><span className="font-semibold text-brand-600">景深：</span>shallow depth of field</div>
-                <div><span className="font-semibold text-brand-600">构图：</span>eye-level composition</div>
+                <div><span className="font-semibold text-brand-600">主体：</span>一位年轻男子</div>
+                <div><span className="font-semibold text-brand-600">环境：</span>站在咖啡馆窗边</div>
+                <div><span className="font-semibold text-brand-600">光线：</span>柔和的晨间自然光</div>
+                <div><span className="font-semibold text-brand-600">质感：</span>自然真实的皮肤质感</div>
+                <div><span className="font-semibold text-brand-600">镜头：</span>85mm人像摄影观感</div>
+                <div><span className="font-semibold text-brand-600">景深：</span>浅景深</div>
+                <div><span className="font-semibold text-brand-600">构图：</span>平视构图</div>
                 <div><span className="font-semibold text-brand-600">参数：</span>--ar 2:3</div>
               </div>
             </div>
@@ -307,23 +307,23 @@ export default function MidjourneyPortraitGuide() {
             <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
               <div>
                 <div className="text-sm text-gray-500 mb-1">人物 / 年龄</div>
-                <div className="font-medium text-gray-900">a young man</div>
-                <div className="font-medium text-gray-900">an elderly woman</div>
+                <div className="font-medium text-gray-900">年轻男子 (young man)</div>
+                <div className="font-medium text-gray-900">年长女性 (elderly woman)</div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 mb-1">服装</div>
-                <div className="font-medium text-gray-900">dark casual jacket</div>
-                <div className="font-medium text-gray-900">white linen shirt</div>
+                <div className="font-medium text-gray-900">深色休闲夹克 (dark casual jacket)</div>
+                <div className="font-medium text-gray-900">白色亚麻衬衫 (white linen shirt)</div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 mb-1">表情</div>
-                <div className="font-medium text-gray-900">calm expression</div>
-                <div className="font-medium text-gray-900">gentle smile</div>
+                <div className="font-medium text-gray-900">平静的表情 (calm expression)</div>
+                <div className="font-medium text-gray-900">轻微微笑 (gentle smile)</div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 mb-1">动作</div>
-                <div className="font-medium text-gray-900">looking slightly away</div>
-                <div className="font-medium text-gray-900">reading a book</div>
+                <div className="font-medium text-gray-900">视线稍微看向镜头外 (looking slightly away)</div>
+                <div className="font-medium text-gray-900">正在阅读一本书 (reading a book)</div>
               </div>
             </div>
 
@@ -332,7 +332,7 @@ export default function MidjourneyPortraitGuide() {
               Midjourney 默认倾向于生成唯美、平滑的人脸（通常被称为“AI塑料感”）。虽然没有任何一个词能“保证” 100% 消除 AI 特征，但你可以通过以下描述引导它往更自然的方向生成：
             </p>
             <ul className="mb-12">
-              <li><code>natural skin texture</code> (自然皮肤质感)</li>
+              <li><code>自然真实的皮肤质感</code> (自然皮肤质感)</li>
               <li><code>subtle skin details</code> (微妙的皮肤细节)</li>
               <li><code>soft facial shadows</code> (柔和的面部阴影)</li>
               <li><code>realistic portrait photography</code> (真实人像摄影)</li>
@@ -358,12 +358,12 @@ export default function MidjourneyPortraitGuide() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {[
-                { title: "Soft window light", desc: "柔和窗边光", effect: "适合室内咖啡馆、居家，面部过渡自然柔和。" },
-                { title: "Golden hour", desc: "黄金时刻（日落/日出）", effect: "适合户外，提供温暖、金色的逆光或侧光氛围。" },
-                { title: "Overcast daylight", desc: "阴天自然光", effect: "没有强烈的刺眼阴影，适合表现平静、写实感。" },
-                { title: "Studio softbox", desc: "影棚柔光箱", effect: "适合商业质感、证件照或干净纯粹的肖像照。" },
-                { title: "Backlighting", desc: "逆光", effect: "强调人物发丝边缘的光晕，产生梦幻或情绪感。" },
-                { title: "Neon lighting", desc: "霓虹灯光", effect: "适合赛博朋克、夜间街头，提供强烈的冷暖色彩对比。" }
+                { title: "柔和窗边光 (soft window light)", desc: "柔和窗边光", effect: "适合室内咖啡馆、居家，面部过渡自然柔和。" },
+                { title: "黄金时刻 (golden hour)", desc: "黄金时刻（日落/日出）", effect: "适合户外，提供温暖、金色的逆光或侧光氛围。" },
+                { title: "阴天自然光 (overcast daylight)", desc: "阴天自然光", effect: "没有强烈的刺眼阴影，适合表现平静、写实感。" },
+                { title: "影棚柔光 (studio softbox)", desc: "影棚柔光箱", effect: "适合商业质感、证件照或干净纯粹的肖像照。" },
+                { title: "逆光 (backlighting)", desc: "逆光", effect: "强调人物发丝边缘的光晕，产生梦幻或情绪感。" },
+                { title: "霓虹灯光 (neon lighting)", desc: "霓虹灯光", effect: "适合赛博朋克、夜间街头，提供强烈的冷暖色彩对比。" }
               ].map((light, idx) => (
                 <div key={idx} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
                   <div className="font-mono text-sm font-bold text-brand-600 mb-1">{light.title}</div>
@@ -385,14 +385,14 @@ export default function MidjourneyPortraitGuide() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
               {[
-                { title: "Close-up", type: "特写", desc: "主拍脸部" },
-                { title: "Headshot", type: "大头照", desc: "头部至肩膀" },
-                { title: "Half-body", type: "半身照", desc: "腰部以上" },
-                { title: "Full-body", type: "全身照", desc: "包含脚部" },
-                { title: "Eye-level", type: "平视", desc: "与眼睛齐平" },
-                { title: "Low-angle", type: "仰拍", desc: "从下往上拍" },
-                { title: "High-angle", type: "俯拍", desc: "从上往下拍" },
-                { title: "Off-center", type: "偏离中心", desc: "三分法留白" }
+                { title: "特写 (close-up)", type: "特写", desc: "主拍脸部" },
+                { title: "头肩人像 (headshot)", type: "大头照", desc: "头部至肩膀" },
+                { title: "半身 (half-body)", type: "半身照", desc: "腰部以上" },
+                { title: "全身 (full-body)", type: "全身照", desc: "包含脚部" },
+                { title: "平视 (eye-level)", type: "平视", desc: "与眼睛齐平" },
+                { title: "仰拍 (low-angle)", type: "仰拍", desc: "从下往上拍" },
+                { title: "俯拍 (high-angle)", type: "俯拍", desc: "从上往下拍" },
+                { title: "偏中心构图 (off-center composition)", type: "偏离中心", desc: "三分法留白" }
               ].map((comp, idx) => (
                 <div key={idx} className="bg-white border border-gray-200 p-4 rounded-xl text-center shadow-sm">
                   <div className="font-mono text-sm font-bold text-gray-900 mb-1">{comp.title}</div>
@@ -460,7 +460,7 @@ export default function MidjourneyPortraitGuide() {
             <h3 className="text-xl font-bold mt-12 mb-4">景深（背景虚化）</h3>
             <p>如果想突出人物，让背景变得模糊，可以尝试明确说明景深：</p>
             <ul className="mb-12">
-              <li><code>shallow depth of field</code> (浅景深 / 虚化背景)</li>
+              <li><code>浅景深</code> (浅景深 / 虚化背景)</li>
               <li><code>background bokeh</code> (背景光斑虚化)</li>
               <li><code>deep depth of field / sharp background</code> (深景深 / 背景清晰可见)</li>
             </ul>
@@ -468,8 +468,8 @@ export default function MidjourneyPortraitGuide() {
             <div className="bg-blue-50 border border-blue-200 p-6 rounded-2xl mb-12 text-blue-900">
               <strong className="block mb-2">背景与色彩提示</strong>
               <ul className="m-0 text-sm space-y-2">
-                <li><strong>背景具体化：</strong>不要只写 <code>beautiful background</code>，写 <code>quiet cafe interior</code>、<code>rainy city street</code> 或 <code>minimalist studio</code> 更有用。</li>
-                <li><strong>色彩情绪：</strong>可以适当加入 <code>warm tones</code> (暖色调)、<code>cool tones</code> (冷色调)、<code>muted colors</code> (低饱和色彩) 或 <code>monochrome</code> (黑白) 来引导画面情绪。</li>
+                <li><strong>背景具体化：</strong>不要只写 <code>beautiful background</code>，写 <code>安静的咖啡馆内部 (quiet cafe interior)</code>、<code>雨天城市街道 (rainy city street)</code> 或 <code>极简摄影棚 (minimalist studio)</code> 更有用。</li>
+                <li><strong>色彩情绪：</strong>可以适当加入 <code>暖色调 (warm tones)</code> (暖色调)、<code>冷色调 (cool tones)</code> (冷色调)、<code>低饱和色彩 (muted colors)</code> (低饱和色彩) 或 <code>黑白 (monochrome)</code> (黑白) 来引导画面情绪。</li>
               </ul>
             </div>
 
@@ -511,7 +511,10 @@ export default function MidjourneyPortraitGuide() {
                   <tr>
                     <td className="py-4 px-4 font-mono font-semibold">--no</td>
                     <td className="py-4 px-4">用于负面提示，告诉 AI 你希望减少出现的元素。不要在普通文字里写 no XXX。</td>
-                    <td className="py-4 px-4 bg-gray-50 font-mono text-xs">--no sunglasses</td>
+                    <td className="py-4 px-4 bg-gray-50 font-mono text-xs text-brand-700">
+                        <div className="mb-1">一位男子的街头人像，夜晚城市背景，霓虹灯光，写实摄影 --ar 2:3 --no sunglasses</div>
+                        <div className="text-gray-500">解释：sunglasses = 太阳镜。建议排除词继续使用明确的英文单词。</div>
+                      </td>
                   </tr>
                 </tbody>
               </table>
@@ -555,105 +558,146 @@ export default function MidjourneyPortraitGuide() {
                 </li>
                 <li className="flex flex-col gap-2">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Level 3</span>
-                  <code className="text-sm bg-white p-2 border border-gray-200 rounded">portrait of a man in a dark jacket, standing beside a cafe window, soft morning light, calm expression</code>
+                  <code className="text-sm bg-white p-2 border border-gray-200 rounded">一位穿深色夹克的男子站在咖啡馆窗边，柔和晨光，平静自然的表情</code>
                 </li>
                 <li className="flex flex-col gap-2">
                   <span className="text-xs font-bold text-brand-500 uppercase tracking-wider">Level 4</span>
-                  <code className="text-sm bg-brand-50 border border-brand-200 text-brand-800 p-3 rounded">portrait of a man in a dark jacket, standing beside a cafe window, soft morning light, calm expression, natural skin texture, 85mm portrait photography, shallow depth of field --ar 2:3</code>
+                  <code className="text-sm bg-brand-50 border border-brand-200 text-brand-800 p-3 rounded">一位穿深色夹克的男子站在咖啡馆窗边，柔和晨间自然光，平静自然的表情，真实皮肤质感，85mm人像摄影观感，浅景深 --ar 2:3</code>
                 </li>
               </ul>
             </div>
 
+            
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-12">
+              <h3 className="font-bold text-gray-900 mt-0 mb-4">常用人像 Prompt 中英文对照</h3>
+              <p className="text-sm text-gray-600 mb-4">
+                你可以全中文编写 Prompt，但在微调光线、构图和景深时，使用英文术语能获得更精确的控制。
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-200 text-gray-500">
+                      <th className="py-3 px-4 font-medium">中文概念</th>
+                      <th className="py-3 px-4 font-medium">常见英文表达</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 text-gray-700">
+                    <tr><td className="py-2 px-4">柔和窗边光</td><td className="py-2 px-4 font-mono text-xs">soft window light</td></tr>
+                    <tr><td className="py-2 px-4">黄金时刻</td><td className="py-2 px-4 font-mono text-xs">golden hour</td></tr>
+                    <tr><td className="py-2 px-4">浅景深</td><td className="py-2 px-4 font-mono text-xs">shallow depth of field</td></tr>
+                    <tr><td className="py-2 px-4">背景虚化</td><td className="py-2 px-4 font-mono text-xs">background bokeh</td></tr>
+                    <tr><td className="py-2 px-4">平视</td><td className="py-2 px-4 font-mono text-xs">eye-level</td></tr>
+                    <tr><td className="py-2 px-4">半身人像</td><td className="py-2 px-4 font-mono text-xs">half-body portrait</td></tr>
+                    <tr><td className="py-2 px-4">全身人像</td><td className="py-2 px-4 font-mono text-xs">full-body portrait</td></tr>
+                    <tr><td className="py-2 px-4">自然皮肤质感</td><td className="py-2 px-4 font-mono text-xs">natural skin texture</td></tr>
+                    <tr><td className="py-2 px-4">写实摄影</td><td className="py-2 px-4 font-mono text-xs">realistic photography</td></tr>
+                    <tr><td className="py-2 px-4">暖色调</td><td className="py-2 px-4 font-mono text-xs">warm tones</td></tr>
+                    <tr><td className="py-2 px-4">冷色调</td><td className="py-2 px-4 font-mono text-xs">cool tones</td></tr>
+                    <tr><td className="py-2 px-4">黑白</td><td className="py-2 px-4 font-mono text-xs">monochrome</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 gap-12 mb-16">
               {[
-                {
-                  image: "/images/midjourney/midjourney-portrait-window.jpg",
-                  title: "1. Soft Window Portrait (自然窗边光)",
-                  prompt: "close-up portrait of a young woman standing by a large window, soft diffused daylight, white linen shirt, gentle expression, natural skin texture, bright and airy room background, 50mm lens, shallow depth of field, realistic photography --ar 2:3",
-                  breakdown: { 
-                    "主体": "young woman, white linen shirt", 
-                    "环境": "bright and airy room, by a large window", 
-                    "光线": "soft diffused daylight", 
-                    "摄影": "50mm lens, close-up, shallow depth of field" 
+                  {
+                    image: "/images/midjourney/midjourney-portrait-window.jpg",
+                    title: "1. 自然窗边光 (soft window light)",
+                    prompt: "一位年轻女性的近距离人像，站在宽大的窗户旁，柔和漫射自然光，穿白色亚麻衬衫，神情自然轻松，真实皮肤质感，明亮通透的室内背景，50mm人像摄影观感，浅景深，写实摄影风格 --ar 2:3",
+                    breakdown: { 
+                      "主体": "年轻女性，穿白色亚麻衬衫", 
+                      "环境": "明亮通透的室内背景，宽大窗户旁", 
+                      "光线": "柔和漫射自然光", 
+                      "构图": "近距离人像", 
+                      "摄影方向": "50mm人像摄影观感，浅景深，写实摄影风格" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-city.jpg",
+                    title: "2. 街头电影感 (city cinematic portrait)",
+                    prompt: "一位穿风衣的男子半身人像，走在黄昏的雨天城市街道，蓝调时刻光线，暖色路灯倒映在湿润路面，情绪化电影氛围，35mm街头摄影观感，主体清晰，写实编辑摄影风格 --ar 16:9 --stylize 150",
+                    breakdown: { 
+                      "主体": "穿风衣的男子", 
+                      "环境": "黄昏的雨天城市街道，湿润路面", 
+                      "光线": "蓝调时刻光线，暖色路灯倒映", 
+                      "构图": "半身人像", 
+                      "摄影方向": "35mm街头摄影观感，主体清晰，情绪化电影氛围，写实编辑摄影风格" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-professional.jpg",
+                    title: "3. 专业工作人像 (professional profile)",
+                    prompt: "一位佩戴眼镜的专业女性头肩人像，干净的浅灰色背景，柔和的影棚光，自然自信的微笑表情，真实皮肤细节，85mm商业人像摄影，中等景深，高品质写实风格 --ar 3:4",
+                    breakdown: { 
+                      "主体": "佩戴眼镜的专业女性，自然自信微笑", 
+                      "环境": "干净的浅灰色背景", 
+                      "光线": "柔和的影棚光", 
+                      "构图": "头肩人像", 
+                      "摄影方向": "85mm商业人像摄影，中等景深，高品质写实风格" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-bw.jpg",
+                    title: "4. 黑白人像 (black and white portrait)",
+                    prompt: "一位年长男性的特写人像，黑白摄影，高对比度侧逆光，强调面部皮肤纹理与皱纹细节，深邃平静的表情，黑色纯色背景，写实纪实摄影风格 --ar 4:5 --stylize 80",
+                    breakdown: { 
+                      "主体": "年长男性，深邃平静的表情", 
+                      "环境": "黑色纯色背景", 
+                      "光线": "高对比度侧逆光", 
+                      "构图": "特写人像", 
+                      "摄影方向": "黑白摄影，强调面部皮肤纹理细节，写实纪实摄影风格" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-golden-hour.jpg",
+                    title: "5. 黄金时刻户外 (golden hour outdoor)",
+                    prompt: "一位年轻女性的全身人像，漫步在秋季草地中，黄金时刻的夕阳暖光，强烈的边缘光勾勒轮廓，柔和光斑的背景虚化，自然真实的肤色，85mm户外人像摄影 --ar 16:9",
+                    breakdown: { 
+                      "主体": "年轻女性，自然真实肤色", 
+                      "环境": "秋季草地", 
+                      "光线": "黄金时刻夕阳暖光，强烈边缘光", 
+                      "构图": "全身人像", 
+                      "摄影方向": "85mm户外人像摄影，背景虚化 (光斑)" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-cafe.jpg",
+                    title: "6. 咖啡馆生活感 (lifestyle cafe)",
+                    prompt: "一位男子坐在复古咖啡馆里喝咖啡，偏中心构图，温暖的室内环境光混合自然窗光，抓拍的生活方式摄影，生动自然的肢体动作，35mm环境人像，电影感调色 --ar 3:2",
+                    breakdown: { 
+                      "主体": "喝咖啡的男子，生动自然肢体动作", 
+                      "环境": "复古咖啡馆内部", 
+                      "光线": "温暖室内环境光混合自然窗光", 
+                      "构图": "偏中心构图，半身环境人像", 
+                      "摄影方向": "35mm环境人像，抓拍生活方式摄影，电影感调色" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-studio.jpg",
+                    title: "7. 极简影棚照 (minimalist studio)",
+                    prompt: "一位短发女性的时尚人像，纯白色极简影棚背景，均匀柔和的正面打光，高级质感服装，冷色调，锐利的眼神，85mm高清时尚摄影，深景深 --ar 2:3",
+                    breakdown: { 
+                      "主体": "短发女性，高级质感服装，锐利的眼神", 
+                      "环境": "纯白色极简影棚背景", 
+                      "光线": "均匀柔和的正面打光", 
+                      "构图": "标准人像构图", 
+                      "摄影方向": "85mm高清时尚摄影，深景深，冷色调" 
+                    }
+                  },
+                  {
+                    image: "/images/midjourney/midjourney-portrait-neon.jpg",
+                    title: "8. 夜景霓虹 (neon night portrait)",
+                    prompt: "一位戴帽子的年轻人在夜晚城市天台的特写人像，蓝紫色与暖橙色霓虹灯光交织，脸上有轻微的光线反射，强烈的色彩对比，赛博朋克电影感，浅景深，夜晚环境摄影 --ar 2:3 --stylize 200",
+                    breakdown: { 
+                      "主体": "戴帽子的年轻人", 
+                      "环境": "夜晚城市天台", 
+                      "光线": "蓝紫与暖橙霓虹灯光交织，脸上轻微光线反射", 
+                      "构图": "特写人像", 
+                      "摄影方向": "浅景深，夜晚环境摄影，赛博朋克电影感，强烈色彩对比" 
+                    }
                   }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-city.jpg",
-                  title: "2. City Cinematic Portrait (街头电影感)",
-                  prompt: "half-body portrait of a man in a trench coat walking down a rainy city street at dusk, cinematic blue hour lighting with warm street lamp reflections, moody atmosphere, wet pavement background, 35mm lens, sharp subject, realistic editorial style --ar 16:9 --stylize 150",
-                  breakdown: { 
-                    "主体": "man in a trench coat, half-body", 
-                    "环境": "rainy city street at dusk", 
-                    "光线": "cinematic blue hour lighting, warm reflections", 
-                    "摄影": "35mm lens, sharp subject, editorial style" 
-                  }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-professional.jpg",
-                  title: "3. Professional Profile (专业工作照)",
-                  prompt: "headshot portrait of a confident female executive in a modern office, wearing a dark blazer, warm indoor lighting with a subtle rim light, clean corporate background, professional portrait photography, 85mm, sharp focus, natural skin texture --ar 3:4",
-                  breakdown: { 
-                    "主体": "confident female executive, dark blazer, headshot", 
-                    "环境": "modern office, clean corporate background", 
-                    "光线": "warm indoor lighting, subtle rim light", 
-                    "摄影": "85mm, professional portrait, sharp focus" 
-                  }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-bw.jpg",
-                  title: "4. Black and White Portrait (黑白人像)",
-                  prompt: "dramatic black and white portrait of an elderly man with deep wrinkles, dark textured background, high contrast studio lighting, intense side light, sharp facial details, monochrome photography, Leica, shallow depth of field --ar 2:3",
-                  breakdown: { 
-                    "主体": "elderly man with deep wrinkles", 
-                    "环境": "dark textured background", 
-                    "光线": "high contrast studio lighting, intense side light", 
-                    "风格": "black and white, monochrome, high contrast" 
-                  }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-golden-hour.jpg",
-                  title: "5. Golden Hour Outdoor (黄金时刻户外)",
-                  prompt: "full-body portrait of a smiling woman in a summer dress standing in a tall grass field, beautiful golden hour backlighting, warm glowing sun behind her, lens flare, dreamy and joyful mood, 85mm portrait, shallow depth of field --ar 2:3",
-                  breakdown: { 
-                    "主体": "woman in summer dress, smiling, full-body", 
-                    "环境": "tall grass field", 
-                    "光线": "golden hour backlighting, glowing sun, lens flare", 
-                    "情绪": "dreamy and joyful mood" 
-                  }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-cafe.jpg",
-                  title: "6. Lifestyle Cafe (咖啡馆生活感)",
-                  prompt: "candid lifestyle portrait of a young man drinking coffee at a rustic cafe table, reading a book, natural daylight coming from the side, cozy warm tones, wooden interior background, 35mm photography, relaxed mood, realistic lighting --ar 16:9",
-                  breakdown: { 
-                    "主体": "young man drinking coffee, reading a book", 
-                    "环境": "rustic cafe table, wooden interior", 
-                    "光线": "natural daylight from the side", 
-                    "风格": "candid lifestyle, cozy warm tones, relaxed mood" 
-                  }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-studio.jpg",
-                  title: "7. Minimalist Studio (极简影棚照)",
-                  prompt: "fashion portrait of an elegant woman looking directly at the camera, wearing a minimalist black silk dress, pure beige studio background, softbox lighting, flat soft shadows, editorial fashion photography, flawless but natural skin, 85mm --ar 4:5",
-                  breakdown: { 
-                    "主体": "elegant woman, minimalist black silk dress", 
-                    "环境": "pure beige studio background", 
-                    "光线": "softbox lighting, flat soft shadows", 
-                    "风格": "editorial fashion photography, minimalist" 
-                  }
-                },
-                {
-                  image: "/images/midjourney/midjourney-portrait-neon.jpg",
-                  title: "8. Neon Night Portrait (夜景霓虹)",
-                  prompt: "close-up portrait of a young person in a cyberpunk style jacket, standing in a dark alley illuminated by bright pink and cyan neon signs, dramatic color contrast, cinematic night photography, glowing reflections on face, shallow depth of field --ar 2:3 --stylize 200",
-                  breakdown: { 
-                    "主体": "young person in cyberpunk jacket, close-up", 
-                    "环境": "dark alley, illuminated by neon signs", 
-                    "光线": "pink and cyan neon, glowing reflections", 
-                    "风格": "cinematic night photography, dramatic contrast" 
-                  }
-                } ].map((tpl, idx) => (
+                ].map((tpl, idx) => (
                 <div key={idx} className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
                   <div className="bg-gray-50 border-b border-gray-200 px-6 py-4 flex items-center justify-between">
                     <h4 className="font-bold text-gray-900 m-0">{tpl.title}</h4>
@@ -731,10 +775,10 @@ export default function MidjourneyPortraitGuide() {
               <div className="bg-gray-50 p-4 rounded-xl text-sm border border-gray-200">
                 <strong className="block text-gray-900 mb-2">💡 删词练习</strong>
                 <div className="line-through text-gray-400 mb-2">
-                  a beautiful gorgeous girl, amazing masterpiece, best quality, 8k, ultra HD, unreal engine 5, octane render, soft light, natural light, dark room, beautiful background, close up
+                  一个漂亮女生，超级漂亮，顶级画质，超高清，非常真实，非常精致
                 </div>
                 <div className="text-brand-700 font-medium">
-                  → 精简为：close-up portrait of a woman in a dark room, soft natural light --ar 2:3
+                  → 精简为：一位年轻女性的近距离人像，坐在安静的书店里，柔和的窗边自然光，自然表情，真实皮肤质感，浅景深，写实人像摄影 --ar 2:3
                 </div>
               </div>
             </div>
@@ -742,7 +786,7 @@ export default function MidjourneyPortraitGuide() {
             <div className="bg-gray-50 border border-gray-200 p-6 rounded-2xl mb-12">
               <h4 className="font-bold text-gray-900 mt-0 mb-3">语言说明：中文还是英文？</h4>
               <p className="text-sm text-gray-700 m-0">
-                Midjourney 可以理解不同语言。但许多摄影、构图与艺术专业术语，在英文资料库中训练得更充分。建议：你可以先用中文表达整体概念，再逐步学习和替换常见的英文摄影术语（如 <code>shallow depth of field</code>），以获得更精准的控制力。
+                不用因为不会英文就不敢使用 Midjourney。你可以先用中文描述人物、环境、光线、构图和风格。当以后希望更精确学习摄影术语时，再认识常见英文表达即可。
               </p>
             </div>
 
