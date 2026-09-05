@@ -2,12 +2,12 @@ import Link from "next/link";
 import { CalendarDays } from "lucide-react";
 
 const articles = [
+  { tag: "AI搜索", title: "Perplexity搜索与引用核对教程", date: "2026-09-05", isNetwork: false, href: "/guides/perplexity-search-guide" },
   { tag: "AI绘图", title: "Midjourney人像提示词：构图光线教程", date: "2026-09-05", isNetwork: false, href: "/guides/midjourney-realistic-portrait" },
   { tag: "AI对比", title: "ChatGPT、Claude、Gemini怎么选？", date: "2026-09-04", isNetwork: false, href: "/guides/chatgpt-vs-claude-vs-gemini" },
   { tag: "实战教程", title: "如何用 Cursor 搭建个人博客？", date: "2026-09-04", isNetwork: false, href: "/guides/cursor-build-blog" },
   { tag: "网络指南", title: "为什么连接 VPN 后网速会变慢？", date: "2026-09-04", isNetwork: true, href: "/guides/vpn-slow-speed" },
   { tag: "问题排查", title: "AI 工具打不开怎么办？网络环境与常见问题排查", date: "2026-09-03", isNetwork: true, href: "/guides/ai-network" },
-  { tag: "品牌实测", title: "微风网络怎么样？套餐、节点与 AI 使用体验", date: "2026-09-02", isNetwork: true, href: "/vpn/weifeng" },
 ];
 
 export default function LatestArticles() {

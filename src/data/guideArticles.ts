@@ -13,6 +13,16 @@ export interface GuideArticle {
 
 export const guideArticles: GuideArticle[] = [
   {
+    slug: 'perplexity-search-guide',
+    title: 'Perplexity搜索与引用核对教程',
+    description: '从提问、搜索、引用核对到文件上传与深入研究，本文用实际流程教你使用Perplexity查资料，并说明如何判断来源是否可靠、什么时候需要继续查证。',
+    type: 'tutorial',
+    category: 'AI搜索',
+    tags: ['Perplexity', 'AI搜索', '资料查询', '引用', 'Research'],
+    publishedAt: '2026-09-05',
+    updatedAt: '2026-09-05'
+  },
+  {
     slug: 'midjourney-realistic-portrait',
     title: 'Midjourney人像提示词：构图光线教程',
     description: '从人物主体、构图、光线、镜头、景深到皮肤质感，系统拆解Midjourney真实感人像提示词写法，并提供可直接参考的Prompt模板与常见失败排查方法。',

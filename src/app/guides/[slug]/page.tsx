@@ -420,6 +420,21 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
                   <p className="text-sm text-gray-700 flex-grow line-clamp-2">真实感人像怎么画？系统拆解光线、镜头与构图写法，附带大量模板。</p>
                 </Link>
               )}
+              
+              {tool.slug === 'perplexity' && (
+                <Link 
+                  href="/guides/perplexity-search-guide"
+                  className="bg-brand-50 p-6 rounded-2xl shadow-sm border border-brand-100 hover:shadow-md hover:border-brand-300 transition-all group flex flex-col h-full"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-brand-600 font-bold shadow-sm">
+                      🔍
+                    </div>
+                    <h3 className="font-bold text-gray-900 group-hover:text-brand-600 transition-colors">Perplexity 搜索与引用核对教程</h3>
+                  </div>
+                  <p className="text-sm text-gray-700 flex-grow line-clamp-2">怎么查资料？怎么看引用是否可靠？系统掌握 AI 时代的信息核查方法。</p>
+                </Link>
+              )}
               {['chatgpt', 'claude', 'gemini'].includes(tool.slug) && (
                 <Link 
                   href="/guides/chatgpt-vs-claude-vs-gemini"
