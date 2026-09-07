@@ -269,7 +269,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 15,
     currency: "¥",
     traffic: "50 GB",
-    url: "https://iasfasf.kuailitztz2.xyz/#/?code=9RhZkrkV",
+    url: "https://iasfa.kuailitztz2.sbs/#/?code=9RhZkrkV",
     order: 23,
   },
   {
