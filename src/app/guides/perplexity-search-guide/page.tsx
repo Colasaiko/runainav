@@ -177,6 +177,11 @@ export default function PerplexitySearchGuide() {
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
               从第一次搜索到打开引用、核对原文和继续追问，建立一套比“直接相信 AI 答案”更可靠的资料查询方法。
             </p>
+            
+            <div className="bg-brand-50 border border-brand-100 p-4 rounded-xl mb-6 text-brand-900 flex items-center gap-2 text-sm">
+              <span className="font-bold">第一次使用 Perplexity？</span>先看 <Link href="/guides/perplexity" className="text-brand-600 hover:underline font-bold">Perplexity 基础指南</Link> 了解怎么登录、解决网络问题和基础功能。
+            </div>
+
             <div className="flex items-start gap-2 bg-blue-50 text-blue-700 px-4 py-3 rounded-xl text-sm border border-blue-100/50">
               <Info className="w-4 h-4 mt-0.5 shrink-0" />
               <div>
