@@ -10,7 +10,7 @@ import { ExternalLink, Check, Info, AlertTriangle, Monitor, Smartphone, HelpCirc
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
 import JsonLd from '@/components/seo/JsonLd';
 
-const AFFILIATE_URL = "https://wep01.breezenetaff.com/#/?code=bSnymFll";
+const AFFILIATE_URL = "https://edp01.breezenetaff.com/#/?code=bSnymFll";
 
 import { constructMetadata } from "@/lib/seo";
 

@@ -22,7 +22,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 11,
     currency: "¥",
     traffic: "100 GB",
-    url: "https://wep01.breezenetaff.com/#/?code=bSnymFll",
+    url: "https://edp01.breezenetaff.com/#/?code=bSnymFll",
     featured: true,
     order: 1,
   },
