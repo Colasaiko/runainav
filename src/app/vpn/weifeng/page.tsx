@@ -359,9 +359,9 @@ export default function WeifengReviewPage() {
                       <td className="p-4 font-medium"><Link href="/guides/claude" className="text-brand-600 hover:underline">Claude</Link></td>
                       <td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-02</td>
                     </tr>
-                    <tr><td className="p-4 font-medium">Gemini</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
-                    <tr><td className="p-4 font-medium">Perplexity</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
-                    <tr><td className="p-4 font-medium">Cursor</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
+                    <tr><td className="p-4 font-medium">Gemini</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-07</td></tr>
+                    <tr><td className="p-4 font-medium">Perplexity</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-07</td></tr>
+                    <tr><td className="p-4 font-medium">Cursor</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-07</td></tr>
                     <tr><td className="p-4 font-medium">Midjourney</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
                     <tr><td className="p-4 font-medium">Grok</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
                   </tbody>
