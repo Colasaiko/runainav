@@ -163,6 +163,9 @@ export default function GammaPptTutorial() {
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight tracking-tight">
               Gamma 怎么用 AI 做 PPT？
             </h1>
+            <div className="bg-brand-50 border border-brand-100 p-4 rounded-xl mb-6 mt-6 text-brand-900 flex items-center gap-2 text-sm">
+              <span className="font-bold">第一次使用 Gamma？</span>先看 <Link href="/guides/gamma" className="text-brand-600 hover:underline font-bold">Gamma 基础使用指南</Link> 了解怎么登录、解决网络问题和基础功能。
+            </div>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
               从主题、大纲到页面排版和导出，用一个完整案例带你完成第一份 AI 演示文稿。
             </p>
