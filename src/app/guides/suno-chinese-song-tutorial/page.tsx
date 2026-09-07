@@ -166,6 +166,11 @@ export default function SunoChineseSongTutorial() {
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
               从歌词、主歌副歌到音乐风格，用一个完整中文案例带你完成第一首 AI 歌曲。
             </p>
+            
+            <div className="bg-brand-50 border border-brand-100 p-4 rounded-xl mb-6 text-brand-900 flex items-center gap-2 text-sm">
+              <span className="font-bold">第一次使用 Suno？</span>先阅读 <Link href="/guides/suno" className="text-brand-600 hover:underline font-bold">Suno 基础使用指南</Link> 了解怎么登录、解决网络问题、歌曲下载规则和商用版权。
+            </div>
+
             <div className="flex items-start gap-2 bg-blue-50 text-blue-700 px-4 py-3 rounded-xl text-sm border border-blue-100/50">
               <Info className="w-4 h-4 mt-0.5 shrink-0" />
               <div>
