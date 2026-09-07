@@ -74,7 +74,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://fvip02.fireflyaff.com/#/?code=mcYQUZxG",
+    url: "https://fly.fireflytttt.xyz/#/?code=mcYQUZxG",
     featured: true,
     order: 5,
   },
