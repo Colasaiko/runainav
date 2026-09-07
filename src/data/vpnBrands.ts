@@ -257,7 +257,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 15,
     currency: "¥",
     traffic: "50 GB",
-    url: "https://j3gncnh.tzztssuujj.xyz/#/?code=q1enwrOd",
+    url: "https://linktest.tzztssuujj.xyz/#/?code=q1enwrOd",
     order: 22,
   },
   {
