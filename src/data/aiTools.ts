@@ -790,7 +790,7 @@ export const aiTools: AITool[] = [
   },
   {
     slug: 'grok',
-    seoTitle: 'Grok国内怎么用？使用方法与常见问题',
+    seoTitle: 'Grok国内怎么用？聊天搜索与常见问题 | RunAI',
     seoDescription: '国内使用Grok时，如果遇到官网打不开、登录异常或部分功能不可用，可从账号、浏览器、服务范围与网络环境排查，并了解聊天、搜索、图片与常见使用方法。',
     seoKeywords: 'Grok国内怎么用,Grok教程,xAI,X平台Grok,AI聊天',
     name: 'Grok',
@@ -803,7 +803,7 @@ export const aiTools: AITool[] = [
     tags: ['AI聊天', '实时搜索', '图像生成', 'xAI'],
     featured: true,
     freePlan: '部分地区和平台可能提供受限的免费访问，完整高级功能及无限制使用通常需要 Premium 订阅。',
-    pricingType: 'Free / SuperGrok (独立订阅) / X Premium (X 平台内)',
+    pricingType: 'Free to start / SuperGrok',
     chineseSupport: '支持中文问答、中文内容总结与搜索。',
     accountRequired: '支持通过 grok.com 独立注册登录（如 Email）或使用 X 账号授权登录。',
     platforms: ['网页端 (grok.com)', 'X App (iOS/Android)', 'X 网页端'],
@@ -1157,7 +1157,7 @@ export const aiTools: AITool[] = [
   },
   {
     slug: 'github-copilot',
-    seoTitle: 'GitHub Copilot国内怎么用',
+    seoTitle: 'GitHub Copilot国内怎么用 | RunAI',
     seoDescription: '国内使用GitHub Copilot时，如果遇到登录、代码补全或Agent异常，可从GitHub账号、IDE扩展、方案权限与网络环境排查，并了解基础使用方法。',
     seoKeywords: 'GitHub Copilot国内怎么用,Copilot安装,VS Code使用,Copilot没反应,Copilot Agent',
     name: 'GitHub Copilot',
@@ -1560,7 +1560,7 @@ export const aiTools: AITool[] = [
   },
   {
     slug: 'ideogram',
-    seoTitle: 'Ideogram国内怎么用？绘图教程',
+    seoTitle: 'Ideogram国内怎么用？文字绘图教程 | RunAI',
     seoDescription: '国内使用Ideogram时，如果遇到官网打不开、登录异常或图片生成失败，可从账号、浏览器、方案权限与网络环境排查，并了解文字排版、图片生成与常见提示词方法。',
     seoKeywords: 'Ideogram国内怎么用,Ideogram教程,文字生成图片,AI海报,AI绘图',
     name: 'Ideogram',
@@ -1573,7 +1573,7 @@ export const aiTools: AITool[] = [
     tags: ['文字生成', 'AI海报', 'Logo设计', '图像生成'],
     featured: true,
     freePlan: '提供免费使用额度，可体验基础图像生成，生成次数有一定限制。',
-    pricingType: 'Free / Basic / Plus / Pro',
+    pricingType: 'Free / Plus / Pro / Team / Enterprise (Basic 属于旧方案)',
     chineseSupport: '目前文字生成推荐使用英文以确保精准渲染，但其能够理解中文的主题描述。',
     accountRequired: '需要使用 Google 或 Apple 账号登录。',
     platforms: ['网页端', 'iOS App'],
@@ -1594,7 +1594,7 @@ export const aiTools: AITool[] = [
     ],
     gettingStarted: [
       '访问 ideogram.ai，使用 Google 或 Apple 账号授权登录。',
-      '在顶部输入框中输入提示词，若要生成文字，请务必用英文引号将文字包裹（如 "Hello"）。',
+      '在顶部输入框中输入提示词，若要生成文字，建议用引号标出需要生成的文字（如 "Hello"）。',
       '选择图片的宽高比，点击 Generate，等待几秒钟即可查看四张结果。'
     ],
     networkAndRegion: '访问 Ideogram 及其图片资源加载需要稳定的海外网络连接。如果网页出现样式错乱或图片一直转圈加载不出，请检查官方服务状态、浏览器缓存和当前网络连接。',
@@ -1637,7 +1637,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Ideogram 和 Midjourney 怎么选？',
-        a: '如果你需要经常在图片里生成特定的排版文字（如海报、Logo、标语），Ideogram 会顺手很多；如果需要极端的艺术质感或复杂的人像控制，可以参考 Midjourney (<a href="/guides/midjourney" class="text-brand-600 hover:underline">查看 Midjourney 指南</a>)。'
+        a: '如果你需要经常在图片里生成特定的排版文字（如海报、Logo、标语），Ideogram 会顺手很多；如果需要极端的艺术质感或复杂的人像控制，可以参考 Midjourney，详情可参考本站 Midjourney 指南。'
       },
       {
         q: 'Ideogram 免费版够用吗？',
@@ -1717,7 +1717,7 @@ export const aiTools: AITool[] = [
   },
 {
     slug: 'runway',
-    seoTitle: 'Runway国内怎么用？AI视频教程',
+    seoTitle: 'Runway国内怎么用？AI视频生成教程 | RunAI',
     seoDescription: '国内使用Runway时，如果遇到官网打不开、登录异常或视频生成失败，可从账号、浏览器、方案权限与网络环境排查，并了解文生视频、图生视频与常见创作方法。',
     seoKeywords: 'Runway国内怎么用,Runway教程,AI视频生成,图生视频,文生视频',
     name: 'Runway',
@@ -1730,7 +1730,7 @@ export const aiTools: AITool[] = [
     tags: ['AI视频', '文生视频', '图生视频', '视频编辑'],
     featured: true,
     freePlan: '提供免费试用额度，支持体验基础视频生成功能。',
-    pricingType: 'Free / Standard / Pro / Unlimited',
+    pricingType: 'Free / Standard / Pro / Max',
     chineseSupport: '提示词主要推荐使用英文以获得最佳效果，但系统也可理解简单的中文。',
     accountRequired: '需要注册账号登录。',
     platforms: ['网页端', 'iOS App'],
@@ -1879,8 +1879,8 @@ export const aiTools: AITool[] = [
     officialUrl: 'https://www.canva.com',
     category: 'productivity',
     categories: ['productivity', 'ai-art'],
-    shortDescription: 'Canva AI (Magic Studio) 将多种强大的生成式 AI 功能深度集成于 Canva 现有的设计工作流中。本页重点整理国内用户使用 Canva 时的登录排查、AI PPT 生成、图像创作及中文设计常见问题。',
-    description: 'Canva 不再只是一个拖拽式设计工具，其内置的 Magic Studio 包含了一整套 AI 能力。无论你是要生成演示文稿 (PPT)、根据文字生成图片与视频，还是让 AI 帮你写文案，Canva AI 都能无缝融入你的设计过程。',
+    shortDescription: 'Canva AI 已经融入 Canva 的设计、演示、文档、数据与互动内容工作流。本页重点整理国内用户使用 AI 设计、PPT、Canva Code 与常见功能异常时的排查方法。',
+    description: 'Canva 当前将生成式 AI 功能整合进设计、演示、文档、数据和互动内容等工作流，并提供 Canva Code、Connectors 等新能力。',
     tags: ['AI设计', 'PPT生成', '图像生成', '排版'],
     featured: false,
     freePlan: '提供免费使用，部分基础 AI 体验包含在内，但高级模型与更多的生成次数需要 Canva Pro。',
@@ -1947,7 +1947,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Canva 和 Gamma 哪个做 PPT 更好？',
-        a: 'Canva 更偏向完整的图形设计平台，适合需要精细排版和丰富元素库的用户；Gamma (<a href="/guides/gamma" class="text-brand-600 hover:underline">查看 Gamma 指南</a>) 则专注 AI-first 的网页与演示生成，工作流更纯粹、速度更快。'
+        a: 'Canva 更偏完整设计平台，Gamma 更偏 AI-first 的演示和内容工作流。想了解 Gamma，可查看本站 Gamma 指南。'
       },
       {
         q: 'Canva AI 免费版够用吗？',
@@ -2452,16 +2452,16 @@ export const aiTools: AITool[] = [
     description: 'Replit 是一个基于云端的集成开发环境 (IDE)，它不仅提供开箱即用的运行环境，最新引入的 Replit Agent 更能根据你的自然语言描述从零构建、修改和部署完整的应用程序，非常适合快速原型开发与云端协作。',
     tags: ['AI编程', '云端开发', 'Replit Agent', '应用部署'],
     featured: true,
-    freePlan: '提供免费版本，支持基础的工作区编辑与公开项目的运行。高级 AI 功能 (如 Agent) 与私有项目需订阅付费方案。',
+    freePlan: '提供免费版本，支持基础的工作区编辑与公开项目的运行。Starter 可体验部分 Agent 能力；Core、Pro 等付费方案提供更高额度或更多高级能力，实际以当前 Pricing 为准。',
     pricingType: 'Starter / Core / Pro / Enterprise',
     chineseSupport: 'Agent 和聊天支持中文提示词输入与中文对话。',
     accountRequired: '需要注册账号（支持 Google/GitHub 或邮箱登录）。',
     platforms: ['网页端', 'iOS App', 'Android App'],
     bestFor: ['全栈开发者', '初学者', '产品经理', '需要快速验证想法的创作者'],
     lastUpdated: '2026-09-08',
-    overview: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。通过最新的 Replit Agent，你可以用一句话直接创建包含前端、后端和数据库的 App。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、Core 订阅权限及网络连接状况。',
+    overview: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。可以通过自然语言描述需求，让 Agent 协助创建和修改应用，包括前端、后端或数据相关功能。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、Core 订阅权限及网络连接状况。',
     features: [
-      'Replit Agent：通过聊天驱动，自动理解需求、编写多文件代码并配置环境',
+      'Replit Agent 4：通过聊天驱动，自动理解需求、编写多文件代码并配置环境',
       'Cloud Workspace：开箱即用的云端 IDE，免去本地环境配置烦恼',
       'Deployments：一键将你的应用部署到生产环境，获得独立访问链接',
       'Database & Secrets：内置轻量级数据库支持与安全的环境变量管理',
@@ -2528,7 +2528,7 @@ export const aiTools: AITool[] = [
     alternatives: ['cursor', 'github-copilot', 'bolt'],
     domesticLayout: true,
     seoH1: 'Replit 国内怎么用？Agent、编程与常见问题',
-    domesticIntro: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。通过最新的 Replit Agent，你可以用一句话直接创建包含前端、后端和数据库的 App。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、Core 订阅权限及网络连接状况。',
+    domesticIntro: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。可以通过自然语言描述需求，让 Agent 协助创建和修改应用，包括前端、后端或数据相关功能。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、Core 订阅权限及网络连接状况。',
     domesticWorkflow: ['脑海产生想法', '创建 Replit App', '向 Agent 描述需求', 'Agent 制定计划并执行', '查看 Preview 效果', '检查自动修改的内容', '让 Agent 修 Bug', 'Deploy 上线部署'],
     domesticSymptoms: [
       {
@@ -2859,7 +2859,7 @@ export const aiTools: AITool[] = [
     category: 'image',
     categories: ['image', 'video'],
     shortDescription: 'Adobe Firefly 是由 Adobe 推出的生成式 AI 创作套件，现已包含图像、视频和设计元素的生成。本页重点整理国内用户使用时的登录账号排查、基础用法及 Generative Credits 常见问题。',
-    description: 'Adobe Firefly 旨在提供安全、可商用的 AI 生成能力。它不仅在独立的 Web 端提供文生图、生成式填充等功能，还被深度集成到 Photoshop、Illustrator 和 Premiere 等 Creative Cloud 旗舰软件中，并逐渐扩展到音频、视频及更多第三方模型的支持。',
+    description: 'Adobe Firefly 是 Adobe 的生成式 AI 创作平台，提供图像、视频及其他生成工具，并与部分 Creative Cloud 产品集成。',
     tags: ['AI绘图', '图像生成', '生成式填充', 'Creative Cloud'],
     featured: false,
     freePlan: '免费版提供基础尝试额度。',
@@ -2891,7 +2891,7 @@ export const aiTools: AITool[] = [
     networkAndRegion: 'Adobe 账号的登录认证、区域验证以及 Firefly 庞大的图像数据下发，都需要非常畅通的网络连接。如果网页长时间卡在登录或白屏，请检查官方支持范围与当前网络连接。',
     advantages: [
       'Adobe 官方有关于训练数据版权安全的声明',
-      '与 Adobe 自家软件工作流无缝融合，设计师学习成本极低',
+      '与 Photoshop、Illustrator、Premiere 等部分 Adobe 工作流集成。',
       '网页端界面高度结构化，不必像 Midjourney 那样死记参数',
       '支持输入超过 100 种语言的提示词（包含中文）'
     ],
