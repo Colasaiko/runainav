@@ -29,7 +29,7 @@ const allGuides: GuideArticle[] = [...guideArticles, ...toolGuides].sort((a, b) 
 
 const latestGuides = allGuides.slice(0, 6);
 
-type FilterType = 'all' | 'tool' | 'tutorial' | 'troubleshooting';
+type FilterType = 'all' | 'tool' | 'tutorial' | 'troubleshooting' | 'network';
 
 export default function GuidesList() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
@@ -127,6 +127,13 @@ export default function GuidesList() {
             className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'troubleshooting' ? 'bg-orange-600 text-white border-orange-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-orange-50 hover:text-orange-600'}`}
           >
             问题指南
+          </button>
+        
+          <button 
+            onClick={() => setActiveFilter('network')}
+            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'network' ? 'bg-purple-600 text-white border-purple-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-purple-50 hover:text-purple-600'}`}
+          >
+            网络与机场指南
           </button>
         </div>
 
