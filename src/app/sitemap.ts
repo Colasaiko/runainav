@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   });
   addEntry({
+    url: `${baseUrl}/subscriptions`,
+    lastModified: lastModDate,
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  });
+  addEntry({
     url: `${baseUrl}/guides`,
     lastModified: lastModDate,
     changeFrequency: 'daily' as const,

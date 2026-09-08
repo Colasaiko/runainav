@@ -74,7 +74,7 @@ while ((guideMatch = guideBlockRegex.exec(guidesContent)) !== null) {
   
   if (titleMatch && descMatch) {
     // Only strictly enforce lengths for the new 'network' batch
-    if (type === 'network') {
+    if (type === 'network' || type === 'subscription') {
       checkLength(`Guide: ${slug}`, 'Title', titleMatch[1], 20, 30);
       checkLength(`Guide: ${slug}`, 'Description', descMatch[1], 70, 80);
     } else {
@@ -109,6 +109,7 @@ extractAndCheck('Homepage', 'src/app/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/ai', 'src/app/ai/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides', 'src/app/guides/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn', 'src/app/vpn/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/subscriptions', 'src/app/subscriptions/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides/ai-network', 'src/app/guides/ai-network/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides/cursor-build-blog', 'src/app/guides/cursor-build-blog/page.tsx', 20, 30, 70, 80);
 

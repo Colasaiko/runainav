@@ -27,9 +27,18 @@ const allGuides: GuideArticle[] = [...guideArticles, ...toolGuides].sort((a, b) 
   return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
 });
 
-const latestGuides = allGuides.slice(0, 6);
+// Balanced latest guides selection
+const latestGuides = (() => {
+  const subs = allGuides.filter(g => g.type === 'subscription').slice(0, 2);
+  const toolsTuts = allGuides.filter(g => g.type === 'tool' || g.type === 'tutorial').slice(0, 2);
+  const netsTrouble = allGuides.filter(g => g.type === 'network' || g.type === 'troubleshooting').slice(0, 2);
+  
+  return [...subs, ...toolsTuts, ...netsTrouble].sort((a, b) => {
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  }).slice(0, 6); // Safety slice
+})();
 
-type FilterType = 'all' | 'tool' | 'tutorial' | 'troubleshooting' | 'network';
+type FilterType = 'all' | 'tool' | 'subscription' | 'tutorial' | 'troubleshooting' | 'network';
 
 export default function GuidesList() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
@@ -115,6 +124,12 @@ export default function GuidesList() {
             className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'tool' ? 'bg-blue-600 text-white border-blue-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-blue-50 hover:text-blue-600'}`}
           >
             AI工具指南
+          </button>
+          <button 
+            onClick={() => setActiveFilter('subscription')}
+            className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-colors shadow-sm ${activeFilter === 'subscription' ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white border border-gray-200 text-gray-700 hover:bg-indigo-50 hover:text-indigo-600'}`}
+          >
+            AI订阅指南
           </button>
           <button 
             onClick={() => setActiveFilter('tutorial')}

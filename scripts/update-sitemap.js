@@ -1,20 +1,21 @@
 const fs = require('fs');
-let c = fs.readFileSync('src/app/sitemap.ts', 'utf8');
+let content = fs.readFileSync('src/app/sitemap.ts', 'utf8');
 
-if (!c.includes('cursor-build-blog')) {
-  const insertIndex = c.indexOf('url: `${baseUrl}/guides/ai-network`');
-  if (insertIndex !== -1) {
-    const toInsert = `    {
-      url: \`\${baseUrl}/guides/cursor-build-blog\`,
-      lastModified: new Date('2026-09-04'),
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-    },\n`;
-    
-    // Find the opening brace of ai-network
-    const startOfAiNetwork = c.lastIndexOf('{', insertIndex);
-    c = c.substring(0, startOfAiNetwork) + toInsert + c.substring(startOfAiNetwork);
-  }
-}
+content = content.replace(
+  /addEntry\({\s*url: `\${baseUrl}\/vpn`,\s*lastModified: lastModDate,\s*changeFrequency: 'daily' as const,\s*priority: 0.9,\s*}\);/,
+  `addEntry({
+    url: \`\${baseUrl}/vpn\`,
+    lastModified: lastModDate,
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  });
+  addEntry({
+    url: \`\${baseUrl}/subscriptions\`,
+    lastModified: lastModDate,
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  });`
+);
 
-fs.writeFileSync('src/app/sitemap.ts', c);
+fs.writeFileSync('src/app/sitemap.ts', content);
+console.log('Updated sitemap.ts');
