@@ -1849,7 +1849,9 @@ export const aiTools: AITool[] = [
         name: 'Workflows',
         desc: '适合将多个生成、处理步骤连接起来，提升复杂创作的自动化效率。',
         limitations: '处理过程消耗相应的生成额度。'
-      },
+      }
+    ],
+    domesticPrompts: [
       {
         title: '图生视频：人像微动 (上传图片后使用)',
         desc: '不要重新描述整张图，应说明希望发生什么运动。',
@@ -2003,6 +2005,13 @@ export const aiTools: AITool[] = [
         name: 'Canva Code 2.0 & Connectors',
         desc: '用于生成可交互内容、简单功能或页面组件；Connectors 辅助集成外部工具和检索。',
         limitations: '功能可能受当前方案、账号或 rollout 影响。'
+      }
+    ],
+    domesticPrompts: [
+      {
+        title: '生成 PPT 大纲',
+        desc: '用于快速搭建汇报框架。',
+        text: '请帮我生成一份名为“2026年秋季新品咖啡上市营销方案”的演示文稿。包含市场分析、产品亮点、推广渠道和预算预估，风格要现代、年轻，使用暖色调。'
       },
       {
         title: '生成社交配图',
