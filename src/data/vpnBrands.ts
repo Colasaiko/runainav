@@ -1,5 +1,6 @@
 export type VPNBrand = {
   id: string;
+  logo?: string;
   slug: string;
   name: string;
   description: string;
@@ -16,6 +17,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "weifeng",
     slug: "weifeng",
+    logo: "/images/vpn/微风.png",
     name: "微风网络",
     description: "全IPLC专线，低延迟高速率，不限制设备同时接入。",
     tags: ["AI", "多设备", "大流量"],
@@ -29,6 +31,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "feimao",
     slug: "feimao",
+    logo: "/images/vpn/飞猫.png",
     name: "飞猫云",
     description: "全IPLC专线网络，原生IP解锁流媒体与AI，多端同时登录。",
     tags: ["AI", "影音", "多设备"],
@@ -68,6 +71,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "firefly",
     slug: "firefly",
+    logo: "/images/vpn/Firefly.png",
     name: "Firefly",
     description: "IPLC专线网络，不限速，不限设备数。",
     tags: ["AI", "多设备"],
@@ -81,6 +85,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "wuyou",
     slug: "wuyou",
+    logo: "/images/vpn/无忧.png",
     name: "无忧",
     description: "全IPLC专线，稳定支持全球AI与4K流媒体。",
     tags: ["AI", "影音"],
@@ -94,6 +99,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "kuajie",
     slug: "kuajie",
+    logo: "/images/vpn/跨界.png",
     name: "跨界云",
     description: "IPLC高端线路，全解锁流媒体，支持AI应用，不限设备数。",
     tags: ["AI", "影音", "多设备"],
@@ -107,6 +113,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "sogo",
     slug: "sogo",
+    logo: "/images/vpn/sogo.png",
     name: "sogo云",
     description: "VLESS协议企业级IEPL专线，智能负载，晚高峰不限速。",
     tags: ["AI", "影音", "多设备"],
@@ -119,6 +126,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "muguang",
     slug: "muguang",
+    logo: "/images/vpn/暮光加速.jpg",
     name: "暮光加速",
     description: "BGP多线路智能调度，专线级出口架构，解锁主流AI与流媒体。",
     tags: ["AI", "影音", "多设备"],
@@ -131,6 +139,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "xingdaomeng",
     slug: "xingdaomeng",
+    logo: "/images/vpn/星梦岛.png",
     name: "星岛梦",
     description: "全IEPL专线，低延迟，原生IP支持流媒体与AI，多设备在线。",
     tags: ["AI", "影音", "多设备"],
@@ -143,6 +152,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "weitu",
     slug: "weitu",
+    logo: "/images/vpn/唯兔云.png",
     name: "唯兔云",
     description: "全IPLC专线，不限制客户端，自带直连节点与原生IP解锁。",
     tags: ["AI", "影音"],
@@ -155,6 +165,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "guangsu",
     slug: "guangsu",
+    logo: "/images/vpn/光速云.png",
     name: "光速云",
     description: "全球IPLC专线，原生IP解锁，不限设备，单节点至高2.5Gbps。",
     tags: ["AI", "影音", "多设备"],
@@ -167,6 +178,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "u1s1",
     slug: "u1s1",
+    logo: "/images/vpn/U1S1.jpg",
     name: "U1S1",
     description: "BGP三网智能优化，IEPL专线出口，不限速不限设备。",
     tags: ["AI", "影音", "多设备"],
@@ -179,6 +191,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "jilian",
     slug: "jilian",
+    logo: "/images/vpn/极连云.png",
     name: "极连云",
     description: "全IPLC专线，原生IP解锁各大平台流媒体与AI，不限制客户端。",
     tags: ["AI", "影音"],
@@ -191,6 +204,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "guangnian",
     slug: "guangnian",
+    logo: "/images/vpn/光年梯.jpg",
     name: "光年梯",
     description: "全程IPLC专线，原生IP，多设备可用，解锁ChatGPT和流媒体。",
     tags: ["AI", "影音", "多设备"],
@@ -203,6 +217,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "yifan",
     slug: "yifan",
+    logo: "/images/vpn/一翻云.png",
     name: "一翻云",
     description: "覆盖全球60+优质节点，解锁主流流媒体及AI工具。",
     tags: ["AI", "影音"],
@@ -215,6 +230,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "ermao",
     slug: "ermao",
+    logo: "/images/vpn/二猫云.png",
     name: "二猫云",
     description: "全IEPL专线，原生IP解锁流媒体与AI，多设备不限量同时在线。",
     tags: ["AI", "影音", "多设备"],
@@ -227,6 +243,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "edge",
     slug: "edge",
+    logo: "/images/vpn/边缘节点.png",
     name: "边缘节点",
     description: "全IPLC专线网络，不限制设备数量，提供稳定速率。",
     tags: ["AI", "影音", "多设备"],
@@ -239,6 +256,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "kexin",
     slug: "kexin",
+    logo: "/images/vpn/可信云.png",
     name: "可信云",
     description: "全IEPL专线，不限制设备数量，解锁各大流媒体与AI。",
     tags: ["AI", "影音"],
@@ -251,6 +269,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "sujie",
     slug: "sujie",
+    logo: "/images/vpn/速界机场.png",
     name: "速界机场",
     description: "全IPLC专线网络，原生IP，多端同时登录使用。",
     tags: ["AI", "影音", "多设备"],
@@ -263,6 +282,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "kuaili",
     slug: "kuaili",
+    logo: "/images/vpn/快狸.png",
     name: "快狸",
     description: "全IEPL专线，原生IP支持全球网络解锁，多设备同时在线。",
     tags: ["AI", "影音", "多设备"],
@@ -275,6 +295,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "flyv",
     slug: "flyv",
+    logo: "/images/vpn/飞V.png",
     name: "飞V",
     description: "云端多链路+全链路专线架构，流畅支持4K流媒体与开发者工具。",
     tags: ["影音", "开发", "多设备"],
@@ -287,6 +308,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "tiziyun",
     slug: "tiziyun",
+    logo: "/images/vpn/梯子云.png",
     name: "梯子云",
     description: "中转方案+智能调度，全节点统一倍率，完整解锁主流服务。",
     tags: ["AI", "影音"],
@@ -299,6 +321,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "wavenet",
     slug: "wavenet",
+    logo: "/images/vpn/wavenet.jpg",
     name: "WaveNet",
     description: "三网智能优化+纯专线出口，大流量满足商用级需求。",
     tags: ["影音", "大流量", "开发"],
@@ -311,6 +334,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "lingdong",
     slug: "lingdong",
+    logo: "/images/vpn/灵动云.png",
     name: "灵动云",
     description: "提供基础到大流量多种选择的网络方案。",
     tags: ["AI", "影音"],
@@ -323,6 +347,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "bitznet",
     slug: "bitznet",
+    logo: "/images/vpn/bitznet.png",
     name: "BitzNet",
     description: "广东IEPL专线，普通国际线路，流媒体解锁。",
     tags: ["影音", "多设备"],

@@ -135,8 +135,11 @@ function BrandCard({ brand, isFeatured = false }: { brand: VPNBrand, isFeatured?
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center text-lg font-bold text-gray-700 shrink-0 overflow-hidden">
-            {/* Fallback to text if no image. Since we don't have images locally, just use text */}
-            {brand.name.substring(0, 1)}
+            {brand.logo ? (
+              <img src={brand.logo} alt={brand.name} className="w-full h-full object-cover" />
+            ) : (
+              brand.name.substring(0, 1)
+            )}
           </div>
           <div>
             <h3 className="text-lg font-bold text-gray-900">{brand.name}</h3>

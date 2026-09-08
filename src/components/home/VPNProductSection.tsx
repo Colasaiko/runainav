@@ -31,8 +31,12 @@ export default function VPNProductSection() {
               )}
               
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center text-lg font-bold text-gray-700 shrink-0">
-                  {brand.name.substring(0, 1)}
+                <div className="w-12 h-12 bg-gray-50 border border-gray-100 rounded-xl flex items-center justify-center text-lg font-bold text-gray-700 shrink-0 overflow-hidden">
+                  {brand.logo ? (
+                    <img src={brand.logo} alt={brand.name} className="w-full h-full object-cover" />
+                  ) : (
+                    brand.name.substring(0, 1)
+                  )}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">{brand.name}</h3>
