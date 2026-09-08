@@ -397,7 +397,7 @@ export default function GammaPptTutorial() {
 - 不要虚构销售数据
 - 如果缺少数据，请使用占位说明，而不是自己编数字</div>
             </div>
-            <TutorialImage src="/images/gamma/gamma-generate.png" alt="Gamma Generate 界面" />
+            
 
             {/* 页面结构科普 */}
             <h3 className="font-bold text-xl mb-6 mt-12">一页 PPT 最好解决一个问题</h3>
@@ -494,7 +494,7 @@ export default function GammaPptTutorial() {
 不要重新生成内容。</div>
               </div>
             </div>
-            <TutorialImage src="/images/gamma/gamma-edit-slide.png" alt="Gamma AI 编辑页面" />
+            
 
             <div className="bg-indigo-50 border border-indigo-200 p-6 rounded-2xl mb-12 shadow-sm text-indigo-900">
               <h4 className="font-bold mb-3 flex items-center gap-2 mt-0">
@@ -558,7 +558,7 @@ export default function GammaPptTutorial() {
               <strong className="block mb-2 text-base">排版变化警告</strong>
               由于不同平台（Gamma vs MS Office vs Google Slides）的字体渲染和布局引擎不同。导出为 PPTX 以后，表格虽可能保持可编辑状态，但依然可能存在文字溢出、换行错位等问题。<strong>正式会议前，一定要在最终放映的软件里完整过一遍！</strong>
             </div>
-            <TutorialImage src="/images/gamma/gamma-export.png" alt="Gamma Export 导出功能" />
+            
 
             <hr className="my-16 border-gray-100" />
 

@@ -1,6 +1,7 @@
 export type VPNBrand = {
   id: string;
   logo?: string;
+  detailPath?: string;
   slug: string;
   name: string;
   description: string;
@@ -18,6 +19,7 @@ export const vpnBrands: VPNBrand[] = [
     id: "weifeng",
     slug: "weifeng",
     logo: "/images/vpn/微风.png",
+    detailPath: "/vpn/weifeng",
     name: "微风网络",
     description: "全IPLC专线，低延迟高速率，不限制设备同时接入。",
     tags: ["AI", "多设备", "大流量"],

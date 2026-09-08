@@ -623,15 +623,15 @@ export default function PerplexitySearchGuide() {
             {/* 预留截图组件 */}
             {/* 
               未来当截图就绪时在此释放:
-              <TutorialImage src="/images/perplexity/perplexity-search.png" alt="Perplexity Search Example" />
-              <TutorialImage src="/images/perplexity/perplexity-citations.png" alt="Checking Citations" />
+              
+              
               ...
             */}
-            <TutorialImage src="/images/perplexity/perplexity-search.png" alt="Perplexity Search Example" />
-            <TutorialImage src="/images/perplexity/perplexity-citations.png" alt="Checking Citations" />
-            <TutorialImage src="/images/perplexity/perplexity-source-open.png" alt="Opening Source Pages" />
-            <TutorialImage src="/images/perplexity/perplexity-file-upload.png" alt="File Uploads" />
-            <TutorialImage src="/images/perplexity/perplexity-research.png" alt="Perplexity Research Mode" />
+            
+            
+            
+            
+            
 
             {/* References */}
             <div className="bg-gray-50 px-6 py-4 rounded-xl text-sm text-gray-500 mt-12">

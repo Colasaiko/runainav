@@ -602,7 +602,7 @@ export default function MidjourneyPortraitGuide() {
             <div className="grid grid-cols-1 gap-12 mb-16">
               {[
                   {
-                    image: "/images/midjourney/midjourney-portrait-window.jpg",
+                    image: "",
                     title: "1. 自然窗边光 (soft window light)",
                     prompt: "一位年轻女性的近距离人像，站在宽大的窗户旁，柔和漫射自然光，穿白色亚麻衬衫，神情自然轻松，真实皮肤质感，明亮通透的室内背景，50mm人像摄影观感，浅景深，写实摄影风格 --ar 2:3",
                     breakdown: { 
@@ -614,7 +614,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-city.jpg",
+                    image: "",
                     title: "2. 街头电影感 (city cinematic portrait)",
                     prompt: "一位穿风衣的男子半身人像，走在黄昏的雨天城市街道，蓝调时刻光线，暖色路灯倒映在湿润路面，情绪化电影氛围，35mm街头摄影观感，主体清晰，写实编辑摄影风格 --ar 16:9 --stylize 150",
                     breakdown: { 
@@ -626,7 +626,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-professional.jpg",
+                    image: "",
                     title: "3. 专业工作人像 (professional profile)",
                     prompt: "一位佩戴眼镜的专业女性头肩人像，干净的浅灰色背景，柔和的影棚光，自然自信的微笑表情，真实皮肤细节，85mm商业人像摄影，中等景深，高品质写实风格 --ar 3:4",
                     breakdown: { 
@@ -638,7 +638,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-bw.jpg",
+                    image: "",
                     title: "4. 黑白人像 (black and white portrait)",
                     prompt: "一位年长男性的特写人像，黑白摄影，高对比度侧逆光，强调面部皮肤纹理与皱纹细节，深邃平静的表情，黑色纯色背景，写实纪实摄影风格 --ar 4:5 --stylize 80",
                     breakdown: { 
@@ -650,7 +650,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-golden-hour.jpg",
+                    image: "",
                     title: "5. 黄金时刻户外 (golden hour outdoor)",
                     prompt: "一位年轻女性的全身人像，漫步在秋季草地中，黄金时刻的夕阳暖光，强烈的边缘光勾勒轮廓，柔和光斑的背景虚化，自然真实的肤色，85mm户外人像摄影 --ar 16:9",
                     breakdown: { 
@@ -662,7 +662,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-cafe.jpg",
+                    image: "",
                     title: "6. 咖啡馆生活感 (lifestyle cafe)",
                     prompt: "一位男子坐在复古咖啡馆里喝咖啡，偏中心构图，温暖的室内环境光混合自然窗光，抓拍的生活方式摄影，生动自然的肢体动作，35mm环境人像，电影感调色 --ar 3:2",
                     breakdown: { 
@@ -674,7 +674,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-studio.jpg",
+                    image: "",
                     title: "7. 极简影棚照 (minimalist studio)",
                     prompt: "一位短发女性的时尚人像，纯白色极简影棚背景，均匀柔和的正面打光，高级质感服装，冷色调，锐利的眼神，85mm高清时尚摄影，深景深 --ar 2:3",
                     breakdown: { 
@@ -686,7 +686,7 @@ export default function MidjourneyPortraitGuide() {
                     }
                   },
                   {
-                    image: "/images/midjourney/midjourney-portrait-neon.jpg",
+                    image: "",
                     title: "8. 夜景霓虹 (neon night portrait)",
                     prompt: "一位戴帽子的年轻人在夜晚城市天台的特写人像，蓝紫色与暖橙色霓虹灯光交织，脸上有轻微的光线反射，强烈的色彩对比，赛博朋克电影感，浅景深，夜晚环境摄影 --ar 2:3 --stylize 200",
                     breakdown: { 

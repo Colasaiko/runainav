@@ -28,12 +28,8 @@ const jsonLd = {
   "description": "微风网络提供多档流量套餐与专线节点，支持Windows、macOS、Android和iOS。本文整理价格、节点覆盖、实际测速、AI使用测试与新手选择建议。",
   "publisher": {
     "@type": "Organization",
-    "name": "RunAI",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://runainav.com/logo.png"
-    }
-  },
+    "name": "RunAI"
+    },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://runainav.com/vpn/weifeng"

@@ -184,12 +184,14 @@ function BrandCard({ brand, isFeatured = false }: { brand: VPNBrand, isFeatured?
       </div>
       
       <div className="flex gap-3 mt-auto">
-        <Link 
-          href={brand.slug === 'weifeng' ? `/vpn/${brand.slug}` : "/vpn"}
-          className="flex-1 py-2.5 text-sm font-medium text-center text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors"
-        >
-          查看详情
-        </Link>
+        {brand.detailPath && (
+          <Link 
+            href={brand.detailPath}
+            className="flex-1 py-2.5 text-sm font-medium text-center text-gray-700 bg-gray-50 hover:bg-gray-100 rounded-xl transition-colors"
+          >
+            查看详情
+          </Link>
+        )}
         <a 
           href={brand.url}
           target="_blank"
