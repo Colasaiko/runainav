@@ -806,7 +806,7 @@ export const aiTools: AITool[] = [
     pricingType: 'Free to start / SuperGrok',
     chineseSupport: '支持中文问答、中文内容总结与搜索。',
     accountRequired: '支持通过 grok.com 独立注册登录（如 Email）或使用 X 账号授权登录。',
-    platforms: ['网页端 (grok.com)', 'X App (iOS/Android)', 'X 网页端'],
+    platforms: ['网页端 (grok.com)', 'Grok iOS App', 'Grok Android App', 'X 平台内 Grok'],
     bestFor: ['寻找最新资讯的用户', '研究人员', '创作者', '喜爱幽默风格对话的用户'],
     lastUpdated: '2026-09-08',
     overview: '国内用户使用 Grok 时，可以通过 X 平台内的入口访问，也可以直接前往独立的 grok.com 网页版。Grok 的主要优势在于实时结合 X 平台的信息流进行最新搜索和总结，同时也支持 AI 生成图片。如果遇到官网打不开、登录失败或某些功能（如图片生成）不可用，应分别检查当前账号订阅状态、官方功能 Rollout 进度及网络连接。',
@@ -835,7 +835,7 @@ export const aiTools: AITool[] = [
       '官方已提供独立简洁的网页版 (grok.com)'
     ],
     limitations: [
-      '部分高级功能（如无限制图片生成）需要 X Premium 订阅',
+      '部分高级功能与更高用量需要 SuperGrok 订阅',
       '由于实时信息源自社交媒体，可能会引用到未经核实的信息',
       '不同账号或平台版本看到的功能可能不一致（受功能灰度测试影响）'
     ],
@@ -870,7 +870,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Grok 免费版够用吗？',
-        a: '根据最新政策，部分地区提供受限的免费体验额度，适合轻度查询。若需进行大量搜索、高频对话或图片生成，建议订阅 Premium。'
+        a: '根据最新政策，Grok 提供免费基础体验，适合轻度查询。若需进行大量搜索、高频对话或高级生成，建议订阅 SuperGrok。'
       },
       {
         q: 'Grok 和 ChatGPT 有什么区别？',
@@ -884,11 +884,11 @@ export const aiTools: AITool[] = [
     domesticSymptoms: [
       {
         title: '官网完全打不开',
-        checks: ['Grok / X 官方服务状态', '浏览器缓存与 DNS', '基础网络连接是否正常', '检查当前网络连接是否稳定是否稳定。']
+        checks: ['Grok / X 官方服务状态', '浏览器缓存与 DNS', '基础网络连接是否正常', '检查当前网络连接是否稳定。']
       },
       {
         title: 'X 能登录但 Grok 不出现',
-        checks: ['当前账号是否满足使用资格（如是否需要 Premium）', '查看官方功能灰度开放说明', '尝试访问独立域名 grok.com 确认']
+        checks: ['当前账号方案与功能权限', '查看官方功能灰度开放说明', '尝试访问独立域名 grok.com 确认']
       },
       {
         title: 'grok.com 登录失败',
@@ -900,7 +900,7 @@ export const aiTools: AITool[] = [
       },
       {
         title: '图片功能没有',
-        checks: ['图像生成可能属于 Premium 专属或灰度测试', '尝试换用简单的英文描述重试']
+        checks: ['图像生成可能属于更高方案专属或灰度测试', '账号、方案、平台、功能 rollout、官方状态']
       },
       {
         title: '长时间加载无响应',
@@ -921,7 +921,7 @@ export const aiTools: AITool[] = [
       {
         name: '图片生成 (Image Generation)',
         desc: '直接在对话中描述画面，Grok 会为你生成图像。',
-        limitations: '具体权限和生成数量可能受限于是否为 Premium 订阅账号。'
+        limitations: '具体权限和生成数量受限于当前账号方案与功能权限。'
       },
       {
         name: '独立网页版 (grok.com)',
@@ -1766,7 +1766,7 @@ export const aiTools: AITool[] = [
     limitations: [
       '可以直接使用中文描述创作需求；涉及镜头、摄影或专业术语时，也可以结合常见英文术语辅助表达。',
       '视频生成和编辑操作非常消耗 Credits',
-      '高级控制功能和无限制生成需要较高级别的订阅方案',
+      '部分高级功能与更高生成用量需要更高级别的订阅方案。',
       '网络连接不稳定时视频加载与预览较慢'
     ],
     faq: [
@@ -2459,7 +2459,7 @@ export const aiTools: AITool[] = [
     platforms: ['网页端', 'iOS App', 'Android App'],
     bestFor: ['全栈开发者', '初学者', '产品经理', '需要快速验证想法的创作者'],
     lastUpdated: '2026-09-08',
-    overview: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。可以通过自然语言描述需求，让 Agent 协助创建和修改应用，包括前端、后端或数据相关功能。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、Core 订阅权限及网络连接状况。',
+    overview: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。可以通过自然语言描述需求，让 Agent 协助创建和修改应用，包括前端、后端或数据相关功能。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、方案与 Agent Credits、项目状态以及网络连接。',
     features: [
       'Replit Agent 4：通过聊天驱动，自动理解需求、编写多文件代码并配置环境',
       'Cloud Workspace：提供云端开发环境，可减少部分本地环境配置步骤',
@@ -2468,7 +2468,7 @@ export const aiTools: AITool[] = [
       'Import GitHub：轻松导入已有的 GitHub 仓库进行云端修改'
     ],
     useCases: [
-      '不懂复杂环境配置的用户快速从零搭建并上线一个全栈 Web 应用',
+      '希望减少本地环境配置步骤，并用 Agent 快速验证 Web 应用想法的用户',
       '通过手机 App 随时随地修改和运行代码',
       '与团队成员或面试官在同一个云端项目中实时协作编程',
       '利用 Agent 快速生成一个包含数据库读写的内部工具原型'
@@ -2487,7 +2487,7 @@ export const aiTools: AITool[] = [
     ],
     limitations: [
       '重度依赖网络环境，断网或网络极差时几乎无法工作',
-      '核心的 Replit Agent 等高级 AI 能力需要订阅 Replit Core',
+      '核心的 Replit Agent 体验与高级 AI 能力与当前订阅方案有关',
       '对于极度复杂的企业级大型微服务架构，依然不如本地 IDE (如 Cursor) 灵活',
       '免费账号的资源受到严格限制，项目可能会被休眠'
     ],
@@ -2522,13 +2522,13 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Replit 免费版够用吗？',
-        a: '免费版适合学习基础编程或运行简单的公开项目。但如果要使用强大的 Replit Agent、开发私有项目或获得更高的云端算力，需要订阅 Replit Core。'
+        a: 'Starter 可学习基础编程或运行简单的公开项目并体验部分 Agent；如果要开发私有项目、获得更高的云端算力及更高 Agent 额度，需要订阅 Core 或 Pro 方案。'
       }
     ],
     alternatives: ['cursor', 'github-copilot', 'bolt'],
     domesticLayout: true,
     seoH1: 'Replit 国内怎么用？Agent、编程与常见问题',
-    domesticIntro: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。可以通过自然语言描述需求，让 Agent 协助创建和修改应用，包括前端、后端或数据相关功能。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、Core 订阅权限及网络连接状况。',
+    domesticIntro: '国内用户使用 Replit 时，可以直接在浏览器中打开 replit.com 进行全栈开发。可以通过自然语言描述需求，让 Agent 协助创建和修改应用，包括前端、后端或数据相关功能。如果遇到登录失败、Agent 长时间无响应或项目无法部署运行等问题，应分别检查当前账号状态、方案与 Agent Credits、项目状态以及网络连接。',
     domesticWorkflow: ['脑海产生想法', '创建 Replit App', '向 Agent 描述需求', 'Agent 制定计划并执行', '查看 Preview 效果', '检查自动修改的内容', '让 Agent 修 Bug', 'Deploy 上线部署'],
     domesticSymptoms: [
       {
@@ -2537,7 +2537,7 @@ export const aiTools: AITool[] = [
       },
       {
         title: 'Agent 一直 thinking / 无响应',
-        checks: ['检查网络是否断开', '当前是否订阅了包含 Agent 权限的 Core 方案', '刷新浏览器页面']
+        checks: ['检查网络是否断开', '当前账号是否包含 Agent 权限及剩余额度', '刷新浏览器页面']
       },
       {
         title: 'Preview (预览窗口) 打不开',
@@ -2556,7 +2556,7 @@ export const aiTools: AITool[] = [
       {
         name: 'Replit Agent',
         desc: '输入一句话需求，自动规划架构、编写前后端代码、安装依赖并配置数据库。',
-        limitations: '需订阅 Replit Core，生成极其复杂的系统时可能仍需人工干预。'
+        limitations: '依赖当前方案及 Agent Credits 额度，生成极其复杂的系统时可能仍需人工干预。'
       },
       {
         name: 'Cloud Workspace',
@@ -2863,7 +2863,7 @@ export const aiTools: AITool[] = [
     tags: ['AI绘图', '图像生成', '生成式填充', 'Creative Cloud'],
     featured: false,
     freePlan: 'Firefly Free 提供有限的免费每日生成体验，实际可用次数和功能以当前 Adobe 账号页面为准。',
-    pricingType: 'Firefly Free / Firefly Premium / Firefly Pro / Firefly Pro Plus',
+    pricingType: 'Firefly Free / Firefly Standard / Firefly Pro / Firefly Pro Plus / Firefly Premium',
     chineseSupport: 'Web 端支持输入中文提示词，系统能较好地理解中文意图。',
     accountRequired: '需要注册并登录 Adobe 账号。',
     platforms: ['Web 网页端', 'Creative Cloud 桌面软件集成'],
@@ -2871,11 +2871,11 @@ export const aiTools: AITool[] = [
     lastUpdated: '2026-09-08',
     overview: '国内用户使用 Adobe Firefly 时，可以通过网页端登录 Adobe 账号开始体验，或直接在支持的 Creative Cloud 软件中使用。除了经典的文生图（Text to Image）和生成式填充（Generative Fill），现在也包含针对视频和设计元素的扩展功能。如果遇到网站打不开、无法登录或功能提示权限不足，请重点检查 Adobe 账号、当前方案、官方支持范围、浏览器、Generative Credits 和网络连接。',
     features: [
-      'Text to Image：基础文生图，支持高度定制化的风格、光影和材质参数',
-      'Generative Fill：广受好评的局部重绘、背景替换和画面扩展',
+      'Text to Image：基础文生图，支持支持调整画幅、风格、光影和材质等生成设置的风格、光影和材质参数',
+      'Generative Fill：支持局部重绘、背景替换和画面扩展、背景替换和画面扩展',
       'Text Effects：为文字或字母生成独特的 AI 纹理与特效',
       'Generate Video：根据文字或图片创建视频内容。', 'Generate Sound Effects / Audio：根据当前官方支持范围生成音频素材。',
-      'Creative Cloud Integration：深度集成于 PS、AI 之中，随时可用'
+      'Creative Cloud Integration：与 Photoshop、Illustrator、Premiere 等部分 Creative Cloud 工作流集成'
     ],
     useCases: [
       '通过网页端快速生成多张符合特定品牌色彩的产品背景配图',
