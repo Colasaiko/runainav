@@ -646,7 +646,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
                         GitHub Copilot
                       </h4>
                       <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                        作为插件，可以完美融入你现有的 VS Code 或 JetBrains 环境。在代码审查、Pull Request 以及企业级组织管理（Organization Policies）上有不可替代的优势。
+                        作为插件，可以融入现有 VS Code、JetBrains 等开发工作流。在代码审查、Pull Request 以及企业级组织管理（Organization Policies）上有不可替代的优势。
                       </p>
                       <div className="text-xs font-medium text-gray-500 uppercase tracking-wider">适合谁：</div>
                       <ul className="text-sm text-gray-700 mt-2 space-y-1">
@@ -827,10 +827,26 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
 
             <h2 id="how-to" className="text-2xl font-bold text-gray-900 scroll-mt-24 mb-6">{tool.name} 国内怎么用？</h2>
             <p className="text-gray-700">{tool.overview}</p>
+            {tool.domesticWorkflow && tool.domesticWorkflow.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">基础工作流</h3>
+                <div className="bg-white border border-gray-200 rounded-xl p-5 overflow-x-auto shadow-sm">
+                  <div className="flex items-center gap-2 text-sm font-medium text-gray-700 min-w-max">
+                    {tool.domesticWorkflow.map((step, idx) => (
+                      <span key={idx} className="flex items-center gap-2">
+                        <span className="bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-200">{step}</span>
+                        {idx < tool.domesticWorkflow.length - 1 && <span className="text-gray-400">→</span>}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
             <div className="bg-gray-50 border border-gray-200 p-6 rounded-2xl mb-8">
               <h4 className="font-bold text-gray-900 m-0 mb-4">开始前请确认：</h4>
               <ul className="space-y-3 m-0 pl-0 list-none text-sm text-gray-700">
-                <li className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> OpenAI/官方当前服务支持范围（如当前所在地是否开放服务）</li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> {tool.company || "官方"} 当前服务状态、账号权限与相关服务政策</li>
                 <li className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> 账号是否可以正常登录</li>
                 <li className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> 当前网络环境是否能够稳定访问服务</li>
                 <li className="flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" /> 产品功能是否在账号当前方案中开放</li>
