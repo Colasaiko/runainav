@@ -13,16 +13,16 @@ export const metadata = constructMetadata({
 });
 
 export default function Page() {
-  const tableOfContents = [
-    { id: 'win', title: 'v2rayN 客户端简介' },
-    { id: 'sub', title: '订阅与节点格式支持' },
-    { id: 'faq', title: '常见问题 FAQ' }
+  const sections = [
+    { id: 'win', navLabel: '客户端简介' },
+    { id: 'sub', navLabel: '格式支持' },
+    { id: 'faq', navLabel: 'FAQ' }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
       <Header />
-      <ArticleStickyBar title="v2rayN机场推荐" toc={tableOfContents} />
+      <ArticleStickyBar sections={sections} />
       
       <main className="flex-grow pb-24">
         {/* Breadcrumb */}
@@ -47,6 +47,7 @@ export default function Page() {
         {/* Content */}
         <div className="container mx-auto px-4 max-w-4xl mt-12">
           <div className="prose prose-lg max-w-none text-gray-700">
+            <div id="article-sticky-trigger" />
             
             <div className="bg-brand-50 border border-brand-100 rounded-2xl p-6 mb-12">
               <h3 className="text-brand-900 font-bold text-lg mb-3 mt-0">30 秒速读摘要</h3>
@@ -128,9 +129,10 @@ export default function Page() {
 
           </div>
         </div>
+        <div id="article-end-trigger" />
       </main>
       
-      <FloatingBackButton fallbackPath="/guides" />
+      <FloatingBackButton fallbackHref="/guides" />
       <Footer />
     </div>
   );

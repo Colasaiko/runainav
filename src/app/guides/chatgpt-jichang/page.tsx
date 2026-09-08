@@ -13,18 +13,18 @@ export const metadata = constructMetadata({
 });
 
 export default function Page() {
-  const tableOfContents = [
-    { id: 'need', title: 'AI 工具稳定使用真正需要看什么' },
-    { id: 'region', title: '节点地区与官方服务范围' },
-    { id: 'diff', title: '不同 AI 产品的政策差异' },
-    { id: 'latency', title: '延迟与长连接的实际影响' },
-    { id: 'faq', title: '常见问题 FAQ' }
+  const sections = [
+    { id: 'need', navLabel: '看什么' },
+    { id: 'region', navLabel: '节点地区' },
+    { id: 'diff', navLabel: '政策差异' },
+    { id: 'latency', navLabel: '延迟影响' },
+    { id: 'faq', navLabel: 'FAQ' }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
       <Header />
-      <ArticleStickyBar title="ChatGPT机场推荐" toc={tableOfContents} />
+      <ArticleStickyBar sections={sections} />
       
       <main className="flex-grow pb-24">
         {/* Breadcrumb */}
@@ -49,6 +49,7 @@ export default function Page() {
         {/* Content */}
         <div className="container mx-auto px-4 max-w-4xl mt-12">
           <div className="prose prose-lg max-w-none text-gray-700">
+            <div id="article-sticky-trigger" />
             
             <div className="bg-brand-50 border border-brand-100 rounded-2xl p-6 mb-12">
               <h3 className="text-brand-900 font-bold text-lg mb-3 mt-0">30 秒速读摘要</h3>
@@ -146,9 +147,10 @@ export default function Page() {
 
           </div>
         </div>
+        <div id="article-end-trigger" />
       </main>
       
-      <FloatingBackButton fallbackPath="/guides" />
+      <FloatingBackButton fallbackHref="/guides" />
       <Footer />
     </div>
   );

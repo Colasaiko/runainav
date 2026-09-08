@@ -13,18 +13,18 @@ export const metadata = constructMetadata({
 });
 
 export default function Page() {
-  const tableOfContents = [
-    { id: 'metrics', title: '2026 选择机场先看哪 6 个指标' },
-    { id: 'price', title: '价格不是第一指标' },
-    { id: 'route', title: '线路怎么看（直连/中转/专线）' },
-    { id: 'samples', title: '已验证品牌样本' },
-    { id: 'faq', title: '常见问题 FAQ' }
+  const sections = [
+    { id: 'metrics', navLabel: '6大指标' },
+    { id: 'price', navLabel: '价格指标' },
+    { id: 'route', navLabel: '看线路' },
+    { id: 'samples', navLabel: '品牌样本' },
+    { id: 'faq', navLabel: 'FAQ' }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
       <Header />
-      <ArticleStickyBar title="机场推荐" toc={tableOfContents} />
+      <ArticleStickyBar sections={sections} />
       
       <main className="flex-grow pb-24">
         {/* Breadcrumb */}
@@ -49,6 +49,7 @@ export default function Page() {
         {/* Content */}
         <div className="container mx-auto px-4 max-w-4xl mt-12">
           <div className="prose prose-lg max-w-none text-gray-700">
+            <div id="article-sticky-trigger" />
             
             <div className="bg-brand-50 border border-brand-100 rounded-2xl p-6 mb-12">
               <h3 className="text-brand-900 font-bold text-lg mb-3 mt-0">30 秒速读摘要</h3>
@@ -166,9 +167,10 @@ export default function Page() {
 
           </div>
         </div>
+        <div id="article-end-trigger" />
       </main>
       
-      <FloatingBackButton fallbackPath="/guides" />
+      <FloatingBackButton fallbackHref="/guides" />
       <Footer />
     </div>
   );

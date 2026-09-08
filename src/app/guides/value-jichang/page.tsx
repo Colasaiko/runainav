@@ -13,17 +13,17 @@ export const metadata = constructMetadata({
 });
 
 export default function Page() {
-  const tableOfContents = [
-    { id: 'balance', title: '价格与质量的平衡' },
-    { id: 'eval', title: '性价比评估表' },
-    { id: 'scenario', title: '不同使用场景的取舍' },
-    { id: 'faq', title: '常见问题 FAQ' }
+  const sections = [
+    { id: 'balance', navLabel: '价格质量' },
+    { id: 'eval', navLabel: '性价比表' },
+    { id: 'scenario', navLabel: '使用场景' },
+    { id: 'faq', navLabel: 'FAQ' }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
       <Header />
-      <ArticleStickyBar title="高性价比机场推荐" toc={tableOfContents} />
+      <ArticleStickyBar sections={sections} />
       
       <main className="flex-grow pb-24">
         {/* Breadcrumb */}
@@ -48,6 +48,7 @@ export default function Page() {
         {/* Content */}
         <div className="container mx-auto px-4 max-w-4xl mt-12">
           <div className="prose prose-lg max-w-none text-gray-700">
+            <div id="article-sticky-trigger" />
             
             <div className="bg-brand-50 border border-brand-100 rounded-2xl p-6 mb-12">
               <h3 className="text-brand-900 font-bold text-lg mb-3 mt-0">30 秒速读摘要</h3>
@@ -150,9 +151,10 @@ export default function Page() {
 
           </div>
         </div>
+        <div id="article-end-trigger" />
       </main>
       
-      <FloatingBackButton fallbackPath="/guides" />
+      <FloatingBackButton fallbackHref="/guides" />
       <Footer />
     </div>
   );
