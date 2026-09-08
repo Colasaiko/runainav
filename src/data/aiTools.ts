@@ -799,13 +799,13 @@ export const aiTools: AITool[] = [
     category: 'chat',
     categories: ['chat', 'search'],
     shortDescription: 'Grok 是 xAI 研发的 AI 聊天与搜索助手，支持直接使用网页版或在 X 平台内访问。本页重点整理国内用户使用 Grok 时的登录、搜索资料、图片生成排查及常用的中文创作提示词。',
-    description: 'Grok 是由 Elon Musk 的 xAI 团队开发的 AI 助手，以其独特的幽默感、实时获取 X (原 Twitter) 平台最新资讯的能力以及无限制的言论风格而闻名。目前提供网页版 (grok.com) 及集成在 X 平台内的使用入口，具备文本生成、实时搜索和图像生成等功能。',
+    description: 'Grok 是由 Elon Musk 的 xAI 团队开发的 AI 助手，以其独特的幽默感、结合 X 平台的信息检索能力而闻名。目前提供网页版 (grok.com) 及集成在 X 平台内的使用入口，具备文本生成、实时搜索和图像生成等功能。',
     tags: ['AI聊天', '实时搜索', '图像生成', 'xAI'],
     featured: true,
     freePlan: '部分地区和平台可能提供受限的免费访问，完整高级功能及无限制使用通常需要 Premium 订阅。',
-    pricingType: 'Free (Limited) / Premium',
+    pricingType: 'Free / SuperGrok (独立订阅) / X Premium (X 平台内)',
     chineseSupport: '支持中文问答、中文内容总结与搜索。',
-    accountRequired: '需要注册 X 账号或通过 grok.com 进行授权登录。',
+    accountRequired: '支持通过 grok.com 独立注册登录（如 Email）或使用 X 账号授权登录。',
     platforms: ['网页端 (grok.com)', 'X App (iOS/Android)', 'X 网页端'],
     bestFor: ['寻找最新资讯的用户', '研究人员', '创作者', '喜爱幽默风格对话的用户'],
     lastUpdated: '2026-09-08',
@@ -827,10 +827,10 @@ export const aiTools: AITool[] = [
       '如果你使用的是 X，请在侧边栏找到 Grok 入口；如果在独立网页，请直接登录。',
       '在聊天框中输入你的中文问题或要求，即可开始体验（可随时切换对话风格）。'
     ],
-    networkAndRegion: '由于 xAI 及 X 平台的服务范围限制，国内直接访问通常无法打开。请确保你的网络环境可以正常访问海外服务，并建议在遇到加载失败时优先排查当前代理节点的连通性。',
+    networkAndRegion: '国内用户实际使用时，需要同时考虑 Grok 当前服务范围、账号状态和网络连接情况。',
     advantages: [
-      '实时信息获取能力极强，直接连接 X 的数据源',
-      '提供幽默、无滤镜的对话风格',
+      '支持搜索和整理当前信息，可结合公开网络内容及 X 平台信息进行回答',
+      '提供幽默的对话风格',
       '支持文本、搜索和图像生成的综合工作流',
       '官方已提供独立简洁的网页版 (grok.com)'
     ],
@@ -862,7 +862,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Grok 可以搜索最新资料吗？',
-        a: '可以，这正是 Grok 的强项。它会实时检索 X 平台上的最新推文及全网内容，为你整理和解答最新发生的事件。'
+        a: '可以，它会实时检索 X 平台上的推文及全网内容，为你整理和解答最新发生的事件。请注意核对原始来源。'
       },
       {
         q: 'Grok 可以生成图片吗？',
@@ -884,7 +884,7 @@ export const aiTools: AITool[] = [
     domesticSymptoms: [
       {
         title: '官网完全打不开',
-        checks: ['Grok / X 官方服务状态', '浏览器缓存与 DNS', '基础网络连接是否正常', '当前网络代理连通性']
+        checks: ['Grok / X 官方服务状态', '浏览器缓存与 DNS', '基础网络连接是否正常', '当前网络连接']
       },
       {
         title: 'X 能登录但 Grok 不出现',
@@ -915,7 +915,7 @@ export const aiTools: AITool[] = [
       },
       {
         name: '实时搜索 (DeepSearch / Search)',
-        desc: '结合 X 平台的实时数据流，快速获取刚刚发生的新闻和讨论。',
+        desc: '结合网络与 X 平台的实时数据流，快速获取新闻和讨论。来自社交平台的信息不一定已经核实，建议交叉验证。',
         limitations: '信息源自社交网络，部分信息未经事实核查，需自行判断。'
       },
       {
@@ -925,7 +925,7 @@ export const aiTools: AITool[] = [
       },
       {
         name: '独立网页版 (grok.com)',
-        desc: '提供纯粹的 AI 助手界面，避免被 X 的信息流干扰。',
+        desc: '提供纯粹的 AI 助手界面。',
         limitations: '仍需 X 账号体系进行授权登录。'
       }
     ],
@@ -1196,7 +1196,7 @@ export const aiTools: AITool[] = [
       '在 VS Code（或其他支持的 IDE）的扩展商店中搜索并安装 GitHub Copilot 扩展。',
       '在 IDE 中登录你的 GitHub 账号，打开代码文件即可体验自动补全与 Chat。'
     ],
-    networkAndRegion: '访问 GitHub Copilot 需要稳定的网络连接。如果 github.com 能打开但代码补全没反应，可能是 API 域名连接不稳定。遇到问题时，请先排查扩展版本、网络代理以及 GitHub Copilot 服务状态。',
+    networkAndRegion: '访问 GitHub Copilot 需要稳定的网络连接。如果 github.com 能打开但代码补全没反应，可能是 API 域名连接不稳定。遇到问题时，请先排查扩展版本、网络连接以及 GitHub Copilot 服务状态。',
     advantages: [
       '与 GitHub 工作流（PR、Issues）深度整合',
       '支持几乎所有主流 IDE，跨平台体验一致性强',
@@ -1288,7 +1288,7 @@ export const aiTools: AITool[] = [
       },
       {
         title: 'Copilot Chat 一直加载',
-        checks: ['GitHub 官方服务状态 (Status)', '网络代理与连通性', 'IDE 与 Copilot 扩展是否需要更新', '选择的模型当前是否可用']
+        checks: ['GitHub 官方服务状态 (Status)', '网络连通性', 'IDE 与 Copilot 扩展是否需要更新', '选择的模型当前是否可用']
       },
       {
         title: 'Agent Mode 没有出现',
@@ -1572,7 +1572,7 @@ export const aiTools: AITool[] = [
     description: 'Ideogram 是一款支持高级排版能力的 AI 图像生成模型。它能够极大地减少过去 AI 生成图片中字母乱码的问题，非常适合用来制作包含标题的海报、Logo 字标、T恤图案及产品宣传图。',
     tags: ['文字生成', 'AI海报', 'Logo设计', '图像生成'],
     featured: true,
-    freePlan: '提供免费使用额度，可体验基础图像生成，每日生成次数有一定限制。',
+    freePlan: '提供免费使用额度，可体验基础图像生成，生成次数有一定限制。',
     pricingType: 'Free / Basic / Plus / Pro',
     chineseSupport: '目前文字生成推荐使用英文以确保精准渲染，但其能够理解中文的主题描述。',
     accountRequired: '需要使用 Google 或 Apple 账号登录。',
@@ -1597,12 +1597,12 @@ export const aiTools: AITool[] = [
       '在顶部输入框中输入提示词，若要生成文字，请务必用英文引号将文字包裹（如 "Hello"）。',
       '选择图片的宽高比，点击 Generate，等待几秒钟即可查看四张结果。'
     ],
-    networkAndRegion: '访问 Ideogram 及其图片资源加载需要稳定的海外网络连接。如果网页出现样式错乱或图片一直转圈加载不出，请检查代理节点是否对静态资源域名进行了拦截或延迟过高。',
+    networkAndRegion: '访问 Ideogram 及其图片资源加载需要稳定的海外网络连接。如果网页出现样式错乱或图片一直转圈加载不出，请检查官方服务状态、浏览器缓存和当前网络连接。',
     advantages: [
-      '在图像内渲染文字的准确度和排版审美行业领先',
-      '提供 Canvas 画板模式，极大提升了后期组合与排版的自由度',
-      '界面直观易用，对新手非常友好',
-      '免费版每日重置一定额度，适合轻量使用'
+      '在图像内渲染特定排版文字的效果相对稳定',
+      '提供 Canvas 画板模式，支持后期组合与排版',
+      '界面直观易用',
+      '免费版提供部分基础体验额度，适合轻量使用'
     ],
     limitations: [
       '对中文文字的直接生成和排版支持不如英文稳定，仍有乱码概率',
@@ -1621,7 +1621,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Ideogram 官网打不开怎么办？',
-        a: '这通常是网络阻断或 DNS 问题，请检查你的网络代理设置，并确保能正常访问海外服务。'
+        a: '若页面或图片长期加载失败，可以检查官方服务状态、浏览器缓存和当前网络连接。'
       },
       {
         q: 'Ideogram 登录失败怎么办？',
@@ -1633,7 +1633,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Ideogram 可以生成中文文字吗？',
-        a: '目前的 AI 模型在生成汉字这种复杂图形结构时，经常会出现乱码或缺笔少划的情况。建议核心排版使用英文设计。'
+        a: '目前的 AI 模型在生成汉字这种复杂图形结构时，经常会出现乱码或缺笔少划的情况。AI 生成中文文字仍然可能出现错字、漏字或字形异常，正式商业图片必须人工检查。'
       },
       {
         q: 'Ideogram 和 Midjourney 怎么选？',
@@ -1641,7 +1641,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Ideogram 免费版够用吗？',
-        a: '免费版每天会提供少量基础生成积分，适合轻度用户。如果需要高频商用创作或使用最新的高级功能，则需考虑付费方案。'
+        a: '免费版提供部分基础体验额度，适合轻量使用。如果需要高频创作或高级功能，则需考虑付费方案。'
       }
     ],
     alternatives: ['midjourney', 'adobe-firefly', 'dall-e-3'],
@@ -1651,7 +1651,7 @@ export const aiTools: AITool[] = [
     domesticSymptoms: [
       {
         title: '官网打不开 / 界面错乱',
-        checks: ['Ideogram 官方服务状态', '检查网络连通性', '部分静态图片 CDN 域名是否被代理拦截', '尝试清除浏览器缓存']
+        checks: ['Ideogram 官方服务状态', '检查网络连通性', '当前网络连接状态', '尝试清除浏览器缓存']
       },
       {
         title: '登录异常 / 无法授权',
@@ -1726,7 +1726,7 @@ export const aiTools: AITool[] = [
     category: 'video',
     categories: ['video', 'ai-art'],
     shortDescription: 'Runway 是一款专业的 AI 视频生成与编辑平台，支持文生视频、图生视频及复杂的视频编辑工作流。本页重点整理国内用户使用 Runway 时的登录、视频生成排查及常用的中文创作提示词。',
-    description: 'Runway 是领先的 AI 视频创作平台。最新的视频模型支持高度逼真的 Text to Video (文生视频) 和 Image to Video (图生视频)，并提供多种高级视频编辑工具，适合视频创作者、电影制作人及设计师使用。',
+    description: '截至 2026-09-08，Runway 当前视频生成工作流已进入 Gen-4.5 阶段。支持高度逼真的 Text to Video (文生视频) 和 Image to Video (图生视频)，并提供 Agent、Apps 以及 Workflows 等多种创作与视频编辑能力。',
     tags: ['AI视频', '文生视频', '图生视频', '视频编辑'],
     featured: true,
     freePlan: '提供免费试用额度，支持体验基础视频生成功能。',
@@ -1738,7 +1738,8 @@ export const aiTools: AITool[] = [
     lastUpdated: '2026-09-08',
     overview: '国内用户使用 Runway 时，可以直接从官方网站进入视频创作界面。当前推荐使用最新的视频模型进行文生视频 (Text to Video) 或图生视频 (Image to Video)。如果遇到官网打不开、登录失败或视频生成一直加载等问题，应分别检查账号、当前方案的生成权限及网络环境。',
     features: [
-      'Text to Video (文生视频)：通过文字描述生成高度逼真的视频',
+      'Text to Video (文生视频)：通过文字描述生成视频'
+    ,
       'Image to Video (图生视频)：将静态图片转化为动态视频',
       'Advanced Camera Controls：精细控制镜头运动与画面动态',
       'Video Editor：提供背景移除、视频修补等一站式视频编辑能力',
@@ -1755,15 +1756,15 @@ export const aiTools: AITool[] = [
       '在 Dashboard 中选择 Text to Video 或 Image to Video 开始创作。',
       '如果是图生视频，上传图片后在 Prompt 框中描述希望发生的运动。'
     ],
-    networkAndRegion: '视频生成需要稳定的连接传输大量数据，如果出现进度条卡死或网站完全无法加载，请检查当前网络代理及浏览器设置。',
+    networkAndRegion: '视频生成需要稳定的连接传输大量数据，如果出现进度条卡死或网站完全无法加载，请检查当前网络连接、浏览器与官方服务状态。',
     advantages: [
-      '视频生成质量极高，动作自然，物理合理性强',
+      '支持文生视频与图生视频等工作流，生成结果仍会受到 Prompt、输入素材和模型随机性的影响。',
       '提供文生视频、图生视频等多种创作入口',
       '不仅有生成，还有专业的后期编辑工具',
       'Workflows 提升复杂创作的自动化效率'
     ],
     limitations: [
-      '复杂提示词建议使用英文，中文理解仍可能存在偏差',
+      '可以从中文描述开始；如果涉及特定摄影、镜头或行业术语，也可以结合常见英文术语辅助表达。',
       '视频生成和编辑操作非常消耗 Credits',
       '高级控制功能和无限制生成需要较高级别的订阅方案',
       '网络连接不稳定时视频加载与预览较慢'
@@ -1809,7 +1810,7 @@ export const aiTools: AITool[] = [
     domesticSymptoms: [
       {
         title: '官网完全打不开',
-        checks: ['Runway 官方服务器状态', '浏览器缓存与 DNS 设置', '基础网络连接是否正常', '当前网络代理策略']
+        checks: ['Runway 官方服务器状态', '浏览器缓存与 DNS 设置', '基础网络连接是否正常', '官方服务状态与当前网络连接']
       },
       {
         title: '登录失败或报错',
@@ -1840,21 +1841,14 @@ export const aiTools: AITool[] = [
         limitations: '建议重点描述“运动”，避免重复描述图片中已有的静态元素。'
       },
       {
-        name: 'Advanced Camera Controls',
-        desc: '精细控制镜头推拉摇移（Pan/Zoom/Tilt 等）。',
-        limitations: '高级功能可能受当前账号计划限制。'
+        name: 'Agent & Apps',
+        desc: 'Agent 通过自然语言帮助选择工具或完成创作步骤；Apps 提供针对不同创作需求的预设 AI 工作流。',
+        limitations: '部分高级应用可能需要特定订阅。'
       },
       {
-        name: 'Video Editor & Workflows',
-        desc: '提供背景移除、修补等视频编辑工具，以及连接多步骤的自动化工作流。',
+        name: 'Workflows',
+        desc: '适合将多个生成、处理步骤连接起来，提升复杂创作的自动化效率。',
         limitations: '处理过程消耗相应的生成额度。'
-      }
-    ],
-    domesticPrompts: [
-      {
-        title: '文生视频：城市夜景 (镜头推进)',
-        desc: '适合生成具有电影感的空镜头。',
-        text: '夜晚的城市街道刚下过雨，路面反射霓虹灯，一辆出租车缓慢驶过镜头，电影感，自然镜头运动'
       },
       {
         title: '图生视频：人像微动 (上传图片后使用)',
@@ -1889,12 +1883,12 @@ export const aiTools: AITool[] = [
     featured: false,
     freePlan: '提供免费使用，部分基础 AI 体验包含在内，但高级模型与更多的生成次数需要 Canva Pro。',
     pricingType: 'Free / Pro / Teams',
-    chineseSupport: '完全支持中文指令、中文排版与中文文案生成。',
+    chineseSupport: '可以使用中文输入需求并生成中文内容；不同 AI 功能的效果仍可能有所差异。',
     accountRequired: '需要注册账号（支持多种登录方式）。',
     platforms: ['网页端', 'iOS', 'Android', 'Mac/Windows 客户端'],
     bestFor: ['社交媒体运营', '市场营销', '教育工作者', '非专业设计师'],
     lastUpdated: '2026-09-08',
-    overview: '国内用户使用 Canva AI 时，可直接通过浏览器或客户端登录账号。Canva 的 AI 功能大多打包在 Magic Studio 中，你可以在制作 PPT、海报或视频时随时唤起它。如果遇到官网加载失败、功能不可见或导出异常等问题，应分别检查当前网络、账号所属团队的方案权限及积分额度。',
+    overview: '国内用户使用 Canva AI 时，可直接通过浏览器或客户端登录账号。Canva 的 AI 能力现在已经不仅是单个 Magic 功能，而是逐步融入设计、文档、演示、数据和互动内容工作流。如果遇到官网加载失败、功能不可见或导出异常等问题，应分别检查当前网络、账号所属团队的方案权限及积分额度。',
     features: [
       'Magic Design：根据你的文字需求自动生成演示文稿、海报或社交媒体图片',
       'AI Image & Video Generation：内置文本生成图像与视频能力，无需切换工具',
@@ -1912,9 +1906,9 @@ export const aiTools: AITool[] = [
       '点击新建设计或进入 Magic Studio 面板，选择你需要的功能（如 Magic Design）。',
       '在输入框中用中文描述你的需求，等待 AI 生成后，再使用常规的拖拽工具进行微调。'
     ],
-    networkAndRegion: '虽然 Canva 在国内有一定的访问通道，但使用包含最新海外大模型的 AI 功能时，常需依赖稳定的国际网络环境。如果出现 AI 菜单消失或生成一直加载，请检查网络代理。',
+    networkAndRegion: '如果页面或 AI 功能加载异常，可以检查 Canva 官方状态、账号权限、浏览器以及当前网络连接。',
     advantages: [
-      'AI 与传统设计工具完美融合，修改门槛极低',
+      'AI 功能与 Canva 现有设计工作流集成。',
       '在一个平台上解决图片、文案、排版、视频四大需求',
       '对中文的支持和中文字体库非常完善',
       '跨平台同步极快，提供优秀的移动端体验'
@@ -1935,7 +1929,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Canva AI 官网打不开怎么办？',
-        a: '通常是因为 DNS 污染或网络线路问题。请检查你的网络代理是否稳定，或尝试切换不同的网络节点。'
+        a: '通常是因为网络线路问题。如果页面或 AI 功能加载异常，可以检查 Canva 官方状态、账号权限、浏览器以及当前网络连接。'
       },
       {
         q: '为什么我的账号看不到 AI 功能？',
@@ -1961,7 +1955,7 @@ export const aiTools: AITool[] = [
     alternatives: ['gamma', 'midjourney', 'adobe-firefly'],
     domesticLayout: true,
     seoH1: 'Canva AI 国内怎么用？设计、PPT 与常见问题',
-    domesticIntro: '国内用户使用 Canva AI 时，可直接通过浏览器或客户端登录账号。Canva 的 AI 功能大多打包在 Magic Studio 中，你可以在制作 PPT、海报或视频时随时唤起它。如果遇到官网加载失败、功能不可见或导出异常等问题，应分别检查当前网络、账号所属团队的方案权限及积分额度。',
+    domesticIntro: '国内用户使用 Canva AI 时，可直接通过浏览器或客户端登录账号。Canva 的 AI 能力现在已经不仅是单个 Magic 功能，而是逐步融入设计、文档、演示、数据和互动内容工作流。如果遇到官网加载失败、功能不可见或导出异常等问题，应分别检查当前网络、账号所属团队的方案权限及积分额度。',
     domesticSymptoms: [
       {
         title: '官网打不开 / 加载极慢',
@@ -1977,7 +1971,7 @@ export const aiTools: AITool[] = [
       },
       {
         title: '生成一直加载中',
-        checks: ['检查代理节点稳定性', '当前模型并发量大', '尝试刷新页面重新唤起生成']
+        checks: ['检查当前网络连接', '当前模型并发量大', '尝试刷新页面重新唤起生成']
       },
       {
         title: '导出异常',
@@ -2004,13 +1998,11 @@ export const aiTools: AITool[] = [
         name: '智能图像处理',
         desc: '提供背景移除、魔法擦除和魔法替换功能。',
         limitations: '背景颜色过于复杂时，边缘抠图可能不够干净。'
-      }
-    ],
-    domesticPrompts: [
+      },
       {
-        title: '生成 PPT 大纲',
-        desc: '用于快速搭建汇报框架。',
-        text: '请帮我生成一份名为“2026年秋季新品咖啡上市营销方案”的演示文稿。包含市场分析、产品亮点、推广渠道和预算预估，风格要现代、年轻，使用暖色调。'
+        name: 'Canva Code 2.0 & Connectors',
+        desc: '用于生成可交互内容、简单功能或页面组件；Connectors 辅助集成外部工具和检索。',
+        limitations: '功能可能受当前方案、账号或 rollout 影响。'
       },
       {
         title: '生成社交配图',
@@ -2452,7 +2444,7 @@ export const aiTools: AITool[] = [
     tags: ['AI编程', '云端开发', 'Replit Agent', '应用部署'],
     featured: true,
     freePlan: '提供免费版本，支持基础的工作区编辑与公开项目的运行。高级 AI 功能 (如 Agent) 与私有项目需订阅付费方案。',
-    pricingType: 'Free / Replit Core',
+    pricingType: 'Starter / Core / Pro / Enterprise',
     chineseSupport: 'Agent 和聊天支持中文提示词输入与中文对话。',
     accountRequired: '需要注册账号（支持 Google/GitHub 或邮箱登录）。',
     platforms: ['网页端', 'iOS App', 'Android App'],
@@ -2474,14 +2466,14 @@ export const aiTools: AITool[] = [
     ],
     gettingStarted: [
       '访问 replit.com，使用 GitHub 或 Google 账号快速登录。',
-      '点击 "Create Repl" 或直接唤起 Replit Agent 输入你的开发需求。',
+      '点击 "Create App" 或直接唤起 Replit Agent 输入你的开发需求。',
       '等待 Agent 规划并生成代码，在右侧的 Preview 窗口中实时预览效果。'
     ],
-    networkAndRegion: 'Replit 的工作区运行在海外云服务器上，项目依赖的下载和预览窗口的加载需要稳定的网络连接。如果项目一直处于 Booting 状态或预览打不开，请检查网络代理和 DNS 设置。',
+    networkAndRegion: 'Replit 的工作区运行在海外云服务器上，项目依赖的下载和预览窗口的加载需要稳定的网络连接。如果项目一直处于 Booting 状态或预览打不开，请检查当前网络连接、官方状态、项目依赖下载与 Preview 服务是否正常。',
     advantages: [
-      '零环境配置，打开浏览器即可开始写代码',
-      'Replit Agent 将“写代码”升级为“做产品”，极大地降低了开发门槛',
-      '自带托管与部署，从写代码到上线无缝衔接',
+      '云端提供开发环境，减少部分本地环境配置步骤。',
+      'Agent 可以根据自然语言需求协助创建和修改应用。',
+      '可以使用 Replit 的部署能力发布应用。',
       '支持从 GitHub 导入项目，云端修改更轻量'
     ],
     limitations: [
@@ -2501,7 +2493,7 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Replit 官网打不开怎么办？',
-        a: '这通常是网络连接或 DNS 问题。请确保你的网络能够访问海外开发服务，并检查浏览器是否使用了不稳定的代理节点。'
+        a: '这通常是网络连接或 DNS 问题。请确保你的网络能够访问海外开发服务，并检查当前网络连接状态。'
       },
       {
         q: 'Replit Agent 怎么用？',
@@ -2540,7 +2532,7 @@ export const aiTools: AITool[] = [
       },
       {
         title: 'Preview (预览窗口) 打不开',
-        checks: ['代码本身是否有报错 (查看 Console 终端)', '是否配置了正确的运行命令与端口', '网络代理是否拦截了动态生成的预览域名']
+        checks: ['代码本身是否有报错 (查看 Console 终端)', '是否配置了正确的运行命令与端口', '网络是否拦截了动态生成的预览域名']
       },
       {
         title: 'Deploy (部署) 失败',
@@ -2861,8 +2853,8 @@ export const aiTools: AITool[] = [
     description: 'Adobe Firefly 旨在提供安全、可商用的 AI 生成能力。它不仅在独立的 Web 端提供文生图、生成式填充等功能，还被深度集成到 Photoshop、Illustrator 和 Premiere 等 Creative Cloud 旗舰软件中，并逐渐扩展到音频、视频及更多第三方模型的支持。',
     tags: ['AI绘图', '图像生成', '生成式填充', 'Creative Cloud'],
     featured: false,
-    freePlan: '免费 Adobe 账号每月提供基础的 Generative Credits 额度。',
-    pricingType: 'Free / Premium / CC',
+    freePlan: '免费版提供基础尝试额度。',
+    pricingType: 'Firefly Free / Firefly Standard / Firefly Pro / Firefly Pro Plus',
     chineseSupport: 'Web 端支持输入中文提示词，系统能较好地理解中文意图。',
     accountRequired: '需要注册并登录 Adobe 账号。',
     platforms: ['Web 网页端', 'Creative Cloud 桌面软件集成'],
@@ -2887,9 +2879,9 @@ export const aiTools: AITool[] = [
       '选择你需要的功能板块（例如 Text to Image 或 Generative Fill）。',
       '输入中文或英文指令，利用右侧的参数面板调整风格，点击生成。'
     ],
-    networkAndRegion: 'Adobe 账号的登录认证、区域验证以及 Firefly 庞大的图像数据下发，都需要非常畅通的网络连接。如果网页长时间卡在登录或白屏，请排查网络代理策略，并确认当前账号是否存在区域网络锁定。',
+    networkAndRegion: 'Adobe 账号的登录认证、区域验证以及 Firefly 庞大的图像数据下发，都需要非常畅通的网络连接。如果网页长时间卡在登录或白屏，请检查官方支持范围与当前网络连接。',
     advantages: [
-      '官方声明训练数据基于正版图库与公有领域，设计商用安全性更高',
+      'Adobe 官方有关于训练数据版权安全的声明',
       '与 Adobe 自家软件工作流无缝融合，设计师学习成本极低',
       '网页端界面高度结构化，不必像 Midjourney 那样死记参数',
       '支持输入超过 100 种语言的提示词（包含中文）'
@@ -2910,19 +2902,19 @@ export const aiTools: AITool[] = [
       },
       {
         q: 'Adobe Firefly 官网打不开怎么办？',
-        a: '最常见的问题是网络代理未能正确解析 Adobe 的登录及资源服务器。请检查你的网络环境，或尝试清理浏览器 Cookie 重试。'
+        a: '请检查官方支持范围、浏览器缓存与当前网络连接。'
       },
       {
         q: '登录 Adobe 账号后提示服务不可用？',
-        a: '这通常与你账号注册的区域以及当前网络 IP 的归属地有关。请确保两者都处于 Firefly 支持的服务范围内。'
+        a: '如果服务不可用，应检查 Adobe 账号、当前方案、官方支持范围和网络连接。'
       },
       {
         q: 'Generative Credits 是什么？',
-        a: 'Adobe 使用生成积分来衡量 AI 消耗量。每次生成图片、视频或进行复杂重绘都会扣减相应的点数。额度用完后生成速度可能会被限制。'
+        a: 'Adobe 用 Generative Credits 衡量部分生成式 AI 功能使用量。不同模型、视频、图片、音频可能消耗不同。具体数值以当前 Adobe Plan 页面为准。'
       },
       {
         q: 'Firefly 生成的图片绝对没有版权风险吗？',
-        a: 'Adobe 官方声明其训练库安全，并提供相关的企业赔偿条款。但在法律实操中，没有绝对的“零风险”，企业用户商业使用前仍应详细阅读 Adobe 官方协议与当地法律。'
+        a: 'Adobe 针对 Firefly 的训练来源、商业使用和部分企业保障有自己的官方说明，但实际使用仍需要符合 Adobe 条款、第三方素材权利和所在地法律。'
       },
       {
         q: 'Adobe Firefly 中文怎么用？',
@@ -2940,11 +2932,11 @@ export const aiTools: AITool[] = [
     domesticSymptoms: [
       {
         title: '官网打不开 / 白屏',
-        checks: ['Adobe 全球服务状态', '网络连接是否稳定', '是否被网络防火墙或代理规则阻挡', '浏览器插件冲突']
+        checks: ['Adobe 全球服务状态', '网络连接是否稳定', '当前网络连接', '浏览器插件冲突']
       },
       {
         title: 'Adobe 账号登录失败',
-        checks: ['检查账号密码', '账号区域政策限制', '若提示“不在当前区域提供”，请检查网络环境与账号注册地']
+        checks: ['检查账号密码', '官方支持范围', '如果服务不可用，应检查 Adobe 账号、当前方案、官方支持范围和网络连接']
       },
       {
         title: '功能显示不同或缺失',
@@ -2977,7 +2969,7 @@ export const aiTools: AITool[] = [
       },
       {
         name: 'Generative Video & Boards',
-        desc: '扩展中的多媒体创作功能，将 AI 延伸到视频生成和多资产概念板管理中。',
+        desc: '扩展中的多媒体创作功能，将 AI 延伸到视频生成和多资产概念板管理中；同时支持更多 Partner Models 合作伙伴模型。',
         limitations: '部分功能处于灰度测试或高阶订阅专享阶段。'
       }
     ],
