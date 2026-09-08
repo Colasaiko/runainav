@@ -47,6 +47,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "shanyue",
     slug: "shanyue",
+    logo: "/images/vpn/闪跃.png",
     name: "闪跃",
     description: "全IPLC专线，原生IP解锁流媒体与AI应用。",
     tags: ["AI", "影音"],
@@ -60,6 +61,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "lingmao",
     slug: "lingmao",
+    logo: "/images/vpn/灵猫.png",
     name: "灵猫",
     description: "全IPLC专线，不限制客户端，解锁流媒体与AI。",
     tags: ["AI", "影音"],
