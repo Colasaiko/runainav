@@ -1714,7 +1714,7 @@ export const aiTools: AITool[] = [
         text: '一瓶高端香水放在大理石桌面上，水波纹倒影，背景是纯色柔和的米白色，在香水的玻璃瓶身上刻着金色的文字 "ELEGANCE"，质感高级，微距摄影'
       }
     ]
-  }
+  },
 {
     slug: 'runway',
     seoTitle: 'Runway国内怎么用？AI视频教程',
@@ -2028,8 +2028,8 @@ export const aiTools: AITool[] = [
         text: '将人物手里拿着的咖啡杯，替换成一束盛开的向日葵，光线要自然融合。'
       }
     ]
-  }
-{
+  },
+  {
     slug: 'gamma',
     seoTitle: 'Gamma国内怎么用？PPT生成与常见问题',
     seoDescription: '国内使用Gamma时，如果遇到官网打不开、登录异常或PPT生成失败，可从账号、浏览器与网络环境排查，并了解AI生成、大纲修改、Agent编辑与PPT导出方法。',
@@ -3003,8 +3003,8 @@ export const aiTools: AITool[] = [
         text: '将这个区域替换为一只正在熟睡的橘猫'
       }
     ]
-  }
-{
+  },
+  {
     "slug": "pika",
     "seoTitle": "Pika教程：3D动漫风格与视频运镜 - RunAI",
     "seoDescription": "不知道如何让静态图片瞬间动起来？RunAI为您演示Pika在3D动画与动漫风格视频生成上的独特优势，精准控制视频局部动态。立即点击获取动漫创作与视频运镜指南！",

@@ -827,15 +827,15 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
 
             <h2 id="how-to" className="text-2xl font-bold text-gray-900 scroll-mt-24 mb-6">{tool.name} 国内怎么用？</h2>
             <p className="text-gray-700">{tool.overview}</p>
-            {tool.domesticWorkflow && tool.domesticWorkflow.length > 0 && (
+            {tool.domesticWorkflow && tool.domesticWorkflow?.length > 0 && (
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">基础工作流</h3>
                 <div className="bg-white border border-gray-200 rounded-xl p-5 overflow-x-auto shadow-sm">
                   <div className="flex items-center gap-2 text-sm font-medium text-gray-700 min-w-max">
-                    {tool.domesticWorkflow.map((step, idx) => (
+                    {tool.domesticWorkflow?.map((step, idx) => (
                       <span key={idx} className="flex items-center gap-2">
                         <span className="bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-200">{step}</span>
-                        {idx < tool.domesticWorkflow.length - 1 && <span className="text-gray-400">→</span>}
+                        {idx < (tool.domesticWorkflow?.length || 0) - 1 && <span className="text-gray-400">→</span>}
                       </span>
                     ))}
                   </div>
