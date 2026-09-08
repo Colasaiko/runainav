@@ -1,0 +1,156 @@
+# RunAI Keyword Map
+# 格式：Primary Keyword | Secondary Keywords | Search Intent | Target URL | Title Pattern | Status
+# 更新时间：2026-09-08
+# 负责人：RunAI SEO
+
+# ============================================================
+# HOMEPAGE
+# ============================================================
+
+AI工具大全 | 海外AI工具, 机场推荐, 2026机场推荐, 国内AI使用, 网络方案, AI工具国内怎么用 | 导航 + 商业调查 | / | 品牌Hub型 | 已完成
+
+# ============================================================
+# 机场推荐集群（Airport Recommendation Cluster）
+# ============================================================
+
+2026机场推荐 | 机场怎么选, 专线机场推荐, 机场选择指南, 稳定机场, IPLC机场 | 商业调查 | /guides/jichang-recommendation-2026 | 大词型（决策型） | 已完成
+
+稳定机场推荐 | 晚高峰稳定机场, 低延迟机场, 不断线机场, 晚高峰怎么判断 | 商业调查 | /guides/stable-jichang | 问题型 | 已完成
+
+便宜机场推荐 | 低价机场, 学生党机场, 小流量机场, 便宜稳定机场 | 商业调查 | /guides/cheap-jichang | 人群型 | 已完成
+
+高性价比机场推荐 | 便宜稳定机场, 价格流量线路, 机场性价比对比 | 商业调查 | /guides/value-jichang | 比较型 | 已完成
+
+ChatGPT机场推荐 | AI工具机场推荐, AI网络环境, ChatGPT网络, 使用ChatGPT机场 | 商业调查 | /guides/chatgpt-jichang | 场景型 | 已完成
+
+Clash机场推荐 | Clash订阅机场, Clash节点推荐, Clash配置机场 | 商业调查 | /guides/clash-jichang | 客户端型 | 已完成
+
+Clash Verge机场推荐 | Windows机场订阅, Clash Verge配置, Clash Verge节点 | 商业调查 | /guides/clash-verge-jichang | 人群型（Windows） | 已完成
+
+Shadowrocket机场推荐 | 小火箭机场推荐, 小火箭订阅, 小火箭节点, iOS机场推荐 | 商业调查 | /guides/shadowrocket-jichang | 客户端型（iOS） | 已完成
+
+v2rayN机场推荐 | Windows机场推荐, v2rayN订阅, v2rayN配置 | 商业调查 | /guides/v2rayn-jichang | 客户端型（Windows） | 已完成
+
+不限时机场推荐 | 按量计费机场, 流量包机场, 不过期机场, 低频用户机场 | 商业调查 | /guides/no-expiry-jichang | 购买型 | 已完成
+
+机场排行榜 | 机场天梯榜, 2026机场排行榜, 机场综合排名, Top 10机场 | 商业调查 | 待定 | 排名型 | ⏸ 暂缓（需建立统一多品牌实测体系后再做）
+
+# ============================================================
+# AI 工具集群（AI Tools Cluster）
+# ============================================================
+
+ChatGPT国内怎么用 | ChatGPT国内可以用吗, ChatGPT官网打不开, ChatGPT登录失败, ChatGPT中文 | 问题型 | /guides/chatgpt | 问题型 | 已完成
+
+Claude国内怎么用 | Claude国内可以用吗, Claude官网打不开, Claude中文怎么用 | 问题型 | /guides/claude | 问题型 | 已完成
+
+Gemini国内怎么用 | Gemini国内可以用吗, Google AI国内, Gemini中文 | 问题型 | /guides/gemini | 问题型 | 已完成
+
+Cursor国内怎么用 | Cursor安装教程, Cursor AI代码补全, Cursor中文 | 问题型 | /guides/cursor | 问题型 | 已完成
+
+Midjourney国内怎么用 | Midjourney国内可以用吗, Midjourney提示词 | 问题型 | /guides/midjourney | 问题型 | 已完成
+
+Perplexity国内怎么用 | Perplexity国内可以用吗, Perplexity搜索怎么用 | 问题型 | /guides/perplexity | 问题型 | 已完成
+
+Gamma国内怎么用 | Gamma AI PPT, Gamma做PPT, Gamma中文 | 问题型 | /guides/gamma | 问题型 | 已完成
+
+Suno国内怎么用 | Suno中文歌曲, Suno AI音乐, Suno歌词 | 问题型 | /guides/suno | 问题型 | 已完成
+
+GitHub Copilot国内怎么用 | Copilot VS Code, Copilot安装, Copilot代码补全 | 问题型 | /guides/github-copilot | 问题型 | 已完成
+
+# ============================================================
+# 网络故障排查（Troubleshooting Cluster）
+# ============================================================
+
+VPN后网速变慢怎么办 | VPN速度慢原因, VPN连接后卡顿, 机场速度优化 | 问题型 | /guides/vpn-slow-speed | 问题型 | 已完成
+
+AI工具打不开怎么办 | ChatGPT打不开, AI网络问题, 海外AI无法访问 | 问题型 | /guides/ai-network | 问题型 | 已完成
+
+# ============================================================
+# 品牌详情（Brand Pages）
+# ============================================================
+
+微风网络怎么样 | 微风网络测评, 微风网络套餐, 微风网络速度 | 商业调查 | /vpn/weifeng | 品牌详情型 | 已完成
+
+# ============================================================
+# 待开发关键词（Backlog）
+# ============================================================
+
+# 专线机场推荐 | IPLC机场推荐, IEPL机场, 专线节点 | 商业调查 | 待定 | 技术型 | ⏳ 待建
+# 按量计费机场和包月怎么选 | 流量包vs包月, 机场套餐怎么选 | 商业调查 | 待定 | 比较型 | ⏳ 待建
+# 机场排行榜 | 上方已标注暂缓 | | 待定 | | ⏸ 暂缓
+
+
+# ============================================================
+# TDK Title Pattern Rules（强制规范）
+# ============================================================
+
+【Title 规则】
+
+规则1：Title 字符数：20～30（Array.from(text).length 计算，中英文数字标点空格各算1字符）
+规则2：禁止 .slice() / substring() 截断
+规则3：相邻 10 篇文章至少使用 4 种不同 Title 句式
+
+可用 Title 句式类型（必须轮换）：
+
+A. 大词型
+   例：2026机场推荐：稳定、价格与线路怎么选
+
+B. 问题型
+   例：晚高峰总是卡？稳定机场怎么判断
+
+C. 人群型
+   例：Windows用户怎么选Clash Verge订阅
+
+D. 场景型
+   例：ChatGPT国内使用网络怎么选？机场选择指南
+
+E. 比较型
+   例：IPLC、IEPL与中转有什么区别？
+
+F. 购买型
+   例：不限时流量包值得买吗？按量计费怎么选
+
+G. 教程型
+   例：Cursor搭建网站教程：从创建到部署
+
+H. 对比型
+   例：Cursor和GitHub Copilot怎么选？
+
+
+# ============================================================
+# Description Pattern Rules（强制规范）
+# ============================================================
+
+【Description 规则】
+
+规则1：Description 字符数：70～80（Array.from(text).length，同上规则）
+规则2：禁止所有 Description 统一以"本文从……"开头
+
+可用 Description 开头句式（必须轮换）：
+
+问题型：   晚高峰经常卡顿，不一定只是速度问题……
+人群型：   如果你主要在 Windows 使用……
+场景型：   使用 ChatGPT、Claude 等海外 AI 时……
+比较型：   IPLC、IEPL和普通中转有什么区别……
+购买型：   第一次购买机场应该月付还是年付……
+决策型：   价格最低不代表长期成本最低……
+教程型：   从安装、配置到实际使用……
+
+
+# ============================================================
+# 关键词内耗防止规则（Cannibalization Prevention）
+# ============================================================
+
+首页（/）禁止作为以下词的 Primary Page，这些词有独立专页：
+
+稳定机场推荐      → /guides/stable-jichang
+便宜机场推荐      → /guides/cheap-jichang
+高性价比机场推荐  → /guides/value-jichang
+Clash机场推荐     → /guides/clash-jichang
+Clash Verge机场推荐 → /guides/clash-verge-jichang
+Shadowrocket机场推荐 → /guides/shadowrocket-jichang
+v2rayN机场推荐    → /guides/v2rayn-jichang
+不限时机场推荐    → /guides/no-expiry-jichang
+ChatGPT机场推荐   → /guides/chatgpt-jichang
+
+首页可在 Anchor Text 中出现以上词，但不得在 Title/Description/H1 中全量堆砌。
