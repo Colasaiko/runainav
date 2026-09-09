@@ -59,6 +59,10 @@ export default function Page() {
               </ul>
             </div>
 
+            <p className="mb-6">
+              如果这是你第一次在 PC 上配置代理软件，不妨先阅读<a href="https://jichangmao.com/blog/v2rayn-airport-recommendations/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">Windows机场选择指南</a>，了解不同线路在 v2rayN 上的实际连通率表现。
+            </p>
+
             
             <h2 id="win" className="text-2xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24">v2rayN 客户端简介</h2>
             <p className="mb-6">

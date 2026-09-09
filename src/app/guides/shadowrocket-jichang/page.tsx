@@ -59,6 +59,10 @@ export default function Page() {
               </ul>
             </div>
 
+            <p className="mb-6">
+              如果你还在犹豫哪家服务商更适合你，也可以参考<a href="https://jichangmao.com/blog/shadowrocket-airport-recommendations/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">Shadowrocket机场指南</a>，获取针对 iOS 用户的专线节点测速数据。
+            </p>
+
             
             <h2 id="ios" className="text-2xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24">iPhone/iOS 用户的首选</h2>
             <p className="mb-6">

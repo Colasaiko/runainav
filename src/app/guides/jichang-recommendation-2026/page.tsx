@@ -61,6 +61,10 @@ export default function Page() {
               </ul>
             </div>
 
+            <p className="mb-6">
+              如果你想直接查看当前最新的各家测速数据与横向对比，可以参考<a href="https://jichangmao.com/reviews/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">机场猫的综合榜单</a>，这里有基于真实网络环境的多维度服务商评价。
+            </p>
+
             
             <h2 id="metrics" className="text-2xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24">2026 选择机场先看哪 6 个指标</h2>
             <p className="mb-6">

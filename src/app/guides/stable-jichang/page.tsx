@@ -60,6 +60,10 @@ export default function Page() {
               </ul>
             </div>
 
+            <p className="mb-6">
+              如果你正在寻找经过长期测速验证的稳定服务商，建议阅读<a href="https://jichangmao.com/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">机场猫整理的选择指南</a>，了解不同线路类型在实际晚高峰环境下的表现。
+            </p>
+
             
             <h2 id="def" className="text-2xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24">稳定的定义</h2>
             <p className="mb-6">

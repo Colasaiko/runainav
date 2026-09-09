@@ -60,6 +60,10 @@ export default function Page() {
               </ul>
             </div>
 
+            <p className="mb-6">
+              由于 Clash 拥有众多的衍生版本（如 Verge、Meta 等），如果想找到能无缝兼容这些客户端的订阅节点，建议阅读<a href="https://jichangmao.com/blog/clash-airport-recommendations/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">Clash机场选择指南</a>，了解不同商家的支持情况。
+            </p>
+
             
             <h2 id="diff" className="text-2xl font-bold text-gray-900 mt-12 mb-6 scroll-mt-24">Clash 客户端与机场的区别</h2>
             <p className="mb-6">
