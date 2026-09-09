@@ -175,3 +175,126 @@ Perplexity Pro怎么订阅 | Perplexity价格, Perplexity Max | 购买型 | /gui
 AI订阅价格大全 | ChatGPT价格, Claude价格, Cursor价格 | 商业调查 | 待定 | 比较型 | 待开发
 ChatGPT Plus多少钱 | ChatGPT价格 | 商业调查 | 由 chatgpt-plus-buy 覆盖 | 不新建 | Covered
 Claude Pro价格 | Claude多少钱 | 商业调查 | 由 claude-pro-subscribe 覆盖 | 不新建 | Covered
+
+=========================
+2026-09-09 New Articles:
+=========================
+Target URL: /guides/chatgpt-pdf-guide
+Primary Keyword: ChatGPT怎么分析PDF
+Secondary Keywords: ChatGPT分析PDF, ChatGPT总结PDF, ChatGPT读取文件, ChatGPT长文档
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/chatgpt-compare-files
+Primary Keyword: ChatGPT怎么比较两个文件
+Secondary Keywords: ChatGPT文件对比, 两个PDF对比, AI比较合同, AI比较文档
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/claude-project-docs
+Primary Keyword: Claude怎么整理项目资料
+Secondary Keywords: Claude长文档, Claude项目资料, Claude文件分析, Claude总结资料
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/gemini-file-drive-guide
+Primary Keyword: Gemini怎么上传文件
+Secondary Keywords: Gemini读取PDF, Gemini Google Drive, Gemini分析文件, Gemini总结文档
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-excel-data
+Primary Keyword: AI怎么处理Excel数据
+Secondary Keywords: AI Excel, ChatGPT Excel公式, AI数据分析, AI处理表格
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-meeting-notes
+Primary Keyword: AI怎么整理会议记录
+Secondary Keywords: AI会议纪要, AI行动项, AI会议总结, 会议转录整理
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-interview-prep
+Primary Keyword: AI怎么准备求职面试
+Secondary Keywords: ChatGPT模拟面试, AI面试, AI修改面试回答, AI求职
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-research-paper
+Primary Keyword: AI怎么帮助阅读论文
+Secondary Keywords: AI读论文, ChatGPT论文, AI论文总结, AI文献阅读
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-office-workflow
+Primary Keyword: AI办公工作流
+Secondary Keywords: AI提高工作效率, AI办公, AI邮件, AI报告, AI工作流程
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-build-website-no-code
+Primary Keyword: 不会代码怎么用AI做网站
+Secondary Keywords: AI做网站, AI建站, AI生成网页, 零基础AI建站
+Intent: tutorial
+Status: Published
+
+Target URL: /guides/ai-outage-or-network
+Primary Keyword: AI官方宕机怎么判断
+Secondary Keywords: AI网站故障, ChatGPT是不是崩了, AI网络问题, AI服务状态
+Intent: troubleshooting
+Status: Published
+
+Target URL: /guides/ai-response-slow
+Primary Keyword: AI响应慢原因
+Secondary Keywords: ChatGPT回复慢, AI生成慢, 网络延迟AI, AI首字延迟
+Intent: troubleshooting
+Status: Published
+
+Target URL: /guides/ai-packet-loss
+Primary Keyword: 网络丢包影响AI
+Secondary Keywords: ChatGPT断流, AI回复卡住, Packet Loss, AI网络丢包
+Intent: troubleshooting
+Status: Published
+
+Target URL: /guides/client-connected-site-unreachable
+Primary Keyword: 客户端连接成功但网站打不开
+Secondary Keywords: Clash连接成功打不开网页, 节点有延迟但打不开, AI网站打不开, 代理连接失败
+Intent: troubleshooting
+Status: Published
+
+Target URL: /guides/ai-evening-slow
+Primary Keyword: 晚上AI很卡
+Secondary Keywords: AI晚高峰, ChatGPT晚上卡, AI网络波动, 晚高峰网络
+Intent: troubleshooting
+Status: Published
+
+Target URL: /guides/cursor-copilot-timeout
+Primary Keyword: Cursor网络超时
+Secondary Keywords: GitHub Copilot网络错误, Cursor连接失败, VS Code AI网络, 终端网络超时
+Intent: troubleshooting
+Status: Published
+
+Target URL: /guides/after-buying-airport
+Primary Keyword: 买完机场后怎么用
+Secondary Keywords: 机场买完怎么使用, 机场订阅链接是什么, 订阅怎么导入, 机场新手教程
+Intent: network
+Status: Published
+
+Target URL: /guides/clash-verge-import-subscription
+Primary Keyword: Clash Verge怎么导入订阅
+Secondary Keywords: Clash Verge教程, Clash Verge订阅, Windows Clash, Clash Verge配置
+Intent: network
+Status: Published
+
+Target URL: /guides/node-speed-test-guide
+Primary Keyword: 节点速度怎么测才准
+Secondary Keywords: 节点测速, 机场测速, URL Test, 节点延迟, 节点丢包
+Intent: network
+Status: Published
+
+Target URL: /guides/iplc-iepl-transit-direct
+Primary Keyword: IPLC和IEPL有什么区别
+Secondary Keywords: IPLC机场, IEPL机场, 中转机场, 直连机场, 专线机场推荐
+Intent: network
+Status: Published (replaces Backlog item '专线机场推荐')
