@@ -182,7 +182,7 @@ export default function GuidePage() {
               
               <h2 id="references">参考资料与延伸阅读</h2>
               <ul>
-                <li><a href="https://bestjichang.com" target="_blank" rel="noopener">BestJichang</a> - 了解更多工具网络环境。</li>
+                <li><a href="https://bestjichang.com/" target="_blank" rel="noopener">BestJichang</a> —— 提供 AI 工具实际任务与办公场景教程，可作为更多 AI 应用案例的延伸阅读。</li>
               </ul>
 
               <h2 id="faq">常见问题 FAQ</h2>

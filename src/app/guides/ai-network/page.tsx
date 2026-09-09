@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import Link from 'next/link';

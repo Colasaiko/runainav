@@ -18,9 +18,9 @@ export const metadata = constructMetadata({
 
 export default function GuidePage() {
   const faqData = [
-    { q: "看到 'Error 1020 Access Denied' 是什么情况？", a: "这通常不是AI工具本身宕机，而是Cloudflare等防火墙阻止了你的IP地址访问。说明你当前的网络环境、代理IP被官方拉黑或视为高风险，需要更换纯净的IP节点。" },
+    { q: "看到 'Error 1020 Access Denied' 是什么情况？", a: "这通常不是AI工具本身宕机，而是Cloudflare等防火墙阻止了你的IP地址访问。说明你当前的网络环境、代理触发了防火墙规则或视为高风险，需要更换纯净的IP节点。" },
     { q: "提示 'Capacity is full' 或者 'Too many requests' 怎么办？", a: "这是官方服务器过载或你的账号请求太频繁导致的。属于服务端问题或账号限流。你可以稍等几分钟再试，或者升级为付费订阅会员（通常有优先处理权）。" },
-    { q: "页面一直转圈加载不出来，没有任何报错信息，怎么查？", a: "大概率是本地网络问题或DNS污染。可以尝试按下F12打开开发者工具，在Network标签页看是否有标红的请求。尝试切换WiFi、关闭或更换网络代理工具再试。" },
+    { q: "页面一直转圈加载不出来，没有任何报错信息，怎么查？", a: "大概率是本地网络问题或DNS 解析异常。可以尝试按下F12打开开发者工具，在Network标签页看是否有标红的请求。尝试切换WiFi、关闭或更换网络代理工具再试。" },
     { q: "为什么手机上可以用，电脑网页版却报错？", a: "这说明账号和官方服务器都没问题。问题出在电脑端：可能是电脑的代理软件配置异常、浏览器缓存损坏，或者安装了冲突的浏览器插件（特别是广告拦截插件）。" }
   ];
 
@@ -168,7 +168,7 @@ export default function GuidePage() {
                     <tr>
                       <td className="border border-gray-200 p-3">Error 1020 / Access Denied</td>
                       <td className="border border-gray-200 p-3">IP被防火墙拦截，节点不干净</td>
-                      <td className="border border-gray-200 p-3">更换代理节点、使用原生IP</td>
+                      <td className="border border-gray-200 p-3">更换代理节点、使用高质量节点</td>
                     </tr>
                     <tr>
                       <td className="border border-gray-200 p-3">502 Bad Gateway / 503</td>
@@ -191,7 +191,7 @@ export default function GuidePage() {
               
               <h2 id="references">参考资料与延伸阅读</h2>
               <ul>
-                <li><a href="https://vpn-clash.com" target="_blank" rel="noopener">VPN-Clash 网络环境配置</a> - 了解如何优化和解决常见的网络代理连接问题。</li>
+                <li><a href="https://vpn-clash.net/" target="_blank" rel="noopener">VPN-Clash 网络环境配置</a> - 了解如何优化和解决常见的网络代理连接问题。</li>
               </ul>
 
               <h2 id="faq">常见问题 FAQ</h2>

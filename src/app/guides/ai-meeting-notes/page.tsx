@@ -167,7 +167,7 @@ export default function GuidePage() {
                   <Link href="/guides/ai-excel-data" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
                     AI处理Excel数据指南
                   </Link>
-                  <Link href="/guides/prompt-engineering" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
+                  <Link href="/guides/chatgpt-vs-claude-vs-gemini" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
                     写好 Prompt 的实用技巧
                   </Link>
                 </div>

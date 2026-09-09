@@ -180,7 +180,7 @@ export default function GuidePage() {
                   <Link href="/guides/chatgpt" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
                     ChatGPT 基础教程
                   </Link>
-                  <Link href="/guides/prompt-engineering" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
+                  <Link href="/guides/chatgpt-vs-claude-vs-gemini" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
                     提示词工程指南
                   </Link>
                 </div>

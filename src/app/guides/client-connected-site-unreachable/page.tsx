@@ -20,7 +20,7 @@ export default function GuidePage() {
   const faqData = [
     { q: "为什么只能打开 Google，打不开 ChatGPT？", a: "很多时候是因为代理客户端的规则设置问题。ChatGPT 和 Claude 有严格的地区限制，如果你的规则没有将它们的域名分流到正确的节点（比如代理节点被识别为国内或不支持的地区），就会被拦截。" },
     { q: "清除了浏览器缓存还是打不开，怎么办？", a: "可以尝试使用浏览器的无痕模式。如果无痕模式可以打开，说明问题还是出在浏览器扩展、Cookie 或本地缓存；如果依然打不开，则需要检查 DNS 或代理客户端配置。" },
-    { q: "什么是 DNS 污染？", a: "DNS 污染是指你的网络无法解析真实的服务器 IP，导致访问失败。在使用代理时，应确保代理客户端接管了 DNS 解析，或者使用了安全的远程 DNS。" }
+    { q: "什么是 DNS 解析异常？", a: "DNS 解析异常是指你的网络无法解析真实的服务器 IP，导致访问失败。在使用代理时，应确保代理客户端接管了 DNS 解析，或者使用了安全的远程 DNS。" }
   ];
 
   const breadcrumbJsonLd = {
@@ -108,7 +108,7 @@ export default function GuidePage() {
               <ul>
                 <li><strong>代理规则（分流）错误：</strong>客户端虽然连接了，但是对于 AI 网站的请求没有走正确的节点。</li>
                 <li><strong>节点 IP 被屏蔽：</strong>AI 服务商对节点 IP 进行严格风控，如果大量用户共用一个 IP 频繁访问，该 IP 就可能被拉黑。</li>
-                <li><strong>DNS 解析问题：</strong>系统 DNS 无法正确解析目标网站，或者遭遇了 DNS 污染。</li>
+                <li><strong>DNS 解析问题：</strong>系统 DNS 无法正确解析目标网站，或者遭遇了 DNS 解析异常。</li>
                 <li><strong>浏览器缓存或扩展冲突：</strong>曾经登录失败留下的缓存、Cookie 错误，或广告拦截插件误杀了页面的重要脚本。</li>
                 <li><strong>服务端本身宕机：</strong>有时候并不是你的网络问题，而是 OpenAI 或 Anthropic 的服务器宕机了。</li>
               </ul>

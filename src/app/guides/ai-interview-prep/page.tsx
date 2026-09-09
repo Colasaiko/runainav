@@ -162,7 +162,7 @@ export default function GuidePage() {
               <div className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
                 <h3 className="font-bold text-gray-900 mb-4 text-base">相关推荐</h3>
                 <div className="space-y-3">
-                  <Link href="/guides/prompt-engineering" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
+                  <Link href="/guides/chatgpt-vs-claude-vs-gemini" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">
                     如何写好 Prompt
                   </Link>
                   <Link href="/guides/ai-meeting-notes" className="block text-gray-600 hover:text-brand-600 transition-colors text-sm py-1">

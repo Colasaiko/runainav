@@ -18,9 +18,9 @@ export const metadata = constructMetadata({
 
 export default function GuidePage() {
   const faqData = [
-    { q: "遇到订阅更新失败怎么办？", a: "首先检查您的网络是否可以正常访问订阅链接所在的服务器。部分机场的订阅域名可能被污染，建议切换网络或者尝试联系服务商获取备用订阅地址。" },
-    { q: "客户端提示配置错误如何处理？", a: "这通常是因为客户端版本过旧或者配置格式不兼容导致的。请确保您使用的是最新版本的客户端，并确认订阅链接对应的是您正在使用的客户端格式。" },
-    { q: "节点突然全部超时怎么解决？", a: "这种情况可能是由于网络波动或服务商端点维护。您可以尝试更新订阅配置文件，或者检查本地设备的网络设置和系统时间是否准确。" }
+    { q: "提示 Core error 核心错误怎么办？", a: "这通常是因为没有正确选择内核或者内核文件损坏。在 Settings（设置）中找到 Clash Core，选择 Meta 内核并重启软件即可。如果依然报错，建议尝试在设置中点击重新安装内核文件夹。" },
+    { q: "System proxy (系统代理) 无法开启或者打开后没网？", a: "如果您开启了 System proxy 但无法上网，可能是因为您的配置节点全部超时，或者之前使用了其他代理软件未正确关闭导致端口冲突。请检查 Windows 系统设置的“代理”选项，确保未被其他软件锁定，并确认所选的节点有正常延迟。" },
+    { q: "为什么更新订阅时提示网络错误？", a: "请确认您的电脑当前可以直接访问订阅链接所在的服务器。如果您正处于无代理状态，且机场的订阅域名被墙，您可能需要先使用临时节点或其他工具开启全局代理后再进行更新订阅操作。" }
   ];
 
   const breadcrumbJsonLd = {
@@ -58,10 +58,14 @@ export default function GuidePage() {
   };
 
   const sections = [
-    { id: "intro", title: "导语" , navLabel: "导语"  },
-    { id: "section1", title: "核心概念" , navLabel: "核心概念"  },
-    { id: "section2", title: "操作指南" , navLabel: "操作指南"  },
-    { id: "faq", title: "常见问题" , navLabel: "常见问题"  }
+    { id: "intro", title: "导语", navLabel: "导语" },
+    { id: "download", title: "一、下载与安装 Clash Verge Rev", navLabel: "一、下载与安装" },
+    { id: "import", title: "二、如何导入订阅配置 (Profiles)", navLabel: "二、导入订阅" },
+    { id: "proxy-mode", title: "三、节点选择与模式切换 (Rule vs Global)", navLabel: "三、模式与节点" },
+    { id: "system-proxy", title: "四、开启 System Proxy 系统代理", navLabel: "四、系统代理" },
+    { id: "core", title: "五、核心选择与常见故障排查", navLabel: "五、核心与排查" },
+    { id: "references", title: "参考资料与延伸阅读", navLabel: "参考资料" },
+    { id: "faq", title: "常见问题 FAQ", navLabel: "常见问题" }
   ];
 
   return (
@@ -96,51 +100,69 @@ export default function GuidePage() {
           <div className="lg:col-span-8 lg:col-start-2">
             <div className="prose prose-lg prose-brand max-w-none text-gray-700">
               
-              <h2 id="intro">前言介绍</h2>
-              <p>在网络世界中，高效、稳定的连接是每个人追求的目标。第一次使用 Clash Verge 不知道订阅放哪里？本文整理 Windows 基本流程，包括导入订阅、更新配置、选择节点和规则模式，并说明失败排查与官方来源。</p>
+              <h2 id="intro">导语</h2>
+              <p>Clash Verge Rev 是目前 Windows 平台上最受欢迎、界面最美观的代理客户端之一。对于刚刚接触代理工具的新手而言，第一次打开全英文或带有大量专业术语的界面时，往往不知道从何下手。本文将手把手教你如何在 Windows 环境下使用 Clash Verge Rev：从官方 GitHub 下载、导入机场订阅链接、选择节点，一直到开启系统代理（System Proxy）和切换不同的代理模式（Rule 与 Global）。看完本篇 Windows 入门教程，你将能够轻松驾驭这款强大的网络工具。</p>
               
-              <h2 id="section1">第一部分：核心概念解析</h2>
-              <p>为了让您能够更好地理解和应用相关技术，我们首先需要理清几个核心概念。很多新手在刚接触时，往往会被各种术语搞得一头雾水。实际上，无论是订阅、节点、还是客户端，它们之间的关系并没有想象中那么复杂。本文将为您详细拆解这些基础知识，帮助您建立清晰的认识。</p>
-
-              <p>随着互联网的发展，我们对网络环境的要求越来越高。优质的网络服务不仅能够提升工作效率，还能极大改善我们的数字生活体验。在选择和配置网络工具时，了解背后的原理和机制显得尤为重要。接下来，我们将深入探讨具体的操作步骤和最佳实践。</p>
+              <h2 id="download">一、下载与安装 Clash Verge Rev</h2>
+              <p>在开始之前，我们需要获取正版、纯净的客户端。请注意，原版 Clash Verge 已经停止维护，目前社区接手维护的最新活跃版本为 Clash Verge Rev。截至本文更新的 2026年9月9日，你可以直接前往 GitHub，搜索 “Clash Verge Rev” 并进入其官方仓库的 Releases 页面下载。</p>
+              
               <div className="bg-blue-50 p-5 rounded-xl border border-blue-200 my-6 flex items-start gap-3">
                 <Info className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                 <div>
                   <h4 className="text-blue-900 font-bold m-0 mb-1">关键提示</h4>
-                  <p className="text-blue-800 m-0 text-sm">在进行任何设置更改之前，建议您先备份当前的配置文件，以防出现意外情况需要恢复。良好的备份习惯可以为您省去很多不必要的麻烦。</p>
+                  <p className="text-blue-800 m-0 text-sm">强烈建议只从官方 GitHub 下载，避免使用第三方来源的修改版，以防止遭受恶意软件或木马的侵扰。下载时请选择以 <code>.exe</code> 结尾的安装包（例如 <code>Clash.Verge_x.x.x_x64-setup.exe</code>）。</p>
                 </div>
               </div>
-              
-              <h2 id="section2">第二部分：详细操作指南</h2>
-              <p>掌握了基本概念后，我们就可以进入实操环节了。不同平台和设备可能存在细微的差异，但整体的逻辑是相通的。以下是通用且行之有效的操作流程，请根据您的具体情况进行参考。</p>
+
+              <p>下载完成后，双击运行，按照默认选项完成安装。启动软件后，如果发现是全英文界面，可以在 <code>Settings</code>（设置）菜单下的 <code>Language</code> 选项中将其更改为中文。</p>
+
+              <h2 id="import">二、如何导入订阅配置 (Profiles)</h2>
+              <p>当你从机场或服务商处购买服务后，通常会获得一串“订阅链接”（通常以 http 或 https 结尾，可能标有 Clash 订阅专用字样）。获取链接后，请按以下步骤将订阅导入到客户端中：</p>
               
               <ol>
-                <li><strong>准备工作：</strong> 确保您已经获取了有效的服务信息，如订阅链接或账号密码，并已安装好对应的客户端软件。</li>
-                <li><strong>导入配置：</strong> 打开客户端，找到“订阅”、“配置”或“Profiles”等相关选项，将您的链接粘贴进去并进行更新。</li>
-                <li><strong>选择节点：</strong> 更新成功后，您应该能看到一系列的节点列表。根据您的需求（如延迟、带宽），选择一个合适的节点。</li>
-                <li><strong>启用服务：</strong> 将客户端的代理模式设置为“规则”（Rule）或“全局”（Global），然后打开系统代理开关。</li>
+                <li>在软件界面左侧导航栏中点击 <strong>Profiles</strong>（配置或订阅）。</li>
+                <li>找到界面上方的 URL 输入框，将你复制的订阅链接粘贴进去。</li>
+                <li>点击右侧的 <strong>Import</strong>（导入）按钮。软件会自动向服务器请求配置文件并将其下载到本地。</li>
+                <li>导入成功后，配置列表里会出现一个新的卡片。<strong>务必用鼠标左键单击选中它</strong>（选中后卡片侧边通常会有高亮提示或颜色变化）。只有在选中状态下，软件才会加载并使用这份配置。</li>
               </ol>
 
+              <p>此外，你可以右键点击该配置卡片，选择 <code>Update</code>（更新）来获取最新的节点信息。当服务商调整了线路或服务器时，更新订阅能确保你的节点列表是最新的。</p>
+
+              <h2 id="proxy-mode">三、节点选择与模式切换 (Rule vs Global)</h2>
+              <p>配置文件成功加载后，点击左侧的 <code>Proxies</code>（代理）选项卡，你将看到所有的节点和策略组列表。你可以点击界面上方的 Wi-Fi 测速图标或闪电图标，测试各个节点的当前延迟。挑选一个延迟较低且无超时的节点作为主用节点。</p>
+
+              <p>在这个界面，理解不同的代理模式至关重要：</p>
+              <ul>
+                <li><strong>Rule (规则模式)</strong>：这是最推荐、最智能的日常使用模式。它会根据配置文件内置的规则集，自动判断你的访问请求。如果你访问国内网站（如百度、淘宝），流量将直接连接；如果你访问海外网站（如 Google、GitHub），流量则会自动通过代理节点。这既能保障海外访问畅通，又不会拖慢国内应用。</li>
+                <li><strong>Global (全局模式)</strong>：在此模式下，电脑的所有网络请求都将强制通过你选择的代理节点。这种模式适合在 Rule 模式下部分小众海外网站无法打开时，进行临时故障排除和强制代理。</li>
+                <li><strong>Direct (直连模式)</strong>：所有的流量均不经过代理，等同于完全关闭了翻墙功能。</li>
+              </ul>
+
+              <h2 id="system-proxy">四、开启 System Proxy 系统代理</h2>
+              <p>节点选好、模式设置完毕后，最后也是最关键的一步是让系统流量真正经过 Clash Verge Rev 的接管。</p>
+              
+              <ol>
+                <li>点击左侧导航栏的 <strong>Settings</strong>（设置）选项卡。</li>
+                <li>找到 <strong>System Proxy</strong>（系统代理）选项，将其右侧的开关拨至开启状态。</li>
+              </ol>
+
+              <p>一旦开启，Windows 系统的代理设置就会被自动修改，指向 Clash Verge Rev 的本地端口。此时，你可以打开浏览器访问一些常见的国际网站来测试是否成功连通。</p>
+              
               <div className="bg-yellow-50 p-5 rounded-xl border border-yellow-200 my-6 flex items-start gap-3">
                 <AlertTriangle className="text-yellow-600 flex-shrink-0 mt-1" size={20} />
                 <div>
                   <h4 className="text-yellow-900 font-bold m-0 mb-1">注意事项</h4>
-                  <p className="text-yellow-800 m-0 text-sm">如果您发现某些网站无法访问，请检查是否处于“全局模式”，有时特定网站对访问IP有严格限制。建议大部分时间使用“规则模式”或“分流模式”。</p>
+                  <p className="text-yellow-800 m-0 text-sm">如果你发现某些特定的游戏或老旧软件不遵守系统代理设置，导致无法连通外网，你可以尝试在设置中开启 <code>Tun Mode</code>（虚拟网卡模式），它可以更底层地接管整个操作系统的所有流量。</p>
                 </div>
               </div>
-              
-              <p>除了基础的使用方法，进阶用户还可以通过自定义规则和策略组来进一步优化网络体验。这需要一定的学习成本，但一旦掌握，您将获得极大的灵活性和控制力。</p>
-              
-              <p>为了保证文字满足1500字的详细要求，这里展开讨论一下网络优化的深层逻辑。无论是通过何种协议（如 Shadowsocks、Vmess、Trojan 等），其核心目标都是在复杂的网络环境中寻找一条快速、安全、稳定的数据传输通道。不同的协议在加密方式、混淆机制和资源消耗上各有侧重。</p>
-              
-              <p>在实际使用中，我们不仅要关注协议本身，还要关注线路的质量。常见的线路类型包括直连线路、中转线路以及专线（如 IPLC、IEPL 等）。直连线路成本较低，但在高峰期容易受到网络拥堵的影响；中转线路通过在优质节点进行数据转发，能在一定程度上改善连接质量；而专线则提供了最高的稳定性和最低的延迟，适合对网络要求极高的用户，如游戏玩家或企业用户。</p>
-              
-              <p>总之，选择合适的网络服务和工具，需要综合考虑您的实际需求、预算以及技术能力。希望本指南能够为您提供有价值的参考，帮助您在网络世界中畅游无阻。</p>
+
+              <h2 id="core">五、核心选择与常见故障排查</h2>
+              <p>Clash Verge Rev 提供了多种内核（Core）选择，主要是 Meta 内核（现更名为 Mihomo）。在 <code>Settings</code> - <code>Clash Core</code> 中，确保你选择了正确的内核并成功启动。</p>
+              <p>如果你在界面顶部看到红色的 "Core error" 或类似错误提示，说明内核未能正常运行，这会导致所有的代理功能彻底失效。通常，这可能是权限不足或内核文件下载不完整导致的。你可以尝试在设置中点击重新安装内核，或者以管理员身份重启软件来解决问题。</p>
 
               <h2 id="references">参考资料与延伸阅读</h2>
               <ul>
-                <li><a href="https://clashwiki.com" target="_blank" rel="noopener noreferrer">ClashWiki</a> - 一句话说明为什么值得读。</li>
-
+                <li><a href="https://clashwiki.blog/">ClashWiki</a> —— 提供 Clash 客户端、订阅与网络配置相关教程，可作为进一步了解客户端使用方式的参考。</li>
               </ul>
 
               <h2 id="faq">常见问题 FAQ</h2>

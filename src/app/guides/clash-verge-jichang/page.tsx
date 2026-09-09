@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Link from 'next/link';
 import { ChevronRight, ExternalLink } from 'lucide-react';
 import Header from '@/components/layout/Header';
