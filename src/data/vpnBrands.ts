@@ -33,6 +33,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "feimao",
     slug: "feimao",
+    detailPath: "/vpn/feimao",
     logo: "/images/vpn/飞猫.png",
     name: "飞猫云",
     description: "全IPLC专线网络，原生IP解锁流媒体与AI，多端同时登录。",
