@@ -42,11 +42,14 @@ export default function AITestsSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {testedTools.map(tool => {
-            const run = networkAITests.find(t => t.toolSlug === tool.slug);
-            const open = run ? run.open : 'not-tested';
-            const login = run ? run.login : 'not-tested';
-            const use = run ? run.use : 'not-tested';
-            const date = run ? run.testedAt : '-';
+            const runs = networkAITests.filter(t => t.toolSlug === tool.slug);
+            const latestRun = [...runs].sort((a, b) => new Date(b.testedAt).getTime() - new Date(a.testedAt).getTime())[0];
+            
+            const open = latestRun ? latestRun.open : 'not-tested';
+            const login = latestRun ? latestRun.login : 'not-tested';
+            const use = latestRun ? latestRun.use : 'not-tested';
+            const date = latestRun ? latestRun.testedAt : '-';
+            const networkName = latestRun ? latestRun.networkName : '';
             
             return (
               <Link key={tool.slug} href={`/tests/${tool.slug}`} className="block bg-gray-50 hover:bg-white rounded-2xl border border-gray-200 hover:border-brand-200 hover:shadow-md transition-all p-5 group">
@@ -66,8 +69,10 @@ export default function AITestsSection() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                  <span className="text-xs text-gray-400">{date}</span>
-                  <span className="text-xs font-medium text-brand-600 group-hover:text-brand-700">查看详情</span>
+                  <span className="text-xs text-gray-400 truncate pr-2" title={networkName ? `${networkName} · ${date}` : date}>
+                    {networkName ? `${networkName} · ${date}` : date}
+                  </span>
+                  <span className="text-xs font-medium text-brand-600 group-hover:text-brand-700 whitespace-nowrap">查看详情</span>
                 </div>
               </Link>
             );
