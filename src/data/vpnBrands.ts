@@ -64,6 +64,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "lingmao",
     slug: "lingmao",
+    detailPath: "/vpn/lingmao",
     logo: "/images/vpn/灵猫.png",
     name: "灵猫",
     description: "全IPLC专线，不限制客户端，解锁流媒体与AI。",
