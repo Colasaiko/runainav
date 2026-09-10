@@ -79,6 +79,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "firefly",
     slug: "firefly",
+    detailPath: "/vpn/firefly",
     logo: "/images/vpn/Firefly.png",
     name: "Firefly",
     description: "IPLC专线网络，不限速，不限设备数。",
