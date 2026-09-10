@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ai': '2026-09-08',
     '/vpn/weifeng': '2026-09-03',
     '/vpn/feimao': '2026-09-10',
+    '/vpn/shanyue': '2026-09-10',
     '/tests': '2026-09-10',
   };
   
@@ -79,6 +80,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   addEntry({
     url: `${baseUrl}/vpn/feimao`,
     lastModified: new Date(staticDates['/vpn/feimao']),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  });
+
+  addEntry({
+    url: `${baseUrl}/vpn/shanyue`,
+    lastModified: new Date(staticDates['/vpn/shanyue']),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   });

@@ -50,6 +50,8 @@ export const vpnBrands: VPNBrand[] = [
     slug: "shanyue",
     logo: "/images/vpn/闪跃.png",
     name: "闪跃",
+    detailPath: "/vpn/shanyue",
+
     description: "全IPLC专线，原生IP解锁流媒体与AI应用。",
     tags: ["AI", "影音"],
     price: 24,

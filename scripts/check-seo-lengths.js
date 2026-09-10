@@ -112,6 +112,7 @@ extractAndCheck('/guides/ai-network', 'src/app/guides/ai-network/page.tsx', 20, 
 extractAndCheck('/guides/cursor-build-blog', 'src/app/guides/cursor-build-blog/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/tests', 'src/app/tests/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/feimao', 'src/app/vpn/feimao/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/vpn/shanyue', 'src/app/vpn/shanyue/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/weifeng', 'src/app/vpn/weifeng/page.tsx', 20, 30, 70, 80);
 
 
