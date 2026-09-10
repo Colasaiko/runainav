@@ -54,7 +54,13 @@ export default function FeimaoReviewPage() {
         }
       ]} />
       <Header />
-      <ArticleStickyBar sections={[{ id: "pricing", navLabel: "套餐价格" }]} />
+      <ArticleStickyBar sections={[
+        { id: "overview", navLabel: "速读" },
+        { id: "pricing", navLabel: "套餐价格" },
+        { id: "ai-test", navLabel: "AI实测" },
+        { id: "network", navLabel: "线路测速" },
+        { id: "faq", navLabel: "FAQ" },
+      ]} />
       <FloatingBackButton fallbackHref="/vpn" />
 
       <main className="flex-grow pt-24 pb-20">
@@ -91,7 +97,7 @@ export default function FeimaoReviewPage() {
           </div>
 
           {/* 30秒速读 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="overview">
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <Zap className="w-6 h-6 text-brand-500" />
               30秒速读
@@ -118,7 +124,7 @@ export default function FeimaoReviewPage() {
           </section>
 
           {/* 套餐与价格 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm" id="pricing">
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="pricing">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">套餐价格</h2>
             <p className="text-gray-600 mb-6 text-sm">
               以下资料于 <strong className="text-gray-900">2026-09-10</strong> 根据飞猫云当前官方页面核实。定制套餐因无法完全确认未在下表列出。
@@ -148,7 +154,7 @@ export default function FeimaoReviewPage() {
           </section>
 
           {/* AI 实测 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-gray-900">AI 连通性实测</h2>
               <Link href="/tests" className="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center gap-1 bg-brand-50 px-3 py-1.5 rounded-full">
@@ -204,7 +210,7 @@ export default function FeimaoReviewPage() {
           </section>
 
           {/* 节点与速度 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">线路说明与测速</h2>
             <div className="prose prose-gray max-w-none text-sm md:text-base leading-relaxed">
               <p>官方页面标称为 IPLC 专线网络。<strong>RunAI 当前尚未发布飞猫云独立速度测试数据</strong>，相关晚高峰稳定性和测速图表待后续补充。我们不对未经验证的公开测速截图进行直接引用。</p>
@@ -212,7 +218,7 @@ export default function FeimaoReviewPage() {
           </section>
 
           {/* FAQ */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="faq">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h2>
             <div className="space-y-6">
               <div>
