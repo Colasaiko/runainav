@@ -6,12 +6,12 @@ import Link from "next/link";
 import { constructMetadata } from "@/lib/seo";
 import JsonLd, { generateBreadcrumbSchema } from "@/components/seo/JsonLd";
 import { aiTests, TestStatus, getAITestBySlug } from "@/data/aiTests";
+import { networkAITests } from "@/data/networkAITests";
 import { CheckCircle2, AlertTriangle, XCircle, Clock, ExternalLink, ShieldAlert, Wifi, Info } from "lucide-react";
 import { aiTools } from "@/data/aiTools";
 
 export async function generateStaticParams() {
   return aiTests
-    .filter(t => t.open !== 'pending' && t.open !== 'not-tested')
     .map((test) => ({
       slug: test.slug,
     }));
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const test = getAITestBySlug(slug);
   
-  if (!test || test.open === 'pending') return {};
+  if (!test) return {};
 
   return constructMetadata({
     title: test.seoTitle || `${test.toolName}国内能用吗？实测记录`,
@@ -64,9 +64,14 @@ export default async function TestDetail({ params }: { params: Promise<{ slug: s
   const test = getAITestBySlug(slug);
   const toolData = aiTools.find(t => t.slug === slug);
 
-  if (!test || test.open === 'pending') {
+  if (!test) {
     notFound();
   }
+
+  // Get all network test runs, ordered by date desc
+  const testRuns = networkAITests
+    .filter(t => t.toolSlug === slug)
+    .sort((a, b) => new Date(b.testedAt).getTime() - new Date(a.testedAt).getTime());
 
   const breadcrumbItems = [
     { name: '首页', item: 'https://runainav.com/' },
@@ -115,73 +120,65 @@ export default async function TestDetail({ params }: { params: Promise<{ slug: s
               本文记录了 {test.toolName} 在实际网络环境中的打开、登录与使用情况，帮助判断当前的连通性状态。
             </p>
 
-            {/* Matrix */}
-            <div className="grid md:grid-cols-3 gap-4 mb-8">
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center text-center">
-                <span className="text-gray-500 text-sm font-medium mb-3">打开网页/应用</span>
-                <div className="flex items-center gap-2 text-lg">
-                  {getStatusIcon(test.open)}
-                  {getStatusText(test.open)}
-                </div>
+            {testRuns.length > 0 ? (
+              <div className="space-y-6">
+                <h2 className="font-bold text-gray-900 text-lg">在不同网络的测试记录</h2>
+                {testRuns.map((run, idx) => (
+                  <div key={idx} className="border border-gray-100 rounded-2xl p-6 bg-white shadow-sm">
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+                      <div className="flex items-center gap-3">
+                        <Wifi className="w-5 h-5 text-brand-600" />
+                        <span className="font-bold text-lg text-gray-900">{run.networkName}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full border border-gray-100">
+                        <Clock className="w-4 h-4" />
+                        <span>{run.testedAt}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-3 gap-4 mb-4">
+                      <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 flex flex-col items-center justify-center text-center">
+                        <span className="text-gray-500 text-xs font-medium mb-2">打开网页/应用</span>
+                        <div className="flex items-center gap-2 text-base">
+                          {getStatusIcon(run.open)}
+                          {getStatusText(run.open)}
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 flex flex-col items-center justify-center text-center">
+                        <span className="text-gray-500 text-xs font-medium mb-2">账号登录</span>
+                        <div className="flex items-center gap-2 text-base">
+                          {getStatusIcon(run.login)}
+                          {getStatusText(run.login)}
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 flex flex-col items-center justify-center text-center">
+                        <span className="text-gray-500 text-xs font-medium mb-2">基础使用</span>
+                        <div className="flex items-center gap-2 text-base">
+                          {getStatusIcon(run.use)}
+                          {getStatusText(run.use)}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <p className="text-sm text-gray-600 mb-4">{run.summary}</p>
+                    
+                    {run.networkDetailPath && (
+                      <Link href={run.networkDetailPath} className="inline-block text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
+                        查看该网络详情 →
+                      </Link>
+                    )}
+                  </div>
+                ))}
               </div>
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center text-center">
-                <span className="text-gray-500 text-sm font-medium mb-3">账号登录</span>
-                <div className="flex items-center gap-2 text-lg">
-                  {getStatusIcon(test.login)}
-                  {getStatusText(test.login)}
-                </div>
+            ) : (
+              <div className="bg-gray-50 rounded-2xl p-6 text-center text-gray-500 border border-gray-100">
+                暂无网络测试记录。
               </div>
-              <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 flex flex-col items-center justify-center text-center">
-                <span className="text-gray-500 text-sm font-medium mb-3">基础使用</span>
-                <div className="flex items-center gap-2 text-lg">
-                  {getStatusIcon(test.use)}
-                  {getStatusText(test.use)}
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 bg-gray-50 px-6 py-4 rounded-xl border border-gray-100">
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-gray-400" />
-                <span>测试日期：<strong className="text-gray-900">{test.testedAt}</strong></span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Wifi className="w-4 h-4 text-gray-400" />
-                <span>测试网络：
-                  {test.networkDetailPath ? (
-                    <Link href={test.networkDetailPath} className="text-brand-600 hover:underline font-medium">
-                      {test.networkName}
-                    </Link>
-                  ) : (
-                    <strong className="text-gray-900">{test.networkName}</strong>
-                  )}
-                </span>
-              </div>
-            </div>
+            )}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="md:col-span-2 space-y-8">
-              
-              {/* Conclusion */}
-              <section className="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
-                <h2 className="text-xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-4">测试结论</h2>
-                <p className="text-gray-700 leading-relaxed">
-                  {test.summary}
-                </p>
-                {toolData?.officialUrl && (
-                  <div className="mt-6 pt-6 border-t border-gray-100">
-                    <a 
-                      href={toolData.officialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors"
-                    >
-                      前往 {test.toolName} 官方网站 <ExternalLink className="w-4 h-4" />
-                    </a>
-                  </div>
-                )}
-              </section>
 
               {/* Untested Items */}
               {test.untestedItems.length > 0 && (
@@ -191,7 +188,7 @@ export default async function TestDetail({ params }: { params: Promise<{ slug: s
                     哪些功能没有经过测试？
                   </h2>
                   <p className="text-sm text-gray-500 mb-4 leading-relaxed">
-                    为了避免误导，以上“正常”状态仅代表基础连通性。我们在本次记录中<strong>没有</strong>对以下深层功能进行独立测试：
+                    为了避免误导，以上“正常”状态仅代表基础连通性。我们在实际测试记录中<strong>没有</strong>对以下深层功能进行独立验证：
                   </p>
                   <ul className="grid sm:grid-cols-2 gap-3">
                     {test.untestedItems.map((item, idx) => (
@@ -218,6 +215,17 @@ export default async function TestDetail({ params }: { params: Promise<{ slug: s
                       <div className="font-medium text-gray-900 group-hover:text-brand-700 mb-1">{test.toolName} 付费订阅指南</div>
                       <div className="text-sm text-gray-500">了解最新价格、套餐差异与付款方式。</div>
                     </Link>
+                  )}
+                  
+                  {toolData?.officialUrl && (
+                    <a 
+                      href={toolData.officialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors mt-2"
+                    >
+                      前往 {test.toolName} 官方网站 <ExternalLink className="w-4 h-4" />
+                    </a>
                   )}
                 </div>
               </section>
@@ -274,20 +282,9 @@ export default async function TestDetail({ params }: { params: Promise<{ slug: s
                 
                 <h3 className="text-sm font-bold text-gray-900 mb-3 pt-4 border-t border-gray-200">商业关联说明</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  说明：本记录使用微风网络完成测试。RunAI 与微风网络存在商业关联，下方包含相关链接；表中的状态仅记录当次实际观察，我们不会因为商业关系把未测试项目标记为通过。
+                  说明：本记录使用的网络品牌可能与 RunAI 存在商业关联，下方可能包含相关推广链接；表中的状态仅记录当次实际观察，我们不会因为商业关系把未测试项目标记为通过。
                 </p>
               </div>
-
-              {/* Network Ad */}
-              {test.networkDetailPath && (
-                <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
-                  <h3 className="font-bold text-gray-900 mb-2">本次测试使用网络</h3>
-                  <p className="text-sm text-gray-500 mb-6">{test.networkName}</p>
-                  <Link href={test.networkDetailPath} className="inline-block w-full text-center text-sm font-medium text-brand-600 bg-brand-50 hover:bg-brand-100 py-2.5 rounded-lg transition-colors border border-brand-100">
-                    查看测试网络详情
-                  </Link>
-                </div>
-              )}
 
             </div>
           </div>

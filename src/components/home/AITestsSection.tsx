@@ -1,9 +1,10 @@
-import React from "react";
-import Link from "next/link";
-import { aiTests } from "@/data/aiTests";
-import { CheckCircle2, AlertTriangle, XCircle, Clock } from "lucide-react";
+import Link from 'next/link';
+import { CheckCircle2, AlertTriangle, XCircle, Clock } from 'lucide-react';
+import { aiTests } from '@/data/aiTests';
+import { networkAITests } from '@/data/networkAITests';
+import { TestStatus } from '@/data/aiTests';
 
-const getStatusIcon = (status: string) => {
+const getStatusIcon = (status: TestStatus) => {
   switch (status) {
     case 'pass': return <CheckCircle2 className="w-4 h-4 text-emerald-500" />;
     case 'partial': return <AlertTriangle className="w-4 h-4 text-amber-500" />;
@@ -13,18 +14,18 @@ const getStatusIcon = (status: string) => {
   }
 };
 
-const getStatusText = (status: string) => {
+const getStatusText = (status: TestStatus) => {
   switch (status) {
-    case 'pass': return <span className="text-emerald-700 font-medium">正常</span>;
-    case 'partial': return <span className="text-amber-700 font-medium">部分正常</span>;
-    case 'fail': return <span className="text-red-700 font-medium">异常</span>;
-    case 'pending': return <span className="text-gray-500">待测试</span>;
-    default: return <span className="text-gray-400">未测试</span>;
+    case 'pass': return <span className="text-emerald-700">正常</span>;
+    case 'partial': return <span className="text-amber-700">部分正常</span>;
+    case 'fail': return <span className="text-red-700">异常</span>;
+    case 'pending': return <span className="text-gray-500">待测</span>;
+    default: return <span className="text-gray-400">未测</span>;
   }
 };
 
 export default function AITestsSection() {
-  const testedTools = aiTests.filter(t => t.open !== 'pending' && t.open !== 'not-tested').slice(0, 5);
+  const testedTools = aiTests.slice(0, 5); // first 5
 
   return (
     <section className="py-16 bg-white border-t border-gray-100">
@@ -40,29 +41,37 @@ export default function AITestsSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          {testedTools.map(tool => (
-            <Link key={tool.slug} href={`/tests/${tool.slug}`} className="block bg-gray-50 hover:bg-white rounded-2xl border border-gray-200 hover:border-brand-200 hover:shadow-md transition-all p-5 group">
-              <h3 className="font-bold text-gray-900 group-hover:text-brand-600 mb-4 transition-colors">{tool.toolName}</h3>
-              <div className="space-y-3 mb-5">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-500">打开</span>
-                  <div className="flex items-center gap-1.5">{getStatusIcon(tool.open)}{getStatusText(tool.open)}</div>
+          {testedTools.map(tool => {
+            const run = networkAITests.find(t => t.toolSlug === tool.slug);
+            const open = run ? run.open : 'not-tested';
+            const login = run ? run.login : 'not-tested';
+            const use = run ? run.use : 'not-tested';
+            const date = run ? run.testedAt : '-';
+            
+            return (
+              <Link key={tool.slug} href={`/tests/${tool.slug}`} className="block bg-gray-50 hover:bg-white rounded-2xl border border-gray-200 hover:border-brand-200 hover:shadow-md transition-all p-5 group">
+                <h3 className="font-bold text-gray-900 group-hover:text-brand-600 mb-4 transition-colors">{tool.toolName}</h3>
+                <div className="space-y-3 mb-5">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">打开</span>
+                    <div className="flex items-center gap-1.5">{getStatusIcon(open)}{getStatusText(open)}</div>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">登录</span>
+                    <div className="flex items-center gap-1.5">{getStatusIcon(login)}{getStatusText(login)}</div>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-500">使用</span>
+                    <div className="flex items-center gap-1.5">{getStatusIcon(use)}{getStatusText(use)}</div>
+                  </div>
                 </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-500">登录</span>
-                  <div className="flex items-center gap-1.5">{getStatusIcon(tool.login)}{getStatusText(tool.login)}</div>
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
+                  <span className="text-xs text-gray-400">{date}</span>
+                  <span className="text-xs font-medium text-brand-600 group-hover:text-brand-700">查看详情</span>
                 </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-500">使用</span>
-                  <div className="flex items-center gap-1.5">{getStatusIcon(tool.use)}{getStatusText(tool.use)}</div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-                <span className="text-xs text-gray-400">{tool.testedAt}</span>
-                <span className="text-xs font-medium text-brand-600 group-hover:text-brand-700">查看详情</span>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

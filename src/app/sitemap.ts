@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guides': '2026-09-09',
     '/ai': '2026-09-08',
     '/vpn/weifeng': '2026-09-03',
+    '/vpn/feimao': '2026-09-10',
     '/tests': '2026-09-10',
   };
   
@@ -76,6 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   addEntry({
+    url: `${baseUrl}/vpn/feimao`,
+    lastModified: new Date(staticDates['/vpn/feimao']),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  });
+
+  addEntry({
     url: `${baseUrl}/tests`,
     lastModified: new Date(staticDates['/tests']),
     changeFrequency: 'daily' as const,
@@ -84,7 +92,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic Test Detail Pages
   aiTests.forEach((test) => {
-    if (test.open !== 'pending' && test.open !== 'not-tested') {
+    if (true) {
       addEntry({
         url: `${baseUrl}/tests/${test.slug}`,
         lastModified: new Date(test.updatedAt),

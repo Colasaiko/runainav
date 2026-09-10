@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ExternalLink, Check, Info, AlertTriangle, Monitor, Smartphone, HelpCircle, Zap, ArrowRight } from 'lucide-react';
+import { networkAITests } from '@/data/networkAITests';
 import { aiTests } from '@/data/aiTests';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
 import JsonLd from '@/components/seo/JsonLd';
@@ -197,29 +198,32 @@ export default function WeifengReviewPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
-                      {aiTests.filter(t => t.networkId === 'weifeng' || t.open === 'pending').map(tool => (
-                        <tr key={tool.slug}>
-                          <td className="p-4 font-medium">
-                            {tool.open !== 'pending' ? (
-                              <Link href={`/tests/${tool.slug}`} className="text-brand-600 hover:underline">{tool.toolName}</Link>
-                            ) : (
-                              tool.toolName
-                            )}
-                          </td>
-                          <td className="p-4">
-                            {tool.open === 'pass' ? '✅ 正常' : tool.open === 'pending' ? <span className="text-gray-400">待测试</span> : '❌ 异常'}
-                          </td>
-                          <td className="p-4">
-                            {tool.login === 'pass' ? '✅ 正常' : tool.login === 'pending' ? '-' : '❌ 异常'}
-                          </td>
-                          <td className="p-4">
-                            {tool.use === 'pass' ? '✅ 正常' : tool.use === 'pending' ? '-' : '❌ 异常'}
-                          </td>
-                          <td className="p-4 text-sm text-gray-500">
-                            {tool.testedAt || '-'}
-                          </td>
-                        </tr>
-                      ))}
+                      {aiTests.map(baseTool => {
+                        const run = networkAITests.find(t => t.networkId === 'weifeng' && t.toolSlug === baseTool.slug);
+                        return (
+                          <tr key={baseTool.slug}>
+                            <td className="p-4 font-medium">
+                              {run ? (
+                                <Link href={`/tests/${baseTool.slug}`} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                              ) : (
+                                baseTool.toolName
+                              )}
+                            </td>
+                            <td className="p-4">
+                              {run && run.open === 'pass' ? '✅ 正常' : (!run ? <span className="text-gray-400">待测试</span> : '❌ 异常')}
+                            </td>
+                            <td className="p-4">
+                              {run && run.login === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                            </td>
+                            <td className="p-4">
+                              {run && run.use === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                            </td>
+                            <td className="p-4 text-sm text-gray-500">
+                              {run ? run.testedAt : '-'}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                 </table>
               </div>
