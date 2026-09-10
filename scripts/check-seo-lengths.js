@@ -115,6 +115,7 @@ extractAndCheck('/vpn/feimao', 'src/app/vpn/feimao/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/shanyue', 'src/app/vpn/shanyue/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/lingmao', 'src/app/vpn/lingmao/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/firefly', 'src/app/vpn/firefly/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/vpn/wuyou', 'src/app/vpn/wuyou/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/weifeng', 'src/app/vpn/weifeng/page.tsx', 20, 30, 70, 80);
 
 

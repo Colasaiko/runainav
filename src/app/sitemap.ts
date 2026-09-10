@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/vpn/shanyue': '2026-09-10',
     '/vpn/lingmao': '2026-09-10',
     '/vpn/firefly': '2026-09-10',
+    '/vpn/wuyou': '2026-09-10',
     '/tests': '2026-09-10',
   };
   
@@ -103,6 +104,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   addEntry({
     url: `${baseUrl}/vpn/firefly`,
     lastModified: new Date(staticDates['/vpn/firefly']),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  });
+
+  addEntry({
+    url: `${baseUrl}/vpn/wuyou`,
+    lastModified: new Date(staticDates['/vpn/wuyou']),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   });

@@ -94,6 +94,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "wuyou",
     slug: "wuyou",
+    detailPath: "/vpn/wuyou",
     logo: "/images/vpn/无忧.png",
     name: "无忧",
     description: "全IPLC专线，稳定支持全球AI与4K流媒体。",
