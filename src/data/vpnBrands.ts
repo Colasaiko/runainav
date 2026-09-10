@@ -109,6 +109,7 @@ export const vpnBrands: VPNBrand[] = [
   {
     id: "kuajie",
     slug: "kuajie",
+    detailPath: "/vpn/kuajie",
     logo: "/images/vpn/跨界.png",
     name: "跨界云",
     description: "IPLC高端线路，全解锁流媒体，支持AI应用，不限设备数。",
