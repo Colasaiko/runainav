@@ -4,6 +4,7 @@ import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from "@/lib/seo";
@@ -70,7 +71,7 @@ export default function ShanyuePage() {
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div className="flex items-start gap-6">
                 <div className="w-20 h-20 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center bg-white overflow-hidden shrink-0">
-                  <div className="text-3xl font-bold text-gray-900 bg-gray-50 w-full h-full flex items-center justify-center">闪</div>
+                  <Image src="/images/vpn/闪跃.png" alt="闪跃 Logo" width={80} height={80} className="w-full h-full object-contain p-2" />
                 </div>
                 <div>
                   <h1 className="text-3xl font-bold text-gray-900 mb-3">闪跃怎么样？套餐、线路与购买建议</h1>
