@@ -113,7 +113,7 @@ export default function AITestsHub() {
                     <td className="py-5 px-6 text-sm text-gray-600">{tool.testedAt}</td>
                     <td className="py-5 px-6 text-sm">
                       {tool.networkDetailPath ? (
-                        <Link href={tool.networkDetailPath} target="_blank" className="text-brand-600 hover:underline">
+                        <Link href={tool.networkDetailPath} className="text-brand-600 hover:underline">
                           {tool.networkName}
                         </Link>
                       ) : (
@@ -156,7 +156,7 @@ export default function AITestsHub() {
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">测试网络</span>
                     {tool.networkDetailPath ? (
-                      <Link href={tool.networkDetailPath} target="_blank" className="text-brand-600 hover:underline">
+                      <Link href={tool.networkDetailPath} className="text-brand-600 hover:underline">
                         {tool.networkName}
                       </Link>
                     ) : (

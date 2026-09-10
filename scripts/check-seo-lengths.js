@@ -114,16 +114,43 @@ extractAndCheck('/guides/ai-network', 'src/app/guides/ai-network/page.tsx', 20, 
 extractAndCheck('/guides/cursor-build-blog', 'src/app/guides/cursor-build-blog/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/tests', 'src/app/tests/page.tsx', 20, 30, 70, 80);
 
-// Check dynamic test detail pages
-const testDetailsContent = fs.readFileSync('src/app/tests/[slug]/page.tsx', 'utf-8');
-const detailMatches = [...testDetailsContent.matchAll(/titles*=s*['"]([^'"]+)['"];s*descriptions*=s*['"]([^'"]+)['"];/g)];
+// 4. Check aiTests metadata records
+const aiTestsContent = fs.readFileSync('src/data/aiTests.ts', 'utf-8');
+const aiTestsBlockRegex = /\{\s*['"]?slug['"]?:\s*['"]([^'"]+)['"]([\s\S]*?)(?=\{\s*['"]?slug['"]?:|\];)/g;
 
-detailMatches.forEach(match => {
-  const title = match[1];
-  const desc = match[2];
-  checkLength('Test Detail', 'Title', title, 20, 30);
-  checkLength('Test Detail', 'Description', desc, 70, 80);
-});
+let testDetailsCount = 0;
+let aiTestMatch;
+while ((aiTestMatch = aiTestsBlockRegex.exec(aiTestsContent)) !== null) {
+  const slug = aiTestMatch[1];
+  const block = aiTestMatch[2];
+  
+  if (slug === 'midjourney' || slug === 'grok') continue; // pending tests
+  
+  const titleMatch = block.match(/['"]?seoTitle['"]?:\s*['"]([^'"]+)['"]/);
+  const descMatch = block.match(/['"]?seoDescription['"]?:\s*['"]([^'"]+)['"]/);
+  
+  if (!titleMatch) {
+    console.error(`[ERROR] Test Detail ${slug} - seoTitle is missing`);
+    hasError = true;
+  }
+  
+  if (!descMatch) {
+    console.error(`[ERROR] Test Detail ${slug} - seoDescription is missing`);
+    hasError = true;
+  }
+  
+  if (titleMatch && descMatch) {
+    checkLength(`Test Detail: ${slug}`, 'Title', titleMatch[1], 20, 30);
+    checkLength(`Test Detail: ${slug}`, 'Description', descMatch[1], 70, 80);
+    testDetailsCount++;
+  }
+}
+
+console.log(`Found ${testDetailsCount} Test Detail metadata records.`);
+if (testDetailsCount !== 5) {
+  console.error(`[ERROR] Expected 5 Test Detail metadata records, but found ${testDetailsCount}.`);
+  hasError = true;
+}
 
 
 console.log(`\nFound ${foundCount} AI tool records.`);

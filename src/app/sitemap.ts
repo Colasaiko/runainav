@@ -87,7 +87,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (test.open !== 'pending' && test.open !== 'not-tested') {
       addEntry({
         url: `${baseUrl}/tests/${test.slug}`,
-        lastModified: new Date(test.publishedAt), // Use the test's published date, not the test date itself
+        lastModified: new Date(test.updatedAt),
         changeFrequency: 'weekly' as const,
         priority: 0.8,
       });

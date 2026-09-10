@@ -9,7 +9,7 @@ import { aiTests, TestStatus, getAITestBySlug } from "@/data/aiTests";
 import { CheckCircle2, AlertTriangle, XCircle, Clock, ExternalLink, ShieldAlert, Wifi, Info } from "lucide-react";
 import { aiTools } from "@/data/aiTools";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return aiTests
     .filter(t => t.open !== 'pending' && t.open !== 'not-tested')
     .map((test) => ({
@@ -17,33 +17,15 @@ export function generateStaticParams() {
     }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const test = getAITestBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const test = getAITestBySlug(slug);
+  
   if (!test || test.open === 'pending') return {};
 
-  let title = "";
-  let description = "";
-
-  if (test.slug === 'chatgpt') {
-    title = "ChatGPT国内能用吗？打开登录与对话实测";
-    description = "ChatGPT 国内能用吗？RunAI 记录网页打开、账号登录与基础对话的实际测试结果，并注明测试日期、网络环境和适用范围，方便国内用户判断当前使用情况。";
-  } else if (test.slug === 'claude') {
-    title = "Claude国内能用吗？网页登录与对话实测";
-    description = "Claude 国内能用吗？RunAI 记录网页打开、账号登录和基础对话的实际测试结果，并注明测试日期、网络环境与限制说明，帮助国内用户了解当前使用情况。";
-  } else if (test.slug === 'gemini') {
-    title = "Gemini国内能用吗？网页登录与使用实测";
-    description = "Gemini 国内能用吗？RunAI 记录网页打开、账号登录和基础使用的实际测试结果，并注明测试日期、网络环境和服务地区说明，帮助国内用户了解当前使用情况。";
-  } else if (test.slug === 'perplexity') {
-    title = "Perplexity国内能用吗？搜索与登录实测";
-    description = "Perplexity 国内能用吗？RunAI 记录网页打开、账号登录与基础搜索的实际测试结果，并注明测试日期、网络环境和功能范围，方便国内用户了解当前使用情况。";
-  } else if (test.slug === 'cursor') {
-    title = "Cursor国内能用吗？编辑器登录与AI功能实测";
-    description = "Cursor 国内能用吗？RunAI 记录应用打开、账号登录与基础 AI 功能的实际测试结果，并注明测试日期、网络环境和测试范围，帮助国内用户了解当前使用情况。";
-  }
-
   return constructMetadata({
-    title,
-    description,
+    title: test.seoTitle || `${test.toolName}国内能用吗？实测记录`,
+    description: test.seoDescription || `RunAI 记录 ${test.toolName} 在实际网络环境中的打开、登录与使用情况，帮助判断当前的连通性状态。`,
     canonical: `/tests/${test.slug}`,
     type: 'article',
   });
@@ -69,9 +51,18 @@ const getStatusText = (status: TestStatus) => {
   }
 };
 
-export default function TestDetail({ params }: { params: { slug: string } }) {
-  const test = getAITestBySlug(params.slug);
-  const toolData = aiTools.find(t => t.slug === params.slug);
+const subscriptionGuideMap: Record<string, string> = {
+  chatgpt: '/guides/chatgpt-plus-buy',
+  claude: '/guides/claude-pro-subscribe',
+  gemini: '/guides/gemini-subscribe',
+  cursor: '/guides/cursor-pro-buy',
+  perplexity: '/guides/perplexity-pro-subscribe',
+};
+
+export default async function TestDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const test = getAITestBySlug(slug);
+  const toolData = aiTools.find(t => t.slug === slug);
 
   if (!test || test.open === 'pending') {
     notFound();
@@ -83,6 +74,8 @@ export default function TestDetail({ params }: { params: { slug: string } }) {
     { name: `${test.toolName} 实测`, item: `https://runainav.com/tests/${test.slug}` }
   ];
 
+  const subGuide = subscriptionGuideMap[test.slug];
+
   return (
     <div className="min-h-screen flex flex-col font-[family-name:var(--font-sans)] bg-gray-50">
       <JsonLd data={[
@@ -90,7 +83,8 @@ export default function TestDetail({ params }: { params: { slug: string } }) {
         {
           "@context": "https://schema.org",
           "@type": "Article",
-          "headline": `${test.toolName} 国内能用吗？RunAI 实测记录`,
+          "headline": test.seoTitle || `${test.toolName} 国内能用吗？RunAI 实测记录`,
+          "description": test.seoDescription,
           "datePublished": test.publishedAt,
           "dateModified": test.updatedAt,
           "author": {
@@ -155,7 +149,7 @@ export default function TestDetail({ params }: { params: { slug: string } }) {
                 <Wifi className="w-4 h-4 text-gray-400" />
                 <span>测试网络：
                   {test.networkDetailPath ? (
-                    <Link href={test.networkDetailPath} target="_blank" className="text-brand-600 hover:underline font-medium">
+                    <Link href={test.networkDetailPath} className="text-brand-600 hover:underline font-medium">
                       {test.networkName}
                     </Link>
                   ) : (
@@ -219,9 +213,8 @@ export default function TestDetail({ params }: { params: { slug: string } }) {
                     <div className="text-sm text-gray-500">查看完整的新手入门指南。</div>
                   </Link>
                   
-                  {/* Depending on the tool, we can conditionally link subscriptions */}
-                  {(test.slug === 'chatgpt' || test.slug === 'claude' || test.slug === 'cursor' || test.slug === 'gemini' || test.slug === 'perplexity') && (
-                    <Link href={`/guides/${test.slug}${test.slug === 'chatgpt' || test.slug === 'cursor' ? '-plus-buy' : (test.slug === 'claude' || test.slug === 'perplexity' ? '-pro-subscribe' : '-subscribe')}`} className="block p-4 rounded-xl border border-gray-100 hover:border-brand-200 hover:bg-brand-50 transition-colors group">
+                  {subGuide && (
+                    <Link href={subGuide} className="block p-4 rounded-xl border border-gray-100 hover:border-brand-200 hover:bg-brand-50 transition-colors group">
                       <div className="font-medium text-gray-900 group-hover:text-brand-700 mb-1">{test.toolName} 付费订阅指南</div>
                       <div className="text-sm text-gray-500">了解最新价格、套餐差异与付款方式。</div>
                     </Link>
@@ -290,7 +283,7 @@ export default function TestDetail({ params }: { params: { slug: string } }) {
                 <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
                   <h3 className="font-bold text-gray-900 mb-2">本次测试使用网络</h3>
                   <p className="text-sm text-gray-500 mb-6">{test.networkName}</p>
-                  <Link href={test.networkDetailPath} target="_blank" className="inline-block w-full text-center text-sm font-medium text-brand-600 bg-brand-50 hover:bg-brand-100 py-2.5 rounded-lg transition-colors border border-brand-100">
+                  <Link href={test.networkDetailPath} className="inline-block w-full text-center text-sm font-medium text-brand-600 bg-brand-50 hover:bg-brand-100 py-2.5 rounded-lg transition-colors border border-brand-100">
                     查看测试网络详情
                   </Link>
                 </div>
