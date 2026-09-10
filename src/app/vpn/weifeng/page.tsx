@@ -198,33 +198,13 @@ export default function WeifengReviewPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
-                      {aiTests.map(baseTool => {
-                        const run = networkAITests.find(t => t.networkId === 'weifeng' && t.toolSlug === baseTool.slug);
-                        return (
-                          <tr key={baseTool.slug}>
-                            <td className="p-4 font-medium">
-                              {run ? (
-                                <Link href={`/tests/${baseTool.slug}`} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
-                              ) : (
-                                baseTool.toolName
-                              )}
-                            </td>
-                            <td className="p-4">
-                              {run && run.open === 'pass' ? '✅ 正常' : (!run ? <span className="text-gray-400">待测试</span> : '❌ 异常')}
-                            </td>
-                            <td className="p-4">
-                              {run && run.login === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
-                            </td>
-                            <td className="p-4">
-                              {run && run.use === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
-                            </td>
-                            <td className="p-4 text-sm text-gray-500">
-                              {run ? run.testedAt : '-'}
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
+                    <tr><td className="p-4 font-medium">清风 Breeze</td><td className="p-4">100GB/月</td><td className="p-4 text-gray-400">不提供单月购买</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-brand-600 font-medium">¥137</td></tr>
+                    <tr><td className="p-4 font-medium">乘风 Riding</td><td className="p-4">200GB/月</td><td className="p-4 font-medium">¥27</td><td className="p-4 text-gray-600">¥72</td><td className="p-4 text-brand-600 font-medium">¥259</td></tr>
+                    <tr><td className="p-4 font-medium">破风 Breaking</td><td className="p-4">500GB/月</td><td className="p-4 font-medium">¥57</td><td className="p-4 text-gray-600">¥153</td><td className="p-4 text-brand-600 font-medium">¥547</td></tr>
+                    <tr><td className="p-4 font-medium">御风 Mastery</td><td className="p-4">1200GB/月</td><td className="p-4 font-medium">¥127</td><td className="p-4 text-gray-600">¥342</td><td className="p-4 text-brand-600 font-medium">¥1219</td></tr>
+                    <tr><td className="p-4 font-medium">信风·不限时</td><td className="p-4">270GB</td><td className="p-4" colSpan={3}>一次性 ¥200</td></tr>
+                    <tr><td className="p-4 font-medium">长风·不限时</td><td className="p-4">570GB</td><td className="p-4" colSpan={3}>一次性 ¥370</td></tr>
+</tbody>
                 </table>
               </div>
               <p className="text-sm text-gray-600 bg-gray-100 p-4 rounded-xl">
@@ -369,20 +349,33 @@ export default function WeifengReviewPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
-                    <tr>
-                      <td className="p-4 font-medium"><Link href="/guides/chatgpt" className="text-brand-600 hover:underline">ChatGPT</Link></td>
-                      <td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-02</td>
-                    </tr>
-                    <tr>
-                      <td className="p-4 font-medium"><Link href="/guides/claude" className="text-brand-600 hover:underline">Claude</Link></td>
-                      <td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-02</td>
-                    </tr>
-                    <tr><td className="p-4 font-medium">Gemini</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-07</td></tr>
-                    <tr><td className="p-4 font-medium">Perplexity</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-07</td></tr>
-                    <tr><td className="p-4 font-medium">Cursor</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4">✅ 正常</td><td className="p-4 text-sm text-gray-500">2026-09-07</td></tr>
-                    <tr><td className="p-4 font-medium">Midjourney</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
-                    <tr><td className="p-4 font-medium">Grok</td><td className="p-4 text-gray-400">待测试</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
-                  </tbody>
+                      {aiTests.map(baseTool => {
+                        const run = networkAITests.find(t => t.networkId === 'weifeng' && t.toolSlug === baseTool.slug);
+                        return (
+                          <tr key={baseTool.slug}>
+                            <td className="p-4 font-medium">
+                              {run ? (
+                                <Link href={`/tests/${baseTool.slug}`} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                              ) : (
+                                baseTool.toolName
+                              )}
+                            </td>
+                            <td className="p-4">
+                              {run && run.open === 'pass' ? '✅ 正常' : (!run ? <span className="text-gray-400">待测试</span> : '❌ 异常')}
+                            </td>
+                            <td className="p-4">
+                              {run && run.login === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                            </td>
+                            <td className="p-4">
+                              {run && run.use === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                            </td>
+                            <td className="p-4 text-sm text-gray-500">
+                              {run ? run.testedAt : '-'}
+                            </td>
+                          </tr>
+                        );
+                      })}
+</tbody>
                 </table>
               </div>
               <div className="bg-gray-50 p-4 rounded-xl text-sm text-gray-600 border border-gray-200">
