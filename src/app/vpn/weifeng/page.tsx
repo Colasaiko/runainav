@@ -15,6 +15,19 @@ import JsonLd from '@/components/seo/JsonLd';
 const AFFILIATE_URL = "https://edp01.breezenetaff.com/#/?code=bSnymFll";
 
 import { constructMetadata } from "@/lib/seo";
+import { type TestStatus } from "@/data/aiTests";
+
+function renderTestStatus(status?: TestStatus) {
+  if (!status) return <span className="text-gray-400">— 未测试</span>;
+  switch (status) {
+    case 'pass': return '✅ 正常';
+    case 'partial': return '⚠️ 部分正常';
+    case 'fail': return '❌ 异常';
+    case 'pending': return '⏳ 待测试';
+    case 'not-tested': return <span className="text-gray-400">— 未测试</span>;
+    default: return <span className="text-gray-400">— 未测试</span>;
+  }
+}
 
 export const metadata: Metadata = constructMetadata({
   title: '微风网络怎么样？套餐、节点与AI使用体验 | RunAI',
@@ -367,13 +380,13 @@ export default function WeifengReviewPage() {
                               )}
                             </td>
                             <td className="p-4">
-                              {run && run.open === 'pass' ? '✅ 正常' : (!run ? <span className="text-gray-400">待测试</span> : '❌ 异常')}
+                              {renderTestStatus(run?.open)}
                             </td>
                             <td className="p-4">
-                              {run && run.login === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                              {renderTestStatus(run?.login)}
                             </td>
                             <td className="p-4">
-                              {run && run.use === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                              {renderTestStatus(run?.use)}
                             </td>
                             <td className="p-4 text-sm text-gray-500">
                               {run ? run.testedAt : '-'}

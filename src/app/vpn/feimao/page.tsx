@@ -17,6 +17,19 @@ const feimaoData = vpnBrands.find(b => b.id === 'feimao');
 const AFFILIATE_URL = feimaoData?.url || "https://dfg12cd.feimaogfttt1.sbs/#/?code=UUcH5yh9";
 
 import { constructMetadata } from "@/lib/seo";
+import { type TestStatus } from "@/data/aiTests";
+
+function renderTestStatus(status?: TestStatus) {
+  if (!status) return <span className="text-gray-400">— 未测试</span>;
+  switch (status) {
+    case 'pass': return '✅ 正常';
+    case 'partial': return '⚠️ 部分正常';
+    case 'fail': return '❌ 异常';
+    case 'pending': return '⏳ 待测试';
+    case 'not-tested': return <span className="text-gray-400">— 未测试</span>;
+    default: return <span className="text-gray-400">— 未测试</span>;
+  }
+}
 
 export const metadata: Metadata = constructMetadata({
   title: '飞猫云怎么样？套餐价格、线路与AI使用体验｜RunAI',
@@ -190,13 +203,13 @@ export default function FeimaoReviewPage() {
                           )}
                         </td>
                         <td className="p-4">
-                          {run && run.open === 'pass' ? '✅ 正常' : (!run ? <span className="text-gray-400">待测试</span> : '❌ 异常')}
+                          {renderTestStatus(run?.open)}
                         </td>
                         <td className="p-4">
-                          {run && run.login === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                          {renderTestStatus(run?.login)}
                         </td>
                         <td className="p-4">
-                          {run && run.use === 'pass' ? '✅ 正常' : (!run ? '-' : '❌ 异常')}
+                          {renderTestStatus(run?.use)}
                         </td>
                         <td className="p-4 text-gray-500">
                           {run ? run.testedAt : '-'}
