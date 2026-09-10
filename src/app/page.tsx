@@ -4,6 +4,7 @@ import AICategoryGrid from "@/components/home/AICategoryGrid";
 import PopularAITools from "@/components/home/PopularAITools";
 import AIUseCases from "@/components/home/AIUseCases";
 import FeaturedGuides from "@/components/home/FeaturedGuides";
+import AITestsSection from "@/components/home/AITestsSection";
 import GlobalInternetSection from "@/components/home/GlobalInternetSection";
 import VPNExplainer from "@/components/home/VPNExplainer";
 import VPNUseCases from "@/components/home/VPNUseCases";
@@ -33,6 +34,8 @@ export default function Home() {
         <PopularAITools />
         <AIUseCases />
         <FeaturedGuides />
+        
+        <AITestsSection />
         
         {/* Soft transition to Network / VPN section */}
         <GlobalInternetSection />

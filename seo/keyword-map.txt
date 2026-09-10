@@ -298,3 +298,12 @@ Primary Keyword: IPLCå’ŒIEPLæœ‰ä»€ä¹ˆåŒºåˆ«
 Secondary Keywords: IPLCæœºåœº, IEPLæœºåœº, ä¸­è½¬æœºåœº, ç›´è¿æœºåœº, ä¸“çº¿æœºåœºæ¨è
 Intent: network
 Status: Published (replaces Backlog item 'ä¸“çº¿æœºåœºæ¨è')
+
+ #   A I   T e s t   /   A v a i l a b i l i t y   C l u s t e r 
+ wmYA I ıV…QO(u[Km  |   A I å]wQıV…Qı€(uT,   wmYA I KmÕ‹,   A I O(u¶r`  |   áOo`Œåg  |   / t e s t s   |   [KmH u b ‹W  |   ò]Œ[b
+ C h a t G P T ıV…Qı€(uT  |   C h a t G P T ıV…QO(u[Km,   C h a t G P T {vU_KmÕ‹  |   áOo`Œåg  |   / t e s t s / c h a t g p t   |   [Km‹W  |   ò]Œ[b
+ C l a u d e ıV…Qı€(uT  |   C l a u d e ıV…QO(u[Km,   C l a u d e {vU_KmÕ‹  |   áOo`Œåg  |   / t e s t s / c l a u d e   |   [Km‹W  |   ò]Œ[b
+ G e m i n i ıV…Qı€(uT  |   G e m i n i ıV…QO(u[Km,   G e m i n i {vU_KmÕ‹  |   áOo`Œåg  |   / t e s t s / g e m i n i   |   [Km‹W  |   ò]Œ[b
+ P e r p l e x i t y ıV…Qı€(uT  |   P e r p l e x i t y ıV…QO(u[Km,   P e r p l e x i t y d"}KmÕ‹  |   áOo`Œåg  |   / t e s t s / p e r p l e x i t y   |   [Km‹W  |   ò]Œ[b
+ C u r s o r ıV…Qı€(uT  |   C u r s o r ıV…QO(u[Km,   C u r s o r {vU_KmÕ‹  |   áOo`Œåg  |   / t e s t s / c u r s o r   |   [Km‹W  |   ò]Œ[b 
+ 

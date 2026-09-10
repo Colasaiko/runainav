@@ -21,6 +21,7 @@ export default function Header() {
             <Link href="/ai" className="hover:text-gray-900 transition-colors">AI工具</Link>
             <Link href="/guides" className="hover:text-gray-900 transition-colors">AI指南</Link>
             <Link href="/subscriptions" className="hover:text-gray-900 transition-colors">AI订阅</Link>
+            <Link href="/tests" className="hover:text-gray-900 transition-colors">AI实测</Link>
             <Link href="/vpn" className="hover:text-gray-900 transition-colors">VPN</Link>
           </nav>
         </div>
@@ -50,6 +51,7 @@ export default function Header() {
           <Link href="/ai" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI工具</Link>
           <Link href="/guides" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI指南</Link>
           <Link href="/subscriptions" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI订阅</Link>
+          <Link href="/tests" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2">AI实测</Link>
           <Link href="/vpn" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-700 font-medium py-2 text-brand-600">VPN 方案</Link>
         </div>
       )}

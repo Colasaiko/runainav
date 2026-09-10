@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { aiTools } from '@/data/aiTools';
 import { guideArticles } from '@/data/guideArticles';
+import { aiTests } from '@/data/aiTests';
 
 export const dynamic = 'force-static';
 
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guides': '2026-09-09',
     '/ai': '2026-09-08',
     '/vpn/weifeng': '2026-09-03',
+    '/tests': '2026-09-10',
   };
   
   // Use a Map to deduplicate paths. The key is the normalized URL pathname.
@@ -71,6 +73,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(staticDates['/vpn/weifeng']),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+  });
+
+  addEntry({
+    url: `${baseUrl}/tests`,
+    lastModified: new Date(staticDates['/tests']),
+    changeFrequency: 'daily' as const,
+    priority: 0.9,
+  });
+
+  // Dynamic Test Detail Pages
+  aiTests.forEach((test) => {
+    if (test.open !== 'pending' && test.open !== 'not-tested') {
+      addEntry({
+        url: `${baseUrl}/tests/${test.slug}`,
+        lastModified: new Date(test.publishedAt), // Use the test's published date, not the test date itself
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      });
+    }
   });
 
   // 2. Guide Articles (from data)

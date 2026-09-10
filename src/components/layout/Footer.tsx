@@ -31,7 +31,11 @@ export default function Footer() {
             <h4 className="font-semibold text-gray-900 mb-4">指南</h4>
             <ul className="space-y-3 text-sm text-gray-500">
               <li><Link href="/guides" className="hover:text-gray-900">AI教程</Link></li>
+              <li><Link href="/subscriptions" className="hover:text-gray-900">AI订阅</Link></li>
               <li><Link href="/guides/chatgpt-vs-claude-vs-gemini" className="hover:text-gray-900">AI工具比较</Link></li>
+              <li><Link href="/tests" className="hover:text-gray-900">AI实测中心</Link></li>
+              <li><Link href="/tests/chatgpt" className="hover:text-gray-900">ChatGPT实测</Link></li>
+              <li><Link href="/tests/claude" className="hover:text-gray-900">Claude实测</Link></li>
             </ul>
           </div>
 

@@ -139,6 +139,13 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
               {tool.shortDescription}
             </p>
+            {['chatgpt', 'claude', 'gemini', 'perplexity', 'cursor'].includes(slug) && (
+              <div className="mb-8">
+                <Link href={`/tests/${slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl transition-colors text-sm font-medium border border-blue-100">
+                  想看当前实际测试结果？查看 RunAI {tool.name} 实测 →
+                </Link>
+              </div>
+            )}
             {tool.domesticIntro && (
               <div className="bg-blue-50 text-blue-800 p-5 rounded-2xl border border-blue-100 text-base leading-relaxed mb-8">
                 {tool.domesticIntro}
@@ -1132,6 +1139,14 @@ return (
             <div className="flex-grow">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{tool.name}</h1>
               <p className="text-xl text-gray-600 mb-6">{tool.shortDescription}</p>
+
+                {['chatgpt', 'claude', 'gemini', 'perplexity', 'cursor'].includes(slug) && (
+                  <div className="mb-6">
+                    <Link href={`/tests/${slug}`} className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 hover:bg-blue-100 rounded-xl transition-colors text-sm font-medium border border-blue-100">
+                      想看当前实际测试结果？查看 RunAI {tool.name} 实测 →
+                    </Link>
+                  </div>
+                )}
               
               <div className="flex flex-wrap gap-2 mb-8">
                 {tool.tags.map((tag, idx) => (

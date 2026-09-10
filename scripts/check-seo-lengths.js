@@ -112,6 +112,19 @@ extractAndCheck('/vpn', 'src/app/vpn/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/subscriptions', 'src/app/subscriptions/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides/ai-network', 'src/app/guides/ai-network/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides/cursor-build-blog', 'src/app/guides/cursor-build-blog/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/tests', 'src/app/tests/page.tsx', 20, 30, 70, 80);
+
+// Check dynamic test detail pages
+const testDetailsContent = fs.readFileSync('src/app/tests/[slug]/page.tsx', 'utf-8');
+const detailMatches = [...testDetailsContent.matchAll(/titles*=s*['"]([^'"]+)['"];s*descriptions*=s*['"]([^'"]+)['"];/g)];
+
+detailMatches.forEach(match => {
+  const title = match[1];
+  const desc = match[2];
+  checkLength('Test Detail', 'Title', title, 20, 30);
+  checkLength('Test Detail', 'Description', desc, 70, 80);
+});
+
 
 console.log(`\nFound ${foundCount} AI tool records.`);
 console.log(`Found ${guideFoundCount} guide articles.`);

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ExternalLink, Check, Info, AlertTriangle, Monitor, Smartphone, HelpCircle, Zap, ArrowRight } from 'lucide-react';
+import { aiTests } from '@/data/aiTests';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
 import JsonLd from '@/components/seo/JsonLd';
 
@@ -196,13 +197,30 @@ export default function WeifengReviewPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
-                    <tr><td className="p-4 font-medium">清风 Breeze</td><td className="p-4">100GB/月</td><td className="p-4 text-gray-400">不提供单月购买</td><td className="p-4 text-gray-400">—</td><td className="p-4">¥137</td></tr>
-                    <tr><td className="p-4 font-medium">乘风 Riding</td><td className="p-4">200GB/月</td><td className="p-4 font-bold text-brand-600">¥27</td><td className="p-4">¥72</td><td className="p-4">¥259</td></tr>
-                    <tr><td className="p-4 font-medium">破风 Breaking</td><td className="p-4">500GB/月</td><td className="p-4">¥57</td><td className="p-4">¥153</td><td className="p-4">¥547</td></tr>
-                    <tr><td className="p-4 font-medium">御风 Mastery</td><td className="p-4">1200GB/月</td><td className="p-4">¥127</td><td className="p-4">¥342</td><td className="p-4">¥1219</td></tr>
-                    <tr><td className="p-4 font-medium">信风 · 不限时</td><td className="p-4">270GB</td><td className="p-4">一次性 ¥200</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
-                    <tr><td className="p-4 font-medium">长风 · 不限时</td><td className="p-4">570GB</td><td className="p-4">一次性 ¥370</td><td className="p-4 text-gray-400">—</td><td className="p-4 text-gray-400">—</td></tr>
-                  </tbody>
+                      {aiTests.filter(t => t.networkId === 'weifeng' || t.open === 'pending').map(tool => (
+                        <tr key={tool.slug}>
+                          <td className="p-4 font-medium">
+                            {tool.open !== 'pending' ? (
+                              <Link href={`/tests/${tool.slug}`} className="text-brand-600 hover:underline">{tool.toolName}</Link>
+                            ) : (
+                              tool.toolName
+                            )}
+                          </td>
+                          <td className="p-4">
+                            {tool.open === 'pass' ? '✅ 正常' : tool.open === 'pending' ? <span className="text-gray-400">待测试</span> : '❌ 异常'}
+                          </td>
+                          <td className="p-4">
+                            {tool.login === 'pass' ? '✅ 正常' : tool.login === 'pending' ? '-' : '❌ 异常'}
+                          </td>
+                          <td className="p-4">
+                            {tool.use === 'pass' ? '✅ 正常' : tool.use === 'pending' ? '-' : '❌ 异常'}
+                          </td>
+                          <td className="p-4 text-sm text-gray-500">
+                            {tool.testedAt || '-'}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
                 </table>
               </div>
               <p className="text-sm text-gray-600 bg-gray-100 p-4 rounded-xl">
