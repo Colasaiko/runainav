@@ -334,9 +334,14 @@ export default function WeifengReviewPage() {
               </div>
             </div>
 
-            {/* AI 实际测试 */}
+            {/* AI 连通性实测 */}
             <div>
-              <h2 id="ai-test" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-32">AI 实际测试</h2>
+              <h2 id="ai-test" className="text-2xl font-bold text-gray-900 mb-6 scroll-mt-32">AI 连通性实测</h2>
+              
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800 leading-relaxed mb-6">
+                以下结果来自 RunAI 在对应日期使用微风网络进行的实际记录，仅代表当次网络环境与基础使用情况，不代表所有地区、账号或未来状态始终一致。
+              </div>
+
               <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
                 <table className="w-full text-left border-collapse min-w-[600px]">
                   <thead>
@@ -344,13 +349,14 @@ export default function WeifengReviewPage() {
                       <th className="p-4 font-bold">AI 工具</th>
                       <th className="p-4 font-bold">打开</th>
                       <th className="p-4 font-bold">登录</th>
-                      <th className="p-4 font-bold">使用</th>
+                      <th className="p-4 font-bold">基础使用</th>
                       <th className="p-4 font-bold">测试时间</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
                       {aiTests.map(baseTool => {
                         const run = networkAITests.find(t => t.networkId === 'weifeng' && t.toolSlug === baseTool.slug);
+                        // Check if we have real test records, even if they aren't all passes, if a run exists it means it's tested.
                         return (
                           <tr key={baseTool.slug}>
                             <td className="p-4 font-medium">
@@ -375,11 +381,14 @@ export default function WeifengReviewPage() {
                           </tr>
                         );
                       })}
-</tbody>
+                  </tbody>
                 </table>
               </div>
-              <div className="bg-gray-50 p-4 rounded-xl text-sm text-gray-600 border border-gray-200">
-                <p>以上测试结果仅代表 RunAI 在测试日期和当时网络环境下的实际情况。AI 服务的地区支持、账号要求和可用性可能随着服务方政策及网络环境调整发生变化。</p>
+
+              <div className="mt-4 flex justify-start">
+                <Link href="/tests" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700 bg-brand-50 px-4 py-2 rounded-full transition-colors border border-brand-100">
+                  查看完整 AI 实测中心 →
+                </Link>
               </div>
             </div>
 
