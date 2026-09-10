@@ -124,8 +124,6 @@ while ((aiTestMatch = aiTestsBlockRegex.exec(aiTestsContent)) !== null) {
   const slug = aiTestMatch[1];
   const block = aiTestMatch[2];
   
-  if (slug === 'midjourney' || slug === 'grok') continue; // pending tests
-  
   const titleMatch = block.match(/['"]?seoTitle['"]?:\s*['"]([^'"]+)['"]/);
   const descMatch = block.match(/['"]?seoDescription['"]?:\s*['"]([^'"]+)['"]/);
   
@@ -147,8 +145,8 @@ while ((aiTestMatch = aiTestsBlockRegex.exec(aiTestsContent)) !== null) {
 }
 
 console.log(`Found ${testDetailsCount} Test Detail metadata records.`);
-if (testDetailsCount !== 5) {
-  console.error(`[ERROR] Expected 5 Test Detail metadata records, but found ${testDetailsCount}.`);
+if (testDetailsCount !== 7) {
+  console.error(`[ERROR] Expected 7 Test Detail metadata records, but found ${testDetailsCount}.`);
   hasError = true;
 }
 
