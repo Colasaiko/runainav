@@ -40,7 +40,7 @@ export default function GuidePage() {
     "headline": "不会代码怎么用AI做网站？从需求到上线教程",
     "description": "不会代码也想用 AI 做一个网站？本指南从需求、页面结构、文案、生成代码、本地预览到部署上线逐步说明，并提醒你检查响应式、链接、SEO、版权与构建错误。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

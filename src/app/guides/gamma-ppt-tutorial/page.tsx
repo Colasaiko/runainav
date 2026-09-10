@@ -44,11 +44,7 @@ export default function GammaPptTutorial() {
     "publisher": {
       "@type": "Organization",
       "name": "RunAI",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://runainav.com/logo.png"
-      }
-    },
+      },
     "datePublished": "2026-09-05T00:00:00+08:00",
     "dateModified": "2026-09-05T00:00:00+08:00"
   };

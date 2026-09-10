@@ -40,7 +40,7 @@ export default function GuidePage() {
     "headline": "AI办公工作流怎么搭？从邮件到报告的实战指南",
     "description": "想把 AI 真正放进日常办公，而不是只用来聊天？本文用邮件、会议、资料整理、报告和待办串成一个简单工作流，并说明不同任务应该由人确认哪些关键结果。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

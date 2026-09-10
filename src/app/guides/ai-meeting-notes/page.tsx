@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "AI怎么整理会议记录？纪要与行动项生成指南",
     "description": "会议结束后还要花时间写纪要？本文整理用 AI 处理转录文本、提取决策、负责人、截止日期和行动项的方法，并给出适合周会、项目会与客户会议的纪要工作流。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

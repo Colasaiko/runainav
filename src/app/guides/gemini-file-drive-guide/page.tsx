@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "Gemini怎么上传文件？Drive与PDF分析指南",
     "description": "想让 Gemini 读取本地文件或 Google Drive 资料？本指南整理文件上传、PDF 总结、重点提取与追问方法，并说明权限、格式和读取失败时排查方向。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

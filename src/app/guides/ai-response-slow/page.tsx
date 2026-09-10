@@ -40,7 +40,7 @@ export default function GuidePage() {
     "headline": "AI响应慢是模型慢还是网络延迟？区别与排查方法",
     "description": "AI 回答很慢不一定是网络延迟，也可能是模型负载、复杂任务或服务端拥堵。本文比较网页加载、首字响应、持续生成和网络 Ping 的差异，并给出逐步排查方法。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

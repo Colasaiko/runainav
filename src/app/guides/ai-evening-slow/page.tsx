@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "为什么晚上AI特别卡？晚高峰与网络波动怎么判断",
     "description": "为什么白天使用 AI 很顺，晚上却容易转圈或断流？本文从晚高峰拥堵、线路波动、节点负载和服务端状态解释差异，并教你通过不同时段对比判断真正原因。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

@@ -40,7 +40,7 @@ export default function GuidePage() {
     "headline": "IPLC、IEPL、中转和直连有什么区别？线路选择指南",
     "description": "IPLC、IEPL、中转和直连经常出现在机场宣传里，但它们并不是简单的高低等级。本文整理常见线路概念、成本、延迟和稳定性差异，并说明选购时该看哪些实际指标。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

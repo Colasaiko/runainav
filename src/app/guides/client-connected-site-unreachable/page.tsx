@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "客户端已连接但AI网站打不开？常见原因与排查",
     "description": "客户端显示已经连接，但 ChatGPT、Claude 等网站仍打不开？本文整理订阅、规则、DNS、浏览器、服务状态和账号权限等常见原因，并给出清晰的排查顺序。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

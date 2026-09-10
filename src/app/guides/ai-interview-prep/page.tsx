@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "AI怎么准备求职面试？模拟问答与复盘方法",
     "description": "准备面试时不知道该练什么？本文教你用 AI 根据职位描述和简历生成模拟问题、优化回答、进行追问与复盘，并说明如何避免让 AI 编造经历或替你夸大个人能力。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

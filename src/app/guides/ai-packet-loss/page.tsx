@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "网络丢包为什么会让AI回复卡住？原因与测试方法",
     "description": "网络丢包会让 AI 对话出现转圈、断流、图片失败或文件上传中断。本文解释丢包与延迟的区别，并整理简单测试方法、观察指标和排查顺序，帮助判断问题出在哪里。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

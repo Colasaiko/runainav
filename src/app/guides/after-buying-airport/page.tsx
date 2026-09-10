@@ -40,7 +40,7 @@ export default function GuidePage() {
     "headline": "买完机场后怎么用？订阅链接与客户端导入指南",
     "description": "购买网络服务后拿到订阅链接，却不知道下一步怎么做？本指南解释订阅、客户端、节点和配置文件的关系，并按常见设备说明基本导入流程、更新方法与注意事项。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

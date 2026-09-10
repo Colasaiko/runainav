@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "Clash Verge订阅怎么导入？Windows入门教程",
     "description": "第一次使用 Clash Verge 不知道订阅放哪里？本文整理 Windows 基本流程，包括导入订阅、更新配置、选择节点和规则模式，并说明失败排查与官方来源。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

@@ -7,7 +7,14 @@ export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://runainav.com';
   
-  const lastModDate = new Date('2026-09-04');
+  const staticDates: Record<string, string> = {
+    '/': '2026-09-08',
+    '/vpn': '2026-09-10',
+    '/subscriptions': '2026-09-08',
+    '/guides': '2026-09-09',
+    '/ai': '2026-09-08',
+    '/vpn/weifeng': '2026-09-03',
+  };
   
   // Use a Map to deduplicate paths. The key is the normalized URL pathname.
   const sitemapEntries = new Map<string, MetadataRoute.Sitemap[0]>();
@@ -31,37 +38,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 1. Static Pages
   addEntry({
     url: `${baseUrl}/`,
-    lastModified: lastModDate,
+    lastModified: new Date(staticDates['/']),
     changeFrequency: 'daily' as const,
     priority: 1,
   });
   addEntry({
     url: `${baseUrl}/vpn`,
-    lastModified: lastModDate,
+    lastModified: new Date(staticDates['/vpn']),
     changeFrequency: 'daily' as const,
     priority: 0.9,
   });
   addEntry({
     url: `${baseUrl}/subscriptions`,
-    lastModified: lastModDate,
+    lastModified: new Date(staticDates['/subscriptions']),
     changeFrequency: 'daily' as const,
     priority: 0.9,
   });
   addEntry({
     url: `${baseUrl}/guides`,
-    lastModified: lastModDate,
+    lastModified: new Date(staticDates['/guides']),
     changeFrequency: 'daily' as const,
     priority: 0.9,
   });
   addEntry({
     url: `${baseUrl}/ai`,
-    lastModified: lastModDate,
+    lastModified: new Date(staticDates['/ai']),
     changeFrequency: 'daily' as const,
     priority: 0.9,
   });
   addEntry({
     url: `${baseUrl}/vpn/weifeng`,
-    lastModified: new Date('2026-09-03'),
+    lastModified: new Date(staticDates['/vpn/weifeng']),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   });

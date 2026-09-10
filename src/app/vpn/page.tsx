@@ -11,7 +11,7 @@ import { constructMetadata } from "@/lib/seo";
 
 export const metadata = constructMetadata({
   title: '稳定网络节点深度测评 | 海外AI连通指南 - RunAI',
-  description: '还在为访问海外AI服务频繁掉线而烦恼？RunAI精选适合国内环境的高速稳定网络品牌，提供节点、原生IP与流媒体解锁深度评测。点击获取最适合你的专线网络配置方案！',
+  description: '还在为访问海外AI服务频繁掉线而烦恼？RunAI精选适合国内环境的高速稳定网络品牌，提供节点、网络配置指南。点击获取最适合你的专线网络配置方案！',
   canonical: '/vpn',
 });
 
@@ -37,7 +37,7 @@ export default function VPNPage() {
               </div>
               <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500">
                 <span>稳定网络节点</span>
-                <span>原生IP代理</span>
+                <span>海外节点配置</span>
                 <span>网络环境配置</span>
                 <span>专线加速方案</span>
               </div>

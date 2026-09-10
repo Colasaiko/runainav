@@ -61,7 +61,7 @@ export default function Page() {
             </div>
 
             <p className="mb-6">
-              如果你正在寻找经过长期测速验证的稳定服务商，建议阅读<a href="https://jichangmao.com/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">机场猫整理的选择指南</a>，了解不同线路类型在实际晚高峰环境下的表现。
+              如果想了解第三方对不同线路的整理，可以参考<a href="https://jichangmao.com/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">机场猫整理的选择指南</a>，作为补充阅读。
             </p>
 
             

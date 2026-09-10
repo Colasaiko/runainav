@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "Cursor和Copilot网络超时？编辑器与终端排查指南",
     "description": "Cursor 或 GitHub Copilot 在编辑器里一直超时，但浏览器访问正常？本文整理编辑器、终端、系统网络与项目依赖的排查思路，帮助开发者定位问题。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

@@ -40,7 +40,7 @@ export default function GuidePage() {
     "headline": "AI工具报错是宕机还是网络问题？判断方法指南",
     "description": "AI 页面突然报错时，问题可能来自官方服务，也可能来自浏览器、账号或网络连接。本文整理状态页、其他设备、不同网站和本地网络的判断顺序，帮助你先定位再处理。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

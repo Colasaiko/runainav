@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "ChatGPT怎么分析PDF？长文档总结与提问教程",
     "description": "需要让 ChatGPT 阅读 PDF 或长文档？本指南整理上传、提问、摘要、表格提取与引用核对方法，并说明文件过大、识别不完整和上下文丢失时应该怎么处理。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

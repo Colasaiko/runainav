@@ -62,7 +62,7 @@ export default function Page() {
             </div>
 
             <p className="mb-6">
-              由于 ChatGPT 对 IP 纯净度有较高要求，如果你总是遇到封号或拒绝访问的情况，建议查阅<a href="https://jichangmao.com/blog/native-ip-airport-recommendations/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">机场猫的原生IP专题</a>，了解如何挑选能稳定解锁各类 AI 服务的节点。
+              如果你想从其他站点了解不同网络线路和节点类型的讨论，也可以参考<a href="https://jichangmao.com/blog/native-ip-airport-recommendations/" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:underline">机场猫的相关专题</a>。需要注意，第三方文章中的线路或适用场景观点属于其自身整理，不代表 ChatGPT 官方对账号可用性的说明。
             </p>
 
             

@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "AI怎么处理Excel数据？公式、分析与表格整理教程",
     "description": "不会复杂 Excel 公式也能让 AI 帮忙处理数据。本指南整理公式生成、数据清洗、分类统计与趋势分析方法，并说明哪些计算必须回到原表核对，避免相信错误结果。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

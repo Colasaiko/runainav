@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "AI怎么帮助阅读论文？摘要、方法与引用核对指南",
     "description": "面对几十页论文不知道怎么读？本指南整理用 AI 提取研究问题、方法、结果、限制与关键引用的流程，并说明如何回到原论文核对数据、图表和引用，减少错误理解。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

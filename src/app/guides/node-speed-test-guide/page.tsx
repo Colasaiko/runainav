@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "节点速度怎么测才准？延迟、丢包与下载速度指南",
     "description": "节点延迟很低不代表实际速度一定快。本文整理 URL Test、延迟、抖动、丢包、下载速度和晚高峰测试的区别，并给出轻度到重度的测试流程，帮助更全面判断节点质量。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

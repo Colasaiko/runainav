@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "ChatGPT怎么比较两个文件？差异提取实战指南",
     "description": "同时拿到两份合同、报告或代码文件，怎么让 ChatGPT 快速找出差异？本文整理文件上传、比较指令、差异表格与人工复核方法，适合文档、表格和文本版本对比。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };

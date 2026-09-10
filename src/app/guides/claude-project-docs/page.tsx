@@ -39,7 +39,7 @@ export default function GuidePage() {
     "headline": "Claude怎么整理项目资料？长文档归纳工作流",
     "description": "项目资料太多不知道从哪里开始？本文整理用 Claude 归纳文档、建立项目背景、提取待办与持续追问的方法，并说明资料更新、引用核对和敏感信息处理时要注意什么。",
     "author": { "@type": "Organization", "name": "RunAI" },
-    "publisher": { "@type": "Organization", "name": "RunAI", "logo": { "@type": "ImageObject", "url": "https://runainav.com/logo.png" } },
+    "publisher": { "@type": "Organization", "name": "RunAI" },
     "datePublished": "2026-09-09T08:00:00+08:00",
     "dateModified": "2026-09-09T08:00:00+08:00"
   };
