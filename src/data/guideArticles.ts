@@ -405,7 +405,7 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: 'gamma-ppt-tutorial',
-    title: 'Gamma做PPT教程：从生成到导出',
+    title: 'Gamma AI做PPT教程：从生成排版到导出',
     description: '从确定主题、起草大纲到排版优化与最终导出，本文用一个完整案例带你使用Gamma制作演示文稿，并教你如何避免AI常见排版错误，做出一份真正能用的PPT。',
     type: 'tutorial',
     category: 'AI办公',
@@ -415,7 +415,7 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: 'perplexity-search-guide',
-    title: 'Perplexity搜索与引用核对教程',
+    title: 'Perplexity AI 搜索与引用核对使用教程',
     description: '从提问、搜索、引用核对到文件上传与深入研究，本文用实际流程教你使用Perplexity查资料，并说明如何判断来源是否可靠、什么时候需要继续查证。',
     type: 'tutorial',
     category: 'AI搜索',
@@ -445,7 +445,7 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: 'vpn-slow-speed',
-    title: '为什么连接VPN后网速会变慢？',
+    title: '为什么连接VPN后网速会变慢？原因与排查方法',
     description: '连接VPN后出现网速下降、延迟升高或视频卡顿，通常与节点距离、线路拥堵、加密开销、本地网络和运营商路由有关。本文用简单方法教你判断原因并逐步排查。',
     type: 'troubleshooting',
     category: '网络环境',
@@ -455,7 +455,7 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: 'cursor-build-blog',
-    title: 'Cursor搭建个人博客教程',
+    title: 'Cursor搭建个人博客教程：从创建到部署',
     description: '从安装Cursor、创建项目、编写提示词到本地预览、上传GitHub与部署网站，本文用新手能看懂的方式演示AI辅助搭建个人博客，并整理常见报错与排查方法。',
     type: 'tutorial',
     category: 'AI编程',
@@ -465,8 +465,8 @@ export const guideArticles: GuideArticle[] = [
   },
   {
     slug: 'ai-network',
-    title: 'AI工具打不开怎么办？',
-    description: '排查网络环境与常见问题，解决 ChatGPT、Claude、Gemini、Cursor 等海外 AI 工具加载缓慢或登录失败的情况。',
+    title: 'AI工具打不开怎么办？网络环境与常见问题排查指南',
+    description: '使用ChatGPT、Claude、Gemini等海外AI工具时，若遇到打不开、登录失败或加载缓慢，可从网络连接、账号地区、DNS与官方支持范围逐项排查。',
     type: 'troubleshooting',
     category: '网络环境',
     tags: ['网络', '常见问题'],

@@ -11,7 +11,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata = constructMetadata({
-  title: 'Gamma做PPT教程：从生成到导出 | RunAI',
+  title: 'Gamma AI做PPT教程：从生成排版到导出',
   description: '从确定主题、起草大纲到排版优化与最终导出，本文用一个完整案例带你使用Gamma制作演示文稿，并教你如何避免AI常见排版错误，做出一份真正能用的PPT。',
   canonical: '/guides/gamma-ppt-tutorial',
   type: 'article',

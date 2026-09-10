@@ -11,7 +11,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 export const metadata = constructMetadata({
-  title: 'Perplexity搜索与引用核对教程 | RunAI',
+  title: 'Perplexity AI 搜索与引用核对使用教程',
   description: '从提问、搜索、引用核对到文件上传与深入研究，本文用实际流程教你使用Perplexity查资料，并说明如何判断来源是否可靠、什么时候需要继续查证。',
   canonical: '/guides/perplexity-search-guide',
   type: 'article',

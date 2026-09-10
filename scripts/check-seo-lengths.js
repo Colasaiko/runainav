@@ -74,12 +74,10 @@ while ((guideMatch = guideBlockRegex.exec(guidesContent)) !== null) {
   
   if (titleMatch && descMatch) {
     // Only strictly enforce lengths for the new 'network' batch
-    if (type === 'network' || type === 'subscription') {
+    
       checkLength(`Guide: ${slug}`, 'Title', titleMatch[1], 20, 30);
       checkLength(`Guide: ${slug}`, 'Description', descMatch[1], 70, 80);
-    } else {
-      console.log(`[OK] Guide: ${slug} (Skipped strict length check for type: ${type})`);
-    }
+    
     guideValidatedCount++;
   }
 }
@@ -114,6 +112,8 @@ extractAndCheck('/guides/ai-network', 'src/app/guides/ai-network/page.tsx', 20, 
 extractAndCheck('/guides/cursor-build-blog', 'src/app/guides/cursor-build-blog/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/tests', 'src/app/tests/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/feimao', 'src/app/vpn/feimao/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/vpn/weifeng', 'src/app/vpn/weifeng/page.tsx', 20, 30, 70, 80);
+
 
 // 4. Check aiTests metadata records
 const aiTestsContent = fs.readFileSync('src/data/aiTests.ts', 'utf-8');

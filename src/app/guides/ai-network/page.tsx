@@ -9,7 +9,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from "@/lib/seo";
 
 export const metadata = constructMetadata({
-  title: 'AI工具打不开怎么办？网络环境与常见问题 | RunAI',
+  title: 'AI工具打不开怎么办？网络环境与常见问题排查指南',
   description: '使用ChatGPT、Claude、Gemini等海外AI工具时，若遇到打不开、登录失败或加载缓慢，可从网络连接、账号地区、DNS与官方支持范围逐项排查。',
   canonical: '/guides/ai-network',
   type: 'article',
