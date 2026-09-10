@@ -63,7 +63,7 @@ export default function VPNPage() {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">AI 使用</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                  适合 ChatGPT、Claude、Gemini 等 AI 服务的网络使用场景，需要较高的 IP 质量和稳定性。
+                  适合 ChatGPT、Claude、Gemini 等海外 AI 服务场景。实际使用情况需要结合 AI 官方服务地区、账号状态以及当前网络连接稳定性判断。
                 </p>
               </div>
               
@@ -164,16 +164,16 @@ export default function VPNPage() {
         <section className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="container mx-auto px-4 max-w-3xl prose prose-gray prose-brand">
             <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">如何选择 VPN？</h2>
-            <div className="text-gray-600 leading-relaxed space-y-6">
-              <p>在挑选 VPN 时，最重要的是明确您的<strong></strong>，而不是盲目追求昂贵或参数最高的套餐。以下是几个关键参考指标：</p>
-              <ul className="space-y-3">
-                <li><strong>使用场景：</strong>如果您主要为了使用 ChatGPT 或 Claude，那么<strong></strong>比带宽大小更重要。如果是看 Netflix，那么<strong></strong>是第一要素。</li>
-                <li><strong>流量消耗：</strong>轻度查资料 50GB 往往足够，深度刷视频可能需要 300GB 甚至更多。建议先购买小流量套餐试水。</li>
-                <li><strong>套餐周期：</strong>除非您对某个品牌极度信任，否则建议首次购买以<strong></strong>或<strong></strong>为主，避免跑路风险，确认速度满意后再考虑年付优惠。</li>
-                <li><strong>设备数量：</strong>如果您有手机、电脑、平板甚至软路由同时在线需求，请务必注意套餐的<strong></strong>限制。</li>
-                <li><strong>售后支持：</strong>购买前建议看看是否有活跃的电报群或客服工单系统。</li>
-              </ul>
-            </div>
+              <div className="text-gray-600 leading-relaxed space-y-6">
+                <p>在挑选网络方案时，最重要的是先明确自己的实际使用场景，而不是只看价格、节点数量或宣传参数。不同用户关注的重点并不相同，可以从下面几个方面判断。</p>
+                <ul className="space-y-4">
+                  <li><strong>使用场景：</strong> 如果主要用于 ChatGPT、Claude、Gemini、Cursor 等海外 AI 服务，更应该关注实际连接稳定性、服务地区适配情况和长期使用体验，而不是单纯追求最高带宽。如果主要用于视频影音，则需要同时考虑流量额度、晚高峰表现和实际下载速度。</li>
+                  <li><strong>流量消耗：</strong> 轻度查资料、AI 对话和日常浏览的流量需求通常不高；如果经常观看高清视频、下载大文件或多设备同时使用，则需要选择更大的流量套餐。</li>
+                  <li><strong>套餐周期：</strong> 第一次购买一个还没有长期使用经验的品牌时，可以优先考虑月付、季付或金额较低的套餐，先确认实际体验是否符合需求，再决定是否购买更长期的方案。</li>
+                  <li><strong>设备数量：</strong> 如果需要手机、电脑、平板等多个设备使用，应提前确认品牌当前的设备数量限制、客户端支持情况和订阅使用规则。</li>
+                  <li><strong>售后与购买规则：</strong> 购买前建议确认当前客服入口、套餐有效期、流量重置方式、退款规则以及服务条款。</li>
+                </ul>
+              </div>
           </div>
         </section>
 
