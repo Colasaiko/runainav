@@ -3,6 +3,7 @@ import { aiTools } from '@/data/aiTools';
 import { guideArticles } from '@/data/guideArticles';
 import { aiTests } from '@/data/aiTests';
 import { aiCategorySeo } from '@/data/aiCategorySeo';
+import { aiComparisons } from '@/data/aiComparisons';
 
 export const dynamic = 'force-static';
 
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/vpn/wuyou': '2026-09-10',
     '/vpn/kuajie': '2026-09-10',
     '/tests': '2026-09-10',
+    '/compare': '2026-09-14',
   };
   
   // Use a Map to deduplicate paths. The key is the normalized URL pathname.
@@ -160,6 +162,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date('2026-09-14'),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
+    });
+  });
+
+  // 3.5 AI Comparisons
+  aiComparisons.forEach((comp) => {
+    addEntry({
+      url: `${baseUrl}/compare/${comp.slug}`,
+      lastModified: new Date('2026-09-14'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     });
   });
 
