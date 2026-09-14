@@ -109,6 +109,8 @@ extractAndCheck('/guides', 'src/app/guides/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn', 'src/app/vpn/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/subscriptions', 'src/app/subscriptions/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides/ai-network', 'src/app/guides/ai-network/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/guides/gpt-6-astra-guide', 'src/app/guides/gpt-6-astra-guide/page.tsx', 20, 30, 70, 80);
+extractAndCheck('/guides/chatgpt-images-2-5-guide', 'src/app/guides/chatgpt-images-2-5-guide/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/guides/cursor-build-blog', 'src/app/guides/cursor-build-blog/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/tests', 'src/app/tests/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/feimao', 'src/app/vpn/feimao/page.tsx', 20, 30, 70, 80);

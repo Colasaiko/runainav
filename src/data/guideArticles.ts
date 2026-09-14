@@ -13,6 +13,26 @@ export interface GuideArticle {
 
 export const guideArticles: GuideArticle[] = [
   {
+    slug: 'gpt-6-astra-guide',
+    title: 'GPT-6 Astra是什么？新功能、开放范围与使用建议',
+    description: 'GPT-6 Astra已经发布。本文整理它在编程、研究、浏览器与电脑操作、多步骤任务方面的主要能力，并说明当前开放范围、使用入口与可用性差异。',
+    type: 'tool',
+    category: 'AI聊天',
+    tags: ['GPT-6 Astra', 'OpenAI', 'ChatGPT', 'AI模型', 'AI工具'],
+    publishedAt: '2026-09-14',
+    updatedAt: '2026-09-14'
+  },
+  {
+    slug: 'chatgpt-images-2-5-guide',
+    title: 'ChatGPT图片2.5怎么用？生成、编辑与新功能指南',
+    description: 'ChatGPT图片2.5带来更清晰细节、更精准编辑和更快生成，并新增Sketch、模板、图片评论和提示词分享。本文整理主要功能、使用方法与当前可用范围。',
+    type: 'tutorial',
+    category: 'AI绘图',
+    tags: ['ChatGPT', 'Images 2.5', 'AI绘图', '图片生成', '图片编辑'],
+    publishedAt: '2026-09-14',
+    updatedAt: '2026-09-14'
+  },
+  {
     slug: 'chatgpt-pdf-guide',
     title: 'ChatGPT怎么分析PDF？长文档总结与提问教程',
     description: '需要让 ChatGPT 阅读 PDF 或长文档？本指南整理上传、提问、摘要、表格提取与引用核对方法，并说明文件过大、识别不完整和上下文丢失时应该怎么处理。',
