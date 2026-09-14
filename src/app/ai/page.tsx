@@ -5,8 +5,8 @@ import AIList from './AIList';
 import { constructMetadata } from "@/lib/seo";
 
 export const metadata = constructMetadata({
-  title: 'AI工具大全与测评 | 高效生产力神器 - RunAI',
-  description: '不知道哪个AI工具最适合工作需求？RunAI收录全球热门的聊天、编程、绘图等AI神器，提供详尽对比与国内无障碍使用评测。立即点击探索最新AI工具大全与使用方案！',
+  title: 'AI工具大全与实测 | 国内外高效生产力工具 - RunAI',
+  description: '不知道哪个AI工具最适合工作需求？RunAI收录国内外热门的聊天、编程、绘图等AI神器，提供详尽对比与无障碍使用评测。立即点击探索最新AI工具大全与使用方案！',
   canonical: '/ai',
 });
 

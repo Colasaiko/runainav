@@ -17,8 +17,8 @@ import JsonLd, { generateWebSiteSchema, generateOrganizationSchema } from "@/com
 import { constructMetadata } from "@/lib/seo";
 
 export const metadata = constructMetadata({
-  title: '海外AI工具大全与2026机场推荐｜RunAI',
-  description: 'RunAI 整理海外 AI 工具和国内使用指南，并提供 2026 机场推荐、稳定网络方案、客户端订阅与实测参考，帮助国内用户更清楚地选择 AI 工具和网络服务。',
+  title: '国内外AI工具导航与2026机场推荐｜RunAI',
+  description: 'RunAI整理国内外热门AI工具、教程与国内使用指南，并提供2026机场推荐、稳定网络方案与实测参考，帮助国内用户更清楚地选择AI神器和网络服务。',
   canonical: '/',
 });
 

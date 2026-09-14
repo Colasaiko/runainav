@@ -27,7 +27,15 @@ const SCENARIOS = [
   { icon: '✍️', name: '写文章', query: '写作', tools: ['ChatGPT', 'Claude', 'Gemini'] },
 ];
 
+
+const REGIONS = [
+  { id: 'all', name: '全部地区' },
+  { id: 'china', name: '国内 AI' },
+  { id: 'global', name: '海外 AI' },
+];
+
 function AIListContent() {
+  const [activeRegion, setActiveRegion] = useState('all');
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -47,6 +55,7 @@ function AIListContent() {
 
   const filteredTools = aiTools.filter((tool) => {
     const matchesCategory = activeCategory === 'all' || tool.categories.includes(activeCategory);
+    const matchesRegion = activeRegion === 'all' || tool.region === activeRegion;
     
     let search = searchQuery.toLowerCase();
     // Alias mapping for common user inputs
@@ -61,7 +70,7 @@ function AIListContent() {
       tool.description.toLowerCase().includes(search) ||
       tool.tags.some(tag => tag.toLowerCase().includes(search));
     
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesRegion && matchesSearch;
   });
 
   return (
@@ -156,7 +165,7 @@ function AIListContent() {
           <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
             <Star className="w-6 h-6 text-amber-400 fill-amber-400" /> 新手推荐
           </h2>
-          <p className="text-gray-500 mt-1">如果第一次接触海外 AI，可以先了解这些常用工具。</p>
+          <p className="text-gray-500 mt-1">如果第一次接触 AI，可以先了解这些常用工具。</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
           {['chatgpt', 'claude', 'gemini', 'cursor', 'midjourney', 'gamma'].map(slug => {
@@ -184,6 +193,23 @@ function AIListContent() {
         </div>
 
         <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          
+          <div className="flex flex-wrap gap-2 mb-4 md:mb-0">
+            {REGIONS.map((reg) => (
+              <button
+                key={reg.id}
+                onClick={() => setActiveRegion(reg.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                  activeRegion === reg.id
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'bg-blue-50 text-blue-700 hover:bg-blue-100'
+                }`}
+              >
+                {reg.name}
+              </button>
+            ))}
+          </div>
+
           <div className="flex flex-wrap gap-2">
             {CATEGORIES.map((cat) => (
               <button

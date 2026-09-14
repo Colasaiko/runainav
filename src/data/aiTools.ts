@@ -21,6 +21,7 @@ export type FunctionCard = {
 };
 
 export type AITool = {
+  region: 'china' | 'global';
   domesticWorkflow?: string[];
   seoTitle: string;
   seoDescription: string;
@@ -60,7 +61,213 @@ export type AITool = {
 };
 
 export const aiTools: AITool[] = [
+
+  {
+    region: 'china',
+    seoTitle: "DeepSeek是什么？深度求索模型体验与使用指南",
+    seoDescription: "DeepSeek深度求索是国内知名的开源及闭源大模型提供商，在代码编写和逻辑推理上表现优异。本文整理其核心功能与API调用方式。",
+    seoKeywords: "DeepSeek,深度求索,AI模型,AI代码,国内AI",
+    slug: "deepseek",
+    name: "DeepSeek",
+    company: "深度求索",
+    officialUrl: "https://chat.deepseek.com",
+    category: "chat",
+    categories: ["chat", "coding"],
+    shortDescription: "国内领先的代码与推理大模型",
+    description: "DeepSeek（深度求索）在开源大模型与代码生成领域表现优异，尤其是在中文语境与复杂逻辑推理方面，是国内极具性价比的 AI 工具。",
+    tags: ["国内AI", "代码生成", "逻辑推理", "大模型"],
+    featured: true,
+    freePlan: "有",
+    pricingType: "按需计费/免费",
+    chineseSupport: "原生支持",
+    accountRequired: "需要",
+    platforms: ["网页", "API", "App"],
+    bestFor: ["程序员", "研究人员", "日常对话"],
+    lastUpdated: "2026-09-14",
+    overview: "DeepSeek 以其出色的代码能力和极致的 API 性价比受到国内开发者和重度用户的青睐。",
+    features: ["原生中文支持", "深度代码优化", "数学与逻辑推理"],
+    useCases: ["日常代码辅助", "文本分析", "数学解题"],
+    gettingStarted: ["访问官网注册", "新建对话窗口输入问题"],
+    networkAndRegion: "国内可用",
+    advantages: ["代码能力极强", "推理能力优秀", "性价比高"],
+    limitations: ["海外服务器生态较弱"],
+    faq: [
+      { q: "DeepSeek免费吗？", a: "网页版目前提供免费对话额度，API 也是极具性价比的按量计费。" }
+    ],
+    alternatives: ["千问", "智谱GLM"]
+  },
+  {
+    region: 'china',
+    seoTitle: "豆包是什么？字节跳动AI对话与创作工具指南",
+    seoDescription: "豆包是字节跳动推出的免费AI对话工具，提供语音对话、文本创作与AI智能体等功能，支持手机App与网页端无缝使用。",
+    seoKeywords: "豆包,字节跳动,AI聊天,语音助手,国内AI",
+    slug: "doubao",
+    name: "豆包",
+    company: "字节跳动",
+    officialUrl: "https://www.doubao.com",
+    category: "chat",
+    categories: ["chat", "productivity"],
+    shortDescription: "字节跳动推出的免费AI对话与创作助手",
+    description: "豆包是字节跳动旗下的大模型产品，提供自然流畅的语音和文字对话体验，并内置了多种智能体用于不同的创作和办公场景。",
+    tags: ["国内AI", "语音助手", "文本创作"],
+    featured: true,
+    freePlan: "完全免费",
+    pricingType: "免费使用",
+    chineseSupport: "原生支持",
+    accountRequired: "需要",
+    platforms: ["网页", "App"],
+    bestFor: ["学生", "创作者", "大众用户"],
+    lastUpdated: "2026-09-14",
+    overview: "豆包作为字节跳动的核心 AI 产品，以免费和全平台体验为卖点，是日常工作和生活的便利助手。",
+    features: ["优秀的语音合成", "海量预设智能体", "免费无限制"],
+    useCases: ["文章润色", "语音陪聊", "日常问答"],
+    gettingStarted: ["下载App或访问网页", "手机号一键登录"],
+    networkAndRegion: "国内可用",
+    advantages: ["免费使用", "移动端体验佳", "语音交互优秀"],
+    limitations: ["高级逻辑推理稍逊"],
+    faq: [
+      { q: "豆包收费吗？", a: "豆包目前对个人用户完全免费开放。" }
+    ],
+    alternatives: ["文心一言", "腾讯元宝"]
+  },
+  {
+    region: 'china',
+    seoTitle: "Kimi智能助手怎么用？月之暗面长文本AI体验指?",
+    seoDescription: "Kimi智能助手以超长上下文处理能力著称，支持上传长文档进行总结分析，是国内处理研报、小说和长网页的优秀AI工具。",
+    seoKeywords: "Kimi,月之暗面,长文本AI,AI总结,国内AI",
+    slug: "kimi",
+    name: "Kimi",
+    company: "月之暗面",
+    officialUrl: "https://kimi.moonshot.cn",
+    category: "productivity",
+    categories: ["productivity", "chat", "search"],
+    shortDescription: "超长文本处理专家",
+    description: "Kimi 是月之暗面推出的 AI 助手，核心优势是超大上下文窗口，支持一次性阅读几十万字的文档或数十个网页，在资料分析与总结上无可替代。",
+    tags: ["长文本", "文档分析", "国内AI"],
+    featured: true,
+    freePlan: "有",
+    pricingType: "免费/订阅",
+    chineseSupport: "原生支持",
+    accountRequired: "需要",
+    platforms: ["网页", "App", "小程序"],
+    bestFor: ["研究员", "学生", "职场人士"],
+    lastUpdated: "2026-09-14",
+    overview: "Kimi 凭借对超长文档（如财报、小说、长篇研报）的惊人记忆和解析能力，成为国内办公与学术场景的现象级工具。",
+    features: ["支持百万字长文本", "多网址同步读取", "快速文档总结"],
+    useCases: ["财报分析", "长篇小说阅读", "论文综述"],
+    gettingStarted: ["微信扫码或手机号注册", "直接拖拽文档进入对话框"],
+    networkAndRegion: "国内可用",
+    advantages: ["长文本处理首选", "无损记忆", "多端同步"],
+    limitations: ["高峰期偶尔排队"],
+    faq: [
+      { q: "Kimi可以读取PDF吗？", a: "支持，而且可以同时上传多个大型PDF让它交叉对比。" }
+    ],
+    alternatives: ["千问", "豆包"]
+  },
+  {
+    region: 'china',
+    seoTitle: "腾讯元宝是什么？微信生态AI搜索与创作助手",
+    seoDescription: "腾讯元宝是基于混元大模型的AI助手，深度整合微信生态与公众号文章搜索，提供精准的内容总结与日常AI绘画功能。",
+    seoKeywords: "腾讯元宝,混元大模型,微信AI,AI搜索,国内AI",
+    slug: "yuanbao",
+    name: "腾讯元宝",
+    company: "腾讯",
+    officialUrl: "https://yuanbao.tencent.com",
+    category: "search",
+    categories: ["search", "chat", "productivity"],
+    shortDescription: "深度整合微信生态的AI助手",
+    description: "腾讯元宝由腾讯混元大模型驱动，最大特色是支持深度搜索微信公众号文章与全网资讯，并且内置了实用的 AI 绘画与智能体工坊。",
+    tags: ["微信生态", "公众号搜索", "国内AI"],
+    featured: false,
+    freePlan: "有",
+    pricingType: "免费使用",
+    chineseSupport: "原生支持",
+    accountRequired: "需要",
+    platforms: ["网页", "App", "小程序"],
+    bestFor: ["新媒体运营", "职场白领", "微信用户"],
+    lastUpdated: "2026-09-14",
+    overview: "依赖腾讯丰富的内容生态，元宝在资讯检索（尤其是微信公众号独家内容）上具有不可替代的优势。",
+    features: ["独家公众号搜索", "多格式文件解析", "AI绘画生成"],
+    useCases: ["热点资讯总结", "公众号文章搜集", "日常插图生成"],
+    gettingStarted: ["使用微信扫码直接登录", "在对话框内选择搜索或绘画"],
+    networkAndRegion: "国内可用",
+    advantages: ["公众号生态独家数据", "检索精准", "全能办公"],
+    limitations: ["必须微信登录"],
+    faq: [
+      { q: "腾讯元宝需要下载App吗？", a: "有独立的App，也可以直接在网页端使用。" }
+    ],
+    alternatives: ["豆包", "Kimi"]
+  },
+  {
+    region: 'china',
+    seoTitle: "通义千问怎么用？阿里大模型全能助手指?",
+    seoDescription: "通义千问是阿里云推出的全能型AI大模型助手，提供长文本阅读、语音播报、图文多模态等功能，适合商务与办公场景。",
+    seoKeywords: "千问,通义千问,阿里云,全能AI,国内AI",
+    slug: "qianwen",
+    name: "通义千问",
+    company: "阿里巴巴",
+    officialUrl: "https://tongyi.aliyun.com",
+    category: "chat",
+    categories: ["chat", "productivity", "image"],
+    shortDescription: "阿里云推出的多模态全能AI助手",
+    description: "通义千问集成了文本生成、长文档处理、代码辅助、图像生成等多种能力，是阿里巴巴在 AI 领域的全能旗舰产品。",
+    tags: ["多模态", "国内AI", "全能助手"],
+    featured: false,
+    freePlan: "有",
+    pricingType: "免费/企业版",
+    chineseSupport: "原生支持",
+    accountRequired: "需要",
+    platforms: ["网页", "App"],
+    bestFor: ["职场用户", "开发者", "企业"],
+    lastUpdated: "2026-09-14",
+    overview: "作为一个大厂的旗舰 AI，通义千问在各项能力上都非常均衡，并提供了大量开箱即用的办公与创作小工具。",
+    features: ["强大的多模态解析", "免费长文本总结", "丰富的效率工具集"],
+    useCases: ["会议纪要生成", "数据报表分析", "日常营销文案"],
+    gettingStarted: ["使用阿里云或淘宝账号登录即可使用"],
+    networkAndRegion: "国内可用",
+    advantages: ["综合能力强", "多模态优秀", "插件丰富"],
+    limitations: ["暂无独立桌面端"],
+    faq: [
+      { q: "通义千问可以画图吗？", a: "支持，内置了多款基于通义万相的绘画与图像编辑能力。" }
+    ],
+    alternatives: ["Kimi", "智谱GLM"]
+  },
+  {
+    region: 'china',
+    seoTitle: "智谱清言GLM怎么用？国内领先的大模型基?",
+    seoDescription: "智谱清言基于ChatGLM基座模型，提供优秀的对话、代码和长文本能力，并且在Agent智能体开发上有深厚积累，适合深度AI用户。",
+    seoKeywords: "智谱清言,ChatGLM,智谱AI,智能体,国内AI",
+    slug: "chatglm",
+    name: "智谱清言",
+    company: "智谱AI",
+    officialUrl: "https://chatglm.cn",
+    category: "chat",
+    categories: ["chat", "coding"],
+    shortDescription: "学术与工程实力雄厚的AI助手",
+    description: "智谱清言是由国内大模型头部企业智谱 AI 推出的产品，其背后的 GLM 系列模型在学术界和工业界都享有盛誉，具备出色的推理与智能体构建能力。",
+    tags: ["GLM", "智能体", "国内AI", "数据分析"],
+    featured: false,
+    freePlan: "有",
+    pricingType: "免费使用",
+    chineseSupport: "原生支持",
+    accountRequired: "需要",
+    platforms: ["网页", "App"],
+    bestFor: ["研究员", "开发者", "高级用户"],
+    lastUpdated: "2026-09-14",
+    overview: "智谱清言不仅提供了稳定的大模型对话能力，还内置了数据分析、图表生成和强大的智能体工坊。",
+    features: ["代码沙盒环境", "高级数据分析", "海量智能体支持"],
+    useCases: ["生成数据图表", "复杂学术研报", "开发定制智能体"],
+    gettingStarted: ["注册并登录网页端", "开启高级数据分析功能体验制图"],
+    networkAndRegion: "国内可用",
+    advantages: ["推理与代码强", "自主开发智能体便利", "支持清华学术源"],
+    limitations: ["移动端体验有待优化"],
+    faq: [
+      { q: "智谱清言可以跑Python代码吗？", a: "支持，内置了代码沙盒，可以直接运行Python进行图表绘制与分析。" }
+    ],
+    alternatives: ["DeepSeek", "千问"]
+  },
     {
+    region: 'global',
     slug: 'chatgpt',
     seoTitle: 'ChatGPT国内怎么用？使用教程与常见问题',
     seoDescription: '国内使用ChatGPT时，如果遇到官网打不开、登录失败、页面加载缓慢或部分功能不可用，可从服务地区、账号状态、浏览器与网络环境逐项排查，并了解常见使用方法。',
@@ -228,6 +435,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'claude',
     seoTitle: 'Claude国内怎么用？使用教程与常见问题',
     seoDescription: '国内使用Claude时，如果遇到官网打不开、登录失败、页面加载异常或部分功能不可用，可从服务地区、账号状态、浏览器与网络环境逐项排查，并了解常见使用方法。',
@@ -403,6 +611,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'gemini',
     seoTitle: 'Gemini国内怎么用？使用教程与常见问题',
     seoDescription: '国内使用Gemini时，如果遇到官网打不开、登录失败或部分功能不可用，可从服务地区、Google账号、浏览器与网络环境逐项排查，并了解常见功能与使用方法。',
@@ -594,6 +803,7 @@ export const aiTools: AITool[] = [
     ]
   },
     {
+    region: 'global',
     slug: 'perplexity',
     seoTitle: 'Perplexity国内怎么用？搜索教程',
     seoDescription: '国内使用Perplexity时，如果遇到官网打不开、登录失败或搜索异常，可从账号、浏览器与网络环境排查，并了解搜索、引用、Research与文件分析等功能。',
@@ -789,6 +999,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'grok',
     seoTitle: 'Grok国内怎么用？聊天搜索与常见问题 | RunAI',
     seoDescription: '国内使用Grok时，如果遇到官网打不开、登录异常或部分功能不可用，可从账号、浏览器、服务范围与网络环境排查，并了解聊天、搜索、图片与常见使用方法。',
@@ -953,6 +1164,7 @@ export const aiTools: AITool[] = [
     ]
   },
 {
+    region: 'global',
     slug: 'cursor',
     seoTitle: 'Cursor国内怎么用？安装、使用与常见问题',
     seoDescription: '国内使用Cursor时，如果遇到下载失败、账号登录异常或Agent无响应，可从官方状态、账号、客户端与网络环境逐项排查，并了解安装、Agent和常见使用方法。',
@@ -1156,6 +1368,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'github-copilot',
     seoTitle: 'GitHub Copilot国内怎么用 | RunAI',
     seoDescription: '国内使用GitHub Copilot时，如果遇到登录、代码补全或Agent异常，可从GitHub账号、IDE扩展、方案权限与网络环境排查，并了解基础使用方法。',
@@ -1359,6 +1572,7 @@ export const aiTools: AITool[] = [
     ]
   },
 {
+    region: 'global',
     slug: 'midjourney',
     seoTitle: 'Midjourney国内怎么用？创作教程',
     seoDescription: '国内使用Midjourney时，如果遇到官网打不开、登录异常或无法生成图片，可从账号、订阅、浏览器与网络环境逐项排查，并了解网页版创作、提示词与常见问题。',
@@ -1559,6 +1773,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'ideogram',
     seoTitle: 'Ideogram国内怎么用？文字绘图教程 | RunAI',
     seoDescription: '国内使用Ideogram时，如果遇到官网打不开、登录异常或图片生成失败，可从账号、浏览器、方案权限与网络环境排查，并了解文字排版、图片生成与常见提示词方法。',
@@ -1716,6 +1931,7 @@ export const aiTools: AITool[] = [
     ]
   },
 {
+    region: 'global',
     slug: 'runway',
     seoTitle: 'Runway国内怎么用？AI视频生成教程 | RunAI',
     seoDescription: '国内使用Runway时，如果遇到官网打不开、登录异常或视频生成失败，可从账号、浏览器、方案权限与网络环境排查，并了解文生视频、图生视频与常见创作方法。',
@@ -1870,6 +2086,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'canva-ai',
     seoTitle: 'Canva AI国内怎么用？设计与常见问题',
     seoDescription: '国内使用Canva AI时，如果遇到官网打不开、登录异常或AI功能不可用，可从账号、浏览器、方案与网络环境排查，并了解图片、文案、设计与PPT等常见用法。',
@@ -2031,6 +2248,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'gamma',
     seoTitle: 'Gamma国内怎么用？PPT生成与常见问题',
     seoDescription: '国内使用Gamma时，如果遇到官网打不开、登录异常或PPT生成失败，可从账号、浏览器与网络环境排查，并了解AI生成、大纲修改、Agent编辑与PPT导出方法。',
@@ -2235,6 +2453,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     slug: 'suno',
     seoTitle: 'Suno国内怎么用？中文歌曲生成与常见问题',
     seoDescription: '国内使用Suno时，如果遇到官网打不开、登录异常或歌曲生成失败，可从账号、浏览器与网络环境排查，并了解中文歌词、Custom模式、歌曲修改、下载与商用权限。',
@@ -2439,6 +2658,7 @@ export const aiTools: AITool[] = [
     ]
   },
     {
+    region: 'global',
     slug: 'replit',
     seoTitle: 'Replit国内怎么用？AI编程与常见问题',
     seoDescription: '国内使用Replit时，如果遇到登录异常、Agent无响应或项目运行失败，可从账号、工作区、方案权限与网络环境排查，并了解AI编程、部署与常见使用方法。',
@@ -2603,6 +2823,7 @@ export const aiTools: AITool[] = [
     ]
   },
 {
+    region: 'global',
     "slug": "v0",
     "seoTitle": "v0进阶教程：前端代码一键自动生成 - RunAI",
     "seoDescription": "不知道如何把设计图快速变成前端代码？RunAI为您解析v0强大的UI生成能力，通过自然语言一键导出React与Tailwind组件。点击阅读前端开发自动化指南！",
@@ -2685,6 +2906,7 @@ export const aiTools: AITool[] = [
     "alternatives": []
   },
   {
+    region: 'global',
     "slug": "bolt",
     "seoTitle": "Bolt深度测评：全栈Web应用构建方案 - RunAI",
     "seoDescription": "想要体验直接在浏览器中构建全栈应用？RunAI剖析Bolt的前后端一体化开发体验，让AI助您实时预览与无缝部署项目。点击获取深度全栈开发与国内网络连通指南！",
@@ -2767,6 +2989,7 @@ export const aiTools: AITool[] = [
     "alternatives": []
   },
   {
+    region: 'global',
     "slug": "leonardo-ai",
     "seoTitle": "Leonardo AI教程：免费绘画模型 - RunAI",
     "seoDescription": "寻找功能全面且免费额度高的AI绘画工具？RunAI详细介绍Leonardo AI在游戏资产与艺术创作中的强大模型微调与生成能力。点击获取专属模型训练与设计指南！",
@@ -2849,6 +3072,7 @@ export const aiTools: AITool[] = [
     "alternatives": []
   },
     {
+    region: 'global',
     slug: 'adobe-firefly',
     seoTitle: 'Adobe Firefly国内怎么用？教程',
     seoDescription: '国内使用Adobe Firefly时，如果遇到官网打不开、登录异常或生成失败，可从Adobe账号、浏览器、方案与网络环境排查，并了解图片生成、编辑等常见用法。',
@@ -3006,6 +3230,7 @@ export const aiTools: AITool[] = [
     ]
   },
   {
+    region: 'global',
     "slug": "pika",
     "seoTitle": "Pika教程：3D动漫风格与视频运镜 - RunAI",
     "seoDescription": "不知道如何让静态图片瞬间动起来？RunAI为您演示Pika在3D动画与动漫风格视频生成上的独特优势，精准控制视频局部动态。立即点击获取动漫创作与视频运镜指南！",
@@ -3076,6 +3301,7 @@ export const aiTools: AITool[] = [
     "alternatives": []
   },
   {
+    region: 'global',
     "slug": "luma-dream-machine",
     "seoTitle": "Luma测评：超写实物理视频运镜 - RunAI",
     "seoDescription": "想体验生成超写实电影级画面的快感？RunAI深度评测Luma Dream Machine在物理规律与镜头运动上的优化。点击阅读深度超写实视频创作指南！",

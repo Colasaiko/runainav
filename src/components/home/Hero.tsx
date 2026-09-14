@@ -9,10 +9,10 @@ export default function Hero() {
       
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight mb-6 leading-tight">
-          海外AI工具与2026机场推荐，<br className="md:hidden" />更简单地开始
+          国内外AI工具与2026机场推荐，<br className="md:hidden" />更简单地开始
         </h1>
         <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-          RunAI 帮国内用户发现海外 AI 工具、学习使用方法，并整理 2026 机场推荐与稳定网络方案，让选工具、看教程和解决网络问题都更简单。
+          RunAI 帮国内用户发现国内外热门 AI 工具、学习使用方法，并整理 2026 机场推荐与稳定网络方案，让选工具、看教程和解决网络问题都更简单。
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
