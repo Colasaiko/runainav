@@ -14,17 +14,18 @@ const CATEGORIES = [
   { id: 'video', name: 'AI 视频' },
   { id: 'productivity', name: 'AI 办公' },
   { id: 'music', name: 'AI 音乐' },
+  { id: 'audio', name: 'AI 音频' },
 ];
 
 const SCENARIOS = [
-  { icon: '💬', name: '聊天与问答', query: '聊天', tools: ['ChatGPT', 'Claude', 'Gemini', 'Grok'] },
-  { icon: '🔍', name: '搜资料', query: '搜索', tools: ['Perplexity', 'Gemini', 'ChatGPT'] },
-  { icon: '💻', name: '写代码', query: '代码', tools: ['Cursor', 'GitHub Copilot', 'Replit', 'v0', 'Bolt'] },
-  { icon: '🎨', name: '生成图片', query: '绘图', tools: ['Midjourney', 'Ideogram', 'Leonardo AI', 'Adobe Firefly'] },
-  { icon: '🎬', name: '制作视频', query: '视频', tools: ['Runway', 'Pika', 'Luma Dream Machine'] },
-  { icon: '📊', name: '做 PPT / 办公', query: 'PPT', tools: ['Gamma', 'Canva AI', 'ChatGPT'] },
-  { icon: '🎵', name: '制作音乐', query: '音乐', tools: ['Suno'] },
-  { icon: '✍️', name: '写文章', query: '写作', tools: ['ChatGPT', 'Claude', 'Gemini'] },
+  { icon: '💬', name: '聊天与问答', query: '聊天', tools: ['ChatGPT', 'DeepSeek', '豆包', 'Claude'] },
+  { icon: '🔍', name: '搜资料', query: '搜索', tools: ['Kimi', 'Perplexity', '腾讯元宝', 'Gemini'] },
+  { icon: '💻', name: '写代码', query: '代码', tools: ['Cursor', 'DeepSeek', 'Claude', 'GitHub Copilot'] },
+  { icon: '🎨', name: '生成图片', query: '绘图', tools: ['Midjourney', '即梦 AI', 'Ideogram', 'Adobe Firefly'] },
+  { icon: '🎬', name: '制作视频', query: '视频', tools: ['Runway', '可灵 AI', '海螺 AI', 'Luma Dream Machine'] },
+  { icon: '📊', name: '做 PPT / 办公', query: 'PPT', tools: ['Kimi', 'Gamma', 'Canva AI', '通义千问'] },
+  { icon: '🎵', name: '制作音乐', query: '音乐', tools: ['Suno', 'Udio'] },
+  { icon: '✍️', name: '写文章', query: '写作', tools: ['豆包', 'ChatGPT', 'Claude', 'Kimi'] },
 ];
 
 
@@ -88,7 +89,7 @@ function AIListContent() {
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full hover:shadow-md transition-shadow">
             <h3 className="text-lg font-bold text-gray-900 mb-3">第一次用 AI</h3>
             <p className="text-gray-600 text-sm mb-6 flex-grow leading-relaxed">
-              如果还不知道该选什么，可以先从 ChatGPT、Claude 或 Gemini 开始。这几款工具覆盖聊天、写作、学习、资料整理和日常工作等常见需求。
+              如果还不知道该选什么，可以先从 DeepSeek、豆包、ChatGPT 或 Claude 开始。这几款工具覆盖聊天、写作、学习、资料整理和日常工作等常见需求。
             </p>
             <a href="#beginner-recommends" className="inline-flex items-center text-sm font-medium text-brand-600 hover:text-brand-700">
               看看新手推荐 <ChevronRight className="w-4 h-4 ml-1" />

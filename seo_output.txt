@@ -1,0 +1,211 @@
+
+> runainav.com@0.1.0 check:seo
+> node scripts/check-seo-lengths.js
+
+[OK] deepseek Title = 25
+[ERROR] deepseek - Description length is 64 (Expected 70-80)
+Current text: DeepSeek深度求索是国内知名的开源及闭源大模型提供商，在代码编写和逻辑推理上表现优异。本文整理其核心功能与API调用方式。
+[OK] doubao Title = 21
+[ERROR] doubao - Description length is 56 (Expected 70-80)
+Current text: 豆包是字节跳动推出的免费AI对话工具，提供语音对话、文本创作与AI智能体等功能，支持手机App与网页端无缝使用。
+[OK] kimi Title = 25
+[OK] kimi Description = 72
+[OK] yuanbao Title = 21
+[ERROR] yuanbao - Description length is 67 (Expected 70-80)
+Current text: 腾讯元宝是基于混元大模型打造的AI助手，深度整合了微信生态与微信公众号独家文章搜索，提供精准的热点内容总结与日常AI绘画和智能体功能。
+[OK] qianwen Title = 20
+[ERROR] qianwen - Description length is 69 (Expected 70-80)
+Current text: 通义千问是阿里云重磅推出的全能型AI大模型助手，提供免费的长文本阅读、语音播报、图文多模态生成等强大功能，非常适合国内商务与高效办公场景。
+[OK] chatglm Title = 21
+[ERROR] chatglm - Description length is 69 (Expected 70-80)
+Current text: 智谱清言基于强大的ChatGLM基座模型，提供优秀的逻辑对话、Python代码沙盒和长文本阅读能力，并在Agent智能体构建上有深厚积累。
+[OK] chatgpt Title = 22
+[OK] chatgpt Description = 78
+[OK] claude Title = 21
+[OK] claude Description = 77
+[OK] gemini Title = 21
+[OK] gemini Description = 77
+[OK] perplexity Title = 20
+[OK] perplexity Description = 78
+[OK] grok Title = 27
+[OK] grok Description = 73
+[OK] cursor Title = 22
+[OK] cursor Description = 79
+[OK] github-copilot Title = 27
+[OK] github-copilot Description = 79
+[OK] midjourney Title = 20
+[OK] midjourney Description = 77
+[OK] ideogram Title = 28
+[OK] ideogram Description = 78
+[OK] runway Title = 28
+[OK] runway Description = 75
+[OK] canva-ai Title = 21
+[OK] canva-ai Description = 77
+[OK] gamma Title = 21
+[OK] gamma Description = 79
+[OK] suno Title = 21
+[OK] suno Description = 78
+[OK] replit Title = 21
+[OK] replit Description = 76
+[OK] v0 Title = 25
+[OK] v0 Description = 80
+[OK] bolt Title = 28
+[OK] bolt Description = 78
+[OK] leonardo-ai Title = 28
+[OK] leonardo-ai Description = 80
+[OK] adobe-firefly Title = 21
+[OK] adobe-firefly Description = 79
+[OK] pika Title = 26
+[OK] pika Description = 79
+[OK] luma-dream-machine Title = 24
+[OK] luma-dream-machine Description = 75
+[OK] Guide: gpt-6-astra-guide Title = 28
+[OK] Guide: gpt-6-astra-guide Description = 71
+[OK] Guide: chatgpt-images-2-5-guide Title = 27
+[OK] Guide: chatgpt-images-2-5-guide Description = 76
+[OK] Guide: chatgpt-pdf-guide Title = 25
+[OK] Guide: chatgpt-pdf-guide Description = 77
+[OK] Guide: chatgpt-compare-files Title = 24
+[OK] Guide: chatgpt-compare-files Description = 77
+[OK] Guide: claude-project-docs Title = 23
+[OK] Guide: claude-project-docs Description = 79
+[OK] Guide: gemini-file-drive-guide Title = 26
+[OK] Guide: gemini-file-drive-guide Description = 80
+[OK] Guide: ai-excel-data Title = 26
+[OK] Guide: ai-excel-data Description = 79
+[OK] Guide: ai-meeting-notes Title = 21
+[OK] Guide: ai-meeting-notes Description = 74
+[OK] Guide: ai-interview-prep Title = 20
+[OK] Guide: ai-interview-prep Description = 77
+[OK] Guide: ai-research-paper Title = 23
+[OK] Guide: ai-research-paper Description = 76
+[OK] Guide: ai-office-workflow Title = 22
+[OK] Guide: ai-office-workflow Description = 73
+[OK] Guide: ai-build-website-no-code Title = 21
+[OK] Guide: ai-build-website-no-code Description = 76
+[OK] Guide: ai-outage-or-network Title = 22
+[OK] Guide: ai-outage-or-network Description = 77
+[OK] Guide: ai-response-slow Title = 23
+[OK] Guide: ai-response-slow Description = 77
+[OK] Guide: ai-packet-loss Title = 23
+[OK] Guide: ai-packet-loss Description = 76
+[OK] Guide: client-connected-site-unreachable Title = 22
+[OK] Guide: client-connected-site-unreachable Description = 79
+[OK] Guide: ai-evening-slow Title = 23
+[OK] Guide: ai-evening-slow Description = 72
+[OK] Guide: cursor-copilot-timeout Title = 29
+[OK] Guide: cursor-copilot-timeout Description = 79
+[OK] Guide: after-buying-airport Title = 21
+[OK] Guide: after-buying-airport Description = 73
+[OK] Guide: clash-verge-import-subscription Title = 29
+[OK] Guide: clash-verge-import-subscription Description = 80
+[OK] Guide: node-speed-test-guide Title = 22
+[OK] Guide: node-speed-test-guide Description = 80
+[OK] Guide: iplc-iepl-transit-direct Title = 27
+[OK] Guide: iplc-iepl-transit-direct Description = 78
+[OK] Guide: chatgpt-plus-buy Title = 26
+[OK] Guide: chatgpt-plus-buy Description = 71
+[OK] Guide: claude-pro-subscribe Title = 24
+[OK] Guide: claude-pro-subscribe Description = 71
+[OK] Guide: gemini-subscribe Title = 21
+[OK] Guide: gemini-subscribe Description = 72
+[OK] Guide: cursor-pro-buy Title = 25
+[OK] Guide: cursor-pro-buy Description = 76
+[OK] Guide: midjourney-subscribe Title = 24
+[OK] Guide: midjourney-subscribe Description = 79
+[OK] Guide: runway-subscribe Title = 22
+[OK] Guide: runway-subscribe Description = 80
+[OK] Guide: suno-subscribe Title = 21
+[OK] Guide: suno-subscribe Description = 77
+[OK] Guide: perplexity-pro-subscribe Title = 26
+[OK] Guide: perplexity-pro-subscribe Description = 74
+[OK] Guide: chatgpt-jichang Title = 26
+[OK] Guide: chatgpt-jichang Description = 80
+[OK] Guide: jichang-recommendation-2026 Title = 27
+[OK] Guide: jichang-recommendation-2026 Description = 74
+[OK] Guide: stable-jichang Title = 25
+[OK] Guide: stable-jichang Description = 78
+[OK] Guide: cheap-jichang Title = 24
+[OK] Guide: cheap-jichang Description = 76
+[OK] Guide: value-jichang Title = 26
+[OK] Guide: value-jichang Description = 74
+[OK] Guide: clash-jichang Title = 28
+[OK] Guide: clash-jichang Description = 77
+[OK] Guide: clash-verge-jichang Title = 28
+[OK] Guide: clash-verge-jichang Description = 80
+[OK] Guide: shadowrocket-jichang Title = 25
+[OK] Guide: shadowrocket-jichang Description = 77
+[OK] Guide: v2rayn-jichang Title = 23
+[OK] Guide: v2rayn-jichang Description = 78
+[OK] Guide: no-expiry-jichang Title = 26
+[OK] Guide: no-expiry-jichang Description = 80
+[OK] Guide: suno-chinese-song-tutorial Title = 21
+[OK] Guide: suno-chinese-song-tutorial Description = 72
+[OK] Guide: gamma-ppt-tutorial Title = 23
+[OK] Guide: gamma-ppt-tutorial Description = 75
+[OK] Guide: perplexity-search-guide Title = 25
+[OK] Guide: perplexity-search-guide Description = 72
+[OK] Guide: midjourney-realistic-portrait Title = 22
+[OK] Guide: midjourney-realistic-portrait Description = 75
+[OK] Guide: chatgpt-vs-claude-vs-gemini Title = 25
+[OK] Guide: chatgpt-vs-claude-vs-gemini Description = 78
+[OK] Guide: vpn-slow-speed Title = 22
+[OK] Guide: vpn-slow-speed Description = 73
+[OK] Guide: cursor-build-blog Title = 21
+[OK] Guide: cursor-build-blog Description = 77
+[OK] Guide: ai-network Title = 24
+[OK] Guide: ai-network Description = 76
+[OK] Homepage Title = 23
+[OK] Homepage Description = 73
+[OK] /ai Title = 30
+[OK] /ai Description = 79
+[OK] /guides Title = 25
+[OK] /guides Description = 79
+[OK] /vpn Title = 29
+[OK] /vpn Description = 72
+[OK] /subscriptions Title = 25
+[OK] /subscriptions Description = 75
+[OK] /guides/ai-network Title = 24
+[OK] /guides/ai-network Description = 76
+[OK] /guides/gpt-6-astra-guide Title = 28
+[OK] /guides/gpt-6-astra-guide Description = 71
+[OK] /guides/chatgpt-images-2-5-guide Title = 27
+[OK] /guides/chatgpt-images-2-5-guide Description = 76
+[OK] /guides/cursor-build-blog Title = 21
+[OK] /guides/cursor-build-blog Description = 77
+[OK] /tests Title = 29
+[OK] /tests Description = 73
+[OK] /vpn/feimao Title = 27
+[OK] /vpn/feimao Description = 76
+[OK] /vpn/shanyue Title = 24
+[OK] /vpn/shanyue Description = 78
+[OK] /vpn/lingmao Title = 24
+[OK] /vpn/lingmao Description = 76
+[OK] /vpn/firefly Title = 29
+[OK] /vpn/firefly Description = 79
+[OK] /vpn/wuyou Title = 24
+[OK] /vpn/wuyou Description = 76
+[OK] /vpn/kuajie Title = 25
+[OK] /vpn/kuajie Description = 77
+[OK] /vpn/weifeng Title = 28
+[OK] /vpn/weifeng Description = 77
+[OK] Test Detail: chatgpt Title = 22
+[OK] Test Detail: chatgpt Description = 77
+[OK] Test Detail: claude Title = 21
+[OK] Test Detail: claude Description = 76
+[OK] Test Detail: gemini Title = 21
+[OK] Test Detail: gemini Description = 78
+[OK] Test Detail: perplexity Title = 23
+[OK] Test Detail: perplexity Description = 80
+[OK] Test Detail: cursor Title = 24
+[OK] Test Detail: cursor Description = 80
+[OK] Test Detail: midjourney Title = 23
+[OK] Test Detail: midjourney Description = 74
+[OK] Test Detail: grok Title = 21
+[OK] Test Detail: grok Description = 72
+Found 7 Test Detail metadata records.
+
+Found 26 AI tool records.
+Found 48 guide articles.
+Validated 26 AI tool metadata records.
+Validated 48 guide metadata records.

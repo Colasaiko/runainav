@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AIList from './AIList';
@@ -18,14 +19,24 @@ export default function AIPage() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">AI 工具大全</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-            发现适合你的 AI 工具，了解这些前沿工具能帮你做什么，以及如何在国内网络环境下顺利使用。
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+            收录全球热门 AI 工具，包括国内与海外的聊天、搜索、编程、绘图、视频、办公和音乐工具，可按地区、分类与使用需求快速筛选。
           </p>
-          <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500">
-            <span>AI工具大全</span>
-            <span>AI聊天神器</span>
-            <span>AI编程软件</span>
-            <span>AI绘画生成</span>
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-sm font-medium text-gray-500">按分类浏览</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link href="/ai/chat" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI聊天</Link>
+              <Link href="/ai/search" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI搜索</Link>
+              <Link href="/ai/coding" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI编程</Link>
+              <Link href="/ai/image" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI绘画</Link>
+              <Link href="/ai/video" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI视频</Link>
+              <Link href="/ai/productivity" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI办公</Link>
+              <Link href="/ai/music" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI音乐</Link>
+              <Link href="/ai/audio" className="px-4 py-2 bg-white rounded-full border border-gray-200 text-sm font-medium text-gray-700 hover:border-brand-500 hover:text-brand-600 transition-colors">AI音频</Link>
+              <div className="w-px h-6 bg-gray-300 hidden md:block self-center mx-1"></div>
+              <Link href="/ai/china" className="px-4 py-2 bg-blue-50 rounded-full border border-blue-100 text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors">国内 AI</Link>
+              <Link href="/ai/global" className="px-4 py-2 bg-blue-50 rounded-full border border-blue-100 text-sm font-medium text-blue-700 hover:bg-blue-100 transition-colors">海外 AI</Link>
+            </div>
           </div>
         </div>
         <AIList />

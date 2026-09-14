@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { aiTools } from '@/data/aiTools';
 import { guideArticles } from '@/data/guideArticles';
 import { aiTests } from '@/data/aiTests';
+import { aiCategorySeo } from '@/data/aiCategorySeo';
 
 export const dynamic = 'force-static';
 
@@ -9,11 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://runainav.com';
   
   const staticDates: Record<string, string> = {
-    '/': '2026-09-08',
+    '/': '2026-09-14',
     '/vpn': '2026-09-10',
     '/subscriptions': '2026-09-08',
     '/guides': '2026-09-09',
-    '/ai': '2026-09-08',
+    '/ai': '2026-09-14',
     '/vpn/weifeng': '2026-09-03',
     '/vpn/feimao': '2026-09-10',
     '/vpn/shanyue': '2026-09-10',
@@ -152,7 +153,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // 3. AI Tool Detail Pages (from data)
+  // 3. AI Category Pages (from data)
+  Object.keys(aiCategorySeo).forEach((filter) => {
+    addEntry({
+      url: `${baseUrl}/ai/${filter}`,
+      lastModified: new Date('2026-09-14'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    });
+  });
+
+  // 4. AI Tool Detail Pages (from data)
   aiTools.forEach((tool) => {
     addEntry({
       url: `${baseUrl}/guides/${tool.slug}`,

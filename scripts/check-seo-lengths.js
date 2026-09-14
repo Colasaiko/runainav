@@ -1,4 +1,5 @@
 const fs = require('fs');
+const ts = require('typescript');
 
 let hasError = false;
 let foundCount = 0;
@@ -7,6 +8,11 @@ let guideFoundCount = 0;
 let guideValidatedCount = 0;
 
 function checkLength(slug, type, text, min, max) {
+  if (!text) {
+    console.error(`[ERROR] ${slug} - ${type} is missing or undefined`);
+    hasError = true;
+    return;
+  }
   const len = Array.from(text).length;
   if (len < min || len > max) {
     console.error(`[ERROR] ${slug} - ${type} length is ${len} (Expected ${min}-${max})`);
@@ -17,69 +23,71 @@ function checkLength(slug, type, text, min, max) {
   }
 }
 
-// 1. Check aiTools.ts
+// 1. Check aiTools.ts safely using TS compiler
 const aiToolsContent = fs.readFileSync('src/data/aiTools.ts', 'utf-8');
-const blockRegex = /\{\s*['"]?slug['"]?:\s*['"]([^'"]+)['"]([\s\S]*?)(?=\{\s*['"]?slug['"]?:|$)/g;
+const aiToolsJs = ts.transpile(aiToolsContent, { module: ts.ModuleKind.CommonJS });
+const aiToolsExports = {};
+const aiToolsModule = { exports: aiToolsExports };
+(new Function('exports', 'module', 'require', aiToolsJs))(aiToolsExports, aiToolsModule, require);
 
-let match;
-while ((match = blockRegex.exec(aiToolsContent)) !== null) {
-  const slug = match[1];
-  const block = match[2];
+const aiTools = aiToolsExports.aiTools || [];
+
+for (const tool of aiTools) {
   foundCount++;
-  
-  const titleMatch = block.match(/['"]?seoTitle['"]?:\s*['"]([^'"]+)['"]/);
-  const descMatch = block.match(/['"]?seoDescription['"]?:\s*['"]([^'"]+)['"]/);
-  
-  if (!titleMatch) {
-    console.error(`[ERROR] ${slug} - seoTitle is missing`);
+  if (!tool.seoTitle) {
+    console.error(`[ERROR] ${tool.slug} - seoTitle is missing`);
     hasError = true;
   }
-  
-  if (!descMatch) {
-    console.error(`[ERROR] ${slug} - seoDescription is missing`);
+  if (!tool.seoDescription) {
+    console.error(`[ERROR] ${tool.slug} - seoDescription is missing`);
     hasError = true;
   }
-  
-  if (titleMatch && descMatch) {
-    checkLength(slug, 'Title', titleMatch[1], 20, 30);
-    checkLength(slug, 'Description', descMatch[1], 70, 80);
+  if (tool.seoTitle && tool.seoDescription) {
+    checkLength(tool.slug, 'Title', tool.seoTitle, 20, 30);
+    checkLength(tool.slug, 'Description', tool.seoDescription, 70, 80);
     validatedCount++;
   }
 }
 
-// 2. Check guideArticles.ts
+// 2. Check guideArticles.ts safely
 const guidesContent = fs.readFileSync('src/data/guideArticles.ts', 'utf-8');
-const guideBlockRegex = /\{\s*['"]?slug['"]?:\s*['"]([^'"]+)['"]([\s\S]*?)(?=\{\s*['"]?slug['"]?:|\];)/g;
+const guidesJs = ts.transpile(guidesContent, { module: ts.ModuleKind.CommonJS });
+const guidesExports = {};
+const guidesModule = { exports: guidesExports };
+(new Function('exports', 'module', 'require', guidesJs))(guidesExports, guidesModule, require);
 
-let guideMatch;
-while ((guideMatch = guideBlockRegex.exec(guidesContent)) !== null) {
-  const slug = guideMatch[1];
-  const block = guideMatch[2];
+const guideArticles = guidesExports.guideArticles || [];
+
+for (const guide of guideArticles) {
   guideFoundCount++;
-  
-  const titleMatch = block.match(/['"]?title['"]?:\s*['"]([^'"]+)['"]/);
-  const descMatch = block.match(/['"]?description['"]?:\s*['"]([^'"]+)['"]/);
-  const typeMatch = block.match(/['"]?type['"]?:\s*['"]([^'"]+)['"]/);
-  const type = typeMatch ? typeMatch[1] : '';
-  
-  if (!titleMatch) {
-    console.error(`[ERROR] Guide ${slug} - title is missing`);
+  if (!guide.title) {
+    console.error(`[ERROR] Guide ${guide.slug} - title is missing`);
     hasError = true;
   }
-  
-  if (!descMatch) {
-    console.error(`[ERROR] Guide ${slug} - description is missing`);
+  if (!guide.description) {
+    console.error(`[ERROR] Guide ${guide.slug} - description is missing`);
     hasError = true;
   }
-  
-  if (titleMatch && descMatch) {
-    // Only strictly enforce lengths for the new 'network' batch
-    
-      checkLength(`Guide: ${slug}`, 'Title', titleMatch[1], 20, 30);
-      checkLength(`Guide: ${slug}`, 'Description', descMatch[1], 70, 80);
-    
+  if (guide.title && guide.description) {
+    checkLength(`Guide: ${guide.slug}`, 'Title', guide.title, 20, 30);
+    checkLength(`Guide: ${guide.slug}`, 'Description', guide.description, 70, 80);
     guideValidatedCount++;
   }
+}
+
+// Check aiCategorySeo.ts
+const seoContent = fs.readFileSync('src/data/aiCategorySeo.ts', 'utf-8');
+const seoJs = ts.transpile(seoContent, { module: ts.ModuleKind.CommonJS });
+const seoExports = {};
+const seoModule = { exports: seoExports };
+new Function('exports', 'module', seoJs)(seoExports, seoModule);
+const aiCategorySeo = seoExports.aiCategorySeo || seoModule.exports.aiCategorySeo;
+if (aiCategorySeo) {
+  Object.keys(aiCategorySeo).forEach(key => {
+    const seo = aiCategorySeo[key];
+    checkLength('Category: ' + key, 'Title', seo.title, 20, 30);
+    checkLength('Category: ' + key, 'Description', seo.description, 70, 80);
+  });
 }
 
 // 3. Check specific static pages
@@ -121,44 +129,37 @@ extractAndCheck('/vpn/wuyou', 'src/app/vpn/wuyou/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/kuajie', 'src/app/vpn/kuajie/page.tsx', 20, 30, 70, 80);
 extractAndCheck('/vpn/weifeng', 'src/app/vpn/weifeng/page.tsx', 20, 30, 70, 80);
 
-
-// 4. Check aiTests metadata records
+// 4. Check aiTests metadata records safely
 const aiTestsContent = fs.readFileSync('src/data/aiTests.ts', 'utf-8');
-const aiTestsBlockRegex = /\{\s*['"]?slug['"]?:\s*['"]([^'"]+)['"]([\s\S]*?)(?=\{\s*['"]?slug['"]?:|\];)/g;
+const aiTestsJs = ts.transpile(aiTestsContent, { module: ts.ModuleKind.CommonJS });
+const aiTestsExports = {};
+const aiTestsModule = { exports: aiTestsExports };
+(new Function('exports', 'module', 'require', aiTestsJs))(aiTestsExports, aiTestsModule, require);
 
-let testDetailsCount = 0;
-let aiTestMatch;
-while ((aiTestMatch = aiTestsBlockRegex.exec(aiTestsContent)) !== null) {
-  const slug = aiTestMatch[1];
-  const block = aiTestMatch[2];
-  
-  const titleMatch = block.match(/['"]?seoTitle['"]?:\s*['"]([^'"]+)['"]/);
-  const descMatch = block.match(/['"]?seoDescription['"]?:\s*['"]([^'"]+)['"]/);
-  
-  if (!titleMatch) {
-    console.error(`[ERROR] Test Detail ${slug} - seoTitle is missing`);
-    hasError = true;
-  }
-  
-  if (!descMatch) {
-    console.error(`[ERROR] Test Detail ${slug} - seoDescription is missing`);
-    hasError = true;
-  }
-  
-  if (titleMatch && descMatch) {
-    checkLength(`Test Detail: ${slug}`, 'Title', titleMatch[1], 20, 30);
-    checkLength(`Test Detail: ${slug}`, 'Description', descMatch[1], 70, 80);
-    testDetailsCount++;
+const testDetailsCount = (aiTestsExports.aiTests || []).length;
+
+if (testDetailsCount !== 7) {
+  console.error(`[ERROR] Expected 7 Test Detail metadata records, but found ${testDetailsCount}.`);
+  hasError = true;
+} else {
+  for (const testDetail of aiTestsExports.aiTests) {
+    const slug = testDetail.slug;
+    if (!testDetail.seoTitle) {
+      console.error(`[ERROR] Test Detail ${slug} - seoTitle is missing`);
+      hasError = true;
+    }
+    if (!testDetail.seoDescription) {
+      console.error(`[ERROR] Test Detail ${slug} - seoDescription is missing`);
+      hasError = true;
+    }
+    if (testDetail.seoTitle && testDetail.seoDescription) {
+      checkLength(`Test Detail: ${slug}`, 'Title', testDetail.seoTitle, 20, 30);
+      checkLength(`Test Detail: ${slug}`, 'Description', testDetail.seoDescription, 70, 80);
+    }
   }
 }
 
 console.log(`Found ${testDetailsCount} Test Detail metadata records.`);
-if (testDetailsCount !== 7) {
-  console.error(`[ERROR] Expected 7 Test Detail metadata records, but found ${testDetailsCount}.`);
-  hasError = true;
-}
-
-
 console.log(`\nFound ${foundCount} AI tool records.`);
 console.log(`Found ${guideFoundCount} guide articles.`);
 console.log(`Validated ${validatedCount} AI tool metadata records.`);
