@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ChevronRight, Home, CheckCircle2, ArrowRight, ExternalLink } from 'lucide-react';
+import { ChevronRight, Home, CheckCircle2, ExternalLink } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { aiComparisons } from '@/data/aiComparisons';
@@ -12,20 +12,22 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const comparison = aiComparisons.find((c) => c.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const comparison = aiComparisons.find((c) => c.slug === slug);
   if (!comparison) return {};
   return {
     title: comparison.title,
     description: comparison.description,
     alternates: {
-      canonical: `https://runainav.com/compare/${params.slug}`,
+      canonical: `https://runainav.com/compare/${slug}`,
     },
   };
 }
 
-export default function CompareDetailPage({ params }: { params: { slug: string } }) {
-  const comparison = aiComparisons.find((c) => c.slug === params.slug);
+export default async function CompareDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const comparison = aiComparisons.find((c) => c.slug === slug);
   if (!comparison) {
     notFound();
   }
@@ -43,7 +45,7 @@ export default function CompareDetailPage({ params }: { params: { slug: string }
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "RunAI", "item": "https://runainav.com" },
       { "@type": "ListItem", "position": 2, "name": "AI 工具对比", "item": "https://runainav.com/compare" },
-      { "@type": "ListItem", "position": 3, "name": comparison.title, "item": `https://runainav.com/compare/${params.slug}` }
+      { "@type": "ListItem", "position": 3, "name": comparison.title, "item": `https://runainav.com/compare/${slug}` }
     ]
   };
 
