@@ -1,4 +1,5 @@
 'use client';
+import AIToolLogo from '@/components/ai/AIToolLogo';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -174,9 +175,7 @@ function AIListContent() {
              if(!t) return null;
              return (
                <Link key={slug} href={`/guides/${slug}`} className="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 hover:border-brand-200 hover:shadow-md transition-all flex flex-col items-center text-center group">
-                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center text-brand-600 font-bold text-xl mb-3 shadow-sm border border-brand-100/50">
-                   {t.name.charAt(0)}
-                 </div>
+                 <AIToolLogo tool={t} size="lg" className="!w-12 !h-12 !text-xl !mb-3" />
                  <span className="text-sm font-bold text-gray-900 group-hover:text-brand-600 line-clamp-1">{t.name}</span>
                </Link>
              )
@@ -250,9 +249,7 @@ function AIListContent() {
                 className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center flex-shrink-0 text-brand-600 font-bold text-xl shadow-sm border border-brand-100/50">
-                    {tool.name.charAt(0)}
-                  </div>
+                  <AIToolLogo tool={tool} size="lg" className="!w-14 !h-14 !text-xl" />
                   <div>
                     <h3 className="text-lg font-bold text-gray-900 transition-colors line-clamp-1">{tool.name}</h3>
                     <p className="text-sm text-gray-500">{tool.company}</p>

@@ -1,5 +1,6 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import AIToolLogo from '@/components/ai/AIToolLogo';
 import { aiTools } from "@/data/aiTools";
 
 export default function PopularAITools() {
@@ -51,12 +52,10 @@ export default function PopularAITools() {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayTools.map((tool, index) => (
+          {displayTools.map((tool) => (
             <div key={tool.slug} className="bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-md transition-all flex flex-col h-full">
               <div className="flex items-start justify-between mb-4">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg ${getBrandColor(tool.slug, index)}`}>
-                  {tool.name.charAt(0)}
-                </div>
+                <AIToolLogo tool={tool} size="lg" />
                 <span className="text-xs font-medium px-2.5 py-1 bg-gray-50 text-gray-500 rounded-full">
                   {formatCategory(tool.category)}
                 </span>

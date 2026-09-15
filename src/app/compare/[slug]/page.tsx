@@ -1,3 +1,4 @@
+import AIToolLogo from '@/components/ai/AIToolLogo';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronRight, Home, CheckCircle2, ExternalLink } from 'lucide-react';
@@ -101,16 +102,12 @@ export default async function CompareDetailPage({ params }: { params: Promise<{ 
           <div className="text-center mb-12">
             <div className="flex justify-center items-center gap-6 mb-6">
               <div className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center text-brand-600 font-bold text-3xl shadow-sm border border-brand-100/50 mb-3">
-                  {toolA.name.charAt(0)}
-                </div>
+                <AIToolLogo tool={toolA} size="xl" className="!w-20 !h-20 !text-3xl !mb-3" />
                 <span className="font-bold text-gray-900">{toolA.name}</span>
               </div>
               <div className="text-2xl font-black text-gray-300 italic px-4">VS</div>
               <div className="flex flex-col items-center">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-blue-600 font-bold text-3xl shadow-sm border border-blue-100/50 mb-3">
-                  {toolB.name.charAt(0)}
-                </div>
+                <AIToolLogo tool={toolB} size="xl" className="!w-20 !h-20 !text-3xl !mb-3" />
                 <span className="font-bold text-gray-900">{toolB.name}</span>
               </div>
             </div>

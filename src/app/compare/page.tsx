@@ -1,3 +1,4 @@
+import AIToolLogo from '@/components/ai/AIToolLogo';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, Swords } from 'lucide-react';
@@ -70,18 +71,14 @@ export default function CompareIndexPage() {
                 <Link key={comp.slug} href={`/compare/${comp.slug}`} className="bg-white rounded-3xl p-6 shadow-sm border border-gray-200 hover:shadow-md hover:border-brand-300 transition-all group flex flex-col h-full">
                   <div className="flex justify-center items-center gap-4 mb-6">
                     <div className="flex flex-col items-center">
-                      <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-700 font-bold text-xl shadow-sm border border-gray-100 mb-2">
-                        {toolA.name.charAt(0)}
-                      </div>
+                      <AIToolLogo tool={toolA} size="lg" className="!w-14 !h-14 !text-xl !mb-2" />
                       <span className="text-sm font-medium text-gray-700">{toolA.name}</span>
                     </div>
                     
                     <div className="text-gray-300 font-black italic">VS</div>
                     
                     <div className="flex flex-col items-center">
-                      <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-700 font-bold text-xl shadow-sm border border-gray-100 mb-2">
-                        {toolB.name.charAt(0)}
-                      </div>
+                      <AIToolLogo tool={toolB} size="lg" className="!w-14 !h-14 !text-xl !mb-2" />
                       <span className="text-sm font-medium text-gray-700">{toolB.name}</span>
                     </div>
                   </div>

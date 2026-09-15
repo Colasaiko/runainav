@@ -4,6 +4,7 @@ import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
+import AIToolLogo from '@/components/ai/AIToolLogo';
 import { aiComparisons } from '@/data/aiComparisons';
 import { ExternalLink, CheckCircle2, ShieldAlert, Zap, List, ThumbsUp, ThumbsDown, Lightbulb, AlertCircle, Search, HelpCircle } from 'lucide-react';
 import { Metadata } from 'next';
@@ -1114,9 +1115,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
                     className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full no-underline"
                   >
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center text-brand-600 font-bold">
-                        {t.name.charAt(0)}
-                      </div>
+                      <AIToolLogo tool={t} size="md" />
                       <h3 className="font-bold text-gray-900 group-hover:text-brand-600 transition-colors m-0">{t.name}</h3>
                     </div>
                     <p className="text-sm text-gray-500 flex-grow line-clamp-2 m-0">{t.shortDescription}</p>
@@ -1161,9 +1160,7 @@ return (
           </nav>
           
           <div className="flex flex-col md:flex-row md:items-start gap-8">
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center flex-shrink-0 text-brand-600 font-bold text-4xl shadow-sm border border-brand-100/50">
-              {tool.name.charAt(0)}
-            </div>
+            <AIToolLogo tool={tool} size="xl" className="!w-24 !h-24 !text-4xl" />
             
             <div className="flex-grow">
               <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{tool.name}</h1>
@@ -1546,9 +1543,7 @@ return (
                   className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all group flex flex-col h-full"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center text-brand-600 font-bold">
-                      {t.name.charAt(0)}
-                    </div>
+                    <AIToolLogo tool={t} size="md" />
                     <h3 className="font-bold text-gray-900 group-hover:text-brand-600 transition-colors">{t.name}</h3>
                   </div>
                   <p className="text-sm text-gray-500 flex-grow line-clamp-2">{t.shortDescription}</p>

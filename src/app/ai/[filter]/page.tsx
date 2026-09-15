@@ -1,3 +1,4 @@
+import AIToolLogo from '@/components/ai/AIToolLogo';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronRight, ArrowRight, Home, ExternalLink } from 'lucide-react';
@@ -150,9 +151,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
               {filteredTools.map((tool) => (
                 <div key={tool.slug} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-brand-200 transition-all flex flex-col h-full">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-50 to-brand-100 flex items-center justify-center flex-shrink-0 text-brand-600 font-bold text-xl shadow-sm border border-brand-100/50">
-                      {tool.name.charAt(0)}
-                    </div>
+                      <AIToolLogo tool={tool} size="lg" className="!w-14 !h-14 !text-xl" />
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{tool.name}</h3>
                       <p className="text-sm text-gray-500">{tool.company}</p>
@@ -209,7 +208,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
                   <div className="flex flex-col gap-3">
                     {aiTools.filter(t => t.region === 'china' && t.categories.includes('chat')).slice(0, 5).map(t => (
                       <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
-                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <AIToolLogo tool={t} size="sm" />
                         <div>
                           <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
                           <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
@@ -223,7 +222,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
                   <div className="flex flex-col gap-3">
                     {aiTools.filter(t => t.region === 'china' && t.categories.includes('productivity')).slice(0, 5).map(t => (
                       <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
-                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <AIToolLogo tool={t} size="sm" />
                         <div>
                           <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
                           <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
@@ -237,7 +236,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
                   <div className="flex flex-col gap-3">
                     {aiTools.filter(t => t.region === 'china' && t.categories.includes('image')).slice(0, 5).map(t => (
                       <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
-                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <AIToolLogo tool={t} size="sm" />
                         <div>
                           <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
                           <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
@@ -251,7 +250,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
                   <div className="flex flex-col gap-3">
                     {aiTools.filter(t => t.region === 'china' && t.categories.includes('video')).slice(0, 5).map(t => (
                       <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
-                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <AIToolLogo tool={t} size="sm" />
                         <div>
                           <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
                           <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
