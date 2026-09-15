@@ -88,7 +88,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": seo.faqs.map((faq: any) => ({
+    "mainEntity": seo.faqs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
