@@ -46,6 +46,7 @@ export type AITool = {
   bestFor: string[];
   lastUpdated: string;
   overview: string;
+  screenshots?: { src: string; alt: string; caption?: string; source?: string; }[];
   features: string[];
   useCases: string[];
   gettingStarted: string[];
@@ -342,6 +343,14 @@ export const aiTools: AITool[] = [
     platforms: ["网页", "API", "App"],
     bestFor: ["程序员", "研究人员", "日常对话"],
     lastUpdated: "2026-09-14",
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/deepseek/chat.webp",
+        alt: "DeepSeek官方聊天界面",
+        caption: "DeepSeek官方聊天界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: "DeepSeek 以其出色的代码能力和极致的 API 性价比受到国内开发者和重度用户的青睐。",
     features: ["原生中文支持", "深度代码优化", "数学与逻辑推理"],
     useCases: ["日常代码辅助", "文本分析", "数学解题"],
@@ -376,6 +385,14 @@ export const aiTools: AITool[] = [
     platforms: ["网页", "App"],
     bestFor: ["学生", "创作者", "大众用户"],
     lastUpdated: "2026-09-14",
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/doubao/chat.webp",
+        alt: "豆包官方聊天界面",
+        caption: "豆包官方聊天界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: "豆包作为字节跳动的核心 AI 产品，以免费和全平台体验为卖点，是日常工作和生活的便利助手。",
     features: ["优秀的语音合成", "海量预设智能体", "免费无限制"],
     useCases: ["文章润色", "语音陪聊", "日常问答"],
@@ -410,6 +427,14 @@ export const aiTools: AITool[] = [
     platforms: ["网页", "App", "小程序"],
     bestFor: ["研究员", "学生", "职场人士"],
     lastUpdated: "2026-09-14",
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/kimi/chat.webp",
+        alt: "Kimi官方聊天界面",
+        caption: "Kimi官方聊天界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: "Kimi 凭借对超长文档（如财报、小说、长篇研报）的惊人记忆和解析能力，成为国内办公与学术场景的现象级工具。",
     features: ["支持百万字长文本", "多网址同步读取", "快速文档总结"],
     useCases: ["财报分析", "长篇小说阅读", "论文综述"],
@@ -546,6 +571,14 @@ export const aiTools: AITool[] = [
     platforms: ['网页端', 'iOS', 'Android', 'macOS', 'Windows'],
     bestFor: ['学生', '职场人', '开发者', '创作者'],
     lastUpdated: '2026-09-07',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/chatgpt/chat.webp",
+        alt: "ChatGPT官方聊天界面",
+        caption: "ChatGPT官方聊天界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: 'ChatGPT 支持多轮对话与文本处理，并根据账号方案提供文件分析、图片理解和搜索等功能。国内用户开始使用时，建议优先关注 OpenAI 官方当前支持的服务地区和自身网络连接稳定性。',
     features: [
       '支持多轮对话与长文本处理',
@@ -891,6 +924,14 @@ export const aiTools: AITool[] = [
     platforms: ['网页端（gemini.google.com）', 'Android', 'iOS'],
     bestFor: ['研究人员', '学生', 'Google Workspace 用户', '内容创作者'],
     lastUpdated: '2026-09-07',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/gemini/chat.webp",
+        alt: "Gemini官方对话界面",
+        caption: "Gemini官方对话界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: 'Gemini 网页版与移动 App 的支持范围可能不同，因此"网页能打开"和"手机应用能下载"不是同一个问题。国内用户开始使用时，建议先确认 Google Gemini 当前支持的服务地区，并检查 Google 账号的可用状态。',
     features: [
       '支持多模态输入：文本、图片、视频、音频、文档',
@@ -1084,6 +1125,14 @@ export const aiTools: AITool[] = [
     platforms: ['网页端', 'iOS', 'Android', 'macOS', 'Windows'],
     bestFor: ['研究人员', '学生', '内容创作者', '需要快速核实资料的用户'],
     lastUpdated: '2026-09-07',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/perplexity/chat.webp",
+        alt: "Perplexity搜索与解答界面",
+        caption: "Perplexity搜索与解答界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: '国内用户使用 Perplexity 时，可以先从官方网站开始搜索，并根据当前账号使用 Search、Pro Search、Research 等可用模式。Perplexity 与普通聊天工具最大的不同之一，是回答通常会同时提供来源，因此适合查资料和追踪原始信息。如果官网打不开、登录失败或搜索一直加载，需要分别检查官方状态、浏览器、账号和当前网络环境。',
     features: [
       '回答自动附带来源引用（Citations），方便查证事实',
@@ -1449,6 +1498,14 @@ export const aiTools: AITool[] = [
     platforms: ['Windows', 'macOS', 'Linux'],
     bestFor: ['前端开发者', '后端开发者', '全栈工程师', '学习编程的新手'],
     lastUpdated: '2026-09-07',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/cursor/chat.webp",
+        alt: "Cursor官方代码编辑器界面",
+        caption: "Cursor官方代码编辑器界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: 'Cursor 的 AI 功能需要连接云端服务，而且不同模型提供商可能存在地区可用性差异，所以"Cursor 能打开"和"某个模型可以正常使用"并不是同一件事。建议安装后先用简单项目测试 Agent 是否可以正常响应。',
     features: [
       '搜索和理解代码库上下文，辅助规划和实现功能',
@@ -1857,6 +1914,14 @@ export const aiTools: AITool[] = [
     platforms: ['网页端（midjourney.com）', 'Discord'],
     bestFor: ['设计师', '创作者', '营销人员', '摄影爱好者'],
     lastUpdated: '2026-09-07',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/midjourney/chat.webp",
+        alt: "Midjourney官方产品界面",
+        caption: "Midjourney官方产品界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: 'Midjourney 现在支持直接在官网 Create 页面输入 Prompt 生成图片，Discord 不再是唯一方式。新用户通过 Google 或 Discord 登录后需要先订阅方案才能开始生成。',
     features: [
       '网页端直接生成图片，不再要求必须使用 Discord',
@@ -2742,6 +2807,14 @@ export const aiTools: AITool[] = [
     platforms: ['网页端', 'iOS', 'Android (Limited Release)'],
     bestFor: ['音乐爱好者', '内容创作者', '视频剪辑师', '希望自己写词生成歌曲的用户'],
     lastUpdated: '2026-09-07',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/suno/chat.webp",
+        alt: "Suno官方音乐生成界面",
+        caption: "Suno官方音乐生成界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: '国内用户使用 Suno 时，可以直接从官方网站进入 Create 页面，通过 Simple Mode 从一句描述开始，也可以使用 Custom Mode 自己填写歌词、音乐风格和歌曲结构。Suno 的主要创作功能需要连接在线服务，因此官网打不开、登录失败、歌曲一直生成或下载失败应该分开排查，不要把所有问题都归结为同一个原因。',
     features: [
       'Simple Mode：一句话快速生成歌曲（词曲全包）',
@@ -3926,6 +3999,14 @@ export const aiTools: AITool[] = [
     platforms: ["网页"],
     bestFor: ["导演","特效师","自媒体"],
     lastUpdated: '2026-09-14',
+    screenshots: [
+      {
+        src: "/images/ai/screenshots/kling/chat.webp",
+        alt: "可灵AI官方产品界面",
+        caption: "可灵AI官方产品界面",
+        source: "官方产品主界面"
+      }
+    ],
     overview: '可灵 AI在垂直领域任务上有着极大的优势，是当前国内市场非常受关注的工具之一。',
     features: ['核心功能体验优秀', '交互界面设计友好', '响应速度快速稳定'],
     useCases: ['日常效率提升', '专业领域深度创作', '复杂问题灵感启发'],

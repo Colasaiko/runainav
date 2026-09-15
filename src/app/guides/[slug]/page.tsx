@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { aiTools } from '@/data/aiTools';
 import AIToolLogo from '@/components/ai/AIToolLogo';
+import AIToolScreenshots from '@/components/ai/AIToolScreenshots';
 import { aiComparisons } from '@/data/aiComparisons';
 import { ExternalLink, CheckCircle2, ShieldAlert, Zap, List, ThumbsUp, ThumbsDown, Lightbulb, AlertCircle, Search, HelpCircle } from 'lucide-react';
 import { Metadata } from 'next';
@@ -179,6 +180,7 @@ export default async function AIToolPage({ params }: { params: Promise<{ slug: s
         </section>
 
         <div className="container mx-auto px-4 max-w-4xl py-12">
+          <AIToolScreenshots tool={tool} />
           <div className="prose prose-gray max-w-none">
             
             <h2 id="intro" className="text-2xl font-bold text-gray-900 scroll-mt-24 mb-6">{tool.name} 是什么？适合用来做什么？</h2>

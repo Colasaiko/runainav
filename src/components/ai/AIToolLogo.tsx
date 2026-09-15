@@ -15,12 +15,11 @@ interface AIToolLogoProps {
 
 export default function AIToolLogo({ tool, size = 'md', className = '' }: AIToolLogoProps) {
   const [imageFailed, setImageFailed] = useState(false);
-  const [prevSlug, setPrevSlug] = useState(tool.slug);
 
-  if (tool.slug !== prevSlug) {
-    setPrevSlug(tool.slug);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setImageFailed(false);
-  }
+  }, [tool.slug, tool.logo]);
 
   const sizeMap = {
     sm: 'w-8 h-8',
