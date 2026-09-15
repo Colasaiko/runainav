@@ -41,7 +41,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://dfg12cd.feimaogfttt1.sbs/#/?code=UUcH5yh9",
+    url: "https://flycat1.flycatvipaff.cc/#/?code=UUcH5yh9",
     featured: true,
     order: 2,
   },
@@ -57,7 +57,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 24,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://wep01.flashleapaff.com/#/?code=hCwClNUi",
+    url: "https://vip02.flashleapaff.com/#/?code=hCwClNUi",
     featured: true,
     order: 3,
   },
@@ -72,7 +72,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://edp01.civetaff.com/#/?code=2Ai6V6Ub",
+    url: "https://vip02.civetaff.com/#/?code=2Ai6V6Ub",
     featured: true,
     order: 4,
   },
@@ -87,7 +87,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://fly.fireflytttt.xyz/#/?code=mcYQUZxG",
+    url: "https://vip02.fireflyaff.com/#/?code=mcYQUZxG",
     featured: true,
     order: 5,
   },
@@ -131,7 +131,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://asfdgd.sogotztz2.sbs/#/?code=JvxcPy2A",
+    url: "https://wzjc.sogoyunaff.cc/#/?code=JvxcPy2A",
     order: 10,
   },
   {
@@ -144,7 +144,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 20,
     currency: "¥",
     traffic: "120 GB",
-    url: "https://asfawsf.twilightttt.sbs/#/?code=1eGqV85O",
+    url: "https://varnexa.twilightaff.com/#/?code=1eGqV85O",
     order: 11,
   },
   {
@@ -157,7 +157,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://jljljfois.xdmttt4.lol/#/?code=1qBePxW1",
+    url: "https://kfccbb.xingdaomeng.com/#/?code=1qBePxW1",
     order: 12,
   },
   {
@@ -170,7 +170,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 19.9,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://jifdsf.v2saat.homes/#/?code=bGS5G7xn",
+    url: "https://fast.v2yunvipaff.com/#/?code=bGS5G7xn",
     order: 13,
   },
   {
@@ -183,7 +183,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 23,
     currency: "¥",
     traffic: "138 GB",
-    url: "https://v5g.gggoltt.xyz/#/?code=GKfXFvJh",
+    url: "https://mdlky.gsyaff.com/#/?code=GKfXFvJh",
     order: 14,
   },
   {
@@ -196,7 +196,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 20,
     currency: "¥",
     traffic: "120 GB",
-    url: "https://hudeiuf.u1sat.my/#/?code=T1UVuVDP",
+    url: "https://pkdj7.vipaff.cc/#/?code=T1UVuVDP",
     order: 15,
   },
   {
@@ -209,7 +209,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 18,
     currency: "¥",
     traffic: "100 GB",
-    url: "https://1jdhjfeeef.jilianat.homes/#/?code=3Ci2Ynmm",
+    url: "https://kdjhao.jlyvipaff.com/#/?code=nrPTQT2i",
     order: 16,
   },
   {
@@ -222,7 +222,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 18,
     currency: "¥",
     traffic: "110 GB",
-    url: "https://vv3dbvb.guangnianertt1.homes/#/?code=k0rrn5UQ",
+    url: "https://ggmq.gntaff.com/#/?code=k0rrn5UQ",
     order: 17,
   },
   {
@@ -235,7 +235,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 20,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://bbn3uyoiu.1fyohnzt.xyz/#/?code=e61goYLt",
+    url: "https://wzjc.1flyunaff.cc/#/?code=e61goYLt",
     order: 18,
   },
   {
@@ -248,7 +248,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 20,
     currency: "¥",
     traffic: "130 GB",
-    url: "https://shadow.ermaotztz3.homes/#/?code=c842udvC",
+    url: "https://waaa.2maoyunaff.cc/#/?code=c842udvC",
     order: 19,
   },
   {
@@ -261,7 +261,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 15,
     currency: "¥",
     traffic: "50 GB",
-    url: "https://bcbhk40y.ztymforedge.lol/#/?code=etUBOp4S",
+    url: "https://work.edgenovaaff.cc/#/?code=etUBOp4S",
     order: 20,
   },
   {
@@ -274,7 +274,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 15,
     currency: "¥",
     traffic: "60 GB",
-    url: "https://asfasf.kexintztz2.sbs/#/?code=PY3isazT",
+    url: "https://work.kosingaff.com/#/?code=PY3isazT",
     order: 21,
   },
   {
@@ -287,7 +287,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 15,
     currency: "¥",
     traffic: "50 GB",
-    url: "https://linktest.tzztssuujj.xyz/#/?code=q1enwrOd",
+    url: "https://work.speedworldaff.cc/#/?code=q1enwrOd",
     order: 22,
   },
   {
@@ -300,7 +300,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 15,
     currency: "¥",
     traffic: "50 GB",
-    url: "https://iasfa.kuailitztz2.sbs/#/?code=9RhZkrkV",
+    url: "https://work.kuailicloud.cc/#/?code=9RhZkrkV",
     order: 23,
   },
   {
@@ -313,7 +313,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://asfawsf.flyvastt.lol/#/?code=6ae5FH9i",
+    url: "https://varnexa.flyvaff.com/#/?code=6ae5FH9i",
     order: 24,
   },
   {
@@ -326,7 +326,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 25,
     currency: "¥",
     traffic: "125 GB",
-    url: "https://asfawsf.ladderttt.sbs/#/?code=3vf6NG2u",
+    url: "https://varnexa.ladderaff.com/#/?code=3vf6NG2u",
     order: 25,
   },
   {
@@ -339,7 +339,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 30,
     currency: "¥",
     traffic: "150 GB",
-    url: "https://asfawsf.wavenetttt.homes/#/?code=pcFhy7Lb",
+    url: "https://varnexa.wavenetaff.com/#/?code=pcFhy7Lb",
     order: 26,
   },
   {
@@ -352,7 +352,7 @@ export const vpnBrands: VPNBrand[] = [
     price: 20,
     currency: "¥",
     traffic: "100 GB",
-    url: "https://asfawsf.lingdongyunttt.homes/#/?code=TIMwZeIR",
+    url: "https://varnexa.lingdongaff.com/#/?code=TIMwZeIR",
     order: 27,
   },
   {

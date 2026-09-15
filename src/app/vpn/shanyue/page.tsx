@@ -92,7 +92,7 @@ export default function ShanyuePage() {
               
               <div className="w-full md:w-auto flex flex-col gap-3">
                 <a 
-                  href="https://wep01.flashleapaff.com/#/?code=hCwClNUi"
+                  href="https://vip02.flashleapaff.com/#/?code=hCwClNUi"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="w-full md:w-48 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
@@ -347,7 +347,7 @@ export default function ShanyuePage() {
               建议根据您的实际流量需求选择对应的套餐。
             </p>
             <a
-              href="https://wep01.flashleapaff.com/#/?code=hCwClNUi"
+              href="https://vip02.flashleapaff.com/#/?code=hCwClNUi"
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-brand-500/30 text-lg"
