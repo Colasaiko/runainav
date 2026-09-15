@@ -1,7 +1,11 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 interface AIToolLogoProps {
   tool: {
+    slug?: string;
     name: string;
     logo?: string;
   };
@@ -10,6 +14,14 @@ interface AIToolLogoProps {
 }
 
 export default function AIToolLogo({ tool, size = 'md', className = '' }: AIToolLogoProps) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const [prevSlug, setPrevSlug] = useState(tool.slug);
+
+  if (tool.slug !== prevSlug) {
+    setPrevSlug(tool.slug);
+    setImageFailed(false);
+  }
+
   const sizeMap = {
     sm: 'w-8 h-8',
     md: 'w-10 h-10',
@@ -26,7 +38,7 @@ export default function AIToolLogo({ tool, size = 'md', className = '' }: AITool
 
   const containerClass = `${sizeMap[size]} rounded-lg bg-white flex items-center justify-center text-brand-600 font-bold shadow-sm border border-gray-100 flex-shrink-0 ${className}`;
 
-  if (tool.logo) {
+  if (tool.logo && !imageFailed) {
     return (
       <div className={containerClass}>
         <Image
@@ -36,6 +48,7 @@ export default function AIToolLogo({ tool, size = 'md', className = '' }: AITool
           height={imageSizeMap[size]}
           className="object-contain w-full h-full p-1 rounded-lg"
           unoptimized={tool.logo.endsWith('.svg')}
+          onError={() => setImageFailed(true)}
         />
       </div>
     );
