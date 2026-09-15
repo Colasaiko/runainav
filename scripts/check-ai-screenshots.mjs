@@ -18,14 +18,23 @@ const aiToolsModule = { exports: aiToolsExports };
 (new Function('exports', 'module', 'require', js))(aiToolsExports, aiToolsModule, require);
 const aiTools = aiToolsExports.aiTools || [];
 
+const EXPECTED_TOOLS = [
+  'deepseek', 'doubao', 'kimi', 'kling', 'jimeng',
+  'chatgpt', 'claude', 'gemini', 'perplexity', 'cursor',
+  'midjourney', 'suno'
+];
+
 let toolsWithScreenshots = 0;
 let configuredScreenshots = 0;
 let validCount = 0;
 let invalidCount = 0;
 
+let toolsWithScreenshotsSet = new Set();
+
 for (const tool of aiTools) {
   if (tool.screenshots && tool.screenshots.length > 0) {
     toolsWithScreenshots++;
+    toolsWithScreenshotsSet.add(tool.slug);
     for (const shot of tool.screenshots) {
       configuredScreenshots++;
       const imgPath = path.join(__dirname, '..', 'public', shot.src);
@@ -63,11 +72,21 @@ for (const tool of aiTools) {
   }
 }
 
+let missingExpected = 0;
+for (const expected of EXPECTED_TOOLS) {
+  if (!toolsWithScreenshotsSet.has(expected)) {
+    console.log(`[FAIL] ${expected} has no screenshots configured`);
+    missingExpected++;
+  }
+}
+
+console.log(`Expected tools: ${EXPECTED_TOOLS.length}`);
 console.log(`Tools with screenshots: ${toolsWithScreenshots}`);
-console.log(`Screenshot files configured: ${configuredScreenshots}`);
+console.log(`Configured screenshots: ${configuredScreenshots}`);
 console.log(`Valid screenshots: ${validCount}`);
 console.log(`Invalid screenshots: ${invalidCount}`);
+console.log(`Missing expected tools: ${missingExpected}`);
 
-if (invalidCount > 0 || configuredScreenshots !== validCount) {
+if (invalidCount > 0 || configuredScreenshots !== validCount || missingExpected > 0) {
   process.exit(1);
 }
