@@ -51,6 +51,7 @@ export type AITool = {
   useCases: string[];
   gettingStarted: string[];
   networkAndRegion: string;
+  relatedGuides?: { title: string; url: string; }[];
   advantages: string[];
   limitations: string[];
   faq: FAQItem[];
@@ -580,6 +581,12 @@ export const aiTools: AITool[] = [
       }
     ],
     overview: 'ChatGPT 支持多轮对话与文本处理，并根据账号方案提供文件分析、图片理解和搜索等功能。国内用户开始使用时，建议优先关注 OpenAI 官方当前支持的服务地区和自身网络连接稳定性。',
+    relatedGuides: [
+      { title: 'ChatGPT能做什么？', url: '/guides/chatgpt-what-can-it-do' },
+      { title: 'ChatGPT浏览器操作指南', url: '/guides/chatgpt-browser-guide' },
+      { title: 'ChatGPT分析PDF教程', url: '/guides/chatgpt-pdf-guide' },
+      { title: 'ChatGPT比较文件教程', url: '/guides/chatgpt-compare-files' }
+    ],
     features: [
       '支持多轮对话与长文本处理',
       '支持上传文档进行数据分析（视方案支持）',
@@ -1931,6 +1938,9 @@ export const aiTools: AITool[] = [
       }
     ],
     overview: 'Midjourney 现在支持直接在官网 Create 页面输入 Prompt 生成图片，Discord 不再是唯一方式。新用户通过 Google 或 Discord 登录后需要先订阅方案才能开始生成。',
+    relatedGuides: [
+      { title: 'Midjourney人像提示词教程', url: '/guides/midjourney-realistic-portrait' }
+    ],
     features: [
       '网页端直接生成图片，不再要求必须使用 Discord',
       '支持中文描述，也可以使用英文和摄影术语',
@@ -2824,6 +2834,10 @@ export const aiTools: AITool[] = [
       }
     ],
     overview: '国内用户使用 Suno 时，可以直接从官方网站进入 Create 页面，通过 Simple Mode 从一句描述开始，也可以使用 Custom Mode 自己填写歌词、音乐风格和歌曲结构。Suno 的主要创作功能需要连接在线服务，因此官网打不开、登录失败、歌曲一直生成或下载失败应该分开排查，不要把所有问题都归结为同一个原因。',
+    relatedGuides: [
+      { title: 'Suno中文歌曲高阶生成教程', url: '/guides/suno-chinese-song-tutorial' },
+      { title: 'Suno生成后怎么改歌词？', url: '/guides/suno-edit-lyrics' }
+    ],
     features: [
       'Simple Mode：一句话快速生成歌曲（词曲全包）',
       'Custom Mode：高度控制歌词、Style（流派/情绪）和 Advanced Options',

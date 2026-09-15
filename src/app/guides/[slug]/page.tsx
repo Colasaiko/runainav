@@ -7,7 +7,7 @@ import { aiTools } from '@/data/aiTools';
 import AIToolLogo from '@/components/ai/AIToolLogo';
 import AIToolScreenshots from '@/components/ai/AIToolScreenshots';
 import { aiComparisons } from '@/data/aiComparisons';
-import { ExternalLink, CheckCircle2, ShieldAlert, Zap, List, ThumbsUp, ThumbsDown, Lightbulb, AlertCircle, Search, HelpCircle } from 'lucide-react';
+import { ExternalLink, CheckCircle2, ShieldAlert, Zap, List, ThumbsUp, ThumbsDown, Lightbulb, AlertCircle, Search, HelpCircle, BookOpen, ArrowRight } from 'lucide-react';
 import { Metadata } from 'next';
 import JsonLd from '@/components/seo/JsonLd';
 import CopyButton from '@/components/ui/CopyButton';
@@ -1549,6 +1549,22 @@ return (
                     <h3 className="font-bold text-gray-900 group-hover:text-brand-600 transition-colors">{t.name}</h3>
                   </div>
                   <p className="text-sm text-gray-500 flex-grow line-clamp-2">{t.shortDescription}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+                {tool.relatedGuides && tool.relatedGuides.length > 0 && (
+          <div className="bg-blue-50/50 border border-blue-100 p-8 rounded-3xl shadow-sm mb-12">
+            <h3 className="font-bold text-xl text-gray-900 mt-0 mb-6 flex items-center gap-2">
+              <BookOpen className="w-6 h-6 text-brand-500" /> 相关教程指南
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {tool.relatedGuides.map((guide, idx) => (
+                <Link key={idx} href={guide.url} className="bg-white p-4 rounded-xl border border-blue-100 hover:border-brand-300 hover:shadow-md transition-all group flex items-center justify-between">
+                  <span className="font-medium text-gray-800 group-hover:text-brand-600 transition-colors">{guide.title}</span>
+                  <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-brand-500 transition-colors" />
                 </Link>
               ))}
             </div>

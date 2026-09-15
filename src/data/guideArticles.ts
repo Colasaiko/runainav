@@ -13,6 +13,37 @@ export interface GuideArticle {
 
 export const guideArticles: GuideArticle[] = [
   {
+    slug: 'chatgpt-what-can-it-do',
+    title: 'ChatGPT能做什么？常用功能、场景与实用技巧',
+    description: '整理ChatGPT常见功能与实际使用场景，包括聊天问答、写作、文件分析、图片理解、搜索、学习和日常办公，并说明不同任务下应该怎么用才更方便。',
+    type: 'tutorial',
+    category: 'AI聊天',
+    tags: ['ChatGPT', 'AI工具', 'AI办公', 'AI教程'],
+    publishedAt: '2026-09-15',
+    updatedAt: '2026-09-15'
+  },
+  {
+    slug: 'chatgpt-browser-guide',
+    title: 'ChatGPT怎么操作浏览器？网页任务与使用方法指南',
+    description: '介绍ChatGPT浏览器相关功能与常见网页任务用法，涵盖打开网页、查找信息、执行步骤和使用限制，并帮助判断哪些操作适合交给ChatGPT完成。',
+    type: 'tutorial',
+    category: 'AI聊天',
+    tags: ['ChatGPT', 'Browser', 'AI浏览器', 'AI教程'],
+    publishedAt: '2026-09-15',
+    updatedAt: '2026-09-15'
+  },
+  {
+    slug: 'suno-edit-lyrics',
+    title: 'Suno生成后怎么改歌词？歌曲修改与重新生成教程',
+    description: '介绍Suno歌曲生成后修改歌词的方法，包括Extend、Reuse Prompt、重新生成和版本选择，帮助解决歌词不满意、段落调整和作品继续完善的问题。',
+    type: 'tutorial',
+    category: 'AI音乐',
+    tags: ['Suno', 'AI音乐', 'AI歌曲', 'AI教程'],
+    publishedAt: '2026-09-15',
+    updatedAt: '2026-09-15'
+  },
+
+  {
     slug: 'gpt-6-astra-guide',
     title: 'GPT-6 Astra是什么？新功能、开放范围与使用建议',
     description: 'GPT-6 Astra已经发布。本文整理它在编程、研究、浏览器与电脑操作、多步骤任务方面的主要能力，并说明当前开放范围、使用入口与可用性差异。',
@@ -451,7 +482,7 @@ export const guideArticles: GuideArticle[] = [
     category: 'AI绘图',
     tags: ['Midjourney', 'AI绘图', '提示词', '人像', 'Prompt'],
     publishedAt: '2026-09-05',
-    updatedAt: '2026-09-05'
+    updatedAt: '2026-09-15'
   },
   {
     slug: 'chatgpt-vs-claude-vs-gemini',
