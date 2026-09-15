@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="#5171a7" />
+  
+  <g transform="translate(-15, 25)">
+    <path d="M168 136H304C361.4 136 392 165.6 392 212C392 249.2 368 274.8 332 284L396 376H320L266 296H224V376H168V136ZM224 184V252H296C320.4 252 336 238.8 336 218C336 197.2 320.4 184 296 184H224Z" fill="#ffffff" />
+  </g>
+
+  <!-- AI Spark -->
+  <path d="M 380 110 Q 380 160 430 160 Q 380 160 380 210 Q 380 160 330 160 Q 380 160 380 110 Z" fill="#ffffff" />
+  <!-- Small Spark -->
+  <path d="M 440 80 Q 440 100 460 100 Q 440 100 440 120 Q 440 100 420 100 Q 440 100 440 80 Z" fill="#ffffff" opacity="0.8" />
+</svg>
