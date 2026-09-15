@@ -74,20 +74,6 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": seo.faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
-      }
-    }))
-  };
-
-  
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
     "mainEntity": seo.faqs.map((faq: { q: string; a: string }) => ({
       "@type": "Question",
       "name": faq.q,
@@ -101,11 +87,6 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      
-      {/* Schema Injection */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <main className="flex-grow pb-20 pt-8">

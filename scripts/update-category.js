@@ -1,7 +1,7 @@
 const fs = require('fs');
 let c = fs.readFileSync('src/data/aiCategorySeo.ts', 'utf8');
 
-c = c.replace(/china: \{[\s\S]*?\},/, `china: {
+c = c.replace(/china: \{[\s\S]*?\}\s*\]\n  \},/, `china: {
     filter: 'china',
     title: '国内AI工具推荐：国产AI工具箱与热门应用大全｜RunAI',
     description: 'RunAI整理国内热门AI工具与国产大模型，覆盖DeepSeek、豆包、Kimi、腾讯元宝和千问等聊天、搜索、办公、绘图与视频应用，帮助快速选择国内AI工具。',
@@ -28,7 +28,7 @@ c = c.replace(/china: \{[\s\S]*?\},/, `china: {
     ]
   },`);
 
-c = c.replace(/global: \{[\s\S]*?\}/, `global: {
+c = c.replace(/global: \{[\s\S]*?\s*\]\n  \}/, `global: {
     filter: 'global',
     title: '全球AI工具推荐：国外AI网站与海外AI工具大全｜RunAI',
     description: 'RunAI整理国外AI、海外AI与全球热门工具，覆盖ChatGPT、Claude、Gemini和Cursor等聊天、搜索、编程与绘图应用，并提供分类和使用指南。',
