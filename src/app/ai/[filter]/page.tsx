@@ -12,8 +12,8 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { filter: string } }) {
-  const seo = aiCategorySeo[params.filter];
+export async function generateMetadata({ params }: { params: Promise<{ filter: string }> }) { const { filter } = await params;
+  const seo = aiCategorySeo[filter];
   if (!seo) {
     return {};
   }
@@ -21,28 +21,28 @@ export function generateMetadata({ params }: { params: { filter: string } }) {
     title: seo.title,
     description: seo.description,
     alternates: {
-      canonical: `https://runainav.com/ai/${params.filter}`,
+      canonical: `https://runainav.com/ai/${filter}`,
     },
   };
 }
 
-export default function AICategoryPage({ params }: { params: { filter: string } }) {
-  const seo = aiCategorySeo[params.filter];
+export default async function AICategoryPage({ params }: { params: Promise<{ filter: string }> }) { const { filter } = await params;
+  const seo = aiCategorySeo[filter];
   if (!seo) {
     notFound();
   }
 
   // Filter tools
   let filteredTools = [];
-  if (params.filter === 'china' || params.filter === 'global') {
-    filteredTools = aiTools.filter(t => t.region === params.filter);
+  if (filter === 'china' || filter === 'global') {
+    filteredTools = aiTools.filter(t => t.region === filter);
   } else {
-    filteredTools = aiTools.filter(t => t.categories.includes(params.filter));
+    filteredTools = aiTools.filter(t => t.categories.includes(filter));
   }
 
   // Related categories
   const allFilters = Object.keys(aiCategorySeo);
-  const relatedFilters = allFilters.filter(f => f !== params.filter && f !== 'china' && f !== 'global').slice(0, 4);
+  const relatedFilters = allFilters.filter(f => f !== filter && f !== 'china' && f !== 'global').slice(0, 4);
 
   // Schema
   const breadcrumbSchema = {
@@ -51,7 +51,7 @@ export default function AICategoryPage({ params }: { params: { filter: string } 
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "RunAI", "item": "https://runainav.com" },
       { "@type": "ListItem", "position": 2, "name": "AI工具大全", "item": "https://runainav.com/ai" },
-      { "@type": "ListItem", "position": 3, "name": seo.h1, "item": `https://runainav.com/ai/${params.filter}` }
+      { "@type": "ListItem", "position": 3, "name": seo.h1, "item": `https://runainav.com/ai/${filter}` }
     ]
   };
 
@@ -84,9 +84,24 @@ export default function AICategoryPage({ params }: { params: { filter: string } 
     }))
   };
 
+  
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": seo.faqs.map((faq: any) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* Schema Injection */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -202,7 +217,74 @@ export default function AICategoryPage({ params }: { params: { filter: string } 
           </div>
 
           {/* Suitable For & FAQs */}
+          
+          {/* Dynamic Content for China */}
+          {filter === 'china' && (
+            <div className="mb-16 bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">国内AI有哪些？分类大全</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-lg font-bold text-brand-600 mb-4 border-b border-gray-100 pb-2">💬 国内AI聊天工具</h3>
+                  <div className="flex flex-col gap-3">
+                    {aiTools.filter(t => t.region === 'china' && t.categories.includes('chat')).slice(0, 5).map(t => (
+                      <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <div>
+                          <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
+                          <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-brand-600 mb-4 border-b border-gray-100 pb-2">💼 国内AI办公工具</h3>
+                  <div className="flex flex-col gap-3">
+                    {aiTools.filter(t => t.region === 'china' && t.categories.includes('productivity')).slice(0, 5).map(t => (
+                      <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <div>
+                          <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
+                          <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-brand-600 mb-4 border-b border-gray-100 pb-2">🎨 国内AI绘图工具</h3>
+                  <div className="flex flex-col gap-3">
+                    {aiTools.filter(t => t.region === 'china' && t.categories.includes('image')).slice(0, 5).map(t => (
+                      <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <div>
+                          <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
+                          <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-brand-600 mb-4 border-b border-gray-100 pb-2">🎬 国内AI视频工具</h3>
+                  <div className="flex flex-col gap-3">
+                    {aiTools.filter(t => t.region === 'china' && t.categories.includes('video')).slice(0, 5).map(t => (
+                      <Link key={t.slug} href={`/guides/${t.slug}`} className="flex items-center gap-2 hover:bg-gray-50 p-2 rounded-lg transition-colors">
+                        <span className="w-8 h-8 rounded-md bg-gray-100 flex items-center justify-center font-bold text-gray-700 text-xs">{t.name.charAt(0)}</span>
+                        <div>
+                          <p className="font-bold text-gray-900 text-sm m-0">{t.name}</p>
+                          <p className="text-xs text-gray-500 m-0 truncate w-48">{t.shortDescription}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          
           <div className="grid md:grid-cols-3 gap-8 mb-16">
+
             <div className="md:col-span-1">
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 sticky top-24">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">适合哪些用户？</h3>

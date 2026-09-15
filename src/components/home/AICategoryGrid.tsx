@@ -36,6 +36,12 @@ export default function AICategoryGrid() {
             </Link>
           ))}
         </div>
+
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <Link href="/ai" className="px-6 py-2.5 bg-brand-50 text-brand-700 rounded-full font-medium hover:bg-brand-100 transition-colors border border-brand-200">AI工具箱</Link>
+          <Link href="/ai/china" className="px-6 py-2.5 bg-blue-50 text-blue-700 rounded-full font-medium hover:bg-blue-100 transition-colors border border-blue-200">国内AI工具</Link>
+          <Link href="/ai/global" className="px-6 py-2.5 bg-purple-50 text-purple-700 rounded-full font-medium hover:bg-purple-100 transition-colors border border-purple-200">国外AI工具</Link>
+        </div>
       </div>
     </section>
   );

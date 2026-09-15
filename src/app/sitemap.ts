@@ -11,11 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://runainav.com';
   
   const staticDates: Record<string, string> = {
-    '/': '2026-09-14',
+    '/': '2026-09-15',
     '/vpn': '2026-09-10',
     '/subscriptions': '2026-09-08',
     '/guides': '2026-09-09',
-    '/ai': '2026-09-14',
+    '/ai': '2026-09-15',
     '/vpn/weifeng': '2026-09-03',
     '/vpn/feimao': '2026-09-10',
     '/vpn/shanyue': '2026-09-10',
@@ -159,7 +159,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   Object.keys(aiCategorySeo).forEach((filter) => {
     addEntry({
       url: `${baseUrl}/ai/${filter}`,
-      lastModified: new Date('2026-09-14'),
+      lastModified: new Date('2026-09-15'),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     });
