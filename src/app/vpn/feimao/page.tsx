@@ -72,6 +72,7 @@ export default function FeimaoReviewPage() {
         { id: "pricing", navLabel: "套餐价格" },
         { id: "ai-test", navLabel: "AI实测" },
         { id: "network", navLabel: "线路测速" },
+        { id: "privacy", navLabel: "隐私检测" },
         { id: "faq", navLabel: "FAQ" },
       ]} />
       <FloatingBackButton fallbackHref="/vpn" />
@@ -281,6 +282,24 @@ export default function FeimaoReviewPage() {
             </div>
           </section>
 
+          {/* 隐私与网络检测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              根据本次隐私与安全检测截图，测试环境中未发现 DNS 泄漏，WebRTC 公网地址显示为已阻断，截图中的 IP 风险评分为 8/100，并标记为 Clean。截图同时显示使用了 VLESS + XTLS-Reality 协议、AES-256-GCM 加密以及 TLS 1.3。
+            </p>
+            <ZoomableImage
+              src="/images/feimao/feimao-privacy-test.png"
+              alt="飞猫云DNS与WebRTC隐私检测截图"
+              width={800}
+              height={450}
+              caption="隐私与网络检测截图，仅反映截图所记录的测试环境与时间。"
+            />
+            <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+              <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
+              <p className="leading-relaxed">以上检测结果仅代表本次测试时的网络环境，不构成对所有用户、所有节点或未来使用状态的保证。</p>
+            </div>
+          </section>
 
           {/* FAQ */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="faq">
