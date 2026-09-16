@@ -225,10 +225,60 @@ export default function FeimaoReviewPage() {
           {/* 节点与速度 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">线路说明与测速</h2>
-            <div className="prose prose-gray max-w-none text-sm md:text-base leading-relaxed">
-              <p>官方页面标称为 IPLC 专线网络。<strong>RunAI 当前尚未发布飞猫云独立速度测试数据</strong>，相关晚高峰稳定性和测速图表待后续补充。我们不对未经验证的公开测速截图进行直接引用。</p>
+
+            {/* 节点覆盖 */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">节点覆盖</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                飞猫云官方标称 IPLC 全专线网络，支持原生 IP 解锁流媒体与 AI 服务，多端同时登录不限设备。<br /><br />
+                以下节点状态截图记录于实际使用时，节点数量、地区和在线状态可能随运营调整而变化。
+              </p>
+              <ZoomableImage
+                src="/images/feimao/feimao-node-status.png"
+                alt="飞猫云在线节点状态截图"
+                width={800}
+                height={450}
+                caption="飞猫云节点状态截图，节点数量与状态可能随时间变化。"
+              />
+              <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <p>节点数量、地区和在线状态可能随运营调整而变化，以上仅代表截图记录当时情况。</p>
+              </div>
+            </div>
+
+            {/* 实际测速 */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">实际速度测试</h3>
+              <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <table className="w-full text-left border-collapse min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-700">
+                      <th className="p-4 font-bold">节点</th>
+                      <th className="p-4 font-bold">延迟</th>
+                      <th className="p-4 font-bold">下载速度</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 text-gray-700">
+                    <tr><td className="p-4">香港 IPLC 01</td><td className="p-4 text-green-600 font-medium">—</td><td className="p-4 font-bold text-gray-900">—</td></tr>
+                    <tr><td className="p-4">日本东京专线</td><td className="p-4 text-green-600 font-medium">—</td><td className="p-4 font-bold text-gray-900">—</td></tr>
+                    <tr><td className="p-4">新加坡专线</td><td className="p-4 text-green-600 font-medium">—</td><td className="p-4 font-bold text-gray-900">—</td></tr>
+                    <tr><td className="p-4">美国洛杉矶</td><td className="p-4 text-amber-500 font-medium">—</td><td className="p-4 font-bold text-gray-900">—</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <ZoomableImage
+                src="/images/feimao/feimao-speed-test.png"
+                alt="飞猫云节点实际测速截图"
+                width={800}
+                height={450}
+                caption="飞猫云实际测速截图，实际速度受网络环境与使用时段影响。"
+              />
+              <div className="bg-gray-100 p-5 rounded-xl text-sm text-gray-600 border border-gray-200 mt-4">
+                <p className="leading-relaxed">以上为实际测速记录，不代表所有地区、运营商、设备和使用时间都能获得相同结果。实际速度和延迟会受到本地网络、线路状态和节点负载等因素影响。</p>
+              </div>
             </div>
           </section>
+
 
           {/* FAQ */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="faq">
