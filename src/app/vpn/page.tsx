@@ -16,15 +16,61 @@ export const metadata = constructMetadata({
 });
 
 export default function VPNPage() {
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://runainav.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "VPN 品牌与网络方案",
+        "item": "https://runainav.com/vpn"
+      }
+    ]
+  };
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "稳定网络节点深度测评",
+    "url": "https://runainav.com/vpn",
+    "description": "RunAI精选适合国内环境的高速稳定网络品牌，提供节点、网络配置指南。"
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": vpnBrands.map((vpn, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": vpn.name,
+      "url": `https://runainav.com/vpn/${vpn.slug}`
+    }))
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, collectionSchema, itemListSchema]) }} />
       
       <main className="flex-grow">
         {/* Content-focused Hero */}
         <section className="pt-20 pb-12 bg-gray-50 border-b border-gray-100">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
+        
+            {/* Breadcrumb */}
+            <nav className="flex text-sm text-gray-500 mb-8 justify-center">
+              <Link href="/" className="hover:text-brand-600">首页</Link> <span className="mx-2">/</span>
+              <span className="text-gray-900">VPN 品牌与网络方案</span>
+            </nav>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-6">
               VPN 品牌与网络方案
             </h1>
             <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">

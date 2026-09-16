@@ -151,7 +151,7 @@ export default function WeifengReviewPage() {
       <div className="flex items-start gap-6">
         <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-white rounded-3xl border-2 border-gray-100 shadow-md p-4 flex items-center justify-center">
           <Image
-            src="/images/vpn/Weifeng.png"
+            src="/images/vpn/微风.png"
             alt="Weifeng Logo"
             width={80}
             height={80}

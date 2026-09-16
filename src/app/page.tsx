@@ -25,7 +25,7 @@ export const metadata = constructMetadata({
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col font-[family-name:var(--font-sans)]">
-      <JsonLd data={[generateWebSiteSchema(), generateOrganizationSchema("")]} />
+      <JsonLd data={[generateWebSiteSchema(), generateOrganizationSchema("https://runainav.com/images/brand/runai-icon.svg")]} />
       <Header />
       
       <main className="flex-grow">

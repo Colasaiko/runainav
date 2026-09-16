@@ -78,6 +78,26 @@ const subscriptions = [
   }
 ];
 
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "海外AI订阅购买指南：价格与付款怎么选",
+    "url": "https://runainav.com/subscriptions",
+    "description": "汇集 ChatGPT、Claude、Gemini 等海外 AI 的订阅方案、价格与付款方式。"
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": subscriptions.map((sub, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": sub.name + " " + sub.plan,
+      "url": `https://runainav.com${sub.buyHref}`
+    }))
+  };
+
 export default function SubscriptionsHub() {
   const breadcrumbItems = [
     { name: '首页', item: 'https://runainav.com/' },
@@ -87,7 +107,9 @@ export default function SubscriptionsHub() {
   return (
     <div className="min-h-screen flex flex-col font-[family-name:var(--font-sans)] bg-gray-50">
       <JsonLd data={[
-        generateBreadcrumbSchema(breadcrumbItems)
+        generateBreadcrumbSchema(breadcrumbItems),
+        collectionSchema,
+        itemListSchema
       ]} />
       <Header />
       

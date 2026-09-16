@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { aiTools } from '@/data/aiTools';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import AIList from './AIList';
@@ -40,6 +41,45 @@ export default function AIPage() {
     }
   ];
 
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "https://runainav.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "AI 工具大全",
+        "item": "https://runainav.com/ai"
+      }
+    ]
+  };
+
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI工具大全与AI工具箱",
+    "url": "https://runainav.com/ai",
+    "description": "RunAI收录国内外热门AI工具，涵盖聊天、搜索、编程、绘图、视频、办公与音乐。"
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": aiTools.map((tool, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": tool.name,
+      "url": `https://runainav.com/guides/${tool.slug}`
+    }))
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -56,9 +96,17 @@ export default function AIPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, collectionSchema, itemListSchema, faqSchema]) }} />
       <JsonLd data={faqSchema} />
       <main className="flex-grow py-12">
       <div className="container mx-auto px-4 max-w-7xl">
+
+        {/* Breadcrumb */}
+        <nav className="flex text-sm text-gray-500 mb-6">
+          <Link href="/" className="hover:text-brand-600">首页</Link> <span className="mx-2">/</span>
+          <span className="text-gray-900">AI 工具大全</span>
+        </nav>
+
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">AI工具箱：国内外热门AI工具大全</h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">

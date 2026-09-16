@@ -88,7 +88,7 @@ export default async function AICategoryPage({ params }: { params: Promise<{ fil
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, collectionSchema, faqSchema]) }} />
 
       <main className="flex-grow pb-20 pt-8">
         <div className="container mx-auto px-4 max-w-7xl">
