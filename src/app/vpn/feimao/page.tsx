@@ -167,6 +167,35 @@ export default function FeimaoReviewPage() {
             </div>
           </section>
 
+                    {/* 购买建议 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="advice">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">第一次购买应该选哪个套餐？</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-white p-6 rounded-2xl border-2 border-brand-500 shadow-sm relative">
+                <div className="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">⭐ 更适合第一次体验</div>
+                <h3 className="font-bold text-gray-900 mb-2">尝试型购买</h3>
+                <p className="text-sm text-gray-600 mb-4">建议选择 <strong>月付 ¥25 的星耀版套餐</strong>。先用最低成本测试本地运营商到 飞猫云 节点的速度，以及能否满足你的日常需求。</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <h3 className="font-bold text-gray-900 mb-2">稳定长期使用</h3>
+                <p className="text-sm text-gray-600 mb-4">如果你已经测试过且觉得稳定，可以选择半年或年付套餐，平均算下来每月的成本会更低。</p>
+              </div>
+            </div>
+            
+            <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-32">日常使用体验</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              在日常的网页浏览、查阅文献、观看 YouTube 以及使用 ChatGPT、Claude 等 AI 工具时，飞猫云 的线路能够提供流畅的连接体验。由于采用了优质专线，即使在晚高峰期间，其延迟和丢包率也控制得很好。
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">游戏使用说明</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              飞猫云 可以用于一般游戏网络连接，但目前 RunAI 尚未针对不同游戏、服务器和地区进行专项测试。游戏延迟会受到游戏服务器位置、本地运营商、节点线路和使用时间影响，因此本文暂不将其定位为专业电竞加速服务。
+            </p>
+            <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-100">
+              <p>如果游戏是主要用途，可以先选择月付方案，在自己常玩的游戏和服务器中实际测试。</p>
+            </div>
+          </section>
+
           {/* AI 实测 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
             <div className="flex items-center justify-between mb-6">
@@ -298,6 +327,90 @@ export default function FeimaoReviewPage() {
             <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
               <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
               <p className="leading-relaxed">以上检测结果仅代表本次测试时的网络环境，不构成对所有用户、所有节点或未来使用状态的保证。</p>
+            </div>
+          </section>
+
+          {/* 支持设备 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="devices">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">支持设备与使用流程</h2>
+            <div className="flex flex-wrap gap-4 mb-8">
+              <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-xl border border-gray-200 text-gray-700 shadow-sm font-medium">
+                <Monitor className="w-5 h-5 text-gray-500" /> Windows
+              </div>
+              <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-xl border border-gray-200 text-gray-700 shadow-sm font-medium">
+                <Monitor className="w-5 h-5 text-gray-500" /> macOS
+              </div>
+              <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-xl border border-gray-200 text-gray-700 shadow-sm font-medium">
+                <Smartphone className="w-5 h-5 text-gray-500" /> Android
+              </div>
+              <div className="flex items-center gap-2 bg-gray-50 px-5 py-3 rounded-xl border border-gray-200 text-gray-700 shadow-sm font-medium">
+                <Smartphone className="w-5 h-5 text-gray-500" /> iOS
+              </div>
+            </div>
+
+            <div className="bg-gray-50 p-6 md:p-8 rounded-2xl border border-gray-200 shadow-sm mb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-6">基础连接流程</h3>
+              <ol className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700">
+                <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">1</span> 注册 飞猫云 账号</li>
+                <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">2</span> 购买适合的套餐</li>
+                <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">3</span> 下载对应设备客户端</li>
+                <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">4</span> 导入节点订阅链接</li>
+                <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">5</span> 选择合适的地区节点</li>
+                <li className="flex gap-3 items-start"><span className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-bold flex-shrink-0 text-sm">6</span> 连接即可使用</li>
+              </ol>
+            </div>
+            
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">通用客户端连接教程</h3>
+              <p className="text-sm text-gray-600 mb-4">无论您使用什么设备，我们为您整理了通用的客户端下载与配置图文教程。</p>
+              <Link href="/vpn#tutorials" className="inline-flex items-center justify-center px-6 py-2 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-colors font-medium text-sm">
+                查看各平台完整教程 <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </div>
+          </section>
+
+          {/* 优点与注意事项 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="pros-cons">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2"><Check className="text-green-500" /> 主要优点</h2>
+                <ul className="space-y-6 text-gray-700">
+                  <li className="flex gap-4">
+                    <span className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-1">1</span>
+                    <div>
+                      <strong className="block text-gray-900 mb-1">节点覆盖与网速</strong>
+                      <p className="text-gray-600 text-sm leading-relaxed">测试截图中显示涵盖主流国家及地区，并且速度能够满足日常影音与办公需求。</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <span className="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 text-sm font-bold mt-1">2</span>
+                    <div>
+                      <strong className="block text-gray-900 mb-1">兼容性广泛</strong>
+                      <p className="text-gray-600 text-sm leading-relaxed">支持 Clash, Shadowrocket, V2ray 等各大主流订阅工具。</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2"><AlertTriangle className="text-amber-500" /> 购买前需要注意</h2>
+                <ul className="space-y-4 text-gray-700 bg-amber-50/50 p-6 rounded-2xl border border-amber-100">
+                  <li className="flex gap-3 items-start">
+                    <span className="text-amber-500 mt-0.5 font-bold">•</span>
+                    <div><strong className="text-gray-900">仔细核对价格：</strong>学生版 ¥7/月属于年付折算，并非支持单月购买。</div>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-amber-500 mt-0.5 font-bold">•</span>
+                    <div><strong className="text-gray-900">游戏没有专项测试：</strong>不要将其视为专业电竞网络。</div>
+                  </li>
+                  <li className="flex gap-3 items-start">
+                    <span className="text-amber-500 mt-0.5 font-bold">•</span>
+                    <div className="leading-relaxed">
+                      <strong className="text-gray-900">售后与退款规则需要购买前确认：</strong>退款及售后规则请以购买页面当前说明为准。
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </section>
 

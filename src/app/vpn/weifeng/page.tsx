@@ -139,26 +139,46 @@ export default function WeifengReviewPage() {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-white pt-12 md:pt-20 pb-12 border-b border-gray-100">
-          <div className="container mx-auto px-4 max-w-4xl">
-          <nav className="flex text-sm text-gray-500 mb-8">
-              <Link href="/" className="hover:text-brand-600">首页</Link> <span className="mx-2">/</span>
-              <Link href="/vpn" className="hover:text-brand-600">网络连通方案</Link> <span className="mx-2">/</span>
-              <span className="text-gray-900">微风网络</span>
-            </nav>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">微风网络怎么样？</h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              从套餐、节点、实际测速到 ChatGPT 与 Claude 使用情况，看看微风网络是否适合你的日常网络需求。
-            </p>
-            <div className="flex flex-wrap gap-2 mb-8">
-              <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">专线网络</span>
-              <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">不限设备</span>
-              <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">不限速</span>
-              <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">AI 实测</span>
-              <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">多地区节点</span>
-            </div>
+        <section className="bg-white border-b border-gray-200 pt-12 pb-16 relative overflow-hidden">
+  <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-50 to-transparent opacity-50 pointer-events-none" />
+  <div className="container mx-auto px-4 max-w-4xl relative z-10">
+    <nav className="flex text-sm text-gray-500 mb-8">
+      <Link href="/" className="hover:text-brand-600">首页</Link> <span className="mx-2">/</span>
+      <Link href="/vpn" className="hover:text-brand-600">网络连通方案</Link> <span className="mx-2">/</span>
+      <span className="text-gray-900">微风网络</span>
+    </nav>
+    <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+      <div className="flex items-start gap-6">
+        <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-white rounded-3xl border-2 border-gray-100 shadow-md p-4 flex items-center justify-center">
+          <Image
+            src="/images/vpn/Weifeng.png"
+            alt="Weifeng Logo"
+            width={80}
+            height={80}
+            className="w-full h-full object-contain"
+          />
+        </div>
+        <div>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">微风网络怎么样？</h1>
+          <p className="text-gray-600 text-lg mb-4">从套餐、节点、测速到 AI 实测，深度体验评测</p>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">专线网络</span>
+            <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">不限设备</span>
+            <span className="px-3 py-1 bg-brand-50 text-brand-700 rounded-md text-sm font-medium">不限速</span>
           </div>
-        </section>
+        </div>
+      </div>
+      <a
+        href={AFFILIATE_URL}
+        target="_blank"
+        rel="noopener noreferrer sponsored"
+        className="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3 rounded-xl font-medium transition-colors shadow-sm"
+      >
+        前往官网 <ArrowRight className="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</section>
 
         <section className="py-12">
           <div className="container mx-auto px-4 max-w-4xl space-y-12">
