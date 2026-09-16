@@ -193,7 +193,7 @@ function BrandCard({ brand, isFeatured = false }: { brand: VPNBrand, isFeatured?
           </Link>
         )}
         <a 
-          href={brand.url}
+          href={`/go/${brand.slug}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 py-2.5 text-sm font-medium text-center text-white bg-gray-900 hover:bg-gray-800 rounded-xl transition-colors flex items-center justify-center group-hover:bg-brand-600"

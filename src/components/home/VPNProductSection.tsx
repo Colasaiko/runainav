@@ -64,7 +64,7 @@ export default function VPNProductSection() {
                   </Link>
                 )}
                 <a 
-                  href={brand.url}
+                  href={`/go/${brand.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-[2] py-2.5 text-sm font-medium text-center text-white bg-gray-900 hover:bg-gray-800 rounded-xl transition-colors flex items-center justify-center"

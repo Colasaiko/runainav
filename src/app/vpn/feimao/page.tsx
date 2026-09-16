@@ -14,7 +14,7 @@ import JsonLd from '@/components/seo/JsonLd';
 import { vpnBrands } from '@/data/vpnBrands';
 
 const feimaoData = vpnBrands.find(b => b.id === 'feimao');
-const AFFILIATE_URL = feimaoData?.url || "https://flycat1.flycatvipaff.cc/#/?code=UUcH5yh9";
+const AFFILIATE_URL = "/go/feimao";
 
 import { constructMetadata } from "@/lib/seo";
 import { type TestStatus } from "@/data/aiTests";

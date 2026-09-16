@@ -12,7 +12,7 @@ import { aiTests } from '@/data/aiTests';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
 import JsonLd from '@/components/seo/JsonLd';
 
-const AFFILIATE_URL = "https://edp01.breezenetaff.com/#/?code=bSnymFll";
+const AFFILIATE_URL = "/go/weifeng";
 
 import { constructMetadata } from "@/lib/seo";
 import { type TestStatus } from "@/data/aiTests";
