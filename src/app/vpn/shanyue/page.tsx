@@ -5,9 +5,11 @@ import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag } from 'lucide-react';
+import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag, Info } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 import { constructMetadata } from "@/lib/seo";
+import { networkAITests } from '@/data/networkAITests';
+import { aiTests, type TestStatus } from '@/data/aiTests';
 
 export const metadata: Metadata = constructMetadata({
   title: '闪跃怎么样？套餐价格、线路与购买建议｜RunAI',
@@ -196,34 +198,70 @@ export default function ShanyuePage() {
             </div>
           </section>
 
-          {/* AI 使用参考 */}
+          {/* AI 连通性实测 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">AI 使用参考</h2>
+              <h2 className="text-2xl font-bold text-gray-900">AI 连通性实测</h2>
               <Link href="/tests" className="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center gap-1 bg-brand-50 px-3 py-1.5 rounded-full">
                 前往 AI 实测中心 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
-            <div className="prose prose-gray max-w-none text-sm md:text-base leading-relaxed">
-              <p>
-                闪跃在本站的定位中明确包含了 <strong>AI 工具日常使用</strong> 场景。其 IPLC 专线加上原生 IP 配置，理论上能够较好地应对 ChatGPT、Claude 等海外 AI 平台对网络环境的严格检测。
-              </p>
-              <p>
-                由于目前 RunAI 的 AI 实测中心主要依靠人工抽样测试，暂未录入闪跃的持续连通性实测数据。未来我们将根据资源情况陆续补充相关记录。
-              </p>
-              <div className="mt-6 bg-gray-50 p-5 rounded-xl border border-gray-100 flex items-start gap-4">
-                <Cpu className="w-6 h-6 text-brand-500 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-1 m-0">关于 AI 网络环境提示</h3>
-                  <p className="text-sm text-gray-600 m-0">
-                    即使是优质专线，AI 官方的封控策略也可能随时变化。如果在某个节点遇到访问受限，建议尝试切换不同国家和地区的节点（如从美国切换至日本或新加坡）。
-                  </p>
-                </div>
-              </div>
+
+            <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+              RunAI 记录了在闪跃网络环境下的 AI 使用体验。请注意，结果仅代表当次观察，不构成永久可用或绝对不封号的承诺。
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-gray-100 mb-6">
+              <table className="w-full text-left text-sm whitespace-nowrap">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-100">
+                    <th className="p-4 font-semibold text-gray-900">AI 工具</th>
+                    <th className="p-4 font-semibold text-gray-900">打开网页/应用</th>
+                    <th className="p-4 font-semibold text-gray-900">账号登录</th>
+                    <th className="p-4 font-semibold text-gray-900">基础使用</th>
+                    <th className="p-4 font-semibold text-gray-900">当次测试日期</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 text-gray-700">
+                  {aiTests.map(baseTool => {
+                    const run = networkAITests.find(t => t.networkId === 'shanyue' && t.toolSlug === baseTool.slug);
+                    const renderStatus = (status?: TestStatus) => {
+                      if (!status) return <span className="text-gray-400">— 未测试</span>;
+                      switch (status) {
+                        case 'pass': return '✅ 正常';
+                        case 'partial': return '⚠️ 部分正常';
+                        case 'fail': return '❌ 异常';
+                        case 'pending': return '⏳ 待测试';
+                        default: return <span className="text-gray-400">— 未测试</span>;
+                      }
+                    };
+                    return (
+                      <tr key={baseTool.slug}>
+                        <td className="p-4 font-medium">
+                          {run ? (
+                            <Link href={`/tests/${baseTool.slug}`} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                          ) : (
+                            baseTool.toolName
+                          )}
+                        </td>
+                        <td className="p-4">{renderStatus(run?.open)}</td>
+                        <td className="p-4">{renderStatus(run?.login)}</td>
+                        <td className="p-4">{renderStatus(run?.use)}</td>
+                        <td className="p-4 text-gray-500">{run ? run.testedAt : '-'}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800 leading-relaxed">
+              <Info className="w-4 h-4 inline mr-1.5 mb-0.5" />
+              以上结果来自 RunAI 在对应日期的实际记录，仅代表当次网络环境与基础使用情况，不代表所有地区、账号或未来状态始终一致。
             </div>
           </section>
 
-          {/* 适合什么用户 */}
+
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="suitable">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">闪跃适合哪些用户？</h2>
             <div className="grid sm:grid-cols-2 gap-4">

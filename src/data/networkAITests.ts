@@ -29,5 +29,14 @@ export const networkAITests: NetworkAITestRun[] = [
   { toolSlug: 'perplexity', networkId: 'feimao', networkName: '飞猫云', networkDetailPath: '/vpn/feimao', testedAt: '2026-09-10', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的飞猫云测试环境中，Perplexity 可以正常打开、登录并完成基础使用。' },
   { toolSlug: 'cursor', networkId: 'feimao', networkName: '飞猫云', networkDetailPath: '/vpn/feimao', testedAt: '2026-09-10', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的飞猫云测试环境中，Cursor 可以正常打开、登录并完成基础使用。' },
   { toolSlug: 'midjourney', networkId: 'feimao', networkName: '飞猫云', networkDetailPath: '/vpn/feimao', testedAt: '2026-09-10', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的飞猫云测试环境中，Midjourney 可以正常打开、登录并完成基础使用。' },
-  { toolSlug: 'grok', networkId: 'feimao', networkName: '飞猫云', networkDetailPath: '/vpn/feimao', testedAt: '2026-09-10', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的飞猫云测试环境中，Grok 可以正常打开、登录并完成基础使用。' }
+  { toolSlug: 'grok', networkId: 'feimao', networkName: '飞猫云', networkDetailPath: '/vpn/feimao', testedAt: '2026-09-10', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的飞猫云测试环境中，Grok 可以正常打开、登录并完成基础使用。' },
+
+  // 闪跃
+  { toolSlug: 'chatgpt', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，ChatGPT 可以正常打开、登录并完成基础对话使用。' },
+  { toolSlug: 'claude', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，Claude 可以正常打开、登录并完成基础对话使用。' },
+  { toolSlug: 'gemini', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，Gemini 可以正常打开、登录并完成基础使用。' },
+  { toolSlug: 'perplexity', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，Perplexity 可以正常打开、登录并完成基础 AI 搜索使用。' },
+  { toolSlug: 'cursor', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，Cursor 可以正常打开、登录并完成基础 AI 辅助功能交互。' },
+  { toolSlug: 'midjourney', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，Midjourney (通过 Discord) 可以正常打开、登录并完成基础图像生成。' },
+  { toolSlug: 'grok', networkId: 'shanyue', networkName: '闪跃', networkDetailPath: '/vpn/shanyue', testedAt: '2026-09-16', open: 'pass', login: 'pass', use: 'pass', summary: '在本次记录的闪跃测试环境中，Grok 可以正常打开、登录并完成基础交互。' }
 ];
