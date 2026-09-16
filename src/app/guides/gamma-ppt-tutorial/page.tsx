@@ -609,25 +609,27 @@ export default function GammaPptTutorial() {
             </div>
           </div>
         
+      
+\n    
       {/* 🚀 Topic Cluster 自动聚合区域 */}
       <section className="mt-16 bg-yellow-50/50 dark:bg-yellow-900/10 rounded-2xl p-8 border border-yellow-100 dark:border-yellow-800/30">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
           <span>⚡</span> ⚡ AI 效率提升精选
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           <Link href="/guides/ai-excel-data" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
             <div className="p-2 bg-yellow-100 dark:bg-yellow-900/50 rounded-lg group-hover:scale-110 transition-transform">⚡</div>
             <div>
-              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">AI 搞定 Excel 与数据</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">无需公式，自动化数据分析</div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">AI 搞定 Excel 数据</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">无需公式，自动化完成数据清洗</div>
             </div>
           </Link>
   
           <Link href="/guides/ai-office-workflow" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
             <div className="p-2 bg-yellow-100 dark:bg-yellow-900/50 rounded-lg group-hover:scale-110 transition-transform">⚡</div>
             <div>
-              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">打造 AI 办公流</div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">打造 AI 个人办公流</div>
               <div className="text-sm text-gray-500 dark:text-gray-400">全方位重塑你的日常工作习惯</div>
             </div>
           </Link>
@@ -636,7 +638,7 @@ export default function GammaPptTutorial() {
             <div className="p-2 bg-yellow-100 dark:bg-yellow-900/50 rounded-lg group-hover:scale-110 transition-transform">⚡</div>
             <div>
               <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">一键生成绝美 PPT</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">告别排版，Gamma 新手教程</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">告别繁琐排版，Gamma 新手教程</div>
             </div>
           </Link>
   

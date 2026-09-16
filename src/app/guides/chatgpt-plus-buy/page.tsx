@@ -166,7 +166,49 @@ export default function Page() {
               </Link>
             </div>
           </div>
-        </article>
+        
+      {/* 🚀 Topic Cluster 自动聚合区域 */}
+      <section className="mt-16 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl p-8 border border-blue-100 dark:border-blue-800/30">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <span>✨</span> 🧠 ChatGPT 深度精选系列
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <Link href="/guides/chatgpt-what-can-it-do" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:scale-110 transition-transform">✨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">ChatGPT 能做什么？</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">零基础看懂的 7 大日常高频场景</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/chatgpt-pdf-guide" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:scale-110 transition-transform">✨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">长文档与 PDF 分析</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">如何让 AI 帮你读财报与论文</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/chatgpt-compare-files" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:scale-110 transition-transform">✨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">多文件对比与分析</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">如何让 ChatGPT 帮你找合同差异</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/chatgpt-images-2-5-guide" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-blue-100 dark:bg-blue-900/50 rounded-lg group-hover:scale-110 transition-transform">✨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">图片理解与数据处理</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">从手写草稿到完整的代码实现</div>
+            </div>
+          </Link>
+  
+        </div>
+      </section>
+\n    </article>
       </main>
       <FloatingBackButton fallbackHref="/subscriptions" />
       <Footer />

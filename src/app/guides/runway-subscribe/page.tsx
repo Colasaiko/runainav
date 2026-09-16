@@ -120,12 +120,14 @@ export default function Page() {
             </div>
           </div>
         
+      
+\n    
       {/* 🚀 Topic Cluster 自动聚合区域 */}
       <section className="mt-16 bg-pink-50/50 dark:bg-pink-900/10 rounded-2xl p-8 border border-pink-100 dark:border-pink-800/30">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
-          <span>🎨</span> 🎨 AI 视觉与图像生成
+          <span>🎨</span> 🎨 AI 创作与多模态生成
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           
           <Link href="/guides/midjourney-realistic-portrait" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
             <div className="p-2 bg-pink-100 dark:bg-pink-900/50 rounded-lg group-hover:scale-110 transition-transform">🎨</div>
@@ -147,7 +149,7 @@ export default function Page() {
             <div className="p-2 bg-pink-100 dark:bg-pink-900/50 rounded-lg group-hover:scale-110 transition-transform">🎨</div>
             <div>
               <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Runway 视频生成详解</div>
-              <div className="text-sm text-gray-500 dark:text-gray-400">Gen-3 Alpha 的震撼表现</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Gen-3 Alpha 震撼表现体验</div>
             </div>
           </Link>
   

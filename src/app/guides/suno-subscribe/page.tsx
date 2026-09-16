@@ -118,7 +118,41 @@ export default function Page() {
               </Link>
             </div>
           </div>
-        </article>
+        
+      {/* 🚀 Topic Cluster 自动聚合区域 */}
+      <section className="mt-16 bg-pink-50/50 dark:bg-pink-900/10 rounded-2xl p-8 border border-pink-100 dark:border-pink-800/30">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <span>🎨</span> 🎨 AI 创作与多模态生成
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <Link href="/guides/midjourney-realistic-portrait" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-pink-100 dark:bg-pink-900/50 rounded-lg group-hover:scale-110 transition-transform">🎨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">真实摄影级人像</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">解锁 Midjourney 终极相机参数</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/midjourney-subscribe" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-pink-100 dark:bg-pink-900/50 rounded-lg group-hover:scale-110 transition-transform">🎨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Midjourney 订阅防坑</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">新手安全充值与使用避坑指南</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/runway-subscribe" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-pink-100 dark:bg-pink-900/50 rounded-lg group-hover:scale-110 transition-transform">🎨</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Runway 视频生成详解</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">Gen-3 Alpha 震撼表现体验</div>
+            </div>
+          </Link>
+  
+        </div>
+      </section>
+\n    </article>
       </main>
       <FloatingBackButton fallbackHref="/subscriptions" />
       <Footer />
