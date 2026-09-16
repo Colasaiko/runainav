@@ -150,7 +150,41 @@ export default function Page() {
               </Link>
             </div>
           </div>
-        </article>
+        
+      {/* 🚀 Topic Cluster 自动聚合区域 */}
+      <section className="mt-16 bg-purple-50/50 dark:bg-purple-900/10 rounded-2xl p-8 border border-purple-100 dark:border-purple-800/30">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <span>🧠</span> 🧠 Claude 进阶与实战系列
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <Link href="/guides/claude-pro-subscribe" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg group-hover:scale-110 transition-transform">🧠</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Claude Pro 升级指南</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">畅享 Claude 3.5 Sonnet</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/claude-project-docs" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg group-hover:scale-110 transition-transform">🧠</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Project 知识库实战</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">打造你的专属 AI 团队</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/chatgpt-vs-claude-vs-gemini" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-purple-100 dark:bg-purple-900/50 rounded-lg group-hover:scale-110 transition-transform">🧠</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">御三家对比评测</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">到底应该选哪个大模型？</div>
+            </div>
+          </Link>
+  
+        </div>
+      </section>
+\n    </article>
       </main>
       <FloatingBackButton fallbackHref="/subscriptions" />
       <Footer />

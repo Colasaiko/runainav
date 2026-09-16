@@ -271,7 +271,41 @@ export default function GPT6AstraGuidePage() {
             </section>
 
           </div>
-        </article>
+        
+      {/* 🚀 Topic Cluster 自动聚合区域 */}
+      <section className="mt-16 bg-indigo-50/50 dark:bg-indigo-900/10 rounded-2xl p-8 border border-indigo-100 dark:border-indigo-800/30">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center gap-2">
+          <span>🌌</span> 🌌 Gemini 生态深度探索
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <Link href="/guides/gemini-subscribe" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg group-hover:scale-110 transition-transform">🌌</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Gemini Advanced 订阅指南</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">解锁 Google One AI 体验</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/gemini-file-drive-guide" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg group-hover:scale-110 transition-transform">🌌</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">联动 Google Drive</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">让 AI 帮你管理云盘文件</div>
+            </div>
+          </Link>
+  
+          <Link href="/guides/gpt-6-astra-guide" className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-gray-800 transition-colors group">
+            <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg group-hover:scale-110 transition-transform">🌌</div>
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Project Astra 前瞻</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">下一代视觉实时推理模型</div>
+            </div>
+          </Link>
+  
+        </div>
+      </section>
+\n    </article>
       </main>
 
       <Footer />
