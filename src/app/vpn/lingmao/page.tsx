@@ -10,6 +10,7 @@ import {
   Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight,
   HelpCircle, Server, Cpu, Monitor, Tag,
 } from 'lucide-react';
+import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
 import { constructMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = constructMetadata({
@@ -29,7 +30,7 @@ export default function LingmaoPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <div className="min-h-screen bg-gray-50 flex flex-col font-[family-name:var(--font-sans)] selection:bg-brand-100 selection:text-brand-900">
       <JsonLd data={[
         {
           '@context': 'https://schema.org',
@@ -51,7 +52,7 @@ export default function LingmaoPage() {
       <ArticleStickyBar sections={sections} />
       <FloatingBackButton fallbackHref="/vpn" />
 
-      <main className="pb-20">
+      <main className="flex-grow pt-24 pb-20">
 
         {/* Hero Section */}
         <section className="bg-white border-b border-gray-200 pt-12 pb-16 relative overflow-hidden">
@@ -59,13 +60,13 @@ export default function LingmaoPage() {
           <div className="container mx-auto px-4 max-w-4xl relative z-10">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
               <div className="flex items-start gap-6">
-                <div className="w-20 h-20 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center bg-white overflow-hidden shrink-0">
+                <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-white rounded-3xl border-2 border-gray-100 shadow-md p-4 flex items-center justify-center">
                   <Image
                     src="/images/vpn/灵猫.png"
                     alt="灵猫 Logo"
                     width={80}
                     height={80}
-                    className="w-full h-full object-contain p-2"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <div>
@@ -103,7 +104,7 @@ export default function LingmaoPage() {
           </div>
         </section>
 
-        <div className="container mx-auto px-4 max-w-4xl mt-8 space-y-8">
+        <div className="container mx-auto px-4 max-w-4xl mt-12 space-y-12">
 
           {/* 30秒速读 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="overview">
@@ -356,6 +357,7 @@ export default function LingmaoPage() {
       </main>
 
       <Footer />
+      <FloatingBuyButton brandName="灵猫" url="/go/lingmao" />
     </div>
   );
 }
