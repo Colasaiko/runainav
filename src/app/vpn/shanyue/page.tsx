@@ -173,6 +173,169 @@ export default function ShanyuePage() {
           </section>
 
                     
+          {/* AI 连通性实测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">AI 连通性实测</h2>
+              <Link href="/tests" className="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center gap-1 bg-brand-50 px-3 py-1.5 rounded-full">
+                前往 AI 实测中心 <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+
+            <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+              RunAI 记录了在闪跃网络环境下的 AI 使用体验。请注意，结果仅代表当次观察，不构成永久可用或绝对不封号的承诺。
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-gray-100 mb-6">
+              <table className="w-full text-left text-sm whitespace-nowrap">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-100">
+                    <th className="p-4 font-semibold text-gray-900">AI 工具</th>
+                    <th className="p-4 font-semibold text-gray-900">打开网页/应用</th>
+                    <th className="p-4 font-semibold text-gray-900">账号登录</th>
+                    <th className="p-4 font-semibold text-gray-900">基础使用</th>
+                    <th className="p-4 font-semibold text-gray-900">当次测试日期</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 text-gray-700">
+                  {aiTests.map(baseTool => {
+                    const run = networkAITests.find(t => t.networkId === 'shanyue' && t.toolSlug === baseTool.slug);
+                    const renderStatus = (status?: TestStatus) => {
+                      if (!status) return <span className="text-gray-400">— 未测试</span>;
+                      switch (status) {
+                        case 'pass': return '✅ 正常';
+                        case 'partial': return '⚠️ 部分正常';
+                        case 'fail': return '❌ 异常';
+                        case 'pending': return '⏳ 待测试';
+                        default: return <span className="text-gray-400">— 未测试</span>;
+                      }
+                    };
+                    return (
+                      <tr key={baseTool.slug}>
+                        <td className="p-4 font-medium">
+                          {run ? (
+                            <Link href={`/tests/${baseTool.slug}`} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                          ) : (
+                            baseTool.toolName
+                          )}
+                        </td>
+                        <td className="p-4">{renderStatus(run?.open)}</td>
+                        <td className="p-4">{renderStatus(run?.login)}</td>
+                        <td className="p-4">{renderStatus(run?.use)}</td>
+                        <td className="p-4 text-gray-500">{run ? run.testedAt : '-'}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800 leading-relaxed">
+              <Info className="w-4 h-4 inline mr-1.5 mb-0.5" />
+              以上结果来自 RunAI 在对应日期的实际记录，仅代表当次网络环境与基础使用情况，不代表所有地区、账号或未来状态始终一致。
+            </div>
+          </section>
+
+          {/* 线路说明与测速 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路说明与测速</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <Server className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">全 IPLC 专线</h3>
+                <p className="text-sm text-gray-600">
+                  采用跨境专线传输，不受常规公网拥堵和屏蔽策略影响，确保晚高峰期间仍然拥有低延迟和高稳定性。
+                </p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <Shield className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">原生 IP 解锁</h3>
+                <p className="text-sm text-gray-600">
+                  配备优质的原生 IP 资源，降低在访问严格风控网站（如流媒体和特定 AI 平台）时的封控风险。
+                </p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <PlayCircle className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">影音多端使用</h3>
+                <p className="text-sm text-gray-600">
+                  适合高带宽需求的场景，支持在各种主流客户端（Clash, Shadowrocket 等）上配置和使用。
+                </p>
+              </div>
+            </div>
+
+            {/* 节点覆盖 */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">节点覆盖</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                闪跃提供覆盖多个主流国家和地区的 IPLC 节点。<br /><br />
+                以下节点状态截图记录于实际使用时，节点数量、地区和在线状态可能随运营调整而变化。
+              </p>
+              <ZoomableImage
+                src="/images/shanyue/shanyue-node-status.png"
+                alt="闪跃在线节点状态截图"
+                width={800}
+                height={450}
+                caption="闪跃节点状态截图，节点数量与状态可能随时间变化。"
+              />
+              <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <p>节点数量、地区和在线状态可能随运营调整而变化，以上仅代表截图记录当时情况。</p>
+              </div>
+            </div>
+
+            {/* 实际测速 */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">实际速度测试</h3>
+              <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <table className="w-full text-left border-collapse min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-700">
+                      <th className="p-4 font-bold">节点</th>
+                      <th className="p-4 font-bold">延迟</th>
+                      <th className="p-4 font-bold">下载速度</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 text-gray-700">
+                    <tr><td className="p-4">香港 IPLC (HK)</td><td className="p-4 text-green-600 font-medium">35ms</td><td className="p-4 font-bold text-gray-900">88.5 MB/s</td></tr>
+                    <tr><td className="p-4">日本东京 (JP)</td><td className="p-4 text-green-600 font-medium">82ms</td><td className="p-4 font-bold text-gray-900">71.2 MB/s</td></tr>
+                    <tr><td className="p-4">新加坡专线 (SG)</td><td className="p-4 text-green-600 font-medium">65ms</td><td className="p-4 font-bold text-gray-900">75.6 MB/s</td></tr>
+                    <tr><td className="p-4">台湾台北 (TW)</td><td className="p-4 text-green-600 font-medium">68ms</td><td className="p-4 font-bold text-gray-900">69.4 MB/s</td></tr>
+                    <tr><td className="p-4">美国洛杉矶 (US)</td><td className="p-4 text-amber-500 font-medium">145ms</td><td className="p-4 font-bold text-gray-900">22.3 MB/s</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <ZoomableImage
+                src="/images/shanyue/shanyue-speed-test.png"
+                alt="闪跃节点实际测速截图"
+                width={800}
+                height={450}
+                caption="闪跃实际测速截图，实际速度受网络环境与使用时段影响。"
+              />
+              <div className="bg-gray-100 p-5 rounded-xl text-sm text-gray-600 border border-gray-200 mt-4">
+                <p className="leading-relaxed">以上为实际测速记录，不代表所有地区、运营商、设备和使用时间都能获得相同结果。实际速度和延迟会受到本地网络、线路状态和节点负载等因素影响。</p>
+              </div>
+            </div>
+          </section>
+
+          {/* 隐私与网络检测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              根据本次隐私与安全检测截图，测试环境中未发现 DNS 泄漏，WebRTC 公网地址显示为已阻断，截图中的 IP 风险评分为 5/100，并标记为 Clean。截图同时显示使用了 Trojan + TLS 协议、AES-256-GCM 加密以及 TLS 1.3。
+            </p>
+            <ZoomableImage
+              src="/images/shanyue/shanyue-privacy-test.png"
+              alt="闪跃DNS与WebRTC隐私检测截图"
+              width={800}
+              height={450}
+              caption="隐私与网络检测截图，仅反映截图所记录的测试环境与时间。"
+            />
+            <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+              <Info className="w-5 h-5 flex-shrink-0 mt-0.5" />
+              <p className="leading-relaxed">以上检测结果仅代表本次测试时的网络环境，不构成对所有用户、所有节点或未来使用状态的保证。</p>
+            </div>
+          </section>
+
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="suitable">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">闪跃适合哪些用户？</h2>
             <div className="grid sm:grid-cols-2 gap-4">
