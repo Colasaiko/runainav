@@ -97,6 +97,10 @@ export default function GuidePage() {
           
           <div className="lg:col-span-8 lg:col-start-2">
             <div className="prose prose-lg prose-brand max-w-none text-gray-700">
+
+            <div className="bg-brand-50 border border-brand-100 rounded-xl p-4 mb-8 text-brand-800 not-prose">
+              💡 <strong>相关阅读：</strong>想了解更多进阶技巧和国内连通方案？请查看我们的 <Link href="/guides/chatgpt" className="text-brand-600 font-bold hover:underline">完整 ChatGPT 使用指南</Link>。
+            </div>
               
               <h2 id="intro">前言介绍</h2>
               <p>在日常工作与学习中，我们常常需要阅读长篇的研究报告、财务报表或冗长的技术文档。利用 ChatGPT 的文件解析功能，你可以迅速获取长达数十页甚至上百页 PDF 的核心内容。这不仅能极大地提高工作效率，还能帮助你在复杂繁杂的信息中快速定位关键细节。本文将从文件上传、高效提问到数据表格的提取，全面讲解如何利用 ChatGPT 进行专业级别的 PDF 分析，并分享一系列规避模型“幻觉”和识别障碍的实用策略，让你真正掌握 AI 长文档处理的精髓。</p>

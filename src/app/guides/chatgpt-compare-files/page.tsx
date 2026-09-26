@@ -96,6 +96,10 @@ export default function GuidePage() {
           
           <div className="lg:col-span-8 lg:col-start-2">
             <div className="prose prose-lg prose-brand max-w-none text-gray-700">
+
+            <div className="bg-brand-50 border border-brand-100 rounded-xl p-4 mb-8 text-brand-800 not-prose">
+              💡 <strong>相关阅读：</strong>想了解更多进阶技巧和国内连通方案？请查看我们的 <Link href="/guides/chatgpt" className="text-brand-600 font-bold hover:underline">完整 ChatGPT 使用指南</Link>。
+            </div>
               
               <h2 id="intro">前言介绍</h2>
               <p>在日常工作流中，校对新老版本的文档往往耗时且极易出错。无论是法务在审核两版合同中的细微修改，程序员在排查两份代码文件的差异，还是市场人员在对比前后的营销策划案，肉眼排查不仅痛苦而且容易遗漏。借助 ChatGPT 强大的语义理解能力，我们能够瞬间对两份文件进行智能比对。不仅能找到“字面差异”，更能指出深层的“意义差异”，从而大幅提升办公效率。</p>

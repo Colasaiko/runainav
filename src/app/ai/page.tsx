@@ -8,7 +8,7 @@ import { constructMetadata } from "@/lib/seo";
 import JsonLd from '@/components/seo/JsonLd';
 
 export const metadata = constructMetadata({
-  title: 'AI工具大全与AI工具箱｜国内外热门AI推荐｜RunAI',
+  title: 'AI工具大全与AI工具推荐：热门AI工具导航｜RunAI',
   description: 'RunAI收录国内外热门AI工具，涵盖聊天、搜索、编程、绘图、视频、办公与音乐，可按地区和用途筛选，并提供工具详情、对比和使用指南，帮助快速找到合适的AI工具。',
   canonical: '/ai',
 });
@@ -108,10 +108,11 @@ export default function AIPage() {
         </nav>
 
         <div className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">AI工具箱：国内外热门AI工具大全</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
-            RunAI AI工具箱收录国内外常用AI工具，用户可以按照聊天、搜索、编程、绘图、视频、办公、音乐以及地区快速筛选，探索最佳的AI工具推荐。
-          </p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">AI工具大全：国内外热门AI工具推荐</h1>
+            <p className="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">
+              欢迎来到 RunAI 的<strong>AI工具大全</strong>。这里是为你精心整理的<strong>AI工具推荐</strong>与分类导航。我们收录了包含自然语言对话（如 <Link href="/guides/chatgpt" className="text-brand-600 hover:underline">ChatGPT</Link>、<Link href="/guides/claude" className="text-brand-600 hover:underline">Claude</Link>、<Link href="/guides/gemini" className="text-brand-600 hover:underline">Gemini</Link>、<Link href="/guides/deepseek" className="text-brand-600 hover:underline">DeepSeek</Link>）、AI 编程辅助（如 <Link href="/guides/cursor" className="text-brand-600 hover:underline">Cursor</Link>）、图像与视频生成在内的全球顶尖应用。无论你是职场打工人、开发者还是创作者，都能在这个<strong>AI工具导航</strong>中快速找到最适合你的效率神器。
+            </p>
+
           <div className="flex flex-col items-center gap-4">
             <p className="text-sm font-medium text-gray-500">按分类浏览</p>
             <div className="flex flex-wrap justify-center gap-3">
@@ -153,10 +154,25 @@ export default function AIPage() {
           </div>
         <AIList />
 
+        
         {/* SEO Text Sections */}
         <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
           <div className="prose max-w-none prose-brand">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">AI工具箱里有哪些类型？</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">怎么选择适合自己的 AI 工具？</h2>
+            <div className="text-gray-700 leading-relaxed mb-8">
+              面对海量的 AI 应用，初学者往往不知道从何下手。我们建议根据你的核心需求来定位：
+              <ul className="mt-4 space-y-2">
+                <li><strong>聊天问答与文本写作：</strong> 寻找能够理解复杂指令的大模型，推荐从 <Link href="/ai/chat" className="text-brand-600 hover:underline">AI聊天</Link> 分类中选择 ChatGPT 或 Claude，满足日常内容创作。</li>
+                <li><strong>代码开发与编程：</strong> 需要代码补全、Debug 甚至项目级重构，可以直接前往 <Link href="/ai/coding" className="text-brand-600 hover:underline">AI编程</Link> 分区，Cursor 是目前非常热门的选择。</li>
+                <li><strong>资料搜索与研究：</strong> 需要真实、实时的信息并附带引用来源，建议查看 <Link href="/ai/search" className="text-brand-600 hover:underline">AI搜索</Link> 引擎。</li>
+                <li><strong>办公提效与会议：</strong> 处理 PPT、Excel 或者会议纪要总结，可以浏览 <Link href="/ai/productivity" className="text-brand-600 hover:underline">AI办公</Link> 工具。</li>
+                <li><strong>视觉与音视频创作：</strong> <Link href="/ai/image" className="text-brand-600 hover:underline">AI绘图</Link> 和 <Link href="/ai/video" className="text-brand-600 hover:underline">AI视频</Link> 分区收录了目前表现最佳的图像/视频生成模型，而 <Link href="/ai/music" className="text-brand-600 hover:underline">AI音乐</Link> 则适合配乐和歌曲生成。</li>
+              </ul>
+              <p className="mt-4">更多深度工具对比，你可以查看我们的 <Link href="/compare" className="text-brand-600 hover:underline font-medium">热门 AI 对比</Link> 专栏，或者查阅具体的 <Link href="/guides" className="text-brand-600 hover:underline font-medium">AI 使用指南</Link>。</p>
+            </div>
+
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 mt-12">AI工具箱里有哪些类型？</h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
               <div className="p-4 bg-gray-50 rounded-xl">
                 <h3 className="font-bold text-lg mb-2"><Link href="/ai/chat" className="text-brand-600 hover:underline">AI聊天</Link></h3>

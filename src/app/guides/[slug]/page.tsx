@@ -1555,7 +1555,41 @@ return (
           </div>
         )}
 
-                {tool.relatedGuides && tool.relatedGuides.length > 0 && (
+                
+        {tool.slug === 'chatgpt' && (
+          <div className="bg-brand-50/50 border border-brand-100 p-8 rounded-3xl shadow-sm mb-12 mt-8" id="chatgpt-hub">
+            <h2 className="font-bold text-2xl text-gray-900 mt-0 mb-6 flex items-center gap-2">
+              <BookOpen className="w-7 h-7 text-brand-600" /> ChatGPT 完整教程指南
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="font-bold text-gray-800 mb-3 text-lg">入门与基础使用</h4>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  <li><Link href="/guides/chatgpt-what-can-it-do" className="text-brand-600 hover:underline">ChatGPT 能做什么？使用场景详解</Link></li>
+                  <li><Link href="/guides/chatgpt-plus-buy" className="text-brand-600 hover:underline">ChatGPT Plus 订阅与买号防坑指南</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-bold text-gray-800 mb-3 text-lg">进阶功能与文件处理</h4>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  <li><Link href="/guides/chatgpt-pdf-guide" className="text-brand-600 hover:underline">ChatGPT PDF 与长文档分析教程</Link></li>
+                  <li><Link href="/guides/chatgpt-compare-files" className="text-brand-600 hover:underline">如何用 ChatGPT 比较两份文件</Link></li>
+                  <li><Link href="/guides/chatgpt-images-2-5-guide" className="text-brand-600 hover:underline">ChatGPT 图片局部重绘与编辑指南</Link></li>
+                </ul>
+              </div>
+              <div className="md:col-span-2">
+                <h4 className="font-bold text-gray-800 mb-3 text-lg">网页优化与国内网络</h4>
+                <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                  <li><Link href="/guides/chatgpt-browser-guide" className="text-brand-600 hover:underline">ChatGPT 浏览器操作报错修复指南</Link></li>
+                  <li><Link href="/guides/chatgpt-jichang" className="text-brand-600 hover:underline">ChatGPT 专用节点：网络连通性推荐</Link></li>
+                  <li><Link href="/tests/chatgpt" className="text-brand-600 hover:underline">ChatGPT 国内实测：连通性与解封监测</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {tool.relatedGuides && tool.relatedGuides.length > 0 && tool.slug !== 'chatgpt' && (
           <div className="bg-blue-50/50 border border-blue-100 p-8 rounded-3xl shadow-sm mb-12">
             <h3 className="font-bold text-xl text-gray-900 mt-0 mb-6 flex items-center gap-2">
               <BookOpen className="w-6 h-6 text-brand-500" /> 相关教程指南

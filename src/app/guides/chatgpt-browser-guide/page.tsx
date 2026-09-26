@@ -126,6 +126,10 @@ export default function ChatGPTBrowserGuide() {
           </div>
 
           <div className="p-8 md:p-12 prose prose-lg prose-blue max-w-none prose-headings:text-gray-900 prose-a:text-brand-600 hover:prose-a:text-brand-700">
+
+            <div className="bg-brand-50 border border-brand-100 rounded-xl p-4 mb-8 text-brand-800 not-prose">
+              💡 <strong>相关阅读：</strong>想了解更多进阶技巧和国内连通方案？请查看我们的 <Link href="/guides/chatgpt" className="text-brand-600 font-bold hover:underline">完整 ChatGPT 使用指南</Link>。
+            </div>
             
             <h2 id="what" className="text-2xl font-bold mt-0 mb-6 flex items-center gap-2 scroll-mt-24">
               <Globe className="w-6 h-6 text-brand-500" /> ChatGPT操作浏览器是什么意思？

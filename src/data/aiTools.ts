@@ -748,7 +748,7 @@ export const aiTools: AITool[] = [
     {
     region: 'global',
     slug: 'chatgpt',
-    seoTitle: 'ChatGPT国内怎么用？使用教程与常见问题',
+    seoTitle: 'ChatGPT怎么用？功能、教程与国内使用指南｜RunAI',
     seoDescription: '国内使用ChatGPT时，如果遇到官网打不开、登录失败、页面加载缓慢或部分功能不可用，可从服务地区、账号状态、浏览器与网络环境逐项排查，并了解常见使用方法。',
     seoKeywords: 'ChatGPT,国内怎么用,网络环境,使用教程',
     name: 'ChatGPT',
@@ -852,8 +852,8 @@ export const aiTools: AITool[] = [
     ],
     alternatives: ['claude', 'gemini'],
     domesticLayout: true,
-    seoH1: 'ChatGPT 国内怎么用？使用方法与常见问题',
-    domesticIntro: '国内用户使用 ChatGPT 时，通常首先需要确认 OpenAI 当前服务支持范围、账号状态以及实际网络环境。如果官网打不开、登录失败或页面长时间加载，不一定是 ChatGPT 本身故障，也可能与浏览器、DNS、账号地区或当前连接有关。',
+    seoH1: 'ChatGPT怎么用？功能与国内使用教程',
+    domesticIntro: 'ChatGPT 怎么用？作为一个强大的自然语言模型，它能帮你处理写作、编程和日常问答。对于希望掌握进阶技巧的用户，可以随时参考下方的 ChatGPT 教程。国内用户在使用 ChatGPT 时，通常首先需要确认账号状态、网络连通性以及当前服务支持范围。如果遇到打不开或登录失败的问题，不要慌，可能与浏览器、DNS 或所在地区有关。',
     domesticSymptoms: [
       {
         title: '官网完全打不开',

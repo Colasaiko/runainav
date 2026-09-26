@@ -109,9 +109,7 @@ export default function Page() {
                 <Link href="/vpn" className="bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg shadow-brand-500/30 flex items-center gap-2">
                   查看网络方案库 <ExternalLink className="w-4 h-4" />
                 </Link>
-                <Link href="/guides/jichang-recommendation-2026" className="bg-white/10 hover:bg-white/20 text-white font-medium py-3 px-8 rounded-xl transition-all">
-                  阅读 2026 选购指南
-                </Link>
+                <Link href="/guides/jichang-recommendation-2026" className="bg-white/10 hover:bg-white/20 text-white font-medium py-3 px-8 rounded-xl transition-all">稳定机场怎么选</Link>
               </div>
             </div>
 

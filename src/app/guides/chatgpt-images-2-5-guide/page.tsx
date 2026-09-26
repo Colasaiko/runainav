@@ -132,6 +132,10 @@ export default function ChatGPTImages25GuidePage() {
           </div>
 
           <div className="prose prose-gray max-w-none space-y-8">
+
+            <div className="bg-brand-50 border border-brand-100 rounded-xl p-4 mb-8 text-brand-800 not-prose">
+              💡 <strong>相关阅读：</strong>想了解更多进阶技巧和国内连通方案？请查看我们的 <Link href="/guides/chatgpt" className="text-brand-600 font-bold hover:underline">完整 ChatGPT 使用指南</Link>。
+            </div>
             
             <section id="intro" className="scroll-mt-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">ChatGPT Images 2.5 是什么？</h2>
