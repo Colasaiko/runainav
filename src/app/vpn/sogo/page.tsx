@@ -15,7 +15,7 @@ import { networkAITests } from '@/data/networkAITests';
 
 export const metadata: Metadata = constructMetadata({
   title: 'sogo云怎么样？套餐价格、线路与购买建议｜RunAI',
-  description: 'sogo云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的信息，方便国内用户选择。',
+  description: 'sogo云怎么样？RunAI详细整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的网络连通信息，方便国内用户选择。',
   canonical: '/vpn/sogo',
 });
 
@@ -74,7 +74,7 @@ export default function BrandPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="flex items-center gap-6">
                 <div className="w-24 h-24 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden relative">
-                  <Image src={"/images/vpn/" + encodeURIComponent('sogo云') + ".png"} alt="sogo云 Logo" fill className="object-contain p-2" />
+                  <Image src="/images/vpn/sogo.png" alt="sogo云 Logo" fill className="object-contain p-2" />
                 </div>
                 <div>
                   <div className="flex items-center gap-3 mb-2">
@@ -241,9 +241,9 @@ export default function BrandPage() {
                       <tr key={baseTool.slug}>
                         <td className="p-4 font-medium">
                           {run ? (
-                            <Link href={"/tests/" + baseTool.slug} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                            <Link href={"/tests/" + baseTool.slug} className="text-brand-600 hover:underline">{baseTool.name}</Link>
                           ) : (
-                            baseTool.toolName
+                            baseTool.name
                           )}
                         </td>
                         <td className="p-4">{renderStatus(run?.open)}</td>
@@ -373,8 +373,8 @@ export default function BrandPage() {
         </div>
       </main>
 
-      <FloatingBuyButton buyUrl="https://wzjc.sogoyunaff.cc/#/?code=JvxcPy2A" price={25} />
-      <FloatingBackButton />
+      <FloatingBuyButton url="/go/sogo" brandName="sogo云" />
+      <FloatingBackButton fallbackHref="/vpn" />
       <Footer />
     </div>
   );
