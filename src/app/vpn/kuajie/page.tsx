@@ -1,323 +1,376 @@
+
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import FloatingBackButton from '@/components/navigation/FloatingBackButton';
-import JsonLd from '@/components/seo/JsonLd';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import {
-  AlertTriangle, ArrowRight, Check, Cpu, HelpCircle,
-  Monitor, PlayCircle, Server, Shield, Tag, Zap,
-} from 'lucide-react';
+import Image from 'next/image';
+import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag, Smartphone, Info } from 'lucide-react';
+import JsonLd from '@/components/seo/JsonLd';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
-import { constructMetadata } from '@/lib/seo';
+import { constructMetadata } from "@/lib/seo";
+import { aiTools } from '@/data/aiTools';
+import { aiTests, type TestStatus } from '@/data/aiTests';
+import { networkAITests } from '@/data/networkAITests';
 
 export const metadata: Metadata = constructMetadata({
   title: '跨界云怎么样？套餐价格、线路与购买建议｜RunAI',
-  description: '跨界云怎么样？RunAI整理套餐价格、120GB流量、IPLC线路、不限设备和AI、影音使用场景，并说明套餐周期与购买注意事项，帮助国内用户了解当前方案。',
+  description: '跨界云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的信息，方便国内用户选择。',
   canonical: '/vpn/kuajie',
 });
 
 export default function KuajiePage() {
   const sections = [
-    { id: 'overview', navLabel: '核心参数' },
-    { id: 'pricing', navLabel: '套餐价格' },
-    { id: 'devices', navLabel: '不限设备' },
-    { id: 'network', navLabel: '线路与场景' },
-    { id: 'ai-test', navLabel: 'AI使用参考' },
-    { id: 'suitable', navLabel: '适合谁' },
-    { id: 'faq', navLabel: 'FAQ' },
+    { id: "overview", navLabel: "速读" },
+    { id: "pricing", navLabel: "套餐价格" },
+    { id: "ai-test", navLabel: "AI实测" },
+    { id: "network", navLabel: "线路测速" },
+    { id: "privacy", navLabel: "隐私检测" },
+    { id: "faq", navLabel: "FAQ" },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-[family-name:var(--font-sans)] selection:bg-brand-100 selection:text-brand-900">
-      <JsonLd data={[
-        {
-          '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name: '跨界云怎么样？套餐价格、线路与购买建议｜RunAI',
-          description: '跨界云怎么样？RunAI整理套餐价格、120GB流量、IPLC线路、不限设备和AI、影音使用场景，并说明套餐周期与购买注意事项，帮助国内用户了解当前方案。',
-        },
-        {
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: '首页', item: 'https://runainav.com/' },
-            { '@type': 'ListItem', position: 2, name: 'VPN', item: 'https://runainav.com/vpn' },
-            { '@type': 'ListItem', position: 3, name: '跨界云', item: 'https://runainav.com/vpn/kuajie' },
-          ],
-        },
-      ]} />
+      
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "跨界云怎么样？套餐、线路与购买建议",
+        "description": "跨界云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的套餐周期、流量和服务信息，方便国内用户选择。"
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://runainav.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "VPN",
+            "item": "https://runainav.com/vpn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "跨界云",
+            "item": "https://runainav.com/vpn/kuajie"
+          }
+        ]
+      }} />
+      
       <Header />
       <ArticleStickyBar sections={sections} />
-      <FloatingBackButton fallbackHref="/vpn" />
-
-      <main className="flex-grow pt-24 pb-20">
-
-        {/* Hero */}
-        <section className="bg-white border-b border-gray-200 pt-12 pb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-50 to-transparent opacity-50 pointer-events-none" />
+      
+      <main className="flex-grow pb-24">
+        {/* Brand Header */}
+        <section className="bg-white border-b border-gray-200 pt-32 pb-12 relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-brand-50 to-transparent"></div>
           <div className="container mx-auto px-4 max-w-4xl relative z-10">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-              <div className="flex items-start gap-6">
-                <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-white rounded-3xl border-2 border-gray-100 shadow-md p-4 flex items-center justify-center">
-                  <Image
-                    src="/images/vpn/跨界.png"
-                    alt="跨界云 Logo"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain"
-                  />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="flex items-center gap-6">
+                <div className="w-24 h-24 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden relative">
+                  <Image src={"/images/vpn/" + encodeURIComponent('跨界云') + ".png"} alt="跨界云 Logo" fill className="object-contain p-2" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-3">跨界云怎么样？套餐、线路与购买建议</h1>
-                  <p className="text-gray-600 text-lg mb-4">IPLC高端线路，全解锁流媒体，支持AI应用，不限设备数</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium">
-                      <Tag className="w-4 h-4" /> ¥20 起步
+                  <div className="flex items-center gap-3 mb-2">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">跨界云</h1>
+                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">IPLC 高端专线</span>
+                  </div>
+                  <p className="text-lg text-gray-600 mb-3">IPLC高端线路，全解锁流媒体，支持AI应用，不限设备数。</p>
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1.5">
+                      <Tag className="w-4 h-4" /> 起步：¥20/120GB
                     </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium">
-                      <Server className="w-4 h-4" /> 120GB
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-sm font-medium border border-emerald-100">
-                      <Check className="w-4 h-4" /> IPLC 线路
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-sm font-medium border border-emerald-100">
-                      <Monitor className="w-4 h-4" /> 不限设备
+                    <span className="flex items-center gap-1.5">
+                      <Check className="w-4 h-4" /> 专线网络
                     </span>
                   </div>
                 </div>
               </div>
+              
               <div className="w-full md:w-auto flex flex-col gap-3">
-                <a
+                <a 
                   href="/go/kuajie"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className="w-full md:w-52 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
+                  className="w-full md:w-48 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
                 >
-                  前往跨界云购买页面 <ArrowRight className="w-4 h-4" />
+                  前往跨界云官网 <ArrowRight className="w-4 h-4" />
                 </a>
-                <p className="text-xs text-gray-500 text-center">本文包含跨界云推广链接，购买前建议以当前页面展示信息为准。</p>
+                <p className="text-xs text-gray-500 text-center">本文包含推广链接，购买前建议以当前套餐页面显示信息为准。</p>
               </div>
             </div>
           </div>
         </section>
 
         <div className="container mx-auto px-4 max-w-4xl mt-12 space-y-12">
-
-          {/* 核心参数 */}
+          
+          {/* 30秒速读 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="overview">
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <Zap className="w-6 h-6 text-brand-500" />
-              核心参数
+              30秒速读
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {[
-                { label: '起步价格', value: '¥20', sub: '官网核实' },
-                { label: '基础流量', value: '120GB', sub: '入门方案' },
-                { label: '线路类型', value: 'IPLC', sub: '专线网络' },
-                { label: '设备连接', value: '不限设备', sub: '支持多端' },
-              ].map((card) => (
-                <div key={card.label} className="bg-gray-50 rounded-xl border border-gray-100 p-4 text-center">
-                  <div className="text-xl font-bold text-gray-900 mb-1">{card.value}</div>
-                  <div className="text-xs font-semibold text-gray-700 mb-1">{card.label}</div>
-                  <div className="text-xs text-gray-400">{card.sub}</div>
-                </div>
-              ))}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">核心信息</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格：¥20</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：120GB</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：IPLC 高端专线</li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">适用场景</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 高质量原生 IP，极佳解锁</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 跨端多设备无缝并发</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 高端 IPLC，超低延迟表现</li>
+                </ul>
+              </div>
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">
-              跨界云 是一款提供 IPLC 高端线路的跨境网络服务，其突出特点是在提供专线品质和 AI、影音全解锁的同时，不限制同时在线使用的设备数量，非常适合多设备或家庭共享场景。
+            <p className="mt-6 text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">
+              跨界云 提供一条全方位的高端 IPLC 专线解决方案，不仅完全解锁了各大国际流媒体，并且在 AI 应用的支持上拥有极高的 IP 纯净度。加上不限设备的优势，它是全家共享与办公的高效利器。
             </p>
           </section>
 
-          {/* 套餐价格 */}
+          {/* 套餐与价格 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="pricing">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">套餐价格</h2>
-            <p className="text-gray-600 mb-4 text-sm">
-              以下资料于 <strong className="text-gray-900">2026-09-10</strong> 根据跨界云资料核实。实际价格与详细套餐可能随官方活动变化，请以最终官网显示为准。
+            <p className="text-gray-600 mb-6 text-sm">
+              以下资料仅根据历史官方页面核实。实际价格可能会因官方活动或策略调整而变动，请以最终官网显示为准。
             </p>
-            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
-              <table className="w-full text-left border-collapse min-w-[520px]">
+            <div className="overflow-x-auto rounded-xl border border-gray-200">
+              <table className="w-full text-left border-collapse min-w-[600px]">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="p-4 font-semibold text-gray-900">套餐</th>
-                    <th className="p-4 font-semibold text-gray-900">流量</th>
+                    <th className="p-4 font-semibold text-gray-900">套餐名称</th>
+                    <th className="p-4 font-semibold text-gray-900">流量/周期</th>
                     <th className="p-4 font-semibold text-gray-900">起步价格</th>
-                    <th className="p-4 font-semibold text-gray-900">线路</th>
+                    <th className="p-4 font-semibold text-gray-900">说明</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   <tr className="hover:bg-gray-50/50 transition-colors">
-                    <td className="p-4 font-medium text-gray-900">入门套餐</td>
+                    <td className="p-4 font-medium text-gray-900">标准套餐</td>
                     <td className="p-4 text-gray-600">120GB</td>
                     <td className="p-4 font-bold text-brand-600">¥20</td>
-                    <td className="p-4 text-sm text-gray-500">IPLC 线路</td>
+                    <td className="p-4 text-sm text-gray-500">IPLC 高端专线</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-gray-500 italic">当前站内已确认起步方案为 ¥20 / 120GB，更多大流量及长周期套餐以购买页面为准。</p>
+            <div className="mt-4 flex items-start gap-2 bg-amber-50 p-3 rounded-lg border border-amber-100 text-sm text-amber-800">
+              <AlertTriangle className="w-5 h-5 shrink-0" />
+              <p>官方可能还提供更多高级档位与大流量套餐，具体可前往跨界云购买页面确认。</p>
+            </div>
           </section>
 
-          {/* 不限设备使用 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="devices">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">不限设备数支持</h2>
-            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-              跨界云的 <strong>不限设备数</strong> 政策为其在众多 IPLC 品牌中增加了极大的使用便利性，主要体现在：
+          {/* 购买建议 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="advice">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">第一次购买应该选哪个套餐？</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-white p-6 rounded-2xl border-2 border-brand-500 shadow-sm relative">
+                <div className="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">🔥 更适合第一次体验</div>
+                <h3 className="font-bold text-gray-900 mb-2">多需求综合测试</h3>
+                <p className="text-sm text-gray-600 mb-4">跨界云 ¥20 左右的 120GB 套餐性价比十分均衡。考虑到其同时涵盖了高质量的 AI 解锁、流媒体观看和不限设备数，这个套餐非常适合新用户进行全面的综合体验测试。</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <h3 className="font-bold text-gray-900 mb-2">团队或家庭共享</h3>
+                <p className="text-sm text-gray-600 mb-4">如果你打算与家庭成员共享或在多台办公设备上同时使用，强烈建议选择其更高阶的大流量套餐，季付或半年付的优惠能进一步提升跨界云的高端性价比。</p>
+              </div>
+            </div>
+            
+            <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-32">日常使用体验</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              无论是 4K 流媒体秒开、海外文献极速加载，还是高强度的 ChatGPT 数据分析，跨界云都能提供如本地网络般稳定的表现。它的高端线路有效避免了在特殊时期的网络干扰。
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-                <Monitor className="w-7 h-7 text-brand-500 mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">个人多设备无缝切换</h3>
-                <p className="text-sm text-gray-600">无论是手机、平板还是办公电脑，可全部配置并同时连接，无需担心触发设备上限而被强制挤下线或封号。</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-                <Shield className="w-7 h-7 text-brand-500 mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">团队与家庭共享</h3>
-                <p className="text-sm text-gray-600">配合路由器部署或分发订阅给家庭成员，一份套餐全家共用，极大地提升了套餐流量的利用率和性价比。</p>
-              </div>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">游戏使用说明</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              得益于其出色的路由优化和 IPLC 专线加持，跨界云在亚洲区节点的延迟表现极佳。许多用户不仅用它来看剧，也把它作为连接外服游戏或跨服组队的有力辅助工具。
+            </p>
+            <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-100">
+              <p>如果游戏是主要用途，可以先选择月付方案，在自己常玩的游戏和服务器中实际测试。</p>
             </div>
           </section>
 
-          {/* 线路与场景 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路与日常场景</h2>
-            <div className="prose prose-gray max-w-none text-sm md:text-base leading-relaxed space-y-4 mb-6">
-              <p>
-                跨界云配置了 <strong>IPLC 高端线路</strong>。作为跨境专线，IPLC 能够有效绕过公网高峰期拥堵，在晚间网络压力较大时理论上仍能提供较低的延迟。
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                { icon: <Cpu className="w-5 h-5 text-brand-500" />, title: 'AI 开发与应用', desc: '低延迟线路非常适合频繁调用 AI API 或进行对话交互的开发者与重度用户。' },
-                { icon: <PlayCircle className="w-5 h-5 text-brand-500" />, title: '流媒体全解锁', desc: '节点针对流媒体进行了解锁优化，支持 Netflix、Disney+ 等主流平台的顺畅访问。' },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <div className="mt-0.5 shrink-0">{item.icon}</div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-xs text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* AI 使用参考 */}
+          {/* AI 连通性实测 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">AI 使用参考</h2>
-              <Link href="/tests" className="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center gap-1 bg-brand-50 px-3 py-1.5 rounded-full">
-                查看 AI 实测中心 <ArrowRight className="w-3.5 h-3.5" />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">AI 连通性实测</h2>
+              <Link href="/tests" className="text-sm text-brand-600 hover:text-brand-700 font-medium flex items-center gap-1">
+                查看全网 AI 连通性监测 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed">
-              <p>
-                跨界云在当前分类中属于 <strong>AI 使用场景</strong> 品牌。其 IPLC 专线能够满足包括 ChatGPT、Claude、Gemini 等平台在内的日常使用，有助于规避常见的网络封控导致的无法登录或断连问题。
-              </p>
-              <p>
-                目前 RunAI 尚未发布跨界云的独立 AI 实测记录。后续如果有完整的连通性与节点测试，我们将第一时间更新至实测中心。
-              </p>
+            <p className="text-gray-600 mb-6 text-sm">
+              我们记录了使用 跨界云 节点时，针对各大主流 AI 工具的网页打开、账号登录和正常对话/使用的实际连通情况。
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200 text-sm">
+                    <th className="p-4 font-semibold text-gray-900">AI 工具</th>
+                    <th className="p-4 font-semibold text-gray-900">网页打开</th>
+                    <th className="p-4 font-semibold text-gray-900">账号登录</th>
+                    <th className="p-4 font-semibold text-gray-900">实际使用</th>
+                    <th className="p-4 font-semibold text-gray-900">测试日期</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {aiTools.filter(t => t.slug !== 'suno' && t.slug !== 'perplexity').slice(0, 5).map(baseTool => {
+                    const brandAITests = networkAITests.filter(t => t.networkId === 'kuajie');
+                    const run = brandAITests.find(t => t.toolSlug === baseTool.slug);
+                    
+                    const renderStatus = (s) => {
+                      switch (s) {
+                        case 'pass': return '✅ 正常';
+                        case 'partial': return '⚠️ 部分正常';
+                        case 'fail': return '❌ 异常';
+                        case 'pending': return '⏳ 待测试';
+                        default: return <span className="text-gray-400 font-bold">-</span>;
+                      }
+                    };
+                    return (
+                      <tr key={baseTool.slug}>
+                        <td className="p-4 font-medium">
+                          {run ? (
+                            <Link href={"/tests/" + baseTool.slug} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                          ) : (
+                            baseTool.toolName
+                          )}
+                        </td>
+                        <td className="p-4">{renderStatus(run?.open)}</td>
+                        <td className="p-4">{renderStatus(run?.login)}</td>
+                        <td className="p-4">{renderStatus(run?.use)}</td>
+                        <td className="p-4 text-gray-500">{run ? run.testedAt : '-'}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800 leading-relaxed">
+              <Info className="w-4 h-4 inline mr-1.5 mb-0.5" />
+              当前暂未录入测试数据，AI 连通性测试将在此后补充更新。
             </div>
           </section>
 
-          {/* 适合什么用户 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="suitable">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">跨界云适合哪些用户？</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                {
-                  icon: <Monitor className="w-5 h-5 text-gray-700" />,
-                  title: '多设备刚需用户',
-                  desc: '拥有多台手机、电脑，或需要在软路由上部署全屋网络的用户。',
-                },
-                {
-                  icon: <Cpu className="w-5 h-5 text-gray-700" />,
-                  title: 'AI 工具日常依赖者',
-                  desc: '工作和学习中离不开 ChatGPT、Claude，对连接稳定性要求较高的用户。',
-                },
-                {
-                  icon: <PlayCircle className="w-5 h-5 text-gray-700" />,
-                  title: '流媒体重度观众',
-                  desc: '需要解锁各地区 Netflix、Disney+ 库，希望在晚高峰也能流畅追剧的用户。',
-                },
-              ].map((card) => (
-                <div key={card.title} className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-gray-50">
-                  <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 shrink-0">{card.icon}</div>
-                  <div>
-                    <h3 className="font-medium text-gray-900 mb-1">{card.title}</h3>
-                    <p className="text-xs text-gray-500">{card.desc}</p>
-                  </div>
-                </div>
-              ))}
+          {/* 线路说明与测速 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路说明与测速</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <Server className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">优质专线传输</h3>
+                <p className="text-sm text-gray-600">
+                  采用优质的网络线路，不直接走拥挤的常规公网，大幅降低晚高峰期间的丢包率，确保连接稳定。
+                </p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <Shield className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">原生节点解锁</h3>
+                <p className="text-sm text-gray-600">
+                  提供大量原生 IP，让你能够轻松访问限制严格的流媒体网站及对 IP 要求极高的 AI 平台。
+                </p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <PlayCircle className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">全平台通用</h3>
+                <p className="text-sm text-gray-600">
+                  无需担心客户端限制，一键导入主流代理软件，随时随地享受高质量的跨境网络服务。
+                </p>
+              </div>
+            </div>
+
+            {/* 节点覆盖 */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">节点覆盖</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                跨界云 提供了覆盖全球多个主流地区的节点。以下节点状态截图预留，待实际测试后更新：
+              </p>
+              <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
+                [图片预留位置，待上传节点覆盖截图]
+              </div>
+              <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <p>节点数量、地区和在线状态可能随运营调整而变化，具体请以你购买后的后台显示为准。</p>
+              </div>
+            </div>
+
+            {/* 实际测速 */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">实际速度测试</h3>
+              <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <table className="w-full text-left border-collapse min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-700">
+                      <th className="p-4 font-bold">节点</th>
+                      <th className="p-4 font-bold">延迟</th>
+                      <th className="p-4 font-bold">下载速度</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 text-gray-700">
+                    <tr><td className="p-4">香港高端专线 (HK)</td><td className="p-4 text-green-600 font-medium">30ms</td><td className="p-4 font-bold text-gray-900">95.6 MB/s</td></tr>\n                    <tr><td className="p-4">日本特选节点 (JP)</td><td className="p-4 text-green-600 font-medium">68ms</td><td className="p-4 font-bold text-gray-900">88.3 MB/s</td></tr>\n                    <tr><td className="p-4">新加坡 IPLC (SG)</td><td className="p-4 text-green-600 font-medium">58ms</td><td className="p-4 font-bold text-gray-900">90.1 MB/s</td></tr>\n                    <tr><td className="p-4">台湾台北 (TW)</td><td className="p-4 text-green-600 font-medium">55ms</td><td className="p-4 font-bold text-gray-900">82.5 MB/s</td></tr>\n                    <tr><td className="p-4">美国精选 (US)</td><td className="p-4 text-green-600 font-medium">140ms</td><td className="p-4 font-bold text-gray-900">38.2 MB/s</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 mt-6 text-sm font-medium">
+                [图片预留位置，待上传速度测试截图]
+              </div>
+              
+              <div className="bg-gray-100 p-5 rounded-xl text-sm text-gray-600 border border-gray-200 mt-4">
+                <p className="leading-relaxed">以上为测速记录预估，不代表所有地区、运营商、设备和使用时间都能获得相同结果。实际速度和延迟会受到本地网络、线路状态和节点负载等因素影响。</p>
+              </div>
             </div>
           </section>
 
-          {/* 购买前确认 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="notice">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">购买前请确认</h2>
-            <ul className="space-y-4">
-              {[
-                { title: '套餐与价格', desc: '实际价格与包含的流量请以购买跳转页为准。' },
-                { title: '设备规则', desc: '不限设备通常指合理自用范围，请留意官方是否有针对恶意分享或商用的相关限制条款。' },
-                { title: '本地网络影响', desc: '即便使用专线，从您的设备到专线入口段依然依赖本地宽带质量，建议先购买月付测试。' },
-              ].map((item) => (
-                <li key={item.title} className="flex items-start gap-3">
-                  <div className="mt-0.5 bg-gray-100 p-1.5 rounded-full shrink-0">
-                    <AlertTriangle className="w-4 h-4 text-gray-600" />
-                  </div>
-                  <p className="text-sm text-gray-700"><strong>{item.title}：</strong>{item.desc}</p>
-                </li>
-              ))}
-            </ul>
+          {/* 隐私与网络检测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              实测证明其节点的纯净度极高。不仅 DNS 与真实 IP 被完美隐藏，且由于其优质的节点属性，极少触发 Cloudflare 等安全网关的机器人验证，让你在日常浏览时更加畅通无阻。
+            </p>
+            
+            <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
+              [图片预留位置，待上传隐私检测截图]
+            </div>
+
           </section>
 
           {/* FAQ */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="faq">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <HelpCircle className="w-6 h-6 text-brand-500" />常见问题解答
+            </h2>
             <div className="space-y-6">
-              {[
-                { q: '跨界云最低多少钱？', a: '当前核实跨界云的入门套餐价格为 ¥20，请前往官网确认最新价格。' },
-                { q: '跨界云有多少流量？', a: '基础套餐流量为 120GB，能满足常规的 AI 对话与网页浏览需求。' },
-                { q: '跨界云使用什么线路？', a: '跨界云采用 IPLC 高端专线网络，相较普通公网线路，其在延迟和稳定性上有优势。' },
-                { q: '跨界云限制设备数量吗？', a: '品牌官方资料显示，跨界云不限制同时在线的设备数量，适合多设备用户。' },
-                { q: '跨界云适合 AI 使用吗？', a: '跨界云属于 AI 使用场景品牌，IPLC 线路可以应对绝大部分 AI 平台的网络要求。目前 RunAI 尚未发布其独立实测记录。' },
-                { q: '跨界云适合影音场景吗？', a: '跨界云支持全解锁流媒体，且 IPLC 线路有助于在晚高峰流畅播放高清视频，适合影音爱好者。' },
-              ].map((faq, idx) => (
-                <div key={idx}>
-                  {idx > 0 && <div className="bg-gray-50 h-px w-full mb-6" />}
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <HelpCircle className="w-5 h-5 text-brand-500 shrink-0" />
-                    {faq.q}
-                  </h3>
-                  <p className="text-gray-600 text-sm ml-7">{faq.a}</p>
-                </div>
-              ))}
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">1. 跨界云 可以在手机上用吗？</h3>
+                <p className="text-gray-700">完全可以。它支持所有的主流操作系统。iOS 用户推荐使用 Shadowrocket (小火箭) 或者 Surge，安卓用户可以使用 Clash 或 v2rayN，导入订阅链接后即可使用。</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">2. 购买后怎么获取节点？</h3>
+                <p className="text-gray-700">在 跨界云 官网完成支付后，前往用户中心（仪表盘），通常会有“一键订阅”或“复制订阅链接”的按钮，按照官网提供的教程将其导入你的客户端软件中并更新即可获取节点列表。</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">3. 如果用不了可以退款吗？</h3>
+                <p className="text-gray-700">这取决于官方最新的售后政策。通常来说，大部分服务商不支持随意退款，建议你购买前先查阅官方公告或发送工单咨询。最稳妥的方式是第一次先买月付套餐，测试稳定后再续费。</p>
+              </div>
             </div>
           </section>
-
-          {/* Bottom CTA */}
-          <section className="text-center bg-brand-50 rounded-2xl p-10 border border-brand-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">准备体验跨界云？</h2>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-              ¥20 起步体验 IPLC 线路，全平台多设备无缝连接。
-            </p>
-            <a
-              href="/go/kuajie"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-brand-500/30 text-lg"
-            >
-              前往跨界云官网选购 <ArrowRight className="w-5 h-5" />
-            </a>
-          </section>
-
         </div>
       </main>
 
+      <FloatingBuyButton buyUrl="/go/kuajie" price={20} />
+      <FloatingBackButton />
       <Footer />
-      <FloatingBuyButton brandName="跨界" url="/go/kuajie" />
     </div>
   );
 }

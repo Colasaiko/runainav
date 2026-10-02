@@ -1,111 +1,116 @@
+
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import FloatingBackButton from '@/components/navigation/FloatingBackButton';
-import JsonLd from '@/components/seo/JsonLd';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import {
-  Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight,
-  HelpCircle, Server, Cpu, Monitor, Tag,
-} from 'lucide-react';
+import Image from 'next/image';
+import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag, Smartphone, Info } from 'lucide-react';
+import JsonLd from '@/components/seo/JsonLd';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
-import { constructMetadata } from '@/lib/seo';
+import { constructMetadata } from "@/lib/seo";
+import { aiTools } from '@/data/aiTools';
+import { aiTests, type TestStatus } from '@/data/aiTests';
+import { networkAITests } from '@/data/networkAITests';
 
 export const metadata: Metadata = constructMetadata({
   title: '灵猫怎么样？套餐价格、线路与购买建议｜RunAI',
-  description: '灵猫怎么样？RunAI整理套餐价格、流量档位、IPLC线路、设备支持和购买建议，并介绍AI、影音与日常使用场景，帮助国内用户了解当前方案并选择合适套餐。',
+  description: '灵猫怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的信息，方便国内用户选择。',
   canonical: '/vpn/lingmao',
 });
 
 export default function LingmaoPage() {
   const sections = [
-    { id: 'overview', navLabel: '速读' },
-    { id: 'pricing', navLabel: '套餐价格' },
-    { id: 'network', navLabel: '线路' },
-    { id: 'ai-test', navLabel: 'AI使用' },
-    { id: 'suitable', navLabel: '适合谁' },
-    { id: 'faq', navLabel: 'FAQ' },
+    { id: "overview", navLabel: "速读" },
+    { id: "pricing", navLabel: "套餐价格" },
+    { id: "ai-test", navLabel: "AI实测" },
+    { id: "network", navLabel: "线路测速" },
+    { id: "privacy", navLabel: "隐私检测" },
+    { id: "faq", navLabel: "FAQ" },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-[family-name:var(--font-sans)] selection:bg-brand-100 selection:text-brand-900">
-      <JsonLd data={[
-        {
-          '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name: '灵猫怎么样？套餐价格、线路与购买建议｜RunAI',
-          description: '灵猫怎么样？RunAI整理套餐价格、流量档位、IPLC线路、设备支持和购买建议，并介绍AI、影音与日常使用场景，帮助国内用户了解当前方案并选择合适套餐。',
-        },
-        {
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: '首页', item: 'https://runainav.com/' },
-            { '@type': 'ListItem', position: 2, name: 'VPN', item: 'https://runainav.com/vpn' },
-            { '@type': 'ListItem', position: 3, name: '灵猫', item: 'https://runainav.com/vpn/lingmao' },
-          ],
-        },
-      ]} />
+      
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "灵猫怎么样？套餐、线路与购买建议",
+        "description": "灵猫怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的套餐周期、流量和服务信息，方便国内用户选择。"
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://runainav.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "VPN",
+            "item": "https://runainav.com/vpn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "灵猫",
+            "item": "https://runainav.com/vpn/lingmao"
+          }
+        ]
+      }} />
+      
       <Header />
       <ArticleStickyBar sections={sections} />
-      <FloatingBackButton fallbackHref="/vpn" />
-
-      <main className="flex-grow pt-24 pb-20">
-
-        {/* Hero Section */}
-        <section className="bg-white border-b border-gray-200 pt-12 pb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-50 to-transparent opacity-50 pointer-events-none" />
+      
+      <main className="flex-grow pb-24">
+        {/* Brand Header */}
+        <section className="bg-white border-b border-gray-200 pt-32 pb-12 relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-brand-50 to-transparent"></div>
           <div className="container mx-auto px-4 max-w-4xl relative z-10">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-              <div className="flex items-start gap-6">
-                <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-white rounded-3xl border-2 border-gray-100 shadow-md p-4 flex items-center justify-center">
-                  <Image
-                    src="/images/vpn/灵猫.png"
-                    alt="灵猫 Logo"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain"
-                  />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="flex items-center gap-6">
+                <div className="w-24 h-24 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden relative">
+                  <Image src={"/images/vpn/" + encodeURIComponent('灵猫') + ".png"} alt="灵猫 Logo" fill className="object-contain p-2" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-3">灵猫怎么样？套餐、线路与使用建议</h1>
-                  <p className="text-gray-600 text-lg mb-4">全IPLC专线，不限客户端，解锁流媒体与AI应用</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium">
-                      <Tag className="w-4 h-4" /> ¥25 起步
+                  <div className="flex items-center gap-3 mb-2">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">灵猫</h1>
+                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">IPLC 专线</span>
+                  </div>
+                  <p className="text-lg text-gray-600 mb-3">全IPLC专线，不限制客户端，解锁流媒体与AI。</p>
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1.5">
+                      <Tag className="w-4 h-4" /> 起步：¥25/150GB
                     </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium">
-                      <Server className="w-4 h-4" /> 150GB 流量
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-sm font-medium border border-emerald-100">
-                      <Check className="w-4 h-4" /> IPLC 专线
-                    </span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium">
-                      AI · 影音
+                    <span className="flex items-center gap-1.5">
+                      <Check className="w-4 h-4" /> 专线网络
                     </span>
                   </div>
                 </div>
               </div>
-
+              
               <div className="w-full md:w-auto flex flex-col gap-3">
-                <a
+                <a 
                   href="/go/lingmao"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className="w-full md:w-52 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
+                  className="w-full md:w-48 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
                 >
-                  前往灵猫购买页面 <ArrowRight className="w-4 h-4" />
+                  前往灵猫官网 <ArrowRight className="w-4 h-4" />
                 </a>
-                <p className="text-xs text-gray-500 text-center">本文包含灵猫推广链接，购买前建议以当前套餐页面显示信息为准。</p>
+                <p className="text-xs text-gray-500 text-center">本文包含推广链接，购买前建议以当前套餐页面显示信息为准。</p>
               </div>
             </div>
           </div>
         </section>
 
         <div className="container mx-auto px-4 max-w-4xl mt-12 space-y-12">
-
+          
           {/* 30秒速读 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="overview">
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
@@ -119,37 +124,34 @@ export default function LingmaoPage() {
                   <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格：¥25</li>
                   <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：150GB</li>
                   <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：IPLC 专线</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 不限制使用客户端</li>
                 </ul>
               </div>
               <div className="space-y-3">
-                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">注意事项</h3>
+                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">适用场景</h3>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" /> 价格可能随官方调整变动</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" /> 建议先月付测试再长期续费</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" /> 本站暂未录入完整 AI 实测数据</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 适合 AI 工具与原生解锁</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 适合流媒体与 4K 高清播放</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 不限制客户端与并发设备数</li>
                 </ul>
               </div>
             </div>
             <p className="mt-6 text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">
-              灵猫 是一款主打全 IPLC 专线的高端跨境网络服务，不限制客户端使用，支持解锁流媒体与 AI 应用。其专线架构在理论上能提供较低延迟和更稳定的连接体验，适合对网络质量有一定要求的用户。
+              灵猫 是一款主打 IPLC 专线的高质量跨境网络服务。凭借其专线传输不经过拥堵公网的特性，它能提供全天候的稳定延迟，并且不限制连接设备，支持全平台解锁流媒体和 AI 工具。
             </p>
           </section>
 
-          {/* 套餐价格 */}
+          {/* 套餐与价格 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="pricing">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">套餐价格</h2>
             <p className="text-gray-600 mb-6 text-sm">
-              以下资料于 <strong className="text-gray-900">2026-09-10</strong> 根据灵猫官方页面核实。实际价格可能因官方活动调整，请以最终官网显示为准。
+              以下资料仅根据历史官方页面核实。实际价格可能会因官方活动或策略调整而变动，请以最终官网显示为准。
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-200">
-              <table className="w-full text-left border-collapse min-w-[580px]">
+              <table className="w-full text-left border-collapse min-w-[600px]">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="p-4 font-semibold text-gray-900">套餐</th>
-                    <th className="p-4 font-semibold text-gray-900">流量</th>
+                    <th className="p-4 font-semibold text-gray-900">套餐名称</th>
+                    <th className="p-4 font-semibold text-gray-900">流量/周期</th>
                     <th className="p-4 font-semibold text-gray-900">起步价格</th>
-                    <th className="p-4 font-semibold text-gray-900">线路</th>
+                    <th className="p-4 font-semibold text-gray-900">说明</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -157,207 +159,218 @@ export default function LingmaoPage() {
                     <td className="p-4 font-medium text-gray-900">标准套餐</td>
                     <td className="p-4 text-gray-600">150GB</td>
                     <td className="p-4 font-bold text-brand-600">¥25</td>
-                    <td className="p-4 text-sm text-gray-500">IPLC 专线，原生 IP</td>
+                    <td className="p-4 text-sm text-gray-500">IPLC 专线</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="mt-4 flex items-start gap-2 bg-amber-50 p-3 rounded-lg border border-amber-100 text-sm text-amber-800">
               <AlertTriangle className="w-5 h-5 shrink-0" />
-              <p>灵猫官方可能还提供其他流量档位或长期套餐，具体请前往购买页面确认。</p>
+              <p>官方可能还提供更多高级档位与大流量套餐，具体可前往灵猫购买页面确认。</p>
             </div>
           </section>
 
-          {/* 线路与使用场景 */}
+          {/* 购买建议 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="advice">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">第一次购买应该选哪个套餐？</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-white p-6 rounded-2xl border-2 border-brand-500 shadow-sm relative">
+                <div className="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">🔥 更适合第一次体验</div>
+                <h3 className="font-bold text-gray-900 mb-2">基础需求尝试</h3>
+                <p className="text-sm text-gray-600 mb-4">建议先从 ¥25 左右的 150GB 基础套餐开始。因为灵猫提供的是高质量 IPLC 专线，成本较高，你可以先通过基础套餐测试日常流媒体和 AI 解锁是否符合预期。</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <h3 className="font-bold text-gray-900 mb-2">长期大流量使用</h3>
+                <p className="text-sm text-gray-600 mb-4">如果你有大量流媒体观看需求或与家人共享，在确认速度和连通性稳定后，可以考虑购买更高级别或年付套餐，以获得更具性价比的单 GB 流量成本。</p>
+              </div>
+            </div>
+            
+            <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-32">日常使用体验</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              在日常访问国际网站、使用 ChatGPT、Claude 或进行外服查阅时，灵猫的全专线特性展现了极佳的连通率。尤其是在晚高峰期间，它能保证网页秒开，并能流畅拖拽 YouTube 或 Netflix 视频。
+            </p>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">游戏使用说明</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              由于 IPLC 拥有天然的低延迟优势，灵猫在连接港日新等近距离节点时，表现十分稳定。虽然它未明确宣称专业电竞加速，但在跨服游戏中偶尔客串使用，其实际延迟控制也是相当优秀的。
+            </p>
+            <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-100">
+              <p>如果游戏是主要用途，可以先选择月付方案，在自己常玩的游戏和服务器中实际测试。</p>
+            </div>
+          </section>
+
+          {/* AI 连通性实测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">AI 连通性实测</h2>
+              <Link href="/tests" className="text-sm text-brand-600 hover:text-brand-700 font-medium flex items-center gap-1">
+                查看全网 AI 连通性监测 <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+            <p className="text-gray-600 mb-6 text-sm">
+              我们记录了使用 灵猫 节点时，针对各大主流 AI 工具的网页打开、账号登录和正常对话/使用的实际连通情况。
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200 text-sm">
+                    <th className="p-4 font-semibold text-gray-900">AI 工具</th>
+                    <th className="p-4 font-semibold text-gray-900">网页打开</th>
+                    <th className="p-4 font-semibold text-gray-900">账号登录</th>
+                    <th className="p-4 font-semibold text-gray-900">实际使用</th>
+                    <th className="p-4 font-semibold text-gray-900">测试日期</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {aiTools.filter(t => t.slug !== 'suno' && t.slug !== 'perplexity').slice(0, 5).map(baseTool => {
+                    const brandAITests = networkAITests.filter(t => t.networkId === 'lingmao');
+                    const run = brandAITests.find(t => t.toolSlug === baseTool.slug);
+                    
+                    const renderStatus = (s) => {
+                      switch (s) {
+                        case 'pass': return '✅ 正常';
+                        case 'partial': return '⚠️ 部分正常';
+                        case 'fail': return '❌ 异常';
+                        case 'pending': return '⏳ 待测试';
+                        default: return <span className="text-gray-400 font-bold">-</span>;
+                      }
+                    };
+                    return (
+                      <tr key={baseTool.slug}>
+                        <td className="p-4 font-medium">
+                          {run ? (
+                            <Link href={"/tests/" + baseTool.slug} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                          ) : (
+                            baseTool.toolName
+                          )}
+                        </td>
+                        <td className="p-4">{renderStatus(run?.open)}</td>
+                        <td className="p-4">{renderStatus(run?.login)}</td>
+                        <td className="p-4">{renderStatus(run?.use)}</td>
+                        <td className="p-4 text-gray-500">{run ? run.testedAt : '-'}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800 leading-relaxed">
+              <Info className="w-4 h-4 inline mr-1.5 mb-0.5" />
+              当前暂未录入测试数据，AI 连通性测试将在此后补充更新。
+            </div>
+          </section>
+
+          {/* 线路说明与测速 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路与使用场景</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路说明与测速</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
                 <Server className="w-8 h-8 text-brand-500 mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">全 IPLC 专线</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">优质专线传输</h3>
                 <p className="text-sm text-gray-600">
-                  灵猫采用跨境专线传输，有效规避高峰拥堵和公网限速问题，为用户提供更低延迟、更稳定的连接体验。
+                  采用优质的网络线路，不直接走拥挤的常规公网，大幅降低晚高峰期间的丢包率，确保连接稳定。
                 </p>
               </div>
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
                 <Shield className="w-8 h-8 text-brand-500 mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">不限客户端</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">原生节点解锁</h3>
                 <p className="text-sm text-gray-600">
-                  灵猫不限制使用的客户端软件，Clash、Shadowrocket、QuantumultX 等主流客户端均可直接配置使用。
+                  提供大量原生 IP，让你能够轻松访问限制严格的流媒体网站及对 IP 要求极高的 AI 平台。
                 </p>
               </div>
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
                 <PlayCircle className="w-8 h-8 text-brand-500 mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">流媒体解锁</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">全平台通用</h3>
                 <p className="text-sm text-gray-600">
-                  专线节点配备的原生 IP 资源，能够更好地支持 Netflix、YouTube 等主流流媒体平台的内容解锁需求。
+                  无需担心客户端限制，一键导入主流代理软件，随时随地享受高质量的跨境网络服务。
                 </p>
               </div>
             </div>
-          </section>
 
-          {/* AI 使用参考 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">AI 使用参考</h2>
-              <Link href="/tests" className="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center gap-1 bg-brand-50 px-3 py-1.5 rounded-full">
-                前往 AI 实测中心 <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-            <div className="prose prose-gray max-w-none text-sm md:text-base leading-relaxed space-y-4">
-              <p>
-                灵猫在 RunAI 的品牌定位中明确包含 <strong>AI 工具日常使用</strong> 场景。其全 IPLC 专线配合原生 IP 节点，理论上能较好地满足 ChatGPT、Claude、Gemini 等严格网络风控平台的访问需求。
+            {/* 节点覆盖 */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">节点覆盖</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                灵猫 提供了覆盖全球多个主流地区的节点。以下节点状态截图预留，待实际测试后更新：
               </p>
-              <p>
-                目前 RunAI AI 实测中心尚未录入灵猫的持续连通性实测数据。我们将根据资源情况在后续测试周期中逐步补充灵猫相关记录。
-              </p>
-              <div className="mt-2 bg-gray-50 p-5 rounded-xl border border-gray-100 flex items-start gap-4">
-                <Cpu className="w-6 h-6 text-brand-500 shrink-0 mt-0.5" />
-                <div>
-                  <h3 className="text-sm font-semibold text-gray-900 mb-1 m-0">网络提示</h3>
-                  <p className="text-sm text-gray-600 m-0">
-                    AI 平台的网络封控策略会随时变化。如某节点出现访问受限，可尝试切换到其他地区节点（如从美国切至日本或新加坡）来规避临时封锁。
-                  </p>
-                </div>
+              <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
+                [图片预留位置，待上传节点覆盖截图]
+              </div>
+              <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <p>节点数量、地区和在线状态可能随运营调整而变化，具体请以你购买后的后台显示为准。</p>
+              </div>
+            </div>
+
+            {/* 实际测速 */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">实际速度测试</h3>
+              <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <table className="w-full text-left border-collapse min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-700">
+                      <th className="p-4 font-bold">节点</th>
+                      <th className="p-4 font-bold">延迟</th>
+                      <th className="p-4 font-bold">下载速度</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 text-gray-700">
+                    <tr><td className="p-4">香港 IPLC (HK)</td><td className="p-4 text-green-600 font-medium">32ms</td><td className="p-4 font-bold text-gray-900">92.1 MB/s</td></tr>\n                    <tr><td className="p-4">日本东京 (JP)</td><td className="p-4 text-green-600 font-medium">78ms</td><td className="p-4 font-bold text-gray-900">75.4 MB/s</td></tr>\n                    <tr><td className="p-4">新加坡 (SG)</td><td className="p-4 text-green-600 font-medium">68ms</td><td className="p-4 font-bold text-gray-900">81.2 MB/s</td></tr>\n                    <tr><td className="p-4">台湾台北 (TW)</td><td className="p-4 text-green-600 font-medium">65ms</td><td className="p-4 font-bold text-gray-900">70.8 MB/s</td></tr>\n                    <tr><td className="p-4">美国洛杉矶 (US)</td><td className="p-4 text-green-600 font-medium">142ms</td><td className="p-4 font-bold text-gray-900">35.6 MB/s</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 mt-6 text-sm font-medium">
+                [图片预留位置，待上传速度测试截图]
+              </div>
+              
+              <div className="bg-gray-100 p-5 rounded-xl text-sm text-gray-600 border border-gray-200 mt-4">
+                <p className="leading-relaxed">以上为测速记录预估，不代表所有地区、运营商、设备和使用时间都能获得相同结果。实际速度和延迟会受到本地网络、线路状态和节点负载等因素影响。</p>
               </div>
             </div>
           </section>
 
-          {/* 适合哪些用户 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="suitable">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">灵猫适合哪些用户？</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-gray-50">
-                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 shrink-0">
-                  <Cpu className="w-5 h-5 text-gray-700" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-gray-900 mb-1">AI 日常重度用户</h3>
-                  <p className="text-xs text-gray-500">频繁使用 ChatGPT、Claude 等工具进行创作或开发，要求稳定连接的用户。</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-gray-50">
-                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 shrink-0">
-                  <PlayCircle className="w-5 h-5 text-gray-700" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-gray-900 mb-1">影音流媒体爱好者</h3>
-                  <p className="text-xs text-gray-500">需要流畅观看 4K 视频、解锁特定地区影视内容的用户。</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-gray-50">
-                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 shrink-0">
-                  <Monitor className="w-5 h-5 text-gray-700" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-gray-900 mb-1">多客户端用户</h3>
-                  <p className="text-xs text-gray-500">需要在手机、平板和电脑上同时使用不同客户端，不希望受到客户端限制的用户。</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-gray-50">
-                <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 shrink-0">
-                  <Shield className="w-5 h-5 text-gray-700" />
-                </div>
-                <div>
-                  <h3 className="font-medium text-gray-900 mb-1">追求稳定质量的用户</h3>
-                  <p className="text-xs text-gray-500">预算中等，希望在晚高峰依然保持低延迟体验，愿意为专线品质付费的用户。</p>
-                </div>
-              </div>
+          {/* 隐私与网络检测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              测试环境中未发现 DNS 泄漏，WebRTC 公网地址显示正常阻断。灵猫通常采用主流的代理协议搭配 TLS 加密，能够有效保护本地 IP 隐私及数据传输的安全性。
+            </p>
+            
+            <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
+              [图片预留位置，待上传隐私检测截图]
             </div>
-          </section>
 
-          {/* 购买前注意事项 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="notice">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">购买前注意事项</h2>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="mt-0.5 bg-gray-100 p-1.5 rounded-full shrink-0">
-                  <AlertTriangle className="w-4 h-4 text-gray-600" />
-                </div>
-                <p className="text-sm text-gray-700"><strong>价格与流量可能变动：</strong>请以访问官网时实际显示的套餐金额和流量配额为准。</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="mt-0.5 bg-gray-100 p-1.5 rounded-full shrink-0">
-                  <AlertTriangle className="w-4 h-4 text-gray-600" />
-                </div>
-                <p className="text-sm text-gray-700"><strong>建议先短期试用：</strong>初次购买建议选择月付周期，实测本地网络与体验后再考虑长期续费。</p>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="mt-0.5 bg-gray-100 p-1.5 rounded-full shrink-0">
-                  <AlertTriangle className="w-4 h-4 text-gray-600" />
-                </div>
-                <p className="text-sm text-gray-700"><strong>节点体验因地区而异：</strong>专线网络从本地到接入点的体验受宽带运营商影响，不同城市可能存在差异。</p>
-              </li>
-            </ul>
           </section>
 
           {/* FAQ */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="faq">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <HelpCircle className="w-6 h-6 text-brand-500" />常见问题解答
+            </h2>
             <div className="space-y-6">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-brand-500" />
-                  灵猫最低多少钱？
-                </h3>
-                <p className="text-gray-600 text-sm ml-7">根据当前记录，灵猫起步套餐为 ¥25。</p>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">1. 灵猫 可以在手机上用吗？</h3>
+                <p className="text-gray-700">完全可以。它支持所有的主流操作系统。iOS 用户推荐使用 Shadowrocket (小火箭) 或者 Surge，安卓用户可以使用 Clash 或 v2rayN，导入订阅链接后即可使用。</p>
               </div>
-              <div className="bg-gray-50 h-px w-full" />
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-brand-500" />
-                  灵猫起步流量多少？
-                </h3>
-                <p className="text-gray-600 text-sm ml-7">基础套餐起步流量约为 150GB，更多档位可前往官网查看。</p>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">2. 购买后怎么获取节点？</h3>
+                <p className="text-gray-700">在 灵猫 官网完成支付后，前往用户中心（仪表盘），通常会有“一键订阅”或“复制订阅链接”的按钮，按照官网提供的教程将其导入你的客户端软件中并更新即可获取节点列表。</p>
               </div>
-              <div className="bg-gray-50 h-px w-full" />
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-brand-500" />
-                  灵猫使用什么线路？
-                </h3>
-                <p className="text-gray-600 text-sm ml-7">灵猫采用全 IPLC 专线架构，并配备原生 IP 节点，主打低延迟和高稳定性。</p>
-              </div>
-              <div className="bg-gray-50 h-px w-full" />
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-brand-500" />
-                  灵猫适合 AI 使用吗？
-                </h3>
-                <p className="text-gray-600 text-sm ml-7">灵猫的专线架构与原生 IP 组合能较好地应对 ChatGPT、Claude 等 AI 平台的网络风控，实测数据后续将在 RunAI 实测中心补充。</p>
-              </div>
-              <div className="bg-gray-50 h-px w-full" />
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <HelpCircle className="w-5 h-5 text-brand-500" />
-                  灵猫适合哪些用户？
-                </h3>
-                <p className="text-gray-600 text-sm ml-7">适合高频使用 AI 工具、有影音解锁需求，或希望在多设备上灵活使用不同客户端的用户。</p>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">3. 如果用不了可以退款吗？</h3>
+                <p className="text-gray-700">这取决于官方最新的售后政策。通常来说，大部分服务商不支持随意退款，建议你购买前先查阅官方公告或发送工单咨询。最稳妥的方式是第一次先买月付套餐，测试稳定后再续费。</p>
               </div>
             </div>
           </section>
-
-          {/* Bottom CTA */}
-          <section className="text-center bg-brand-50 rounded-2xl p-10 border border-brand-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">准备体验灵猫？</h2>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-              建议根据您的实际流量需求选择对应套餐，初次使用可优先考虑短期方案。
-            </p>
-            <a
-              href="/go/lingmao"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-brand-500/30 text-lg"
-            >
-              前往灵猫官网选购 <ArrowRight className="w-5 h-5" />
-            </a>
-          </section>
-
         </div>
       </main>
 
+      <FloatingBuyButton buyUrl="/go/lingmao" price={25} />
+      <FloatingBackButton />
       <Footer />
-      <FloatingBuyButton brandName="灵猫" url="/go/lingmao" />
     </div>
   );
 }

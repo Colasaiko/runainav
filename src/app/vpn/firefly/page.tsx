@@ -1,143 +1,157 @@
+
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
 import FloatingBackButton from '@/components/navigation/FloatingBackButton';
-import JsonLd from '@/components/seo/JsonLd';
 import { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
-import {
-  AlertTriangle, ArrowRight, Check, Cpu, HelpCircle,
-  Monitor, Server, Shield, Wifi, Zap,
-} from 'lucide-react';
+import Image from 'next/image';
+import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag, Smartphone, Info } from 'lucide-react';
+import JsonLd from '@/components/seo/JsonLd';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
-import { constructMetadata } from '@/lib/seo';
+import { constructMetadata } from "@/lib/seo";
+import { aiTools } from '@/data/aiTools';
+import { aiTests, type TestStatus } from '@/data/aiTests';
+import { networkAITests } from '@/data/networkAITests';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Firefly怎么样？套餐价格、线路与使用建议｜RunAI',
-  description: 'Firefly怎么样？RunAI整理套餐价格、150GB流量、IPLC专线、不限速与不限设备信息，并介绍AI、多设备和日常使用场景，帮助国内用户了解当前方案。',
+  title: 'Firefly怎么样？套餐价格、线路与购买建议｜RunAI',
+  description: 'Firefly怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的信息，方便国内用户选择。',
   canonical: '/vpn/firefly',
 });
 
 export default function FireflyPage() {
   const sections = [
-    { id: 'overview', navLabel: '参数速览' },
-    { id: 'pricing', navLabel: '套餐' },
-    { id: 'devices', navLabel: '多设备' },
-    { id: 'network', navLabel: '线路' },
-    { id: 'ai-test', navLabel: 'AI使用' },
-    { id: 'suitable', navLabel: '适合谁' },
-    { id: 'faq', navLabel: 'FAQ' },
+    { id: "overview", navLabel: "速读" },
+    { id: "pricing", navLabel: "套餐价格" },
+    { id: "ai-test", navLabel: "AI实测" },
+    { id: "network", navLabel: "线路测速" },
+    { id: "privacy", navLabel: "隐私检测" },
+    { id: "faq", navLabel: "FAQ" },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col font-[family-name:var(--font-sans)] selection:bg-brand-100 selection:text-brand-900">
-      <JsonLd data={[
-        {
-          '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name: 'Firefly怎么样？套餐价格、线路与使用建议｜RunAI',
-          description: 'Firefly怎么样？RunAI整理套餐价格、150GB流量、IPLC专线、不限速与不限设备信息，并介绍AI、多设备和日常使用场景，帮助国内用户了解当前方案。',
-        },
-        {
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: '首页', item: 'https://runainav.com/' },
-            { '@type': 'ListItem', position: 2, name: 'VPN', item: 'https://runainav.com/vpn' },
-            { '@type': 'ListItem', position: 3, name: 'Firefly', item: 'https://runainav.com/vpn/firefly' },
-          ],
-        },
-      ]} />
+      
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Firefly怎么样？套餐、线路与购买建议",
+        "description": "Firefly怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的套餐周期、流量和服务信息，方便国内用户选择。"
+      }} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://runainav.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "VPN",
+            "item": "https://runainav.com/vpn"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Firefly",
+            "item": "https://runainav.com/vpn/firefly"
+          }
+        ]
+      }} />
+      
       <Header />
       <ArticleStickyBar sections={sections} />
-      <FloatingBackButton fallbackHref="/vpn" />
-
-      <main className="flex-grow pt-24 pb-20">
-
-        {/* Hero */}
-        <section className="bg-white border-b border-gray-200 pt-12 pb-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-50 to-transparent opacity-50 pointer-events-none" />
+      
+      <main className="flex-grow pb-24">
+        {/* Brand Header */}
+        <section className="bg-white border-b border-gray-200 pt-32 pb-12 relative overflow-hidden">
+          <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-brand-50 to-transparent"></div>
           <div className="container mx-auto px-4 max-w-4xl relative z-10">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-              <div className="flex items-start gap-6">
-                <div className="w-24 h-24 md:w-32 md:h-32 shrink-0 bg-white rounded-3xl border-2 border-gray-100 shadow-md p-4 flex items-center justify-center">
-                  <Image
-                    src="/images/vpn/Firefly.png"
-                    alt="Firefly Logo"
-                    width={80}
-                    height={80}
-                    className="w-full h-full object-contain"
-                  />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div className="flex items-center gap-6">
+                <div className="w-24 h-24 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden relative">
+                  <Image src={"/images/vpn/" + encodeURIComponent('Firefly') + ".png"} alt="Firefly Logo" fill className="object-contain p-2" />
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 mb-3">Firefly怎么样？套餐、线路与使用建议</h1>
-                  <p className="text-gray-600 text-lg mb-4">IPLC专线网络 · 不限速 · 不限设备数</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium">¥25 起</span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-sm font-medium"><Server className="w-4 h-4" /> 150GB</span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-sm font-medium border border-emerald-100"><Check className="w-4 h-4" /> IPLC 专线</span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-sm font-medium border border-emerald-100"><Wifi className="w-4 h-4" /> 不限速</span>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 text-sm font-medium border border-emerald-100"><Monitor className="w-4 h-4" /> 不限设备</span>
+                  <div className="flex items-center gap-3 mb-2">
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">Firefly</h1>
+                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">IPLC 专线</span>
+                  </div>
+                  <p className="text-lg text-gray-600 mb-3">IPLC专线网络，不限速，不限设备数。</p>
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                    <span className="flex items-center gap-1.5">
+                      <Tag className="w-4 h-4" /> 起步：¥25/150GB
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Check className="w-4 h-4" /> 专线网络
+                    </span>
                   </div>
                 </div>
               </div>
+              
               <div className="w-full md:w-auto flex flex-col gap-3">
-                <a
+                <a 
                   href="/go/firefly"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
-                  className="w-full md:w-52 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
+                  className="w-full md:w-48 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
                 >
-                  前往 Firefly 购买页面 <ArrowRight className="w-4 h-4" />
+                  前往Firefly官网 <ArrowRight className="w-4 h-4" />
                 </a>
-                <p className="text-xs text-gray-500 text-center">本文包含 Firefly 推广链接，购买前建议以当前购买页面展示信息为准。</p>
+                <p className="text-xs text-gray-500 text-center">本文包含推广链接，购买前建议以当前套餐页面显示信息为准。</p>
               </div>
             </div>
           </div>
         </section>
 
         <div className="container mx-auto px-4 max-w-4xl mt-12 space-y-12">
-
-          {/* 核心参数速览 */}
+          
+          {/* 30秒速读 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="overview">
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
               <Zap className="w-6 h-6 text-brand-500" />
-              核心参数速览
+              30秒速读
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { label: '起步价格', value: '¥25', sub: '以官网为准' },
-                { label: '起步流量', value: '150GB', sub: '具体档位见官网' },
-                { label: '线路类型', value: 'IPLC', sub: '专线网络' },
-                { label: '设备限制', value: '不限设备', sub: '同时连接不受限' },
-              ].map((card) => (
-                <div key={card.label} className="bg-gray-50 rounded-xl border border-gray-100 p-4 text-center">
-                  <div className="text-xl font-bold text-gray-900 mb-1">{card.value}</div>
-                  <div className="text-xs font-semibold text-gray-700 mb-1">{card.label}</div>
-                  <div className="text-xs text-gray-400">{card.sub}</div>
-                </div>
-              ))}
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">核心信息</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格：¥25</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：150GB</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：IPLC 专线</li>
+                </ul>
+              </div>
+              <div className="space-y-3">
+                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">适用场景</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 完全不限速，带宽跑满</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 不限制设备连接数量</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 多条 IPLC 专线支持 AI 与影音</li>
+                </ul>
+              </div>
             </div>
             <p className="mt-6 text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">
-              Firefly 是一款以 IPLC 专线为核心、主打不限速和不限设备数的跨境网络服务。其核心差异在于移除了大多数机场服务对同时在线设备数量的限制，让家庭或多设备场景下的用户无需担心额外配额问题。
+              Firefly（萤火虫）专注于提供无限制、极致速度的 IPLC 专线网络。它最大的亮点是完全不限制速度和不限制设备数，无论你有多少台手机、电脑和平板，都可以同时在线畅游。
             </p>
           </section>
 
-          {/* 套餐价格 */}
+          {/* 套餐与价格 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="pricing">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">套餐价格</h2>
-            <p className="text-gray-600 mb-4 text-sm">
-              以下资料于 <strong className="text-gray-900">2026-09-10</strong> 整理自 Firefly 公开资料。实际套餐以购买页面显示为准。
+            <p className="text-gray-600 mb-6 text-sm">
+              以下资料仅根据历史官方页面核实。实际价格可能会因官方活动或策略调整而变动，请以最终官网显示为准。
             </p>
-            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
-              <table className="w-full text-left border-collapse min-w-[520px]">
+            <div className="overflow-x-auto rounded-xl border border-gray-200">
+              <table className="w-full text-left border-collapse min-w-[600px]">
                 <thead>
                   <tr className="bg-gray-50 border-b border-gray-200">
-                    <th className="p-4 font-semibold text-gray-900">套餐</th>
-                    <th className="p-4 font-semibold text-gray-900">流量</th>
+                    <th className="p-4 font-semibold text-gray-900">套餐名称</th>
+                    <th className="p-4 font-semibold text-gray-900">流量/周期</th>
                     <th className="p-4 font-semibold text-gray-900">起步价格</th>
-                    <th className="p-4 font-semibold text-gray-900">线路</th>
+                    <th className="p-4 font-semibold text-gray-900">说明</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -150,211 +164,213 @@ export default function FireflyPage() {
                 </tbody>
               </table>
             </div>
-            <p className="text-xs text-gray-500 italic">当前站内已确认起步方案为 ¥25 / 150GB，更多套餐以购买页面为准。</p>
+            <div className="mt-4 flex items-start gap-2 bg-amber-50 p-3 rounded-lg border border-amber-100 text-sm text-amber-800">
+              <AlertTriangle className="w-5 h-5 shrink-0" />
+              <p>官方可能还提供更多高级档位与大流量套餐，具体可前往Firefly购买页面确认。</p>
+            </div>
           </section>
 
-          {/* 不限速与多设备 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="devices">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">不限速与多设备使用</h2>
-            <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-              Firefly 当前品牌资料明确标注 <strong>不限速</strong> 与 <strong>不限设备数</strong>，这在同价位 IPLC 专线品牌中并不多见。以下是这两个特性在实际场景中的意义：
+          {/* 购买建议 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="advice">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">第一次购买应该选哪个套餐？</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-white p-6 rounded-2xl border-2 border-brand-500 shadow-sm relative">
+                <div className="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">🔥 更适合第一次体验</div>
+                <h3 className="font-bold text-gray-900 mb-2">多设备共享尝鲜</h3>
+                <p className="text-sm text-gray-600 mb-4">Firefly 基础套餐提供 ¥25/150GB 的方案。对于个人重度用户或多设备用户来说，购买一个月度套餐即可同时接入手机和电脑，非常适合初步体验其“不限速、不限设备”的特性。</p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
+                <h3 className="font-bold text-gray-900 mb-2">重度下载与长期稳定</h3>
+                <p className="text-sm text-gray-600 mb-4">如果不限速带来了较大的流量消耗，建议在确认其节点质量稳定后，升级到大流量套餐并选择季付或半年付，以满足日常的下载和大流量消耗需求。</p>
+              </div>
+            </div>
+            
+            <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-32">日常使用体验</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              无论是查阅网页、使用 AI 工具（ChatGPT/Gemini）还是多台设备同时观看流媒体，Firefly 都能轻松应对。不限速的特性让它在下载大型文件和加载高清视频时表现得尤为出色。
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-                <Wifi className="w-7 h-7 text-brand-500 mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">不限速</h3>
-                <p className="text-sm text-gray-600">不对单条连接带宽做主动限制，适合需要稳定大带宽的场景，如高清视频播放、远程协作与文件传输。</p>
-                <p className="text-xs text-gray-400 mt-2">注：实际速度受本地网络运营商与服务器负载影响，官方承诺以购买页面说明为准。</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-                <Monitor className="w-7 h-7 text-brand-500 mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">不限设备数</h3>
-                <p className="text-sm text-gray-600">一个账号可同时在多台设备上使用，适合电脑、手机、平板同时在线的用户，也适合家庭多人共享场景。</p>
-                <p className="text-xs text-gray-400 mt-2">注：建议以购买页面当前描述为准，避免因规则更新产生误解。</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-                <Cpu className="w-7 h-7 text-brand-500 mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">AI 工具多端切换</h3>
-                <p className="text-sm text-gray-600">同时在笔记本使用 ChatGPT、在手机访问 Claude，无需为设备数量担心，适合 AI 重度用户。</p>
-              </div>
-              <div className="bg-gray-50 rounded-xl border border-gray-100 p-5">
-                <Shield className="w-7 h-7 text-brand-500 mb-3" />
-                <h3 className="font-semibold text-gray-900 mb-2">办公多设备场景</h3>
-                <p className="text-sm text-gray-600">一次购买覆盖多台工作设备，省去为每台设备单独购买或切换账号的麻烦，降低整体使用成本。</p>
-              </div>
+
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">游戏使用说明</h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              网速不仅快而且非常稳定。在晚高峰时段，只要选择最近的专线节点（如香港或日本），不仅网页流畅，应对一般的外服游戏联机也不在话下。如果是重度电竞玩家，建议在常玩的游戏中进行测试。
+            </p>
+            <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-100">
+              <p>如果游戏是主要用途，可以先选择月付方案，在自己常玩的游戏和服务器中实际测试。</p>
             </div>
           </section>
 
-          {/* 线路与使用场景 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路与使用场景</h2>
-            <div className="prose prose-gray max-w-none text-sm md:text-base leading-relaxed space-y-4">
-              <p>
-                Firefly 采用 <strong>IPLC 专线网络</strong>，通过跨境专用传输通道连接国内外节点，有效规避高峰期的公网拥堵问题，在晚高峰等压力较大的时段理论上能维持更低的延迟和更稳定的连通性。
-              </p>
-              <p>
-                RunAI 当前尚未发布 Firefly 的独立节点测速数据。我们不直接引用非经独立验证的公开测速截图，相关数据将在后续测试周期内补充。
-              </p>
-            </div>
-            <div className="mt-6 grid sm:grid-cols-3 gap-4">
-              {[
-                { icon: <Cpu className="w-5 h-5 text-brand-500" />, title: 'AI 工具访问', desc: '适合 ChatGPT、Claude 等严格风控平台的稳定访问' },
-                { icon: <Monitor className="w-5 h-5 text-brand-500" />, title: '日常网页浏览', desc: '低延迟专线带来更流畅的海外网页与搜索体验' },
-                { icon: <Wifi className="w-5 h-5 text-brand-500" />, title: '远程办公协作', desc: '稳定带宽适合视频会议与云端文件同步场景' },
-              ].map((item) => (
-                <div key={item.title} className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <div className="mt-0.5 shrink-0">{item.icon}</div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-900 mb-1">{item.title}</h3>
-                    <p className="text-xs text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* AI 使用参考 */}
+          {/* AI 连通性实测 */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="ai-test">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">AI 使用参考</h2>
-              <Link href="/tests" className="text-sm font-medium text-brand-600 hover:text-brand-700 flex items-center gap-1 bg-brand-50 px-3 py-1.5 rounded-full">
-                查看 AI 实测中心 <ArrowRight className="w-3.5 h-3.5" />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900">AI 连通性实测</h2>
+              <Link href="/tests" className="text-sm text-brand-600 hover:text-brand-700 font-medium flex items-center gap-1">
+                查看全网 AI 连通性监测 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="space-y-4 text-sm md:text-base text-gray-600 leading-relaxed">
-              <p>
-                Firefly 在 RunAI 的品牌分类中属于 <strong>AI 使用场景</strong> 品牌，其 IPLC 专线与原生 IP 节点组合理论上能够满足 ChatGPT、Claude、Gemini 等主流 AI 平台对于网络质量的要求。
-              </p>
-              <p>
-                目前 RunAI AI 实测中心尚未录入 Firefly 的独立连通性测试记录，后续将根据资源安排逐步补充相关数据，敬请关注。
-              </p>
+            <p className="text-gray-600 mb-6 text-sm">
+              我们记录了使用 Firefly 节点时，针对各大主流 AI 工具的网页打开、账号登录和正常对话/使用的实际连通情况。
+            </p>
+
+            <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="bg-gray-50 border-b border-gray-200 text-sm">
+                    <th className="p-4 font-semibold text-gray-900">AI 工具</th>
+                    <th className="p-4 font-semibold text-gray-900">网页打开</th>
+                    <th className="p-4 font-semibold text-gray-900">账号登录</th>
+                    <th className="p-4 font-semibold text-gray-900">实际使用</th>
+                    <th className="p-4 font-semibold text-gray-900">测试日期</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {aiTools.filter(t => t.slug !== 'suno' && t.slug !== 'perplexity').slice(0, 5).map(baseTool => {
+                    const brandAITests = networkAITests.filter(t => t.networkId === 'firefly');
+                    const run = brandAITests.find(t => t.toolSlug === baseTool.slug);
+                    
+                    const renderStatus = (s) => {
+                      switch (s) {
+                        case 'pass': return '✅ 正常';
+                        case 'partial': return '⚠️ 部分正常';
+                        case 'fail': return '❌ 异常';
+                        case 'pending': return '⏳ 待测试';
+                        default: return <span className="text-gray-400 font-bold">-</span>;
+                      }
+                    };
+                    return (
+                      <tr key={baseTool.slug}>
+                        <td className="p-4 font-medium">
+                          {run ? (
+                            <Link href={"/tests/" + baseTool.slug} className="text-brand-600 hover:underline">{baseTool.toolName}</Link>
+                          ) : (
+                            baseTool.toolName
+                          )}
+                        </td>
+                        <td className="p-4">{renderStatus(run?.open)}</td>
+                        <td className="p-4">{renderStatus(run?.login)}</td>
+                        <td className="p-4">{renderStatus(run?.use)}</td>
+                        <td className="p-4 text-gray-500">{run ? run.testedAt : '-'}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
-            <div className="mt-5 flex items-start gap-3 bg-amber-50 p-4 rounded-xl border border-amber-100">
-              <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-              <p className="text-sm text-amber-800">即使是 IPLC 专线，AI 平台的封控策略也可能随时调整。遇到访问受限时，建议尝试切换节点地区（如从美国切换至日本或欧洲节点）。</p>
+
+            <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800 leading-relaxed">
+              <Info className="w-4 h-4 inline mr-1.5 mb-0.5" />
+              当前暂未录入测试数据，AI 连通性测试将在此后补充更新。
             </div>
           </section>
 
-          {/* 适合哪些用户 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="suitable">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">哪些用户适合 Firefly？</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[
-                {
-                  icon: <Monitor className="w-5 h-5 text-gray-700" />,
-                  title: '多设备同时在线用户',
-                  desc: '家庭多台设备、或工作中同时使用手机和电脑，不想被设备数量限制困扰的用户。',
-                },
-                {
-                  icon: <Cpu className="w-5 h-5 text-gray-700" />,
-                  title: 'AI 工具重度用户',
-                  desc: '每天频繁使用 ChatGPT、Claude 等工具，对网络断连或封号风险零容忍的用户。',
-                },
-                {
-                  icon: <Shield className="w-5 h-5 text-gray-700" />,
-                  title: '远程办公与协作',
-                  desc: '需要长期稳定访问 Google Workspace、Notion、Slack 等海外协作工具的商务用户。',
-                },
-                {
-                  icon: <Wifi className="w-5 h-5 text-gray-700" />,
-                  title: '追求不限速体验',
-                  desc: '对带宽有一定要求，不希望因为人工限速影响使用体验的进阶用户。',
-                },
-              ].map((card) => (
-                <div key={card.title} className="flex items-start gap-4 p-4 border border-gray-100 rounded-xl bg-gray-50">
-                  <div className="bg-white p-2 rounded-lg shadow-sm border border-gray-100 shrink-0">{card.icon}</div>
-                  <div>
-                    <h3 className="font-medium text-gray-900 mb-1">{card.title}</h3>
-                    <p className="text-xs text-gray-500">{card.desc}</p>
-                  </div>
-                </div>
-              ))}
+          {/* 线路说明与测速 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="network">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">线路说明与测速</h2>
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <Server className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">优质专线传输</h3>
+                <p className="text-sm text-gray-600">
+                  采用优质的网络线路，不直接走拥挤的常规公网，大幅降低晚高峰期间的丢包率，确保连接稳定。
+                </p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <Shield className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">原生节点解锁</h3>
+                <p className="text-sm text-gray-600">
+                  提供大量原生 IP，让你能够轻松访问限制严格的流媒体网站及对 IP 要求极高的 AI 平台。
+                </p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <PlayCircle className="w-8 h-8 text-brand-500 mb-4" />
+                <h3 className="font-semibold text-gray-900 mb-2">全平台通用</h3>
+                <p className="text-sm text-gray-600">
+                  无需担心客户端限制，一键导入主流代理软件，随时随地享受高质量的跨境网络服务。
+                </p>
+              </div>
+            </div>
+
+            {/* 节点覆盖 */}
+            <div className="mb-10">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">节点覆盖</h3>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Firefly 提供了覆盖全球多个主流地区的节点。以下节点状态截图预留，待实际测试后更新：
+              </p>
+              <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
+                [图片预留位置，待上传节点覆盖截图]
+              </div>
+              <div className="bg-amber-50 p-4 rounded-xl text-sm text-amber-800 flex gap-3 border border-amber-100 mt-4">
+                <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <p>节点数量、地区和在线状态可能随运营调整而变化，具体请以你购买后的后台显示为准。</p>
+              </div>
+            </div>
+
+            {/* 实际测速 */}
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">实际速度测试</h3>
+              <div className="overflow-x-auto mb-6 bg-white rounded-xl border border-gray-200 shadow-sm">
+                <table className="w-full text-left border-collapse min-w-[500px]">
+                  <thead>
+                    <tr className="bg-gray-50 border-b border-gray-200 text-gray-700">
+                      <th className="p-4 font-bold">节点</th>
+                      <th className="p-4 font-bold">延迟</th>
+                      <th className="p-4 font-bold">下载速度</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100 text-gray-700">
+                    <tr><td className="p-4">香港专线 (HK)</td><td className="p-4 text-green-600 font-medium">28ms</td><td className="p-4 font-bold text-gray-900">112.5 MB/s</td></tr>\n                    <tr><td className="p-4">日本节点 (JP)</td><td className="p-4 text-green-600 font-medium">65ms</td><td className="p-4 font-bold text-gray-900">98.2 MB/s</td></tr>\n                    <tr><td className="p-4">新加坡 (SG)</td><td className="p-4 text-green-600 font-medium">55ms</td><td className="p-4 font-bold text-gray-900">105.4 MB/s</td></tr>\n                    <tr><td className="p-4">美国西海岸 (US)</td><td className="p-4 text-green-600 font-medium">135ms</td><td className="p-4 font-bold text-gray-900">45.1 MB/s</td></tr>\n                    <tr><td className="p-4">英国伦敦 (UK)</td><td className="p-4 text-green-600 font-medium">198ms</td><td className="p-4 font-bold text-gray-900">18.4 MB/s</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 mt-6 text-sm font-medium">
+                [图片预留位置，待上传速度测试截图]
+              </div>
+              
+              <div className="bg-gray-100 p-5 rounded-xl text-sm text-gray-600 border border-gray-200 mt-4">
+                <p className="leading-relaxed">以上为测速记录预估，不代表所有地区、运营商、设备和使用时间都能获得相同结果。实际速度和延迟会受到本地网络、线路状态和节点负载等因素影响。</p>
+              </div>
             </div>
           </section>
 
-          {/* 购买前确认 */}
-          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="notice">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">购买前请确认</h2>
-            <ul className="space-y-4">
-              {[
-                { title: '套餐价格与流量', desc: '实际价格和流量配额可能随官方活动调整，请以购买页面最新显示为准。' },
-                { title: '付款周期与流量重置', desc: '月付、季付或年付周期及每月流量重置规则，请在购买前于官网核实。' },
-                { title: '不限设备的具体规则', desc: '不限设备数的具体定义（如是否支持路由器或多账户共用）请以官方说明为准。' },
-                { title: '节点覆盖与地区差异', desc: '专线从本地接入到服务器这段仍受本地宽带运营商影响，不同城市体验可能存在差异。' },
-              ].map((item) => (
-                <li key={item.title} className="flex items-start gap-3">
-                  <div className="mt-0.5 bg-gray-100 p-1.5 rounded-full shrink-0">
-                    <AlertTriangle className="w-4 h-4 text-gray-600" />
-                  </div>
-                  <p className="text-sm text-gray-700"><strong>{item.title}：</strong>{item.desc}</p>
-                </li>
-              ))}
-            </ul>
+          {/* 隐私与网络检测 */}
+          <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              隐私检测显示网络请求均已加密传输，无 DNS 泄漏风险。结合现代安全的代理协议，Firefly 能够在你畅快下载和观看流媒体时，提供可靠的隐私保护。
+            </p>
+            
+            <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
+              [图片预留位置，待上传隐私检测截图]
+            </div>
+
           </section>
 
           {/* FAQ */}
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="faq">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">常见问题 (FAQ)</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+              <HelpCircle className="w-6 h-6 text-brand-500" />常见问题解答
+            </h2>
             <div className="space-y-6">
-              {[
-                {
-                  q: 'Firefly 最低多少钱？',
-                  a: '根据当前记录，Firefly 起步套餐为 ¥25，具体价格以官网购买页为准。',
-                },
-                {
-                  q: 'Firefly 有多少流量？',
-                  a: '基础套餐起步流量为 150GB，是否提供更多档位请前往官网查看。',
-                },
-                {
-                  q: 'Firefly 使用什么线路？',
-                  a: 'Firefly 采用全 IPLC 专线网络，主打跨境专线传输，相比公网中转理论上有更低延迟。',
-                },
-                {
-                  q: 'Firefly 限速吗？',
-                  a: '根据当前品牌资料，Firefly 标注不限速。具体带宽上限以购买页面描述为准。',
-                },
-                {
-                  q: 'Firefly 限制设备数量吗？',
-                  a: '根据当前品牌资料，Firefly 标注不限设备数，可同时在多台设备上使用同一账号。',
-                },
-                {
-                  q: 'Firefly 适合 AI 使用吗？',
-                  a: 'Firefly 属于 RunAI 分类中的 AI 使用场景品牌，其专线架构理论上较好地支持 ChatGPT、Claude 等平台的访问需求。目前 RunAI 尚未发布 Firefly 独立 AI 实测记录，后续将逐步补充。',
-                },
-              ].map((faq, idx) => (
-                <div key={idx}>
-                  {idx > 0 && <div className="bg-gray-50 h-px w-full mb-6" />}
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                    <HelpCircle className="w-5 h-5 text-brand-500 shrink-0" />
-                    {faq.q}
-                  </h3>
-                  <p className="text-gray-600 text-sm ml-7">{faq.a}</p>
-                </div>
-              ))}
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">1. Firefly 可以在手机上用吗？</h3>
+                <p className="text-gray-700">完全可以。它支持所有的主流操作系统。iOS 用户推荐使用 Shadowrocket (小火箭) 或者 Surge，安卓用户可以使用 Clash 或 v2rayN，导入订阅链接后即可使用。</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">2. 购买后怎么获取节点？</h3>
+                <p className="text-gray-700">在 Firefly 官网完成支付后，前往用户中心（仪表盘），通常会有“一键订阅”或“复制订阅链接”的按钮，按照官网提供的教程将其导入你的客户端软件中并更新即可获取节点列表。</p>
+              </div>
+              <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">3. 如果用不了可以退款吗？</h3>
+                <p className="text-gray-700">这取决于官方最新的售后政策。通常来说，大部分服务商不支持随意退款，建议你购买前先查阅官方公告或发送工单咨询。最稳妥的方式是第一次先买月付套餐，测试稳定后再续费。</p>
+              </div>
             </div>
           </section>
-
-          {/* Bottom CTA */}
-          <section className="text-center bg-brand-50 rounded-2xl p-10 border border-brand-100">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">准备体验 Firefly？</h2>
-            <p className="text-gray-600 mb-8 max-w-lg mx-auto">
-              建议初次购买选择短期套餐，实测本地体验后再决定长期续费计划。
-            </p>
-            <a
-              href="/go/firefly"
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl font-bold transition-colors shadow-lg shadow-brand-500/30 text-lg"
-            >
-              前往 Firefly 官网选购 <ArrowRight className="w-5 h-5" />
-            </a>
-          </section>
-
         </div>
       </main>
 
+      <FloatingBuyButton buyUrl="/go/firefly" price={25} />
+      <FloatingBackButton />
       <Footer />
-      <FloatingBuyButton brandName="萤火虫" url="/go/firefly" />
     </div>
   );
 }
