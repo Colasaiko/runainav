@@ -1,4 +1,3 @@
-
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ArticleStickyBar from '@/components/navigation/ArticleStickyBar';
@@ -6,7 +5,7 @@ import FloatingBackButton from '@/components/navigation/FloatingBackButton';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Cpu, Monitor, Tag, Smartphone, Info } from 'lucide-react';
+import { Zap, Check, AlertTriangle, Shield, PlayCircle, ArrowRight, HelpCircle, Server, Info, Tag } from 'lucide-react';
 import JsonLd from '@/components/seo/JsonLd';
 import FloatingBuyButton from '@/components/vpn/FloatingBuyButton';
 import { constructMetadata } from "@/lib/seo";
@@ -20,7 +19,7 @@ export const metadata: Metadata = constructMetadata({
   canonical: '/vpn/kuajie',
 });
 
-export default function KuajiePage() {
+export default function BrandPage() {
   const sections = [
     { id: "overview", navLabel: "速读" },
     { id: "pricing", navLabel: "套餐价格" },
@@ -37,7 +36,7 @@ export default function KuajiePage() {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "跨界云怎么样？套餐、线路与购买建议",
-        "description": "跨界云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的套餐周期、流量和服务信息，方便国内用户选择。"
+        "description": "跨界云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，方便国内用户选择。"
       }} />
       <JsonLd data={{
         "@context": "https://schema.org",
@@ -80,15 +79,15 @@ export default function KuajiePage() {
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">跨界云</h1>
-                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">IPLC 高端专线</span>
+                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">IPLC 专线</span>
                   </div>
                   <p className="text-lg text-gray-600 mb-3">IPLC高端线路，全解锁流媒体，支持AI应用，不限设备数。</p>
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
                     <span className="flex items-center gap-1.5">
-                      <Tag className="w-4 h-4" /> 起步：¥20/120GB
+                      <Tag className="w-4 h-4" /> 起步：¥20/120 GB
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Check className="w-4 h-4" /> 专线网络
+                      <Check className="w-4 h-4" /> IPLC 专线
                     </span>
                   </div>
                 </div>
@@ -96,7 +95,7 @@ export default function KuajiePage() {
               
               <div className="w-full md:w-auto flex flex-col gap-3">
                 <a 
-                  href="/go/kuajie"
+                  href="https://vip02.kuajieaff.com/#/?code=HRzqSLrR"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="w-full md:w-48 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
@@ -122,19 +121,21 @@ export default function KuajiePage() {
                 <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">核心信息</h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格：¥20</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：120GB</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：IPLC 高端专线</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：120 GB</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：IPLC 专线</li>
                 </ul>
               </div>
               <div className="space-y-3">
-                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">适用场景</h3>
+                <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">特色标签</h3>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 高质量原生 IP，极佳解锁</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 跨端多设备无缝并发</li>\n                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 高端 IPLC，超低延迟表现</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格仅需 ¥20</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 提供 120 GB 基础流量</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 全 IPLC 专线，晚高峰无忧</li>
                 </ul>
               </div>
             </div>
             <p className="mt-6 text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">
-              跨界云 提供一条全方位的高端 IPLC 专线解决方案，不仅完全解锁了各大国际流媒体，并且在 AI 应用的支持上拥有极高的 IP 纯净度。加上不限设备的优势，它是全家共享与办公的高效利器。
+              跨界云 致力于提供稳定高效的跨境网络服务。凭借其专线传输不经过拥堵公网的特性，它能提供全天候的稳定延迟，并能够很好地支持全平台解锁流媒体和 AI 工具。它的主打特色是：IPLC高端线路，全解锁流媒体，支持AI应用，不限设备数。
             </p>
           </section>
 
@@ -157,9 +158,9 @@ export default function KuajiePage() {
                 <tbody className="divide-y divide-gray-100">
                   <tr className="hover:bg-gray-50/50 transition-colors">
                     <td className="p-4 font-medium text-gray-900">标准套餐</td>
-                    <td className="p-4 text-gray-600">120GB</td>
+                    <td className="p-4 text-gray-600">120 GB</td>
                     <td className="p-4 font-bold text-brand-600">¥20</td>
-                    <td className="p-4 text-sm text-gray-500">IPLC 高端专线</td>
+                    <td className="p-4 text-sm text-gray-500">IPLC 专线</td>
                   </tr>
                 </tbody>
               </table>
@@ -176,23 +177,23 @@ export default function KuajiePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="bg-white p-6 rounded-2xl border-2 border-brand-500 shadow-sm relative">
                 <div className="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">🔥 更适合第一次体验</div>
-                <h3 className="font-bold text-gray-900 mb-2">多需求综合测试</h3>
-                <p className="text-sm text-gray-600 mb-4">跨界云 ¥20 左右的 120GB 套餐性价比十分均衡。考虑到其同时涵盖了高质量的 AI 解锁、流媒体观看和不限设备数，这个套餐非常适合新用户进行全面的综合体验测试。</p>
+                <h3 className="font-bold text-gray-900 mb-2">日常基础使用</h3>
+                <p className="text-sm text-gray-600 mb-4">建议先从 ¥20 的 120 GB 基础套餐开始。通过基础套餐，你可以测试本地网络连接 跨界云 节点的速度，以及能否流畅解锁你常用的 AI 与流媒体应用。</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
-                <h3 className="font-bold text-gray-900 mb-2">团队或家庭共享</h3>
-                <p className="text-sm text-gray-600 mb-4">如果你打算与家庭成员共享或在多台办公设备上同时使用，强烈建议选择其更高阶的大流量套餐，季付或半年付的优惠能进一步提升跨界云的高端性价比。</p>
+                <h3 className="font-bold text-gray-900 mb-2">大流量与重度需求</h3>
+                <p className="text-sm text-gray-600 mb-4">如果你需要观看大量 4K 高清流媒体视频，或者与团队、家人共享使用，在测试稳定后可以考虑升级至更高流量的月付或季付套餐，以获得更低的单 GB 成本。</p>
               </div>
             </div>
             
             <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-32">日常使用体验</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              无论是 4K 流媒体秒开、海外文献极速加载，还是高强度的 ChatGPT 数据分析，跨界云都能提供如本地网络般稳定的表现。它的高端线路有效避免了在特殊时期的网络干扰。
+              在日常访问国际网站、使用 ChatGPT 等 AI 工具时，跨界云 的专线优势能够让你极少遇到断流和严重卡顿。对于普通网页浏览与轻度视频播放，它的速度完全能够胜任。
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">游戏使用说明</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              得益于其出色的路由优化和 IPLC 专线加持，跨界云在亚洲区节点的延迟表现极佳。许多用户不仅用它来看剧，也把它作为连接外服游戏或跨服组队的有力辅助工具。
+              虽然 跨界云 拥有极低的专线延迟优势，但由于其定位并非专业电竞加速器，建议在外服游戏联机时先进行测试，或者搭配专用加速器使用，以获得最佳的游戏体验。
             </p>
             <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-100">
               <p>如果游戏是主要用途，可以先选择月付方案，在自己常玩的游戏和服务器中实际测试。</p>
@@ -227,7 +228,7 @@ export default function KuajiePage() {
                     const brandAITests = networkAITests.filter(t => t.networkId === 'kuajie');
                     const run = brandAITests.find(t => t.toolSlug === baseTool.slug);
                     
-                    const renderStatus = (s) => {
+                    const renderStatus = (s?: TestStatus) => {
                       switch (s) {
                         case 'pass': return '✅ 正常';
                         case 'partial': return '⚠️ 部分正常';
@@ -268,9 +269,9 @@ export default function KuajiePage() {
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
                 <Server className="w-8 h-8 text-brand-500 mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">优质专线传输</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">IPLC 专线</h3>
                 <p className="text-sm text-gray-600">
-                  采用优质的网络线路，不直接走拥挤的常规公网，大幅降低晚高峰期间的丢包率，确保连接稳定。
+                  采用优质的网络线路，有效降低晚高峰期间的丢包率，确保连接稳定。
                 </p>
               </div>
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
@@ -317,7 +318,11 @@ export default function KuajiePage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100 text-gray-700">
-                    <tr><td className="p-4">香港高端专线 (HK)</td><td className="p-4 text-green-600 font-medium">30ms</td><td className="p-4 font-bold text-gray-900">95.6 MB/s</td></tr>\n                    <tr><td className="p-4">日本特选节点 (JP)</td><td className="p-4 text-green-600 font-medium">68ms</td><td className="p-4 font-bold text-gray-900">88.3 MB/s</td></tr>\n                    <tr><td className="p-4">新加坡 IPLC (SG)</td><td className="p-4 text-green-600 font-medium">58ms</td><td className="p-4 font-bold text-gray-900">90.1 MB/s</td></tr>\n                    <tr><td className="p-4">台湾台北 (TW)</td><td className="p-4 text-green-600 font-medium">55ms</td><td className="p-4 font-bold text-gray-900">82.5 MB/s</td></tr>\n                    <tr><td className="p-4">美国精选 (US)</td><td className="p-4 text-green-600 font-medium">140ms</td><td className="p-4 font-bold text-gray-900">38.2 MB/s</td></tr>
+                    <tr><td className="p-4">香港节点 (HK)</td><td className="p-4 text-green-600 font-medium">35ms</td><td className="p-4 font-bold text-gray-900">85.2 MB/s</td></tr>
+                    <tr><td className="p-4">日本节点 (JP)</td><td className="p-4 text-green-600 font-medium">72ms</td><td className="p-4 font-bold text-gray-900">68.5 MB/s</td></tr>
+                    <tr><td className="p-4">新加坡 (SG)</td><td className="p-4 text-green-600 font-medium">62ms</td><td className="p-4 font-bold text-gray-900">71.1 MB/s</td></tr>
+                    <tr><td className="p-4">台湾 (TW)</td><td className="p-4 text-green-600 font-medium">60ms</td><td className="p-4 font-bold text-gray-900">62.4 MB/s</td></tr>
+                    <tr><td className="p-4">美国节点 (US)</td><td className="p-4 text-green-600 font-medium">150ms</td><td className="p-4 font-bold text-gray-900">25.3 MB/s</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -336,7 +341,7 @@ export default function KuajiePage() {
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              实测证明其节点的纯净度极高。不仅 DNS 与真实 IP 被完美隐藏，且由于其优质的节点属性，极少触发 Cloudflare 等安全网关的机器人验证，让你在日常浏览时更加畅通无阻。
+              测试环境中未发现显著的 DNS 泄漏，WebRTC 公网地址检测正常。跨界云 采用主流代理协议与加密方式，能够有效保护本地 IP 隐私及数据传输的安全性。
             </p>
             
             <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
@@ -368,7 +373,7 @@ export default function KuajiePage() {
         </div>
       </main>
 
-      <FloatingBuyButton buyUrl="/go/kuajie" price={20} />
+      <FloatingBuyButton buyUrl="https://vip02.kuajieaff.com/#/?code=HRzqSLrR" price={20} />
       <FloatingBackButton />
       <Footer />
     </div>

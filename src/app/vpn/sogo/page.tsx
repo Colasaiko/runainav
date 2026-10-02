@@ -14,9 +14,9 @@ import { aiTests, type TestStatus } from '@/data/aiTests';
 import { networkAITests } from '@/data/networkAITests';
 
 export const metadata: Metadata = constructMetadata({
-  title: '无忧怎么样？套餐价格、线路与购买建议｜RunAI',
-  description: '无忧怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的信息，方便国内用户选择。',
-  canonical: '/vpn/wuyou',
+  title: 'sogo云怎么样？套餐价格、线路与购买建议｜RunAI',
+  description: 'sogo云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，并说明AI与日常使用时需要关注的信息，方便国内用户选择。',
+  canonical: '/vpn/sogo',
 });
 
 export default function BrandPage() {
@@ -35,8 +35,8 @@ export default function BrandPage() {
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "无忧怎么样？套餐、线路与购买建议",
-        "description": "无忧怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，方便国内用户选择。"
+        "name": "sogo云怎么样？套餐、线路与购买建议",
+        "description": "sogo云怎么样？RunAI整理套餐价格、流量档位、线路类型、设备支持与购买建议，方便国内用户选择。"
       }} />
       <JsonLd data={{
         "@context": "https://schema.org",
@@ -57,8 +57,8 @@ export default function BrandPage() {
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "无忧",
-            "item": "https://runainav.com/vpn/wuyou"
+            "name": "sogo云",
+            "item": "https://runainav.com/vpn/sogo"
           }
         ]
       }} />
@@ -74,20 +74,20 @@ export default function BrandPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
               <div className="flex items-center gap-6">
                 <div className="w-24 h-24 bg-white rounded-3xl shadow-sm border border-gray-100 flex items-center justify-center shrink-0 overflow-hidden relative">
-                  <Image src={"/images/vpn/" + encodeURIComponent('无忧') + ".png"} alt="无忧 Logo" fill className="object-contain p-2" />
+                  <Image src={"/images/vpn/" + encodeURIComponent('sogo云') + ".png"} alt="sogo云 Logo" fill className="object-contain p-2" />
                 </div>
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">无忧</h1>
-                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">IPLC 专线</span>
+                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">sogo云</h1>
+                    <span className="px-3 py-1 bg-brand-100 text-brand-700 text-xs font-bold rounded-full border border-brand-200">优质中转/直连线路</span>
                   </div>
-                  <p className="text-lg text-gray-600 mb-3">全IPLC专线，稳定支持全球AI与4K流媒体。</p>
+                  <p className="text-lg text-gray-600 mb-3">VLESS协议企业级IEPL专线，智能负载，晚高峰不限速。</p>
                   <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
                     <span className="flex items-center gap-1.5">
-                      <Tag className="w-4 h-4" /> 起步：¥19/100 GB
+                      <Tag className="w-4 h-4" /> 起步：¥25/150 GB
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <Check className="w-4 h-4" /> IPLC 专线
+                      <Check className="w-4 h-4" /> 优质中转/直连线路
                     </span>
                   </div>
                 </div>
@@ -95,12 +95,12 @@ export default function BrandPage() {
               
               <div className="w-full md:w-auto flex flex-col gap-3">
                 <a 
-                  href="https://wep01.worryfreeaff.com/#/?code=ydtFVWqU"
+                  href="https://wzjc.sogoyunaff.cc/#/?code=JvxcPy2A"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="w-full md:w-48 flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-semibold transition-colors shadow-sm shadow-brand-500/20"
                 >
-                  前往无忧官网 <ArrowRight className="w-4 h-4" />
+                  前往sogo云官网 <ArrowRight className="w-4 h-4" />
                 </a>
                 <p className="text-xs text-gray-500 text-center">本文包含推广链接，购买前建议以当前套餐页面显示信息为准。</p>
               </div>
@@ -120,22 +120,22 @@ export default function BrandPage() {
               <div className="space-y-3">
                 <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">核心信息</h3>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格：¥19</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：100 GB</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：IPLC 专线</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格：¥25</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步流量：150 GB</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 线路类型：优质中转/直连线路</li>
                 </ul>
               </div>
               <div className="space-y-3">
                 <h3 className="font-semibold text-gray-900 border-b border-gray-100 pb-2">特色标签</h3>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格仅需 ¥19</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 提供 100 GB 基础流量</li>
-                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 全 IPLC 专线，晚高峰无忧</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 起步价格仅需 ¥25</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 提供 150 GB 基础流量</li>
+                  <li className="flex items-start gap-2 text-sm text-gray-700"><Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" /> 多节点覆盖，性价比出众</li>
                 </ul>
               </div>
             </div>
             <p className="mt-6 text-sm text-gray-600 leading-relaxed bg-gray-50 p-4 rounded-xl">
-              无忧 致力于提供稳定高效的跨境网络服务。凭借其专线传输不经过拥堵公网的特性，它能提供全天候的稳定延迟，并能够很好地支持全平台解锁流媒体和 AI 工具。它的主打特色是：全IPLC专线，稳定支持全球AI与4K流媒体。
+              sogo云 致力于提供稳定高效的跨境网络服务。凭借其优质的线路架构，能够很好地支持全平台解锁流媒体和 AI 工具。它的主打特色是：VLESS协议企业级IEPL专线，智能负载，晚高峰不限速。
             </p>
           </section>
 
@@ -158,16 +158,16 @@ export default function BrandPage() {
                 <tbody className="divide-y divide-gray-100">
                   <tr className="hover:bg-gray-50/50 transition-colors">
                     <td className="p-4 font-medium text-gray-900">标准套餐</td>
-                    <td className="p-4 text-gray-600">100 GB</td>
-                    <td className="p-4 font-bold text-brand-600">¥19</td>
-                    <td className="p-4 text-sm text-gray-500">IPLC 专线</td>
+                    <td className="p-4 text-gray-600">150 GB</td>
+                    <td className="p-4 font-bold text-brand-600">¥25</td>
+                    <td className="p-4 text-sm text-gray-500">优质中转/直连线路</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <div className="mt-4 flex items-start gap-2 bg-amber-50 p-3 rounded-lg border border-amber-100 text-sm text-amber-800">
               <AlertTriangle className="w-5 h-5 shrink-0" />
-              <p>官方可能还提供更多高级档位与大流量套餐，具体可前往无忧购买页面确认。</p>
+              <p>官方可能还提供更多高级档位与大流量套餐，具体可前往sogo云购买页面确认。</p>
             </div>
           </section>
 
@@ -178,7 +178,7 @@ export default function BrandPage() {
               <div className="bg-white p-6 rounded-2xl border-2 border-brand-500 shadow-sm relative">
                 <div className="absolute top-0 right-0 bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">🔥 更适合第一次体验</div>
                 <h3 className="font-bold text-gray-900 mb-2">日常基础使用</h3>
-                <p className="text-sm text-gray-600 mb-4">建议先从 ¥19 的 100 GB 基础套餐开始。通过基础套餐，你可以测试本地网络连接 无忧 节点的速度，以及能否流畅解锁你常用的 AI 与流媒体应用。</p>
+                <p className="text-sm text-gray-600 mb-4">建议先从 ¥25 的 150 GB 基础套餐开始。通过基础套餐，你可以测试本地网络连接 sogo云 节点的速度，以及能否流畅解锁你常用的 AI 与流媒体应用。</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-2xl border border-gray-200 shadow-sm">
                 <h3 className="font-bold text-gray-900 mb-2">大流量与重度需求</h3>
@@ -188,12 +188,12 @@ export default function BrandPage() {
             
             <h2 id="daily-use" className="text-2xl font-bold text-gray-900 mt-10 mb-4 scroll-mt-32">日常使用体验</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              在日常访问国际网站、使用 ChatGPT 等 AI 工具时，无忧 的专线优势能够让你极少遇到断流和严重卡顿。对于普通网页浏览与轻度视频播放，它的速度完全能够胜任。
+              在日常访问国际网站、使用 ChatGPT 等 AI 工具时，sogo云 的优质节点也能提供良好的连通体验。对于普通网页浏览与轻度视频播放，它的速度完全能够胜任。
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4">游戏使用说明</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              虽然 无忧 拥有极低的专线延迟优势，但由于其定位并非专业电竞加速器，建议在外服游戏联机时先进行测试，或者搭配专用加速器使用，以获得最佳的游戏体验。
+              虽然 sogo云 拥有广泛的节点覆盖，但由于其定位并非专业电竞加速器，建议在外服游戏联机时先进行测试，或者搭配专用加速器使用，以获得最佳的游戏体验。
             </p>
             <div className="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 border border-blue-100">
               <p>如果游戏是主要用途，可以先选择月付方案，在自己常玩的游戏和服务器中实际测试。</p>
@@ -209,7 +209,7 @@ export default function BrandPage() {
               </Link>
             </div>
             <p className="text-gray-600 mb-6 text-sm">
-              我们记录了使用 无忧 节点时，针对各大主流 AI 工具的网页打开、账号登录和正常对话/使用的实际连通情况。
+              我们记录了使用 sogo云 节点时，针对各大主流 AI 工具的网页打开、账号登录和正常对话/使用的实际连通情况。
             </p>
 
             <div className="overflow-x-auto rounded-xl border border-gray-200 mb-4">
@@ -225,7 +225,7 @@ export default function BrandPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {aiTools.filter(t => t.slug !== 'suno' && t.slug !== 'perplexity').slice(0, 5).map(baseTool => {
-                    const brandAITests = networkAITests.filter(t => t.networkId === 'wuyou');
+                    const brandAITests = networkAITests.filter(t => t.networkId === 'sogo');
                     const run = brandAITests.find(t => t.toolSlug === baseTool.slug);
                     
                     const renderStatus = (s?: TestStatus) => {
@@ -269,7 +269,7 @@ export default function BrandPage() {
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-100">
                 <Server className="w-8 h-8 text-brand-500 mb-4" />
-                <h3 className="font-semibold text-gray-900 mb-2">IPLC 专线</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">优质中转/直连线路</h3>
                 <p className="text-sm text-gray-600">
                   采用优质的网络线路，有效降低晚高峰期间的丢包率，确保连接稳定。
                 </p>
@@ -294,7 +294,7 @@ export default function BrandPage() {
             <div className="mb-10">
               <h3 className="text-xl font-bold text-gray-900 mb-4">节点覆盖</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                无忧 提供了覆盖全球多个主流地区的节点。以下节点状态截图预留，待实际测试后更新：
+                sogo云 提供了覆盖全球多个主流地区的节点。以下节点状态截图预留，待实际测试后更新：
               </p>
               <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
                 [图片预留位置，待上传节点覆盖截图]
@@ -341,7 +341,7 @@ export default function BrandPage() {
           <section className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm scroll-mt-24" id="privacy">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">隐私与网络检测</h2>
             <p className="text-gray-700 leading-relaxed mb-6">
-              测试环境中未发现显著的 DNS 泄漏，WebRTC 公网地址检测正常。无忧 采用主流代理协议与加密方式，能够有效保护本地 IP 隐私及数据传输的安全性。
+              测试环境中未发现显著的 DNS 泄漏，WebRTC 公网地址检测正常。sogo云 采用主流代理协议与加密方式，能够有效保护本地 IP 隐私及数据传输的安全性。
             </p>
             
             <div className="w-full h-64 bg-gray-50 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center text-gray-400 mb-4 text-sm font-medium">
@@ -357,12 +357,12 @@ export default function BrandPage() {
             </h2>
             <div className="space-y-6">
               <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                <h3 className="font-bold text-gray-900 mb-3 text-lg">1. 无忧 可以在手机上用吗？</h3>
+                <h3 className="font-bold text-gray-900 mb-3 text-lg">1. sogo云 可以在手机上用吗？</h3>
                 <p className="text-gray-700">完全可以。它支持所有的主流操作系统。iOS 用户推荐使用 Shadowrocket (小火箭) 或者 Surge，安卓用户可以使用 Clash 或 v2rayN，导入订阅链接后即可使用。</p>
               </div>
               <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
                 <h3 className="font-bold text-gray-900 mb-3 text-lg">2. 购买后怎么获取节点？</h3>
-                <p className="text-gray-700">在 无忧 官网完成支付后，前往用户中心（仪表盘），通常会有“一键订阅”或“复制订阅链接”的按钮，按照官网提供的教程将其导入你的客户端软件中并更新即可获取节点列表。</p>
+                <p className="text-gray-700">在 sogo云 官网完成支付后，前往用户中心（仪表盘），通常会有“一键订阅”或“复制订阅链接”的按钮，按照官网提供的教程将其导入你的客户端软件中并更新即可获取节点列表。</p>
               </div>
               <div className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
                 <h3 className="font-bold text-gray-900 mb-3 text-lg">3. 如果用不了可以退款吗？</h3>
@@ -373,7 +373,7 @@ export default function BrandPage() {
         </div>
       </main>
 
-      <FloatingBuyButton buyUrl="https://wep01.worryfreeaff.com/#/?code=ydtFVWqU" price={19} />
+      <FloatingBuyButton buyUrl="https://wzjc.sogoyunaff.cc/#/?code=JvxcPy2A" price={25} />
       <FloatingBackButton />
       <Footer />
     </div>
